@@ -1,0 +1,98 @@
+/*
+ * blackheart.css
+ * 29 November 2018
+ *
+ */
+
+.color-primary-0 { color: #F5B6D0 }	/* Main Primary color 	*/
+.color-primary-1 { color: #FFFCFD } /* a lot lighter 			*/
+.color-primary-2 { color: #FCDCEA } /* slightly lighter 		*/
+.color-primary-3 { color: #EA8DB4 } /* slightly darker 		*/
+.color-primary-4 { color: #DA6697 } /* a lot darker 			*/
+
+body {
+	background-color: #000000;
+	color: #F5B6D0;
+	font-family: sans-serif;
+}
+
+a {
+	color: #EA8DB4;
+	text-decoration: none;
+}
+
+main {
+	background-color: #F5B6D0;
+	color: #000000;
+	border-radius: 25px;
+	margin: 10px;
+	padding: 20px;
+}
+
+main a {
+	color: #f41c11;
+}
+
+main ul {
+	list-style-image: url(blackheart-bullet.gif);
+}
+
+#clear {
+	clear: both;
+}
+
+#basicform {
+	margin: auto;
+	width: 600px;
+	padding: 10px;
+	border-radius: 25px;
+	background-color: #FCDCEA;
+}
+
+#basicform caption {
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #DA6697;
+	white-space: nowrap;
+	padding: 10px;
+}
+
+.inputtext {
+	width: 450px;
+	border-radius: 7px;
+	height: 24px;
+	border: none;
+	background-color: #FFFCFD;
+	color: #EA8DB4;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.inputselectmulti {
+	width: 450px;
+	border-radius: 7px;
+	border: none;
+	background-color: #FFFCFD;
+	color: #EA8DB4;
+	margin-bottom: 10px;
+}
+
+.inputlabel {
+	width: 170px;
+}
+
+.button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	background-color: #DA6697;
+	color: #FFFCFD;
+	border: none;
+	font-weight: bold;
+	font-size: 18px;
+	border-radius: 7px;
+}
