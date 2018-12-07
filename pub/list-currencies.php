@@ -31,7 +31,7 @@ include_once "main-header.php";
 			$din_id		= $dinopt['din_id'];
 
 			if ($din_digi == 0) {
-				$digital = "";
+				$digital = _('No');
 			} else {
 				$digital = _('Yes');
 			}
