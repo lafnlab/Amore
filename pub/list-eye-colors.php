@@ -5,8 +5,7 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle = "List of eye colors";
-
+$pagetitle = "LIST EYE COLORS TITLE";
 
 include_once "main-header.php";
 ?>
