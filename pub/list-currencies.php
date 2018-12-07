@@ -36,12 +36,12 @@ include_once "main-header.php";
 			} else {
 				$digital = _('Yes');
 			}
-			echo "\t\t\t<tr>\n";
-			echo "\t\t\t\t<td>".$din_iso."</td>\n";
-			echo "\t\t\t\t<td><a href=\"the-currency.php?did=".$din_id."\">".$din_name."</a></td>\n";
-			echo "\t\t\t\t<td>".$din_sym."</td>\n";
-			echo "\t\t\t\t<td>".$digital."</td>\n";
-			echo "\t\t\t</tr>\n";
+			echo "\t\t\t\t<tr>\n";
+			echo "\t\t\t\t\t<td>".$din_iso."</td>\n";
+			echo "\t\t\t\t\t<td><a href=\"the-currency.php?did=".$din_id."\">".$din_name."</a></td>\n";
+			echo "\t\t\t\t\t<td>".$din_sym."</td>\n";
+			echo "\t\t\t\t\t<td>".$digital."</td>\n";
+			echo "\t\t\t\t</tr>\n";
 		}
 ?>
 			</table>
