@@ -20,7 +20,7 @@ include_once "main-header.php";
 			$i18_lang	= $i18opt['i18_language'];
 			$i18_ctry	= $i18opt['i18_country'];
 			$i18_id		= $i18opt['i18_id'];
-			echo "\t\t\t<a href=\"the-locale.php?i18id=".$i18_id."\">".$i18_language."-".$i18_country."</a><br>\n";
+			echo "\t\t\t<a href=\"the-locale.php?i18id=".$i18_id."\">".$i18_lang."-".$i18_ctry."</a><br>\n";
 		}
 ?>
 		</article>
