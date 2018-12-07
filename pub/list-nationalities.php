@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($natopt = mysqli_fetch_assoc($natquery)) {
 			$nat_name	= $natopt['nat_name'];
 			$nat_id		= $natopt['nat_id'];
-			echo "\t\t\t<a href=\"the-nationality.php?nid=".$nat_id."\">".$nat_name."</a>\n";
+			echo "\t\t\t<a href=\"the-nationality.php?nid=".$nat_id."\">".$nat_name."</a><br>\n";
 		}
 ?>
 		</article>

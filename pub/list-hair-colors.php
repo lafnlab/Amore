@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($haropt = mysqli_fetch_assoc($harquery)) {
 			$har_name	= $haropt['har_color'];
 			$har_id		= $haropt['har_id'];
-			echo "\t\t\t<a href=\"the-hair-color.php?hid=".$har_id."\">".$har_name."</a>\n";
+			echo "\t\t\t<a href=\"the-hair-color.php?hid=".$har_id."\">".$har_name."</a><br>\n";
 		}
 ?>
 		</article>

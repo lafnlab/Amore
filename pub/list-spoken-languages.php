@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($spkopt = mysqli_fetch_assoc($spkquery)) {
 			$spk_name	= $spkopt['spk_name'];
 			$spk_id		= $spkopt['spk_id'];
-			echo "\t\t\t<a href=\"the-spoken-language.php?spid=".$spk_id."\">".$spk_name."</a>\n";
+			echo "\t\t\t<a href=\"the-spoken-language.php?spid=".$spk_id."\">".$spk_name."</a><br>\n";
 		}
 ?>
 		</article>

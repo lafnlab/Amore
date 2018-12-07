@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($tztopt = mysqli_fetch_assoc($tztquery)) {
 			$tzt_name	= $tztopt['tzt_name'];
 			$tzt_id		= $tztopt['tzt_id'];
-			echo "\t\t\t<a href=\"the-time-zone.php?tzid=".$tzt_id."\">".$tzt_name."</a>\n";
+			echo "\t\t\t<a href=\"the-time-zone.php?tzid=".$tzt_id."\">".$tzt_name."</a><br>\n";
 		}
 ?>
 		</article>

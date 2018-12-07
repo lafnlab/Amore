@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($genopt = mysqli_fetch_assoc($genquery)) {
 			$gen_name	= $genopt['gen_name'];
 			$gen_id		= $genopt['gen_id'];
-			echo "\t\t\t<a href=\"the-gender.php?gid=".$gen_id."\">".$gen_name."</a>\n";
+			echo "\t\t\t<a href=\"the-gender.php?gid=".$gen_id."\">".$gen_name."</a><br>\n";
 		}
 ?>
 		</article>

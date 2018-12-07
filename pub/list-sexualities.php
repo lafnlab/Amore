@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($sxuopt = mysqli_fetch_assoc($sxuquery)) {
 			$sxu_name	= $sxuopt['sxu_name'];
 			$sxu_id		= $sxuopt['sxu_id'];
-			echo "\t\t\t<a href=\"the-sexuality.php?sid=".$sxu_id."\">".$sxu_name."</a>\n";
+			echo "\t\t\t<a href=\"the-sexuality.php?sid=".$sxu_id."\">".$sxu_name."</a><br>\n";
 		}
 ?>
 		</article>

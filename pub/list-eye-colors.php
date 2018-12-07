@@ -19,7 +19,7 @@ include_once "main-header.php";
 		while ($eyeopt = mysqli_fetch_assoc($eyequery)) {
 			$eye_name	= $eyeopt['eye_color'];
 			$eye_id		= $eyeopt['eye_id'];
-			echo "\t\t\t<a href=\"the-eye-color.php?eid=".$eye_id."\">".$eye_name."</a>\n";
+			echo "\t\t\t<a href=\"the-eye-color.php?eid=".$eye_id."\">".$eye_name."</a><br>\n";
 		}
 ?>
 		</article>
