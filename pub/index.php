@@ -1,5 +1,6 @@
 <?php
-include_once "../conn.php";
+include_once	"../conn.php";
+include_once	"../config.php";
 $pagetitle = "🖤";
 
 include_once "main-header.php";

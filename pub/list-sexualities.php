@@ -1,5 +1,6 @@
 <?php
 include_once	"../conn.php";
+include_once	"../config.php";
 include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
