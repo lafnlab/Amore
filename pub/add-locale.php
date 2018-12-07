@@ -5,15 +5,15 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "ADD LOCALE TITLE";
+$pagetitle 	= "Add a locale to social.media.dating";
 #$message		= 'test message';
 
 // PROCESSING
 if (isset($_POST['i18submit'])) {
 
 	$loid			= makeid($newid);
-	$lolang		= nicetext($_POST['i18lang']);
-	$loctry		= nicetext($_POST['i18ctry']);
+	$lolang		= strtolower(nicetext($_POST['i18lang'])); // must be lowercase
+	$loctry		= strtoupper(nicetext($_POST['i18ctry'])); // must be uppercase
 
 	// is the id unique in this table?
 	$idq = "SELECT * FROM i18 WHERE i18_id=\'".$loid."\'";
@@ -45,11 +45,11 @@ if ($message != '' || NULL) {
 					<caption><?php echo _($pagetitle); ?></caption>
 					<tr>
 						<td class="inputlabel"><label for="i18lang"><?php echo _('Locale language');?></label></td>
-						<td><input type="text" name="i18lang" id="i18lang" class="inputtext" required maxlength="100"></td>
+						<td><input type="text" name="i18lang" id="i18lang" class="inputtext" required maxlength="3"></td>
 					</tr>
 					<tr>
 						<td class="inputlabel"><label for="i18ctry"><?php echo _('Locale country');?></label></td>
-						<td><input type="text" name="i18lang" id="i18lang" class="inputtext" maxlength="100"></td>
+						<td><input type="text" name="i18lang" id="i18lang" class="inputtext" maxlength="5"></td>
 					</tr>
 				</table>
 				<input type="submit" name="i18submit" id="i18submit" class="button" value="<?php echo _('Submit'); ?>">
