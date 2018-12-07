@@ -49,7 +49,7 @@ if ($message != '' || NULL) {
 					</tr>
 					<tr>
 						<td class="inputlabel"><label for="i18ctry"><?php echo _('Locale country');?></label></td>
-						<td><input type="text" name="i18lang" id="i18lang" class="inputtext" maxlength="5"></td>
+						<td><input type="text" name="i18ctry" id="i18ctry" class="inputtext" maxlength="5"></td>
 					</tr>
 				</table>
 				<input type="submit" name="i18submit" id="i18submit" class="button" value="<?php echo _('Submit'); ?>">
