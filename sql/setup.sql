@@ -125,8 +125,8 @@ CREATE TABLE `tzt` (
   `tzt_id` varchar(10) NOT NULL,
   `tzt_abbr` tinytext NOT NULL,
   `tzt_name` tinytext NOT NULL,
-  `tzt_offset` time NOT NULL,
-  `tzt_dst_offset` time NOT NULL
+  `tzt_offset` tinytext NOT NULL,
+  `tzt_dst_offset` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for time zones';
 
 --
