@@ -31,7 +31,7 @@ include_once 'main-header.php';
 		<h4><?php echo _($tztname); ?></h4>
 		<table>
 			<tr>
-				<th><?php echo _('Time zone abbreviation'); ?></th>
+				<th><?php echo _('Abbreviation'); ?></th>
 				<th><?php echo _('Offset'); ?></th>
 				<th><?php echo _('DST offset'); ?></th>
 			</tr>
