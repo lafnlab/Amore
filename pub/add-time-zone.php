@@ -12,10 +12,10 @@ $pagetitle 	= "ADD TIME ZONE TITLE";
 if (isset($_POST['tztsubmit'])) {
 
 	$tzid				= makeid($newid);
-	$tzabbr			= nicetext($_POST['tztabbr']);
-	$tzname			= nicetext($_POST['tztname']);
-	$tzoffset		= nicetext($_POST['tztoffset']);
-	$tzdstoffset	= nicetext($_POST['tztdstoff']);
+	$tzabbr			= nicetext($_POST['tzabbr']);
+	$tzname			= nicetext($_POST['tzname']);
+	$tzoffset		= nicetext($_POST['tzoffset']);
+	$tzdstoffset	= nicetext($_POST['tzdstoff']);
 
 	// is the id unique in this table?
 	$idq = "SELECT * FROM tzt WHERE tzt_id=\'".$loid."\'";
