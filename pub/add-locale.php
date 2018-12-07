@@ -21,7 +21,7 @@ if (isset($_POST['i18submit'])) {
 	$message = $idq;
 	if ($idquery == FALSE) {
 
-		$i18addq 	= "INSERT INTO i18 (i18_id, i18_language, i18_country) VALUES ('$liid','$lolang','$loctry')";
+		$i18addq 	= "INSERT INTO i18 (i18_id, i18_language, i18_country) VALUES ('$loid','$lolang','$loctry')";
 		$i18addquery	= mysqli_query($dbconn,$i18addq);
 		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
 #		redirect('index.php');
