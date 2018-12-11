@@ -19,17 +19,14 @@ if(isset($_POST['acctsubmit'])) {
 /* and session is not set                       */
         if(!session_id()) {
 
-
-
 /* if a userid is set, but a session is not, unset the user id and send them to the home page */
             unset($uid);
             redirect("index.php");
         } else {
 
 /* if a userid is set and a session is set, go to the profile page */
-            redirect("my-profile.php");
+            redirect("my-profile.php?uid=".$uid);
         }
-
 
 /* else a user id is not set                    */
     } else {
@@ -48,9 +45,7 @@ if(isset($_POST['acctsubmit'])) {
 /* if it's banned, show an error                */
                 $message = "Username is banned";
 
-
-            } #else if (!in_array($uname,$bannednames)) {
-                else {
+            } else {
 
 /* check if username is already being used      */
                 $origuname     = "SELECT * FROM usr WHERE usr_name='".$uname."'";
@@ -58,7 +53,6 @@ if(isset($_POST['acctsubmit'])) {
                 if (mysqli_num_rows($origuname_q) <> 0) {
 
 /* error if it's already taken                  */
-#$errorn = mysqli_num_rows($origuname_q);
                     $message = "username is taken";
                     unset($uname);
                 } #else {
@@ -112,15 +106,15 @@ if(isset($_POST['acctsubmit'])) {
         }
 
 /* if we made it this far, start a session, create an id, enter user in DB, and go to the profile page */
-        if ($message == "") {
-            $uid 				= rend_id();
+        if (!isset($message)) {
+            $uid 				= makeid($newid);
             $udatecreate	= date('Y-m-d H:i:s');
             $new_query = "INSERT INTO usr (usr_id, usr_name, usr_pass, usr_email, usr_dob, usr_outbox, usr_inbox, usr_liked, usr_follows, usr_followers, usr_created, usr_last_login) VALUES ('$uid', '$uname', '$hash_pass', '', '$udob', '', '', '', '', '', '$udatecreate', '$udatecreate')";
-            $new_add = mysqli_query($dbconn,$new_query);
-            session_start();
-            redirect("my_profile.php?uid=".$uid);
+#		$message = $new_query;
+				$new_add = mysqli_query($dbconn,$new_query);
+				session_start();
+				redirect("my_profile.php?uid=".$uid);
         }
-
     }
 
 /* else if $_post['acctsubmit'] is not set      */
@@ -160,11 +154,7 @@ if ($message != '' || NULL) {
 				</table>
 				<input type="submit" name="acctsubmit" id="acctsubmit" class="button" value="<?php echo _('Register'); ?>">
 			</form>
-<?php
-			if($open_registration = TRUE) {
-				echo "\t\t\t<a href=\"the-registration.php\">"._('Create an account')."</a>\n";
-			}
-?>
+
         <p>
             <?php echo _('Password must be at least 16 characters long'); ?>.<br><br>
             <?php echo _('Password must have:'); ?>
