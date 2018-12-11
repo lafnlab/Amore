@@ -35,4 +35,39 @@ $user_is_called	= "User";	// singular form
 # Default is TRUE.
 # Change to FALSE if registrations are closed.
 $open_registration = TRUE;
+
+#
+# $bannednames is an array of banned usernames. Users will not be able to register them, but the site admin can caret them if desired
+$bannednames = array(
+						"a hitler",
+						"a. hitler",
+						"adolf hitler",
+						"a. hilter",
+						"a hilter",
+						"mr. hitler",
+						"herr hitler",
+						"mr. hilter",
+						"hitler",
+						"admin",
+						"administrator",
+						"mod",
+						"moderator",
+						"modmin",
+						"daddy",
+						"dad",
+						"mommy",
+						"mom",
+						"god",
+						"allah",
+						"yahweh",
+						"buddha",
+						"deus",
+						"death",
+						"morte",
+						"muerte",
+						"deces",
+						"nigger",
+						"spic",
+						"hebe",
+						"kike");
 ?>
