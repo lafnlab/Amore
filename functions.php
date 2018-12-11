@@ -45,4 +45,9 @@ function header_message($message) {
 function redirect($location) {
 	return header("Location: $location");
 }
+
+function user_age($userage) {
+    // get the date of birth, return the age
+    return floor((time() - strtotime($userage))/31556926);
+}
 ?>
