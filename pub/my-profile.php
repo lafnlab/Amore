@@ -25,22 +25,11 @@ if ($sel_id != '') {
 $visitortitle = $usrname;
 $pagetitle = $greeting.", ".$visitortitle;
 
-include_once "main-header.php";
+include_once "dash-header.php";
 ?>
 
-		<ul>
-			<li><a href="list-currencies.php"><?php echo _("List of $sitetitle currencies"); ?></a></li>
-			<li><a href="list-eye-colors.php"><?php echo _("List of $sitetitle eye colors"); ?></a></li>
-			<li><a href="list-genders.php"><?php echo _("List of $sitetitle genders"); ?></a></li>
-			<li><a href="list-hair-colors.php"><?php echo _("List of $sitetitle hair colors"); ?></a></li>
-			<li><a href="list-locales.php"><?php echo _("List of $sitetitle locales"); ?></a></li>
-			<li><a href="list-nationalities.php"><?php echo _("List of $sitetitle nationalities"); ?></a></li>
-			<li><a href="list-places.php"><?php echo _("List of $sitetitle places"); ?></a></li>
-			<li><a href="list-sexualities.php"><?php echo _("List of $sitetitle sexualities"); ?></a></li>
-			<li><a href="list-spoken-languages.php"><?php echo _("List of $sitetitle spoken languages"); ?></a></li>
-			<li><a href="list-time-zones.php"><?php echo _("List of $sitetitle time zones"); ?></a></li>
-		</ul>
+some content will go here soon.
 
 <?php
-include_once "main-footer.php";
+include_once "dash-footer.php";
 ?>
