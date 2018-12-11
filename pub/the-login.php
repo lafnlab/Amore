@@ -1,7 +1,7 @@
 <?php
 // the-login.php
 include_once	"../conn.php";
-include_once	"../config.php";
+include			"../config.php";
 include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
@@ -96,8 +96,10 @@ if ($message != '' || NULL) {
 				<input type="submit" name="loginsubmit" id="loginsubmit" class="button" value="<?php echo _('Login'); ?>">
 			</form>
 <?php
-			if($open_registration = TRUE) {
+			if($open_registration == TRUE) {
 				echo "\t\t\t<a href=\"the-registration.php\">"._('Create an account')."</a>\n";
+			} else {
+				echo "\n\n\t\t\t<!-- registrations are closed -->\n\n";
 			}
 ?>
 		</article>
