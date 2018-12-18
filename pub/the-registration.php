@@ -113,7 +113,7 @@ if(isset($_POST['acctsubmit'])) {
 #		$message = $new_query;
 				$new_add = mysqli_query($dbconn,$new_query);
 				session_start();
-				redirect("my_profile.php?uid=".$uid);
+				redirect("my-profile.php?uid=".$uid);
         }
     }
 

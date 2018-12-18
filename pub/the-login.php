@@ -49,8 +49,8 @@ if(isset($_POST['loginsubmit'])) {
 
 /* let us check if the password is correct  */
                 if (password_verify($upass,$pass)) {
-                    session_start();
-                    redirect("my-profile.php?uid=".$id);
+							session_start();
+							redirect("my-profile.php?uid=".$id);
 
 /* if the password is incorrect             */
                 } else {

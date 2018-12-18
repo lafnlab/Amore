@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $metalang; ?>">
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico">
 	<title><?php echo _($pagetitle); ?></title>
+	<meta name="description" content="<?php echo $metadescription; ?>">
+	<meta property="og:title" content="<?php echo $pagetitle; ?>">
+	<meta property="og:description" content="<?php echo $objdescription; ?>">
+	<meta property="og:type" content="website">
+	<meta property="og:site_title" content="<?php echo $sitetitle; ?>">
 	<link href="style/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -11,11 +19,7 @@
 		<div class="headerright"><?php
 		echo $greeting;
 		echo ", ";
-		// if a user is logged in, display their username
-		// if a user isn't logged in, display $visitortitle
-		echo "<a href=\"the-login.php\">";
 		echo $visitortitle;
-		echo "</a>";
 ?>
 </div>
 	</header>

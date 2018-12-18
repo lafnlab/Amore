@@ -1,9 +1,9 @@
 <?php
 include "conn.php";
 
-// Creates a 10 character ID, because autoincremented primary keys are so banal
+// creates a 10 character ID
 function makeid($newid) {
-	// The characters we will use. Feel free to add your own.
+	// the characters we will use
 	$chars	= "0123456789abcdefghijklmnopqrstuvwxyzабвдежзийклмнопрстуфхцчшщъыьэюяàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿßABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞẞ";
 
 	// splits $chars into an array of individual characters
@@ -19,7 +19,7 @@ function makeid($newid) {
 	return mb_substr($tmp2,0,10,"UTF-8");
 }
 
-// Sanitizes text inputs
+// sanitizes text inputs
 function nicetext($text) {
 	// get rid of whitespace characters at start or end of text
 	$text = trim($text);
@@ -32,7 +32,7 @@ function nicetext($text) {
 	return $text;
 }
 
-// Displays a message on a page
+// displays a message on a page
 function header_message($message) {
 	$msg = "\t<div class=\"clear\"></div>\n\n";
 	$msg .= "\t<!-- div class message is for general messages & warnings -->\n";
@@ -41,7 +41,6 @@ function header_message($message) {
 	return $msg;
 }
 
-// Short page redirect function
 function redirect($location) {
 	return header("Location: $location");
 }
