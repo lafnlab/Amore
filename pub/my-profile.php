@@ -12,7 +12,15 @@ if (isset($_GET["uid"])) {
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
+/* if a user id is set															*/
 if ($sel_id != '') {
+
+	/* but a session id is not set											*/
+#	if (!session_id()) {
+		#unset($sel_id);
+		#redirect("index.php");
+#		$message = "Why is session_id not set?";
+#	}
 
 	$usrq = "SELECT * FROM usr WHERE usr_id=\"".$sel_id."\"";
 	$usrquery = mysqli_query($dbconn,$usrq);
@@ -21,14 +29,14 @@ if ($sel_id != '') {
 		$usrname		= $usropt['usr_name'];
 	}
 }
-
+$objdescription = _("Dashboard for ").$usrname;
 $visitortitle = $usrname;
 $pagetitle = $greeting.", ".$visitortitle;
 
 include_once "dash-header.php";
+include_once "dash-nav.php";
 ?>
 
-some content will go here soon.
 
 <?php
 include_once "dash-footer.php";
