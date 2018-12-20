@@ -112,6 +112,7 @@ INSERT INTO `prv` (`prv_id`, `prv_name`) VALUES
 ('РЖFÂå1ÔÏúL', 'INSTANCE'),
 ('6ьötХ5áзÚZ', 'EVERYONE'),
 ('ñToùòхаþOЪ', 'SELF'),
+('ÓÇfXЦИфЕaù', 'PRIVATE'),
 ('óСПõöRærÊh', 'FOLLOWERS'),
 ('ÞБЯÍcOъøДS', 'FRIENDS'),
 ('щÊдrûOftÐÿ', 'FEDIVERSE');
