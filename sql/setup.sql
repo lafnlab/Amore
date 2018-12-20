@@ -96,6 +96,29 @@ CREATE TABLE `nat` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `prv`
+--
+
+CREATE TABLE `prv` (
+  `prv_id` varchar(10) NOT NULL,
+  `prv_name` tinytext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for privacy levels';
+
+--
+-- Dumping data for table `prv`
+--
+
+INSERT INTO `prv` (`prv_id`, `prv_name`) VALUES
+('РЖFÂå1ÔÏúL', 'INSTANCE'),
+('6ьötХ5áзÚZ', 'EVERYONE'),
+('ñToùòхаþOЪ', 'SELF'),
+('óСПõöRærÊh', 'FOLLOWERS'),
+('ÞБЯÍcOъøДS', 'FRIENDS'),
+('щÊдrûOftÐÿ', 'FEDIVERSE');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `spk`
 --
 
@@ -174,6 +197,13 @@ ALTER TABLE `loc`
 --
 ALTER TABLE `nat`
   ADD PRIMARY KEY (`nat_id`);
+
+--
+-- Indexes for table `prv`
+--
+ALTER TABLE `prv`
+  ADD PRIMARY KEY (`prv_id`),
+  ADD UNIQUE KEY `prv_name` (`prv_name`(50));
 
 --
 -- Indexes for table `spk`
