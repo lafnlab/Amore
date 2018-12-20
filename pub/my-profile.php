@@ -36,8 +36,12 @@ $pagetitle = $greeting.", ".$visitortitle;
 include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
-
-
+		<article>
+			<form id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php"); ?>">
+				<input type="text" id="addposttext" name="addposttext" maxlength="<?php echo $maxlength; ?>" required placeholder="<?php echo _('What are you doing?'); ?>">
+				<input type="submit" id="addpostsubmit" name="addpostsubmit" value="<?php echo _('Post'); ?>">
+			</form>
+		</article>
 <?php
 include_once "dash-footer.php";
 ?>
