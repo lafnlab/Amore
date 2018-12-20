@@ -14,7 +14,7 @@ $sitetitle = "Amore";
 # $siteurl is the url of the website. The site admin should change this to
 # whatever is most appropriate for the site.
 # Be sure to omit the trailing slash "/" from the end of the url.
-$siteurl = "http://www.example.com";
+$siteurl = "http://blackh3art.media.dating";
 
 #
 # $metadescription is a summary of the website that may appear on websites
@@ -51,6 +51,10 @@ $user_is_called	= "User";	// singular form
 # Default is TRUE.
 # Change to FALSE if registrations are closed.
 $open_registration = FALSE;
+
+#
+# $maxlength is how many characters are allowed in a post
+$maxlength = 500;
 
 #
 # $bannednames is an array of banned usernames. Users will not be able to register them, but the site admin can caret them if desired
