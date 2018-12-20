@@ -1,40 +1,35 @@
 <?php
-include_once "../conn.php";
+include_once	"../conn.php";
 include_once "../config.php";
-include "../functions.php";
-
-if (isset($_GET["uid"])) {
-	$sel_id = $_GET["uid"];
-} else {
-	$sel_id = "";
-}
+include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-/* if a user id is set															*/
-if ($sel_id != '') {
+$pagetitle 	= "Add a post";
+#$message		= 'test message';
 
-	/* but a session id is not set											*/
-#	if (!session_id()) {
-		#unset($sel_id);
-		#redirect("index.php");
-#		$message = "Why is session_id not set?";
-#	}
+// PROCESSING
+if (isset($_POST['addpostsubmit'])) {
 
-	$usrq = "SELECT * FROM usr WHERE usr_id=\"".$sel_id."\"";
-	$usrquery = mysqli_query($dbconn,$usrq);
-	while($usropt = mysqli_fetch_assoc($usrquery)) {
-		$usrid		= $usropt['usr_id'];
-		$usrname		= $usropt['usr_name'];
-	}
-}
-$objdescription = _("Dashboard for ").$usrname;
-$visitortitle = $usrname;
-$pagetitle = $greeting.", ".$visitortitle;
+	$postid			= makeid($newid);
+	$postby			= $_GET['uid']; // this needs to be set to work (hopefully)
+
+	// is this a post or a message? A message will start with DM (or is marked private privacy level)
+
+		// if a post do stuff
+
+		// else if a message do some other stuff
+
+} // if isset $_POST 'addpostsubmit'
 
 include_once "dash-header.php";
 include_once "dash-nav.php";
+?>
+<?php
+if ($message != '' || NULL) {
+	echo header_message($message);
+}
 ?>
 		<article>
 			<form id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php"); ?>">
