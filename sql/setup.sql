@@ -1,4 +1,24 @@
 --
+-- Table structure for table `adm`
+--
+
+CREATE TABLE `adm` (
+  `adm_id` varchar(10) NOT NULL,
+  `adm_level` tinytext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for admin/user levels';
+
+--
+-- Dumping data for table `adm`
+--
+
+INSERT INTO `adm` (`adm_id`, `adm_level`) VALUES
+('sеÔÞLÉзBТт', 'USER'),
+('ÛГUojЭПEЯÉ', 'MODERATOR'),
+('ДÖÍsöÊкÔnц', 'TRANSLATOR'),
+('ЗиóВéèàwVO', 'ADMINISTRATOR'),
+('ЮêlùсdzЕХР', 'GUIDE');
+
+--
 -- Table structure for table `din`
 --
 
@@ -85,6 +105,21 @@ INSERT INTO `loc` (`loc_id`, `loc_name`, `loc_parent`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `msg`
+--
+
+CREATE TABLE `msg` (
+  `msg_id` varchar(10) NOT NULL,
+  `msg_by` varchar(10) NOT NULL COMMENT 'who wrote the message',
+  `msg_to` varchar(10) NOT NULL COMMENT 'who the message is to',
+  `msg_timestamp` timestamp NOT NULL,
+  `msg_text` text NOT NULL,
+  `msg_lang` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for (direct/private) messages';
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nat`
 --
 
@@ -92,6 +127,25 @@ CREATE TABLE `nat` (
   `nat_id` varchar(10) NOT NULL,
   `nat_name` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for Nationalities';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pro`
+--
+
+CREATE TABLE `pro` (
+  `pro_id` varchar(10) NOT NULL COMMENT 'same as usr_id',
+  `pro_gen` varchar(10) NOT NULL COMMENT 'from gen table',
+  `pro_sxu` varchar(10) NOT NULL COMMENT 'from sxu table',
+  `pro_eye` varchar(10) NOT NULL COMMENT 'from eye table',
+  `pro_har` varchar(10) NOT NULL COMMENT 'from har table',
+  `pro_loc` varchar(10) NOT NULL COMMENT 'from loc table',
+  `pro_nat` varchar(10) NOT NULL COMMENT 'from nat table',
+  `pro_i18` varchar(10) NOT NULL COMMENT 'from i18 table',
+  `pro_spk` varchar(60) NOT NULL COMMENT 'from spk table',
+  `pro_tzt` varchar(10) NOT NULL COMMENT 'from tzt table'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for user profiles';
 
 -- --------------------------------------------------------
 
@@ -116,6 +170,21 @@ INSERT INTO `prv` (`prv_id`, `prv_name`) VALUES
 ('óСПõöRærÊh', 'FOLLOWERS'),
 ('ÞБЯÍcOъøДS', 'FRIENDS'),
 ('щÊдrûOftÐÿ', 'FEDIVERSE');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pst`
+--
+
+CREATE TABLE `pst` (
+  `pst_id` varchar(10) NOT NULL,
+  `pst_by` varchar(10) NOT NULL,
+  `pst_timestamp` timestamp NOT NULL,
+  `pst_text` text NOT NULL,
+  `pst_lang` varchar(10) NOT NULL,
+  `pst_priv` varchar(10) NOT NULL DEFAULT '6ьötХ5áзÚZ' COMMENT 'default privacy level is for Everyone'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for posts';
 
 -- --------------------------------------------------------
 
@@ -153,9 +222,37 @@ CREATE TABLE `tzt` (
   `tzt_dst_offset` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for time zones';
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usr`
+--
+
+CREATE TABLE `usr` (
+  `usr_id` varchar(10) NOT NULL,
+  `usr_name` tinytext NOT NULL,
+  `usr_pass` tinytext NOT NULL,
+  `usr_email` tinytext NOT NULL,
+  `usr_dob` date NOT NULL,
+  `usr_outbox` mediumtext NOT NULL COMMENT 'collection of messages by the user',
+  `usr_inbox` mediumtext NOT NULL COMMENT 'collection of messages to the user',
+  `usr_liked` mediumtext NOT NULL COMMENT 'collection of items the user likes',
+  `usr_follows` mediumtext NOT NULL COMMENT 'collection of accts the user follows',
+  `usr_followers` mediumtext NOT NULL COMMENT 'collection of accts that follow the user',
+  `usr_created` datetime NOT NULL,
+  `usr_last_login` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for user accounts';
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `adm`
+--
+ALTER TABLE `adm`
+  ADD PRIMARY KEY (`adm_id`),
+  ADD UNIQUE KEY `adm_level` (`adm_level`(50));
 
 --
 -- Indexes for table `din`
@@ -194,10 +291,22 @@ ALTER TABLE `loc`
   ADD PRIMARY KEY (`loc_id`);
 
 --
+-- Indexes for table `msg`
+--
+ALTER TABLE `msg`
+  ADD PRIMARY KEY (`msg_id`);
+
+--
 -- Indexes for table `nat`
 --
 ALTER TABLE `nat`
   ADD PRIMARY KEY (`nat_id`);
+
+--
+-- Indexes for table `pro`
+--
+ALTER TABLE `pro`
+  ADD PRIMARY KEY (`pro_id`);
 
 --
 -- Indexes for table `prv`
@@ -205,6 +314,12 @@ ALTER TABLE `nat`
 ALTER TABLE `prv`
   ADD PRIMARY KEY (`prv_id`),
   ADD UNIQUE KEY `prv_name` (`prv_name`(50));
+
+--
+-- Indexes for table `pst`
+--
+ALTER TABLE `pst`
+  ADD PRIMARY KEY (`pst_id`);
 
 --
 -- Indexes for table `spk`
@@ -223,4 +338,11 @@ ALTER TABLE `sxu`
 --
 ALTER TABLE `tzt`
   ADD PRIMARY KEY (`tzt_id`);
+
+--
+-- Indexes for table `usr`
+--
+ALTER TABLE `usr`
+  ADD PRIMARY KEY (`usr_id`),
+  ADD UNIQUE KEY `usr_name` (`usr_name`(50));
 COMMIT;
