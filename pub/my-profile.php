@@ -37,7 +37,7 @@ include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
 		<article>
-			<form id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php"); ?>">
+			<form id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php?uid=".$usrid); ?>">
 				<input type="text" id="addposttext" name="addposttext" maxlength="<?php echo $maxlength; ?>" required placeholder="<?php echo _('What are you doing?'); ?>"><br>
 				<input type="radio" class="addpostradio" name="addpostradio" value="6ьötХ5áзÚZ" checked><?php echo _("EVERYONE"); ?>&nbsp;&nbsp;
 				<input type="radio" class="addpostradio" name="addpostradio" value="щÊдrûOftÐÿ" ><?php echo _("FEDIVERSE"); ?>&nbsp;&nbsp;
