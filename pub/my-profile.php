@@ -6,21 +6,21 @@ include "../functions.php";
 if (isset($_GET["uid"])) {
 	$sel_id = $_GET["uid"];
 } else {
-	$sel_id = "";
+	unset($sel_id);
 }
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
 /* if a user id is set															*/
-if ($sel_id != '') {
+if (isset($sel_id)) {
 
-	/* but a session id is not set											*/
-#	if (!session_id()) {
-		#unset($sel_id);
-		#redirect("index.php");
-#		$message = "Why is session_id not set?";
-#	}
+
+	/* but $_COOKIE['id'] is not set											*/
+	if(!isset($_COOKIE['id'])) {
+		unset($sel_id);
+		redirect("index.php");
+	}
 
 	$usrq = "SELECT * FROM usr WHERE usr_id=\"".$sel_id."\"";
 	$usrquery = mysqli_query($dbconn,$usrq);
