@@ -112,7 +112,7 @@ CREATE TABLE `msg` (
   `msg_id` varchar(10) NOT NULL,
   `msg_by` varchar(10) NOT NULL COMMENT 'who wrote the message',
   `msg_to` varchar(10) NOT NULL COMMENT 'who the message is to',
-  `msg_timestamp` timestamp NOT NULL,
+  `msg_timestamp` datetime NOT NULL,
   `msg_text` text NOT NULL,
   `msg_lang` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for (direct/private) messages';
@@ -180,7 +180,7 @@ INSERT INTO `prv` (`prv_id`, `prv_name`) VALUES
 CREATE TABLE `pst` (
   `pst_id` varchar(10) NOT NULL,
   `pst_by` varchar(10) NOT NULL,
-  `pst_timestamp` timestamp NOT NULL,
+  `pst_timestamp` datetime NOT NULL,
   `pst_text` text NOT NULL,
   `pst_lang` varchar(10) NOT NULL,
   `pst_priv` varchar(10) NOT NULL DEFAULT '6ьötХ5áзÚZ' COMMENT 'default privacy level is for Everyone'
