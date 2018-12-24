@@ -211,3 +211,21 @@ nav ul li:hover {
 	font-size: 18px;
 	border-radius: 7px;
 }
+
+.showpost {
+	width: 75%;
+	display: block;
+	margin-left: 210px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #FFFCFD;
+	border-radius: 15px;
+}
+
+.showpostby {
+	font-weight: bold;
+}
+
+.showpost a {
+	color: #EA8DB4;
+}
