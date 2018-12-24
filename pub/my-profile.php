@@ -70,7 +70,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 
 		echo "\t\t\t<div class=\"showpost\">\n";
 		echo "\t\t\t\t<span class=\"showpostby\">".$byname."&nbsp;";
-		echo "<a href=\"post.php?pid=".$postid."\">".$posttime;
+		echo "<a href=\"the-post.php?pid=".$postid."\">".$posttime;
 		echo "</a></span>\n";
 		echo "\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t<!-- future functionality on span below -->\n";
