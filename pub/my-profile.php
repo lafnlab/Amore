@@ -80,7 +80,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 } else {
 		echo "\t\t\t<div class=\"showpost\">\n";
 		echo _("There are no posts at the moment");
-		echo $pst_q;
+#		echo $pst_q;
 		echo "\t\t\t</div>\n";
 }
 ?>
