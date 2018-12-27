@@ -33,7 +33,7 @@ function nicetext($text) {
 	$text = stripslashes($text);
 
 	// converts special characters (i.e. < > &, etc) into their html entities
-	$text = htmlspecialchars($text,ENT_HTML5,'UTF-8',true);
+	$text = htmlspecialchars($text,ENT_QUOTES,'UTF-8',true);
 	return $text;
 }
 
