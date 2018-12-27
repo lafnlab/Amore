@@ -1,10 +1,18 @@
 <?php
 include_once "../conn.php";
 include_once "../config.php";
+include "../functions.php";
 
 if (isset($_SESSION['uname'])) {
 	$visitortitle = $_SESSION['uname'];
 }
+
+if ($open_registration == FALSE) {
+	$open = "false";
+} else {
+	$open = "true";
+}
+
 
 $pagetitle = "🖤";
 $objdescription = $metadescription;
@@ -13,6 +21,30 @@ include_once "main-header.php";
 ?>
 
 <?php
+// trigger nodeinfo creation
+	$nodeinfometa = fopen(".well-known/nodeinfo", "w") or die("Unable to open or create nodeinfo file");
+
+	$json0 = "{\"links\":[{\"rel\":\"http://nodeinfo.diaspora.software/ns/schema/1.0\",\"href\":\"".$siteurl."/nodeinfo/1.0\"},{\"rel\":\"http://nodeinfo.diaspora.software/ns/schema/2.0\",\"href\":\"".$siteurl."/nodeinfo/2.0\"}]}";
+
+	// let's try to write to it.
+	fwrite($nodeinfometa,$json0);
+	fclose($nodeinfometa);
+
+// create or update the nodeinfo/1.0 file
+	$nodeinfo1 = fopen("nodeinfo/1.0", "w") or die("Unable to open or create nodeinfo 1.0 file");
+
+	$json1 = "{\"version\":\"1.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.1\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":,\"activeMonth\":},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$sitetitle."\"}}";
+
+	fwrite($nodeinfo1,$json1);
+	fclose($nodeinfo1);
+
+// create or update nodeinfo/2.0 file
+	$nodeinfo2 = fopen("nodeinfo/2.0", "w") or die("Unable to open or create nodeinfo 2.0 file");
+
+	$json2 = "{\"version\":\"2.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.1\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":,\"activeMonth\":},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$sitetitle."\"}}";
+
+	fwrite($nodeinfo2,$json2);
+	fclose($nodeinfo2);
 
 // if registration of closed display a login panel
 if ($open_registration == FALSE) {
@@ -64,6 +96,9 @@ if ($open_registration == FALSE) {
 	echo "\t\t\t</div>\n";
 	echo "\t\t</article>\n";
 }
+
+	echo "Number of users = ".user_quantity($user)."<br>\n";
+	echo "Number of posts = ".post_quantity($post)."<br>\n";
 ?>
 <?php
 include_once "main-footer.php";
