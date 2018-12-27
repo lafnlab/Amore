@@ -40,7 +40,7 @@ if (isset($_POST['addpostsubmit'])) {
 	$postid			= makeid($newid);
 	$postby			= $_GET['uid']; // despite the form being posted, we get the ID via GET
 	$posttime		= date('Y-m-d H:i:s');
-	$postmsg			= $_POST['addposttext'];
+	$postmsg			= nicetext($_POST['addposttext']);
 	$postprv			= $_POST['addpostradio'];
 
 	// is this a post or a message? A message will start with DM (or is marked private privacy level)
@@ -53,7 +53,7 @@ if (isset($_POST['addpostsubmit'])) {
 #		$message = "message is not private";
 		$postq = "INSERT INTO pst (pst_id, pst_by, pst_timestamp, pst_text, pst_lang, pst_priv) VALUES ('$postid','$postby','$posttime','$postmsg','en','$postprv')";
 		$postadd	= mysqli_query($dbconn,$postq);
-		redirect("my-profile.php?uid=".$uid);
+		redirect("my-profile.php?uid=".$sel_id);
 	}
 
 } // if isset $_POST 'addpostsubmit'
