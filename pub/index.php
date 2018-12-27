@@ -20,6 +20,8 @@ $objdescription = $metadescription;
 include_once "main-header.php";
 ?>
 
+	<main>
+		<div class="clear"></div>
 <?php
 // trigger nodeinfo creation
 	$nodeinfometa = fopen(".well-known/nodeinfo", "w") or die("Unable to open or create nodeinfo file");
@@ -48,7 +50,7 @@ include_once "main-header.php";
 
 // if registration of closed display a login panel
 if ($open_registration == FALSE) {
-	echo "\t\t<article>\n";
+	echo "\t\t<section>\n";
 	echo "\t\t\t<div id=\"mainpagelogin\">\n";
 	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-login.php")."\">\n";
 	echo "\t\t\t\t<h2>"._("Login to ").$sitetitle."</h2>\n";
@@ -63,10 +65,10 @@ if ($open_registration == FALSE) {
 	echo "\t\t\t\t\t<input type=\"submit\" name=\"loginsubmit\" id=\"loginsubmit\" class=\"button\" value=\""._('Login')."\">\n";
 	echo "\t\t\t\t</form>\n";
 	echo "\t\t\t</div>\n";
-	echo "\t\t</article>\n";
+	echo "\t\t</section>\n\n";
 } else {
 // if registration is open, display a registration/login panel
-	echo "\t\t<article>\n";
+	echo "\t\t<section>\n";
 	echo "\t\t\t<div id=\"mainpagelogin\">\n";
 	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-registration.php")."\">\n";
 	echo "\t\t\t\t<h2>"._("Registration for ").$sitetitle."</h2>\n";
@@ -94,12 +96,45 @@ if ($open_registration == FALSE) {
 	echo "\t\t\t\t\t<a href=\"the-login.php\">"._('Login')."</a>\n";
 	echo "\t\t\t\t</p>\n";
 	echo "\t\t\t</div>\n";
-	echo "\t\t</article>\n";
+	echo "\t\t</section>\n\n";
 }
+	echo "\t\t<section id=\"mainpagestats\">\n";
+	echo "\t\t\t<span>Number of users = ".user_quantity($user)."</span><br>\n";
+	echo "\t\t\t<span>Number of posts = ".post_quantity($post)."</span><br>\n";
+	echo "\t\t</section>\n\n";
 
-	echo "Number of users = ".user_quantity($user)."<br>\n";
-	echo "Number of posts = ".post_quantity($post)."<br>\n";
+	// if we have posts, display the most recent ones in a div on the right side of the page
+	if (post_quantity($posts) > 0) {
+		echo "\t\t<section id=\"mainpageposts\">\n";
+		echo "\t\t\t<h2>"._('Recent posts')."</h2>\n";
+		$pst_q = "SELECT * FROM pst WHERE pst_priv=\"6ьötХ5áзÚZ\" ORDER BY pst_timestamp DESC";
+		$pst_query = mysqli_query($dbconn,$pst_q);
+		while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
+			$postid		= $pst_opt['pst_id'];
+			$postby		= $pst_opt['pst_by'];
+			$posttime	= $pst_opt['pst_timestamp'];
+			$posttext	= $pst_opt['pst_text'];
+			$postlang	= $pst_opt['pst_lang'];
+			$postpriv	= $pst_opt['pst_priv'];
+
+			$by_q = "SELECT * FROM usr WHERE usr_id=\"".$postby."\"";
+			$by_query = mysqli_query($dbconn,$by_q);
+			while($by_opt = mysqli_fetch_assoc($by_query)) {
+				$byname		= $by_opt['usr_name'];
+			}
+			$now = date('Y-m-d H:i:s');
+
+			echo "\t\t\t<div class=\"mainpagepost\">\n";
+			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"the-user.php?uid=".$postby."\">".$byname."</a>&nbsp;";
+			echo "<a href=\"the-post.php?pid=".$postid."\">".$posttime;
+			echo "</a></span>\n";
+			echo "\t\t\t\t<p class=\"mainpageposttext\">".$posttext."</p>\n";
+			echo "\t\t\t</div>\n";
+		}
+		echo "\t\t</section>\n\n";
+	}
 ?>
+		<div class="clear"></div>
 <?php
 include_once "main-footer.php";
 ?>
