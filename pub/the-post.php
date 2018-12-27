@@ -33,7 +33,7 @@ if ($sel_id != '') {
 }
 
 $pagetitle = $byname." &middot; ".$posttext;
-include_once 'dash-header.php';
+include_once 'main-header.php';
 ?>
 	<article>
 		<div id="showpost">
@@ -47,5 +47,5 @@ include_once 'dash-header.php';
 		</div>
 	</article>
 <?php
-include_once "dash-footer.php";
+include_once "main-footer.php";
 ?>
