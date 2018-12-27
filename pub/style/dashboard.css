@@ -49,6 +49,10 @@ main ul {
 	background-color: #FCDCEA;
 }
 
+#basicform a {
+
+}
+
 #basicform caption {
 	text-align: center;
 	font-size: 20px;
@@ -222,10 +226,14 @@ nav ul li:hover {
 	border-radius: 15px;
 }
 
+.showpost a {
+	color: #EA8DB4;
+}
+
 .showpostby {
 	font-weight: bold;
 }
 
-.showpost a {
+.showpostby a {
 	color: #EA8DB4;
 }

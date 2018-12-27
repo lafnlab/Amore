@@ -41,7 +41,7 @@ main ul {
 	list-style-image: url(blackheart-bullet.gif);
 }
 
-#clear {
+.clear {
 	clear: both;
 }
 
@@ -151,7 +151,10 @@ header a {
 }
 
 /* ****************************** MAIN PAGE ******************************** */
+/* #mainpagelogin covers the login and registration section */
 #mainpagelogin {
+	display: block;
+	float: left;
 	background-color: #FCDCEA;
 	width: 250px;
 	padding: 10px;
@@ -179,4 +182,87 @@ header a {
 	font-size: 18px;
 	padding: 5px;
 	margin-bottom: 10px;
+}
+
+/* #mainpagestats covers the statistics section */
+#mainpagestats {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FCDCEA;
+	width: 300px;
+	padding: 10px;
+	border-radius: 12px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* #mainpageposts covers the posts section of the main page   */
+/* not to be confused with .mainpagepost for individual posts */
+#mainpageposts {
+	display: block;
+	float: right;
+	width: 300px;
+}
+
+.mainpagepost {
+	background-color: #FCDCEA;
+	padding: 10px;
+	border-radius: 12px;
+	margin-bottom: 20px;
+}
+
+.mainpagepost a {
+	color: #EA8DB4;
+}
+
+/* ***************** misc stuff *********************** */
+.mainnav {
+	display: block;
+	float: left;
+	width: 200px;
+	background-color: #EA8DB4;		/* slightly dark pink */
+	color: #FFFCFD;					/* very light pink */
+}
+
+.mainnav ul {
+	list-style-image: url(blackheart-bullet.gif);
+	margin: 0px;
+}
+
+.mainnav ul li {
+	height: 30px;
+	padding-left: 5px;
+	vertical-align: text-bottom;
+}
+
+.mainnav ul li a {
+	color: #FFFCFD;					/* very light pink */
+}
+
+.mainnav ul li:hover {
+	background-color: #DA6697;		/* very dark pink */
+	color: #ffffff;					/* white */
+}
+
+.showpost {
+	width: 75%;
+	display: block;
+	margin-left: 210px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #FFFCFD;
+	border-radius: 15px;
+}
+
+.showpost a {
+	color: #EA8DB4;
+}
+
+.showpostby {
+	font-weight: bold;
+}
+
+.showpostby a {
+	color: #EA8DB4;
 }
