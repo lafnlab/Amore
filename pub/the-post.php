@@ -32,7 +32,7 @@ if ($sel_id != '') {
 		}
 }
 
-$pagetitle = $eyecolor;
+$pagetitle = $byname." &middot; ".$posttext;
 include_once 'dash-header.php';
 ?>
 	<article>
