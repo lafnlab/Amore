@@ -245,14 +245,12 @@ header a {
 	color: #ffffff;					/* white */
 }
 
-.showpost {
-	width: 75%;
-	display: block;
-	margin-left: 210px;
-	margin-bottom: 20px;
+#showpost {
+	margin: auto;
+	width: 600px;
 	padding: 10px;
-	background-color: #FFFCFD;
-	border-radius: 15px;
+	border-radius: 25px;
+	background-color: #FCDCEA;
 }
 
 .showpost a {
