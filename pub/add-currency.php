@@ -6,7 +6,7 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "Add a currency to social.media.dating";
+$pagetitle 	= "Add a currency";
 #$message		= 'test message';
 
 // PROCESSING
