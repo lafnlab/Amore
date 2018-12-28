@@ -6,7 +6,7 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "Add a locale to social.media.dating";
+$pagetitle 	= "Add a locale";
 #$message		= 'test message';
 
 // PROCESSING
