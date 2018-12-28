@@ -6,7 +6,7 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "ADD SPOKEN LANGUAGE TITLE";
+$pagetitle 	= "Add a spoken language";
 #$message		= 'test message';
 
 // PROCESSING
