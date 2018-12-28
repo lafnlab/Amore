@@ -19,7 +19,6 @@
 		<div class="headerright"><?php
 		echo $greeting;
 		echo ", ";
-		echo $visitortitle;
-?>
-</div>
+		echo "<a href=\"edit-profile.php?uid=".$usrid."\">".$visitortitle."</a>";
+?></div>
 	</header>
