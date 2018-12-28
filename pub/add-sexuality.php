@@ -6,7 +6,7 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "ADD SEXUALITY TITLE";
+$pagetitle 	= "Add a sexuality";
 #$message		= 'test message';
 
 // PROCESSING
