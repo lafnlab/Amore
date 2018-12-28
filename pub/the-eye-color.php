@@ -26,7 +26,7 @@ $pagetitle = $eyecolor;
 include_once 'main-header.php';
 ?>
 	<article>
-		<h4><?php echo _($eyecolor); ?></h4>
+		<p id="basicform"><?php echo _($eyecolor); ?></p>
 		<!-- in the future, this might be a list of people with this eye color -->
 	</article>
 <?php
