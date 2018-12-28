@@ -6,7 +6,7 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "ADD PLACE TITLE";
+$pagetitle 	= "Add a place";
 #$message		= 'test message';
 
 // PROCESSING
