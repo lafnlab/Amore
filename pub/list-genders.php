@@ -6,7 +6,8 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle = "LIST GENDERS TITLE";
+$pagetitle = "List of genders";
+
 
 include_once "main-header.php";
 ?>
