@@ -35,6 +35,7 @@ if ($sel_id != '') {
 $pagetitle = $byname." &middot; ".$posttext;
 include_once 'main-header.php';
 ?>
+
 	<article>
 		<div id="showpost">
 <?php
