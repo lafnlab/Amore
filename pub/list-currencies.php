@@ -6,7 +6,8 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle = "LIST CURRENCIES TITLE";
+$pagetitle = "List of currencies";
+
 
 include_once "main-header.php";
 ?>
@@ -32,7 +33,7 @@ include_once "main-header.php";
 			$din_id		= $dinopt['din_id'];
 
 			if ($din_digi == 0) {
-				$digital = _('No');
+				$digital = _("No");
 			} else {
 				$digital = _('Yes');
 			}
