@@ -6,7 +6,8 @@ include			"../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle = "LIST LOCALES TITLE";
+$pagetitle = "List of locales";
+
 
 include_once "main-header.php";
 ?>
