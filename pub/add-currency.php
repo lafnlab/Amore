@@ -1,12 +1,12 @@
 <?php
 include_once	"../conn.php";
-include_once	"../config.php";
+include_once "../config.php";
 include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$pagetitle 	= "ADD CURRENCY TITLE";
+$pagetitle 	= "Add a currency to social.media.dating";
 #$message		= 'test message';
 
 // PROCESSING
