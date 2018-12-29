@@ -1,4 +1,4 @@
-INSERT INTO `tzt` (`tzt_id`, `tzt_abbr`, `tzt_name`, `tzt_offset`, `tzt_dst_offset`) VALUES
+INSERT INTO `time_zones` (`time_zones_id`, `time_zones_abbr`, `time_zones_name`, `time_zones_offset`, `time_zones_dst_offset`) VALUES
 ('0YÀðañЮOfì', '', 'Africa/Casablanca', '+01:00', '+01:00'),
 ('1БlúÖO6Ë2Ï', '', 'Asia/Dhaka', '+06:00', '+06:00'),
 ('1ФЦDÛ3GоЕЬ', '', 'Asia/Macao', '+08:00', '+08:00'),
