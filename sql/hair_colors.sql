@@ -1,4 +1,4 @@
-INSERT INTO `har` (`har_id`, `har_color`) VALUES
+INSERT INTO `hair_colors` (`hair_colors_id`, `hair_colors_color`) VALUES
 ('0ЮØыэаãaçВ', 'WHITE'),
 ('DTÁ1zÿиÌõf', 'LIGHT BROWN'),
 ('JКЬSДÐæVyю', 'GREY'),
