@@ -1,4 +1,4 @@
-INSERT INTO `loc` (`loc_id`, `loc_name`, `loc_parent`) VALUES
+INSERT INTO `locations` (`locations_id`, `locations_name`, `locations_parent`) VALUES
 ('0CbnUdÎv9A', 'TIMORLESTE', '0000000003'),
 ('2аСjãБAáøй', 'JAMAICA', '0000000004'),
 ('4çmуØяЕÅTî', 'TOKELAU', '0000000007,ХéÃ8рCÂ1ЗK'),
