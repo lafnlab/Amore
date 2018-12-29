@@ -1,8 +1,8 @@
 --
--- Dumping data for table `din`
+-- Dumping data for table `currencies`
 --
 
-INSERT INTO `din` (`din_id`, `din_name`, `din_iso`, `din_symbol`, `din_digital`) VALUES
+INSERT INTO `currencies` (`currencies_id`, `currencies_name`, `currencies_iso`, `currencies_symbol`, `currencies_digital`) VALUES
 ('1ÿЙ9sPьпÏc', 'PARAGUAYGUARANI', 'PYG', '₲', 0),
 ('9AЪØìÃäJÕЖ', 'CUBAPESO', 'CUP', '$', 0),
 ('9Mzý8ЦеÏпщ', 'GEORGIALARI', 'GEL', '₾', 0),
