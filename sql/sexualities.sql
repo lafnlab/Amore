@@ -6,4 +6,3 @@ INSERT INTO sexualities (sexualities_id, sexualities_name) VALUES
 ('SèðКЧgÛТH9', 'BISEXUAL'),
 ('хЬéyГnÝыБЯ', 'EVOLVING'),
 ('яÆÚГôcЧÎdУ', 'QUEER');
-COMMIT;
