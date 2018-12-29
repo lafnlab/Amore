@@ -1,4 +1,4 @@
-INSERT INTO `eye` (`eye_id`, `eye_color`) VALUES
+INSERT INTO `eye_colors` (`eye_colors`, `eye_colors_color`) VALUES
 ('CъфÒyдZÌàЮ', 'HETERO'), // heterochromia
 ('ËêûLwRúлéи', 'PINK'),
 ('HкkaуzãÿFy', 'PURPLE'),
