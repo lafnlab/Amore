@@ -1,4 +1,4 @@
-INSERT INTO `nat` (`nat_id`, `nat_name`) VALUES
+INSERT INTO `nationalities` (`nationalities_id`, `nationalities_name`) VALUES
 ('0ХБosЕßÚаô', 'GUINEAN'),
 ('2ÔHЧÆØЩÕKÉ', 'NEW ZEALANDER'),
 ('4yЭXДÉвlэп', 'SYRIAN'),
