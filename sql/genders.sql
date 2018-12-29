@@ -1,4 +1,4 @@
-INSERT INTO `gen` (`gen_id`, `gen_name`) VALUES
+INSERT INTO `genders` (`genders_id`, `genders_name`) VALUES
 ('äãzuÏ7йàÝü', 'FEMALE'),
 ('ÂíÁЯOxBуWР', 'GENDERFLUID'),
 ('H4YèÓqТceR', 'THIRD SEX'),
