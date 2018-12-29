@@ -10,4 +10,3 @@ INSERT INTO `genders` (`genders_id`, `genders_name`) VALUES
 ('фХöüJпnQюì', 'CISGENDER FEMALE'),
 ('фЭÞQeÁkíßh', 'TRANSGENDER FEMALE'),
 ('ЧîБRIДZТiÙ', 'TRANSGENDER MALE');
-COMMIT;
