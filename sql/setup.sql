@@ -42,7 +42,7 @@ CREATE TABLE `currencies` (
   `currencies_id` varchar(10) NOT NULL,
   `currencies_name` tinytext NOT NULL,
   `currencies_iso` tinytext NOT NULL,
-  `currencies_symbol` varchar(5) NOT NULL DEFAULT '¤',
+  `currencies_symbol` varchar(15) NOT NULL DEFAULT '¤',
   `currencies_digital` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for currencies/money';
 
