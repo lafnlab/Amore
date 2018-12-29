@@ -9,4 +9,3 @@ INSERT INTO `hair_colors` (`hair_colors_id`, `hair_colors_color`) VALUES
 ('жÎбnføЕяшь', 'DARK BROWN'),
 ('ОхJIнЦÆоÒã', 'BALD'),
 ('ЭЧШыVüСЮьm', 'AUBURN');
-COMMIT;
