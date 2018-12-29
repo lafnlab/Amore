@@ -3,6 +3,7 @@
 --
 
 CREATE TABLE `configuration` (
+  `primary_key` varchar(10) NOT NULL,
   `website_url` tinytext NOT NULL,
   `website_name` tinytext NOT NULL,
   `website_description` text NOT NULL,
@@ -23,6 +24,15 @@ CREATE TABLE `configuration` (
   `list_with_the_federation_info` BOOLEAN NOT NULL DEFAULT 1 COMMENT 'default is yes',
   `list_with_fediverse_network` BOOLEAN NOT NULL DEFAULT 1 COMMENT 'default is yes'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for website configuration';
+
+--
+-- Dumping default data for table `configuration`
+--
+
+INSERT INTO `configuration` (`website_name`,`website_description`,`default_locale`,`admin_account`,`posts_are_called`,`post_is_called`,`reposts_are_called`,`repost_is_called`,`users_are_called`,`user_is_called`,`favorites_are_called`,`favorite_is_called`) VALUES
+('Amore','Another fine website made with Amore','en-US','admin','posts','post','reposts','repost','users','user','favorites','favorite');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `currencies`
@@ -276,6 +286,12 @@ CREATE TABLE `user_profiles` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `currencies`
+--
+ALTER TABLE `configuration`
+  ADD PRIMARY KEY (`primary_key`);
 
 --
 -- Indexes for table `currencies`
