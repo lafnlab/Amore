@@ -1,4 +1,4 @@
-INSERT INTO sxu (sxu_id, sxu_name) VALUES
+INSERT INTO sexualities (sexualities_id, sexualities_name) VALUES
 ('0GÙùaõ5ZэК', 'PANSEXUAL'),
 ('ÅжпсЫOВøÄq', 'ASEXUAL'),
 ('ËяQï9éЕ8aн', 'HETEROSEXUAL'),
