@@ -1,3 +1,12 @@
+/*
+ * pub/main-header.php
+ *
+ * This header starts the HTML for each public facing webpage in Amore
+ *
+ * since Amore version 0.1
+ *
+ */
+
 <!DOCTYPE html>
 <html lang="<?php echo $default_locale; ?>">
 <head>
@@ -10,11 +19,11 @@
 	<meta property="og:description" content="<?php echo $$website_description; ?>">
 	<meta property="og:type" content="website">
 	<meta property="og:site_title" content="<?php echo $website_name; ?>">
-	<link href="style/blackheart1.css" rel="stylesheet" type="text/css">
+	<link href="style/amore.css" rel="stylesheet" type="text/css">
 	<script type="application/json">
 		{
 			"@context": "https://www.w3.org/ns/activitystreams",
-			"summary": "<?php echo $objdescription; ?>",
+			"summary": "<?php echo $website_description; ?>",
 			"type": "Page",
 			"name": "<?php echo $website_name." | ".$pagetitle; ?>",
 			"url": "<?php echo $website_url.$_SERVER['PHP_SELF']; ?>"
