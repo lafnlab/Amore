@@ -137,4 +137,23 @@ function timediff($time) {
 
 }
 
+// get the number of users
+function user_quantity($users) {
+ $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+ $userqq = "SELECT * FROM usr";
+ $userqquery = mysqli_query($dbconn,$userqq);
+ $userqty = mysqli_num_rows($userqquery);
+
+ return $userqty;
+}
+
+// get the number of posts
+function post_quantity($posts) {
+ $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+ $postqq = "SELECT * FROM pst";
+ $postqquery = mysqli_query($dbconn,$postqq);
+ $postqty = mysqli_num_rows($postqquery);
+
+ return $postqty;
+}
 ?>
