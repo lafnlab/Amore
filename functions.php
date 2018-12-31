@@ -1,11 +1,18 @@
 <?php
+/*
+ * functions.php
+ *
+ * This file is used to store nearly all functions used by Amore.
+ *
+ * since Amore version 0.1
+ *
+ */
+
 include "conn.php";
 
 // put this here for various functions to use
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
-
-
 
 // creates a 10 character ID
 function makeid($newid) {
@@ -25,7 +32,7 @@ function makeid($newid) {
 	return mb_substr($tmp2,0,10,"UTF-8");
 }
 
-// sanitizes text inputs
+// sanitizes text inputs from forms
 function nicetext($text) {
 	// get rid of whitespace characters at start or end of text
 	$text = trim($text);
@@ -65,7 +72,7 @@ function timediff($time) {
 	$now = date('Y-m-d H:i:s');
 	$diff = (strtotime($time) - strtotime($now));
 
-	// yes, I know I should do this with case. something for the future.
+	// yes, I know I should do this with case. Something for the future.
 	// These should also be localized in the future.
 
 	if ($diff <= 30) {
