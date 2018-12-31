@@ -1,4 +1,15 @@
 <?php
+/*
+ * config.php
+ *
+ * This page is deprecated as of Amore version 0.2.
+ * Use the configuration table instead.
+ * The file will be removed as of Amore version 0.3.
+ *
+ * since Amore version 0.1
+ *
+ */
+ 
 #
 # $metalang is the default language. Since i18n isn't setup yet, this default
 # to English unless the site admin changes it.
@@ -14,7 +25,7 @@ $sitetitle = "Amore";
 # $siteurl is the url of the website. The site admin should change this to
 # whatever is most appropriate for the site.
 # Be sure to omit the trailing slash "/" from the end of the url.
-$siteurl = "";
+$siteurl = "http://blackh3art.media.dating";
 
 #
 # $metadescription is a summary of the website that may appear on websites
