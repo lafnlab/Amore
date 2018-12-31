@@ -1,7 +1,14 @@
 <?php
-// the-login.php
+/*
+ * pub/the-login.php
+ *
+ * The main login page for Amore. Also provides functionality for login widget on main page
+ *
+ * since Amore version 0.1
+ */
+
 include_once	"../conn.php";
-include			"../config.php";
+#include			"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
@@ -13,7 +20,7 @@ if(isset($_POST['loginsubmit'])) {
 	$uname = $_POST['loginuser'];
 	$upass = $_POST['loginpass'];
 
-	$acc_query  = "SELECT * FROM usr WHERE usr_name='".$uname."'";
+	$acc_query  = "SELECT * FROM users WHERE user_name='".$uname."'";
 	$acc_q      = mysqli_query($dbconn,$acc_query);
 
 /* is the user in the database?             			*/
@@ -21,14 +28,14 @@ if(isset($_POST['loginsubmit'])) {
 
 /* the user IS in the db									*/
 		while ($acc_cic = mysqli_fetch_assoc($acc_q)) {
-			$pass	= $acc_cic["usr_pass"];
-			$id     = $acc_cic["usr_id"];
+			$pass	= $acc_cic["user_pass"];
+			$id     = $acc_cic["user_id"];
 
 /* let us check if the password is correct			*/
  			if (password_verify($upass,$pass)) {
  				session_start();
 				setcookie("id",$id,0);
-				redirect("my-profile.php?uid=".$id);
+				redirect("dash/my-profile.php?uid=".$id);
 
 /* if the password is incorrect							*/
 			} else {
