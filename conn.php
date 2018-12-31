@@ -12,4 +12,5 @@ define("DBHOST","localhost"); // Don't change this unless you know what you're d
 define("DBNAME","");
 define("DBUSER","");
 define("DBPASS","");
+define("SITEKEY",""); // from primary_key in configuration table.
 ?>
