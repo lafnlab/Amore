@@ -1,10 +1,11 @@
 <?php
 include "conn.php";
-include "config.php";
 
 // put this here for various functions to use
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
+
+
 
 // creates a 10 character ID
 function makeid($newid) {
@@ -129,23 +130,4 @@ function timediff($time) {
 
 }
 
-// get the number of users
-function user_quantity($users) {
-	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-	$userqq = "SELECT * FROM usr";
-	$userqquery = mysqli_query($dbconn,$userqq);
-	$userqty = mysqli_num_rows($userqquery);
-
-	return $userqty;
-}
-
-// get the number of posts
-function post_quantity($posts) {
-	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-	$postqq = "SELECT * FROM pst";
-	$postqquery = mysqli_query($dbconn,$postqq);
-	$postqty = mysqli_num_rows($postqquery);
-
-	return $postqty;
-}
 ?>
