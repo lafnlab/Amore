@@ -1,11 +1,51 @@
 <?php
+/*
+ * pub/index.php
+ *
+ * This is the main page for Amore and serves several purposes.
+ * It offers a login and/or registration panel. It shows recent posts.
+ * And it triggers creation of nodeinfo.
+ *
+ * since Amore version 0.1
+ *
+ */
+
 include_once "../conn.php";
-include_once "../config.php";
+#include_once "../config.php"; // use the configuration table instead.
 include "../functions.php";
+
+// see if a session is set and get the username, if so.
 
 if (isset($_SESSION['uname'])) {
 	$visitortitle = $_SESSION['uname'];
+} else {
+	$visitortitle = _('Guest');
 }
+
+
+$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+mysqli_set_charset($dbconn, "utf8");
+
+// let's get the configuration data
+
+$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
+$mysitequery = mysqli_query($dbconn,$mysiteq);
+while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
+	$website_url				= $mysiteopt['website_url'];
+	$website_name				= $mysiteopt['website_name'];
+	$website_description		= $mysiteopt['website_description'];
+	$default_locale			= $mysiteopt['default_locale'];
+	$open_registration		= $mysiteopt['open_registrations'];
+	$posts_are_called			= $mysiteopt['posts_are_called'];
+	$post_is_called			= $mysiteopt['post_is_called'];
+	$reposts_are_called		= $mysiteopt['reposts_are_called'];
+	$repost_is_called			= $mysiteopt['repost_is_called'];
+	$users_are_called			= $mysiteopt['users_are_called'];
+	$user_is_called			= $mysiteopt['user_is_called'];
+	$favorites_are_called	= $mysiteopt['favorites_are_called'];
+	$favorite_is_called		= $mysiteopt['favorite_is_called'];
+}
+
 
 if ($open_registration == FALSE) {
 	$open = "false";
@@ -14,19 +54,26 @@ if ($open_registration == FALSE) {
 }
 
 
-$pagetitle = "🖤";
-$objdescription = $metadescription;
+$pagetitle = _("Home");
+$objdescription = $website_description;
 
 include_once "main-header.php";
 ?>
 
 	<main>
 		<div class="clear"></div>
+
 <?php
+
+// messages should appear in <main> only, not in <nav>
+if ($message != '' || NULL) {
+	echo header_message($message);
+}
+
 // trigger nodeinfo creation
 	$nodeinfometa = fopen(".well-known/nodeinfo", "w") or die("Unable to open or create nodeinfo file");
 
-	$json0 = "{\"links\":[{\"rel\":\"http://nodeinfo.diaspora.software/ns/schema/1.0\",\"href\":\"".$siteurl."/nodeinfo/1.0\"},{\"rel\":\"http://nodeinfo.diaspora.software/ns/schema/2.0\",\"href\":\"".$siteurl."/nodeinfo/2.0\"}]}";
+	$json0 = "{\"links\":[{\"rel\":\"http://nodeinfo.diaspora.software/ns/schema/1.0\",\"href\":\"".$website_url."/nodeinfo/1.0\"},{\"rel\":\"http://nodeinfo.diaspora.software/ns/schema/2.0\",\"href\":\"".$website_url."/nodeinfo/2.0\"}]}";
 
 	// let's try to write to it.
 	fwrite($nodeinfometa,$json0);
@@ -35,7 +82,7 @@ include_once "main-header.php";
 // create or update the nodeinfo/1.0 file
 	$nodeinfo1 = fopen("nodeinfo/1.0", "w") or die("Unable to open or create nodeinfo 1.0 file");
 
-	$json1 = "{\"version\":\"1.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.1\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":,\"activeMonth\":},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$sitetitle."\"}}";
+	$json1 = "{\"version\":\"1.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.2\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":,\"activeMonth\":},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$website_name."\"}}";
 
 	fwrite($nodeinfo1,$json1);
 	fclose($nodeinfo1);
@@ -43,17 +90,18 @@ include_once "main-header.php";
 // create or update nodeinfo/2.0 file
 	$nodeinfo2 = fopen("nodeinfo/2.0", "w") or die("Unable to open or create nodeinfo 2.0 file");
 
-	$json2 = "{\"version\":\"2.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.1\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":,\"activeMonth\":},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$sitetitle."\"}}";
+	$json2 = "{\"version\":\"2.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.2\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":,\"activeMonth\":},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$website_name."\"}}";
 
 	fwrite($nodeinfo2,$json2);
 	fclose($nodeinfo2);
 
 // if registration of closed display a login panel
+
 if ($open_registration == FALSE) {
 	echo "\t\t<section>\n";
 	echo "\t\t\t<div id=\"mainpagelogin\">\n";
 	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-login.php")."\">\n";
-	echo "\t\t\t\t<h2>"._("Login to ").$sitetitle."</h2>\n";
+	echo "\t\t\t\t<h2>"._("Login to ").$website_name."</h2>\n";
 	echo "\t\t\t\t\t<p>\n";
 	echo "\t\t\t\t\t\t<label for=\"loginuser\">"._('Username')."</label>\n";
 	echo "\t\t\t\t\t\t<input type=\"text\" name=\"loginuser\" id=\"loginuser\" class=\"smallinputtext\" required maxlength=\"50\">\n";
@@ -71,7 +119,7 @@ if ($open_registration == FALSE) {
 	echo "\t\t<section>\n";
 	echo "\t\t\t<div id=\"mainpagelogin\">\n";
 	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-registration.php")."\">\n";
-	echo "\t\t\t\t<h2>"._("Registration for ").$sitetitle."</h2>\n";
+	echo "\t\t\t\t<h2>"._("Registration for ").$website_name."</h2>\n";
 	echo "\t\t\t\t\t<p>\n";
 	echo "\t\t\t\t\t\t<label for=\"acctuser\">"._('Username')."</label>\n";
 	echo "\t\t\t\t\t\t<input type=\"text\" name=\"acctuser\" id=\"acctuser\" class=\"smallinputtext\" required maxlength=\"50\">\n";
@@ -107,20 +155,20 @@ if ($open_registration == FALSE) {
 	if (post_quantity($posts) > 0) {
 		echo "\t\t<section id=\"mainpageposts\">\n";
 		echo "\t\t\t<h2>"._('Recent posts')."</h2>\n";
-		$pst_q = "SELECT * FROM pst WHERE pst_priv=\"6ьötХ5áзÚZ\" ORDER BY pst_timestamp DESC";
+		$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC";
 		$pst_query = mysqli_query($dbconn,$pst_q);
 		while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
-			$postid		= $pst_opt['pst_id'];
-			$postby		= $pst_opt['pst_by'];
-			$posttime	= $pst_opt['pst_timestamp'];
-			$posttext	= $pst_opt['pst_text'];
-			$postlang	= $pst_opt['pst_lang'];
-			$postpriv	= $pst_opt['pst_priv'];
+			$postid		= $pst_opt['posts_id'];
+			$postby		= $pst_opt['posts_by'];
+			$posttime	= $pst_opt['posts_timestamp'];
+			$posttext	= $pst_opt['posts_text'];
+			$postlang	= $pst_opt['posts_language'];
+			$postpriv	= $pst_opt['posts_privacy_level'];
 
-			$by_q = "SELECT * FROM usr WHERE usr_id=\"".$postby."\"";
+			$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
 			$by_query = mysqli_query($dbconn,$by_q);
 			while($by_opt = mysqli_fetch_assoc($by_query)) {
-				$byname		= $by_opt['usr_name'];
+				$byname		= $by_opt['user_name'];
 			}
 			$now = date('Y-m-d H:i:s');
 
@@ -133,6 +181,7 @@ if ($open_registration == FALSE) {
 		}
 		echo "\t\t</section>\n\n";
 	}
+
 ?>
 		<div class="clear"></div>
 <?php
