@@ -1,11 +1,10 @@
 <?php
 /*
+ * pub/the-user.php
  *
- * the-user.php is a publicly viewable page of a user.
- * It will show their username and posts. If they so choose, it will also have
- * a bio, their location, links to their profile, friends, followers, following
- * favorites, and lists.
+ * Displays a public information about a user
  *
+ * since Amore version 0.1
  */
 
 include_once	"../conn.php";
@@ -23,23 +22,23 @@ mysqli_set_charset($dbconn, "utf8");
 
 if ($sel_id != '') {
 
-	$usrq = "SELECT * FROM usr WHERE usr_id=\"".$sel_id."\"";
+	$usrq = "SELECT * FROM users WHERE user_id=\"".$sel_id."\"";
 	$usrquery = mysqli_query($dbconn,$usrq);
 	while($usr_opt = mysqli_fetch_assoc($usrquery)) {
-		$userid		= $usr_opt['usr_id'];
-		$username	= $usr_opt['usr_name'];
-		$userstart	= $usr_opt['usr_created'];
-		$userlast	= $usr_opt['usr_last_seen'];
+		$userid		= $usr_opt['user_id'];
+		$username	= $usr_opt['user_name'];
+		$userstart	= $usr_opt['user_created'];
+		$userlast	= $usr_opt['user_last_seen'];
 	}
 
 	// get posts from this user
-		$pst_q = "SELECT * FROM pst WHERE pst_by=\"".$postby."\" AND WHERE pst_priv=\"6ьötХ5áзÚZ\" ORDER BY pst_timestamp DESC";
-		$pst_query = mysqli_query($dbconn,$pst_q);
-		while($pst_opt = mysqli_fetch_assoc($pst_query)) {
-			$pstid	= $pst_opt['pst_id'];
-			$psttime	= $pst_opt['pst_timestamp'];
-			$psttext	= $pst_opt['pst_text'];
-		}
+#		$pst_q = "SELECT * FROM posts WHERE posts_by=\"".$postby."\" AND WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC";
+#		$pst_query = mysqli_query($dbconn,$pst_q);
+#		while($pst_opt = mysqli_fetch_assoc($pst_query)) {
+#			$pstid	= $pst_opt['posts_id'];
+#			$psttime	= $pst_opt['posts_timestamp'];
+#			$psttext	= $pst_opt['posts_text'];
+#		}
 }
 
 $pagetitle = $sitetitle." &gt; ".$username;
@@ -49,21 +48,21 @@ include_once 'main-nav.php';
 	<article>
 <?php
 // let's see if there are any posts to view from this user
-$pst_q = "SELECT * FROM pst WHERE (pst_priv=\"6ьötХ5áзÚZ\" AND pst_by=\"".$userid."\") ORDER BY pst_timestamp DESC";
+$pst_q = "SELECT * FROM posts WHERE (posts_privacy_level=\"6ьötХ5áзÚZ\" AND posts_by=\"".$userid."\") ORDER BY posts_timestamp DESC";
 $pst_query = mysqli_query($dbconn,$pst_q);
 if (mysqli_num_rows($pst_query) <> 0) {
 	while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
-		$postid		= $pst_opt['pst_id'];
-		$postby		= $pst_opt['pst_by'];
-		$posttime	= $pst_opt['pst_timestamp'];
-		$posttext	= $pst_opt['pst_text'];
-		$postlang	= $pst_opt['pst_lang'];
-		$postpriv	= $pst_opt['pst_priv'];
+		$postid		= $pst_opt['posts_id'];
+		$postby		= $pst_opt['posts_by'];
+		$posttime	= $pst_opt['posts_timestamp'];
+		$posttext	= $pst_opt['posts_text'];
+		$postlang	= $pst_opt['posts_lang'];
+		$postpriv	= $pst_opt['posts_priv'];
 
-		$by_q = "SELECT * FROM usr WHERE usr_id=\"".$postby."\"";
+		$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
 		$by_query = mysqli_query($dbconn,$by_q);
 		while($by_opt = mysqli_fetch_assoc($by_query)) {
-			$byname		= $by_opt['usr_name'];
+			$byname		= $by_opt['user_name'];
 		}
 			$now = date('Y-m-d H:i:s');
 

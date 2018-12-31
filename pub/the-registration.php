@@ -1,7 +1,14 @@
 <?php
-// the-registration.php
+/*
+ * pub/the-registration.php
+ *
+ * The main registration page for Amore. Also provides functionality for registration widget on main page
+ *
+ * since Amore version 0.1
+ */
+
 include_once	"../conn.php";
-include_once	"../config.php";
+#include_once	"../config.php";
 include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
@@ -25,7 +32,7 @@ if(isset($_POST['acctsubmit'])) {
         } else {
 
 /* if a userid is set and a session is set, go to the profile page */
-            redirect("my-profile.php?uid=".$uid);
+            redirect("dash/my-profile.php?uid=".$uid);
         }
 
 /* else a user id is not set                    */
@@ -48,7 +55,7 @@ if(isset($_POST['acctsubmit'])) {
             } else {
 
 /* check if username is already being used      */
-                $origuname     = "SELECT * FROM usr WHERE usr_name='".$uname."'";
+                $origuname     = "SELECT * FROM users WHERE user_name='".$uname."'";
                 $origuname_q   = mysqli_query($dbconn, $origuname);
                 if (mysqli_num_rows($origuname_q) <> 0) {
 
@@ -109,11 +116,11 @@ if(isset($_POST['acctsubmit'])) {
         if (!isset($message)) {
             $uid 				= makeid($newid);
             $udatecreate	= date('Y-m-d H:i:s');
-            $new_query = "INSERT INTO usr (usr_id, usr_name, usr_pass, usr_email, usr_dob, usr_outbox, usr_inbox, usr_liked, usr_follows, usr_followers, usr_created, usr_last_login) VALUES ('$uid', '$uname', '$hash_pass', '', '$udob', '', '', '', '', '', '$udatecreate', '$udatecreate')";
+            $new_query = "INSERT INTO users (user_id, user_name, user_pass, user_email, user_dob, user_outbox, user_inbox, user_liked, user_follows, user_followers, user_created, user_last_login) VALUES ('$uid', '$uname', '$hash_pass', '', '$udob', '', '', '', '', '', '$udatecreate', '$udatecreate')";
 #		$message = $new_query;
 				$new_add = mysqli_query($dbconn,$new_query);
 				session_start();
-				redirect("my-profile.php?uid=".$uid);
+				redirect("dash/my-profile.php?uid=".$uid);
         }
     }
 

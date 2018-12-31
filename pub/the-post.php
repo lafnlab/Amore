@@ -1,6 +1,14 @@
 <?php
+/*
+ * pub/the-post.php
+ *
+ * Displays a post
+ *
+ * since Amore version 0.1
+ */
+
 include_once	"../conn.php";
-include_once	"../config.php";
+#include_once	"../config.php";
 include			"../functions.php";
 
 if (isset($_GET["pid"])) {
@@ -14,21 +22,21 @@ mysqli_set_charset($dbconn, "utf8");
 
 if ($sel_id != '') {
 
-	$pstq = "SELECT * FROM pst WHERE pst_id=\"".$sel_id."\"";
+	$pstq = "SELECT * FROM posts WHERE posts_id=\"".$sel_id."\"";
 	$pstquery = mysqli_query($dbconn,$pstq);
 	while($pst_opt = mysqli_fetch_assoc($pstquery)) {
-		$postid		= $pst_opt['pst_id'];
-		$postby		= $pst_opt['pst_by'];
-		$posttime	= $pst_opt['pst_timestamp'];
-		$posttext	= $pst_opt['pst_text'];
-		$postlang	= $pst_opt['pst_lang'];
-		$postpriv	= $pst_opt['pst_priv'];
+		$postid		= $pst_opt['posts_id'];
+		$postby		= $pst_opt['posts_by'];
+		$posttime	= $pst_opt['posts_timestamp'];
+		$posttext	= $pst_opt['posts_text'];
+		$postlang	= $pst_opt['posts_language'];
+		$postpriv	= $pst_opt['posts_privacy_level'];
 	}
 
-		$by_q = "SELECT * FROM usr WHERE usr_id=\"".$postby."\"";
+		$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
 		$by_query = mysqli_query($dbconn,$by_q);
 		while($by_opt = mysqli_fetch_assoc($by_query)) {
-			$byname		= $by_opt['usr_name'];
+			$byname		= $by_opt['user_name'];
 		}
 }
 
