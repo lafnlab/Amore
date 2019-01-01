@@ -32,6 +32,7 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$user_is_called			= $mysiteopt['user_is_called'];
 	$favorites_are_called	= $mysiteopt['favorites_are_called'];
 	$favorite_is_called		= $mysiteopt['favorite_is_called'];
+	$banned_user_names		= $mysiteopt['banned_user_names'];
 }
 
 if($open_registration == FALSE) {
@@ -72,7 +73,7 @@ if($open_registration == FALSE) {
 
 /* check if the username is banned             */
             $unamel = strtolower($uname);
-            if(in_array($unamel,$bannednames)) {
+            if(in_array($unamel,$banned_user_names)) {
 
 /* if it's banned, show an error                */
                 $message = "Username is banned";
