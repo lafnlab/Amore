@@ -8,22 +8,47 @@
  */
 
 include_once	"../conn.php";
-#include_once	"../config.php";
+#include_once	"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-/* if $_POST['acctsubmit'] is set                  */
-if(isset($_POST['acctsubmit'])) {
+// let's get the configuration data
 
-/* if a user id is set                          */
+$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
+$mysitequery = mysqli_query($dbconn,$mysiteq);
+while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
+	$website_url				= $mysiteopt['website_url'];
+	$website_name				= $mysiteopt['website_name'];
+	$website_description		= $mysiteopt['website_description'];
+	$default_locale			= $mysiteopt['default_locale'];
+	$open_registration		= $mysiteopt['open_registrations'];
+	$posts_are_called			= $mysiteopt['posts_are_called'];
+	$post_is_called			= $mysiteopt['post_is_called'];
+	$reposts_are_called		= $mysiteopt['reposts_are_called'];
+	$repost_is_called			= $mysiteopt['repost_is_called'];
+	$users_are_called			= $mysiteopt['users_are_called'];
+	$user_is_called			= $mysiteopt['user_is_called'];
+	$favorites_are_called	= $mysiteopt['favorites_are_called'];
+	$favorite_is_called		= $mysiteopt['favorite_is_called'];
+}
+
+if($open_registration == FALSE) {
+
+// if registrations are closed, redirect to main page
+	redirect("index.php");
+
+} else if(isset($_POST['acctsubmit'])) {
+/* if $_POST['acctsubmit'] is set                  */
+
+/* if a user id is set                          	*/
     if(isset($uid)) {
 
         // uncomment for testing
         #session_start();
 
-/* and session is not set                       */
+/* and session is not set                      		*/
         if(!session_id()) {
 
 /* if a userid is set, but a session is not, unset the user id and send them to the home page */
