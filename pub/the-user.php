@@ -11,6 +11,14 @@ include_once	"../conn.php";
 #include_once	"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
+// see if a session is set and get the username, if so.
+if (isset($_SESSION['uname'])) {
+	$visitortitle = $_SESSION['uname'];
+} else {
+	$visitortitle = _('Guest');
+}
+
+// get the ID for the user whose page this is
 if (isset($_GET["uid"])) {
 	$sel_id = $_GET["uid"];
 } else {
@@ -61,7 +69,7 @@ if ($sel_id != '') {
 #		}
 }
 
-$pagetitle = $sitetitle." &gt; ".$username;
+$pagetitle = $website_name." &gt; ".$username;
 include_once 'main-header.php';
 include_once 'main-nav.php';
 ?>
@@ -87,7 +95,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 			$now = date('Y-m-d H:i:s');
 
 		echo "\t\t\t<div class=\"showpost\">\n";
-		echo "\t\t\t\t<span class=\"showpostby\">".$byname."&nbsp;";
+		echo "\t\t\t\t<span class=\"showpostby\">".$username."&nbsp;";
 		echo "<a href=\"the-post.php?pid=".$postid."\">".$posttime;
 		echo "</a></span>\n";
 		echo "\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";

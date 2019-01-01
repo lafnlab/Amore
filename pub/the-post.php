@@ -11,6 +11,14 @@ include_once	"../conn.php";
 #include_once	"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
+// see if a session is set and get the username, if so.
+if (isset($_SESSION['uname'])) {
+	$visitortitle = $_SESSION['uname'];
+} else {
+	$visitortitle = _('Guest');
+}
+
+// get the ID of the post that is on this page
 if (isset($_GET["pid"])) {
 	$sel_id = $_GET["pid"];
 } else {
