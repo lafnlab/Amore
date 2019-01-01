@@ -16,8 +16,8 @@ include "../functions.php";
 
 // see if a session is set and get the username, if so.
 
-if (isset($_SESSION['uname'])) {
-	$visitortitle = $_SESSION['uname'];
+if (isset($_COOKIE['uname'])) {
+	$visitortitle = $_COOKIE['uname'];
 } else {
 	$visitortitle = _('Guest');
 }
@@ -95,57 +95,73 @@ if ($message != '' || NULL) {
 	fwrite($nodeinfo2,$json2);
 	fclose($nodeinfo2);
 
-// if registration of closed display a login panel
 
-if ($open_registration == FALSE) {
+// if a user is logged in, show a section to add a post
+if (isset($_COOKIE['uname'])) {
 	echo "\t\t<section>\n";
-	echo "\t\t\t<div id=\"mainpagelogin\">\n";
-	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-login.php")."\">\n";
-	echo "\t\t\t\t<h2>"._("Login to ").$website_name."</h2>\n";
-	echo "\t\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t\t<label for=\"loginuser\">"._('Username')."</label>\n";
-	echo "\t\t\t\t\t\t<input type=\"text\" name=\"loginuser\" id=\"loginuser\" class=\"smallinputtext\" required maxlength=\"50\">\n";
-	echo "\t\t\t\t\t</p>\n";
-	echo "\t\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t\t<label for=\"loginpass\">"._('Passphrase')."</label>\n";
-	echo "\t\t\t\t\t\t<input type=\"password\" name=\"loginpass\" id=\"loginpass\" class=\"smallinputtext\" required>\n";
-	echo "\t\t\t\t\t</p>\n";
-	echo "\t\t\t\t\t<input type=\"submit\" name=\"loginsubmit\" id=\"loginsubmit\" class=\"button\" value=\""._('Login')."\">\n";
+	echo "\t\t\t<div id=\"mainpagepost\">\n";
+	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("dash/add-post.php?uid=".$_COOKIE['id'])."\">\n";
+	echo "\t\t\t\t<input type=\"hidden\" name=\"addpostradio\" value=\"6ьötХ5áзÚZ\">";
+	echo "\t\t\t\t<h2>"._("Welcome, ").$_COOKIE['uname']."</h2>\n";
+	echo "\t\t\t\t\t<input type=\"text\" name=\"addposttext\" required placeholder=\""._('Let everyone know what you are doing...')."\"><br>\n";
+	echo "\t\t\t\t\t<input type=\"submit\" id=\"addpostsubmit\" name=\"addpostsubmit\" value=\""._('Post')."\">\n";
 	echo "\t\t\t\t</form>\n";
 	echo "\t\t\t</div>\n";
 	echo "\t\t</section>\n\n";
 } else {
-// if registration is open, display a registration/login panel
-	echo "\t\t<section>\n";
-	echo "\t\t\t<div id=\"mainpagelogin\">\n";
-	echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-registration.php")."\">\n";
-	echo "\t\t\t\t<h2>"._("Registration for ").$website_name."</h2>\n";
-	echo "\t\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t\t<label for=\"acctuser\">"._('Username')."</label>\n";
-	echo "\t\t\t\t\t\t<input type=\"text\" name=\"acctuser\" id=\"acctuser\" class=\"smallinputtext\" required maxlength=\"50\">\n";
-	echo "\t\t\t\t\t</p>\n";
-	echo "\t\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t\t<label for=\"acctpass1\">"._('Passphrase')."</label>\n";
-	echo "\t\t\t\t\t\t<input type=\"password\" name=\"acctpass1\" id=\"acctpass1\" class=\"smallinputtext\" required>\n";
-	echo "\t\t\t\t\t</p>\n";
-	echo "\t\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t\t<label for=\"acctpass2\">"._('Verify passphrase')."</label>\n";
-	echo "\t\t\t\t\t\t<input type=\"password\" name=\"acctpass2\" id=\"acctpass2\" class=\"smallinputtext\" required>\n";
-	echo "\t\t\t\t\t</p>\n";
-	echo "\t\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t\t<label for=\"acctdob\">"._('Date of birth')."</label>\n";
-	echo "\t\t\t\t\t\t<input type=\"date\" name=\"acctdob\" id=\"acctdob\" class=\"smallinputtext\" required min=\"1900-01-01\">\n";
-	echo "\t\t\t\t\t</p>\n";
-	echo "\t\t\t\t\t<input type=\"submit\" name=\"acctsubmit\" id=\"acctsubmit\" class=\"button\" value=\""._('Register')."\">\n";
-	echo "\t\t\t\t</form>\n";
-	echo "\t\t\t\t<hr>\n";
-	echo "\t\t\t\t<p>\n";
-	echo "\t\t\t\t\t"._('Already a user?')."\n";
-	echo "\t\t\t\t\t<a href=\"the-login.php\">"._('Login')."</a>\n";
-	echo "\t\t\t\t</p>\n";
-	echo "\t\t\t</div>\n";
-	echo "\t\t</section>\n\n";
-}
+
+// if registration is closed display a login panel
+	if ($open_registration == FALSE) {
+		echo "\t\t<section>\n";
+		echo "\t\t\t<div id=\"mainpagelogin\">\n";
+		echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-login.php")."\">\n";
+		echo "\t\t\t\t<h2>"._("Login to ").$website_name."</h2>\n";
+		echo "\t\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t\t<label for=\"loginuser\">"._('Username')."</label>\n";
+		echo "\t\t\t\t\t\t<input type=\"text\" name=\"loginuser\" id=\"loginuser\" class=\"smallinputtext\" required maxlength=\"50\">\n";
+		echo "\t\t\t\t\t</p>\n";
+		echo "\t\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t\t<label for=\"loginpass\">"._('Passphrase')."</label>\n";
+		echo "\t\t\t\t\t\t<input type=\"password\" name=\"loginpass\" id=\"loginpass\" class=\"smallinputtext\" required>\n";
+		echo "\t\t\t\t\t</p>\n";
+		echo "\t\t\t\t\t<input type=\"submit\" name=\"loginsubmit\" id=\"loginsubmit\" class=\"button\" value=\""._('Login')."\">\n";
+		echo "\t\t\t\t</form>\n";
+		echo "\t\t\t</div>\n";
+		echo "\t\t</section>\n\n";
+	} else {
+
+	// if registration is open, display a registration/login panel
+		echo "\t\t<section>\n";
+		echo "\t\t\t<div id=\"mainpagelogin\">\n";
+		echo "\t\t\t\t<form method=\"post\" action=\"".htmlspecialchars("the-registration.php")."\">\n";
+		echo "\t\t\t\t<h2>"._("Registration for ").$website_name."</h2>\n";
+		echo "\t\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t\t<label for=\"acctuser\">"._('Username')."</label>\n";
+		echo "\t\t\t\t\t\t<input type=\"text\" name=\"acctuser\" id=\"acctuser\" class=\"smallinputtext\" required maxlength=\"50\">\n";
+		echo "\t\t\t\t\t</p>\n";
+		echo "\t\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t\t<label for=\"acctpass1\">"._('Passphrase')."</label>\n";
+		echo "\t\t\t\t\t\t<input type=\"password\" name=\"acctpass1\" id=\"acctpass1\" class=\"smallinputtext\" required>\n";
+		echo "\t\t\t\t\t</p>\n";
+		echo "\t\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t\t<label for=\"acctpass2\">"._('Verify passphrase')."</label>\n";
+		echo "\t\t\t\t\t\t<input type=\"password\" name=\"acctpass2\" id=\"acctpass2\" class=\"smallinputtext\" required>\n";
+		echo "\t\t\t\t\t</p>\n";
+		echo "\t\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t\t<label for=\"acctdob\">"._('Date of birth')."</label>\n";
+		echo "\t\t\t\t\t\t<input type=\"date\" name=\"acctdob\" id=\"acctdob\" class=\"smallinputtext\" required min=\"1900-01-01\">\n";
+		echo "\t\t\t\t\t</p>\n";
+		echo "\t\t\t\t\t<input type=\"submit\" name=\"acctsubmit\" id=\"acctsubmit\" class=\"button\" value=\""._('Register')."\">\n";
+		echo "\t\t\t\t</form>\n";
+		echo "\t\t\t\t<hr>\n";
+		echo "\t\t\t\t<p>\n";
+		echo "\t\t\t\t\t"._('Already a user?')."\n";
+		echo "\t\t\t\t\t<a href=\"the-login.php\">"._('Login')."</a>\n";
+		echo "\t\t\t\t</p>\n";
+		echo "\t\t\t</div>\n";
+		echo "\t\t</section>\n\n";
+	}
+} // end if isset $_COOKIE
 	echo "\t\t<section id=\"mainpagestats\">\n";
 	echo "\t\t\t<span>Number of users = ".user_quantity($user)."</span><br>\n";
 	echo "\t\t\t<span>Number of posts = ".post_quantity($post)."</span><br>\n";
