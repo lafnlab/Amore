@@ -1,12 +1,13 @@
+<?php
 /*
  * pub/main-header.php
  *
- * This header starts the HTML for each public facing webpage in Amore
+ * This header starts the HTML for each public facing webpage in Amore.
  *
  * since Amore version 0.1
  *
  */
-
+?>
 <!DOCTYPE html>
 <html lang="<?php echo $default_locale; ?>">
 <head>
@@ -36,9 +37,13 @@
 		<div class="headermiddle">🖤</div>
 		<div class="headerright"><?php
 		echo _('Hello, ');
-		// if a user is logged in, display their username
-		// if a user isn't logged in, display $visitortitle
-		echo "<a href=\"the-login.php\">";
+		// if a user is logged in, display their username and link to dash/my-profile.php
+		// if a user isn't logged in, display $visitortitle and link to the-login.php
+		if (isset($_COOKIE['uname'])) {
+			echo "<a href=\"dash/my-profile.php?uid=".$_COOKIE['id']."\">";
+		} else {
+			echo "<a href=\"the-login.php\">";
+		}
 		echo $visitortitle;
 		echo "</a>&nbsp;|&nbsp;";
 		echo "<a href=\"\#\">&#9776;</a>";
