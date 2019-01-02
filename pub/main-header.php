@@ -31,11 +31,11 @@
 		}
 	</script>
 </head>
-<body>
-	<header class="headerbar">
-		<div class="headerleft"><a href="/"><?php echo $website_name; // $sitetitle doesn't get i18n ?></a></div>
-		<div class="headermiddle">🖤</div>
-		<div class="headerright"><?php
+<body class="w3-theme-l5">
+	<div class="w3-top">
+	<header class="w3-container w3-bar w3-large w3-theme-d1">
+		<div class="w3-left w3-padding"><a href="<?php echo $website_url; ?>/index.php"><?php echo $website_name; // $sitetitle doesn't get i18n ?></a></div>
+		<div class="w3-right w3-padding"><?php
 		echo _('Hello, ');
 		// if a user is logged in, display their username and link to dash/my-profile.php
 		// if a user isn't logged in, display $visitortitle and link to the-login.php
@@ -49,4 +49,6 @@
 		echo "<a href=\"\#\">&#9776;</a>";
 ?>
 </div>
+		<div class="w3-center w3-padding">🖤</div>
 	</header>
+	</div> <!-- .w3-top -->

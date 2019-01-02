@@ -1,4 +1,13 @@
-
+<?php
+/*
+ * pub/main-nav.php
+ *
+ * This is a navigation menu for some public facing webpages in Amore.
+ *
+ * since Amore version 0.1
+ *
+ */
+?>
 	<nav class="mainnav">
 		<div class="bio">
 			<p>
