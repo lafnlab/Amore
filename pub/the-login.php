@@ -62,6 +62,7 @@ if(isset($_POST['loginsubmit'])) {
  			if (password_verify($upass,$pass)) {
  				session_start();
 				setcookie("id",$id,0);
+				setcookie("uname",$uname,0);
 				redirect("dash/my-profile.php?uid=".$id);
 
 /* if the password is incorrect							*/
@@ -92,30 +93,35 @@ if ($message != '' || NULL) {
 	echo header_message($message);
 }
 ?>
-		<article>
-			<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-				<table>
-					<caption><?php echo _($pagetitle); ?></caption>
-					<tr>
-						<td class="inputlabel"><label for="loginuser"><?php echo _('Username');?></label></td>
-						<td><input type="text" name="loginuser" id="loginuser" class="inputtext" required maxlength="50"></td>
-					</tr>
-					<tr>
-						<td class="inputlabel"><label for="loginpass"><?php echo _('Passphrase');?></label></td>
-						<td><input type="password" name="loginpass" id="loginpass" class="inputtext" required></td>
-					</tr>
+	<!-- THE CONTAINER for the main content -->
+	<main class="w3-container w3-content" style="max-width:1400px;margin-top:40px;">
 
-				</table>
-				<input type="submit" name="loginsubmit" id="loginsubmit" class="button" value="<?php echo _('Login'); ?>">
-			</form>
-<?php
-			if($open_registration == TRUE) {
-				echo "\t\t\t<a href=\"the-registration.php\">"._('Create an account')."</a>\n";
-			} else {
-				echo "\n\n\t\t\t<!-- registrations are closed -->\n\n";
-			}
-?>
-		</article>
+		<!-- THE GRID -->
+		<div class="w3-cell-row w3-container">
+			<div class="w3-col w3-cell m3 l4">&nbsp;</div>
+			<div class="w3-col w3-panel w3-cell m6 l4">
+				<form id="basicform" method="post" class="w3-card-2 w3-theme-l3 w3-padding maincard" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+					<h2 class="w3-center"><?php echo  _("Login to ").$website_name; ?></h2>
+					<p>
+						<label for="loginuser"><?php echo _('Username'); ?></label>
+						<input type="text" name="loginuser" id="loginuser" class="w3-input w3-border w3-margin-bottom" required maxlength="50">
+					</p>
+					<p>
+						<label for="loginpass"><?php echo _('Passphrase'); ?></label>
+						<input type="password" name="loginpass" id="loginpass" class="w3-input w3-border w3-margin-bottom" required>
+					</p>
+					<input type="submit" name="loginsubmit" id="loginsubmit" class="w3-button w3-button-hover w3-block w3-theme-d3 w3-section w3-padding" value="<?php echo _('Login'); ?>">
+				</form>
+	<?php
+				if($open_registration == TRUE) {
+					echo "\t\t\t<a href=\"the-registration.php\">"._('Create an account')."</a>\n";
+				} else {
+					echo "\n\n\t\t\t<!-- registrations are closed -->\n\n";
+				}
+	?>
+			</div>
+			<div class="w3-col w3-cell m3 l4">&nbsp;</div>
+		</div> <!-- end THE GRID -->
 <?php
 include_once "main-footer.php";
 ?>
