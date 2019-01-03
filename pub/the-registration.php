@@ -171,41 +171,47 @@ if ($message != '' || NULL) {
 	echo header_message($message);
 }
 ?>
-		<article>
-			<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-				<table>
-					<caption><?php echo _($pagetitle); ?></caption>
-					<tr>
-						<td class="inputlabel"><label for="acctname"><?php echo _('Username');?></label></td>
-						<td><input type="text" name="acctname" id="acctname" class="inputtext" required maxlength="50"></td>
-					</tr>
-					<tr>
-						<td class="inputlabel"><label for="acctpass1"><?php echo _('Passphrase');?></label></td>
-						<td><input type="password" name="acctpass1" id="acctpass1" class="inputtext" required></td>
-					</tr>
-					<tr>
-						<td class="inputlabel"><label for="acctpass2"><?php echo _('Verify passphrase');?></label></td>
-						<td><input type="password" name="acctpass2" id="acctpass2" class="inputtext" required></td>
-					</tr>
-					<tr>
-						<td class="inputlabel"><label for="acctdob"><?php echo _('Date of birth');?></label></td>
-						<td><input type="date" name="acctdob" id="acctdob" class="inputtext" required min="1900-01-01"></td>
-					</tr>
-				</table>
-				<input type="submit" name="acctsubmit" id="acctsubmit" class="button" value="<?php echo _('Register'); ?>">
-			</form>
+	<!-- THE CONTAINER for the main content -->
+	<main class="w3-container w3-content" style="max-width:1400px;margin-top:40px;">
 
-        <p>
-            <?php echo _('Password must be at least 16 characters long'); ?>.<br><br>
-            <?php echo _('Password must have:'); ?>
-            <ul>
-                <li><?php echo _('at least one lowercase letter'); ?></li>
-                <li><?php echo _('at least one uppercase letter'); ?></li>
-                <li><?php echo _('at least one numeral'); ?></li>
-                <li><?php echo _('at least one character that is not a number or a letter.'); ?></li>
-            </ul>
-        </p>
-		</article>
+		<!-- THE GRID -->
+		<div class="w3-cell-row w3-container">
+			<div class="w3-col w3-cell m3 l4">
+				<p>
+					<?php echo _('Password must be at least 16 characters long'); ?>.<br><br>
+					<?php echo _('Password must have:'); ?>
+					<ul>
+						<li><?php echo _('at least one lowercase letter'); ?></li>
+						<li><?php echo _('at least one uppercase letter'); ?></li>
+						<li><?php echo _('at least one numeral'); ?></li>
+						<li><?php echo _('at least one character that is not a number or a letter.'); ?></li>
+					</ul>
+				</p>
+			</div>
+			<div class="w3-col w3-panel w3-cell m6 l4">
+			<form id="basicform" method="post" class="w3-card-2 w3-theme-l3 w3-padding maincard" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+					<h2 class="w3-center"><?php echo _($pagetitle); ?></h2>
+					<p>
+						<label for="acctname"><?php echo _('Username');?></label>
+						<input type="text" name="acctname" id="acctname" class="w3-input w3-border w3-margin-bottom" required maxlength="50">
+					</p>
+					<p>
+						<label for="acctpass1"><?php echo _('Passphrase');?></label>
+						<input type="password" name="acctpass1" id="acctpass1" class="w3-input w3-border w3-margin-bottom" required>
+					</p>
+					<p>
+						<label for="acctpass2"><?php echo _('Verify passphrase');?></label>
+						<input type="password" name="acctpass2" id="acctpass2" class="w3-input w3-border w3-margin-bottom" required>
+					</p>
+					<p>
+						<label for="acctdob"><?php echo _('Date of birth');?></label>
+						<input type="date" name="acctdob" id="acctdob" class="w3-input w3-border w3-margin-bottom" required min="1900-01-01">
+					</p>
+				<input type="submit" name="acctsubmit" id="acctsubmit" class="w3-button w3-button-hover w3-block w3-theme-d3 w3-section w3-padding" value="<?php echo _('Register'); ?>">
+			</form>
+			</div>
+			<div class="w3-col w3-cell m3 l4">&nbsp;</div> <!-- empty div for the purpose of positioning -->
+		</div> <!-- end THE GRID -->
 <?php
 include_once "main-footer.php";
 ?>
