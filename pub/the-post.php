@@ -12,8 +12,8 @@ include_once	"../conn.php";
 include			"../functions.php";
 
 // see if a session is set and get the username, if so.
-if (isset($_SESSION['uname'])) {
-	$visitortitle = $_SESSION['uname'];
+if (isset($_COOKIE['uname'])) {
+	$visitortitle = $_COOKIE['uname'];
 } else {
 	$visitortitle = _('Guest');
 }
@@ -71,18 +71,28 @@ if ($sel_id != '') {
 $pagetitle = $byname." &middot; ".$posttext;
 include_once 'main-header.php';
 ?>
+	<!-- THE CONTAINER for the main content -->
+	<main class="w3-container w3-content" style="max-width:1400px;margin-top:40px;">
 
-	<article>
-		<div id="showpost">
+		<!-- THE GRID -->
+		<div class="w3-cell-row w3-container">
+			<div class="w3-col w3-cell m3">&nbsp;</div>
+
+			<article class="w3-col w3-panel w3-cell m6">
+				<div class="w3-card-2 w3-theme-l3 w3-padding maincard">
 <?php
-		echo "\t\t\t<span class=\"showpostby\"><a href=\"the-user.php?uid=".$postby."\">".$byname."</a>&nbsp;";
+		echo "\t\t\t\t<span class=\"showpostby\"><a href=\"the-user.php?uid=".$postby."\">".$byname."</a>&nbsp;";
 		echo $posttime."</span>\n";
-		echo "\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
-		echo "\t\t\t<!-- future functionality on span below -->\n";
-		echo "\t\t\t<a href=\"#\" title=\"Reply\">⮪0</a>&nbsp;<a href=\"#\" title=\"Upvote\">⤊0</a>&nbsp;<a href=\"#\" title=\"Downvote\">⤋0</a>&nbsp;<a href=\"#\" title=\"Favorite\">🎔 0</a>&nbsp;…\n";
+		echo "\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
+		echo "\t\t\t\t<!-- future functionality on span below -->\n";
+		echo "\t\t\t\t<a href=\"#\" title=\"Reply\">⮪0</a>&nbsp;<a href=\"#\" title=\"Upvote\">⤊0</a>&nbsp;<a href=\"#\" title=\"Downvote\">⤋0</a>&nbsp;<a href=\"#\" title=\"Favorite\">🎔 0</a>&nbsp;…\n";
 ?>
-		</div>
-	</article>
+				</div>
+			</article>
+
+			<div class="w3-col w3-cell m3">&nbsp;</div>
+		</div> <!-- end THE GRID -->
+
 <?php
 include_once "main-footer.php";
 ?>

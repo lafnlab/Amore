@@ -11,12 +11,12 @@ include_once	"../conn.php";
 #include			"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
-// see if a session is set and get the username, if so.
-if (isset($_SESSION['uname'])) {
-	$visitortitle = $_SESSION['uname'];
+if (isset($_COOKIE['id'])) {
+	redirect("dash/my-profile.php?uid=".$_COOKIE['id']);
 } else {
 	$visitortitle = _('Guest');
 }
+
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
@@ -99,6 +99,7 @@ if ($message != '' || NULL) {
 		<!-- THE GRID -->
 		<div class="w3-cell-row w3-container">
 			<div class="w3-col w3-cell m3 l4">&nbsp;</div>
+
 			<div class="w3-col w3-panel w3-cell m6 l4">
 				<form id="basicform" method="post" class="w3-card-2 w3-theme-l3 w3-padding maincard" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<h2 class="w3-center"><?php echo  _("Login to ").$website_name; ?></h2>
