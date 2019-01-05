@@ -51,7 +51,7 @@ include_once "dash-nav.php";
 		$tztquery = mysqli_query($dbconn,$tztq);
 
 		while ($tztopt = mysqli_fetch_assoc($tztquery)) {
-			$tzt_abbr	= $tztopt['time_zones_abbr'];
+			$tzt_abbr	= $tztopt['time_zones_abbreviation'];
 			$tzt_name	= $tztopt['time_zones_name'];
 			$tzt_id		= $tztopt['time_zones_id'];
 			$tzt_off		= $tztopt['time_zones_offset'];
