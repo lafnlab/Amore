@@ -1,45 +1,72 @@
 <?php
-include_once	"../conn.php";
-include_once	"../config.php";
-include			"../functions.php";
+/*
+ * pub/dash/list-time-zones.php
+ *
+ * Displays a list of time zones in the database.
+ *
+ * since Amore version 0.1
+ *
+ */
+
+include_once	"../../conn.php";
+#include_once	"../config.php";
+include			"../../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
+// let's get the configuration data
+
+$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
+$mysitequery = mysqli_query($dbconn,$mysiteq);
+while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
+	$website_url				= $mysiteopt['website_url'];
+	$website_name				= $mysiteopt['website_name'];
+	$website_description		= $mysiteopt['website_description'];
+	$default_locale			= $mysiteopt['default_locale'];
+	$open_registration		= $mysiteopt['open_registrations'];
+	$posts_are_called			= $mysiteopt['posts_are_called'];
+	$post_is_called			= $mysiteopt['post_is_called'];
+	$reposts_are_called		= $mysiteopt['reposts_are_called'];
+	$repost_is_called			= $mysiteopt['repost_is_called'];
+	$users_are_called			= $mysiteopt['users_are_called'];
+	$user_is_called			= $mysiteopt['user_is_called'];
+	$favorites_are_called	= $mysiteopt['favorites_are_called'];
+	$favorite_is_called		= $mysiteopt['favorite_is_called'];
+	$max_post_length			= $mysiteopt['max_post_length'];
+}
+
 $pagetitle = "List of time zones";
 
 
-include_once "main-header.php";
+include_once "dash-header.php";
+include_once "dash-nav.php";
 ?>
 <!-- gets a list of time zones -->
-		<article>
-			<h4><?php echo _('Time zones'); ?></h4>
-				<table>
-					<tr>
-						<td><?php echo _('Abbreviation'); ?></td>
-						<td><?php echo _('Time zone name'); ?></td>
-						<td><?php echo _('Offset'); ?></td>
-						<td><?php echo _('DST offset'); ?></td>
-					</tr>
+		<article class="w3-col w3-panel w3-cell m9">
+			<table class="w3-card-2 w3-theme-l3 w3-padding">
+				<caption><?php echo _('Time zones'); ?></caption>
 <?php
-		$tztq = "SELECT * FROM tzt ORDER BY tzt_name ASC";
+		$tztq = "SELECT * FROM time_zones ORDER BY time_zones_name ASC";
 		$tztquery = mysqli_query($dbconn,$tztq);
 
 		while ($tztopt = mysqli_fetch_assoc($tztquery)) {
-			$tzt_abbr	= $tztopt['tzt_abbr'];
-			$tzt_name	= $tztopt['tzt_name'];
-			$tzt_id		= $tztopt['tzt_id'];
-			$tzt_off		= $tztopt['tzt_offset'];
-			$tzt_dst		= $tztopt['tzt_dst_offset'];
+			$tzt_abbr	= $tztopt['time_zones_abbr'];
+			$tzt_name	= $tztopt['time_zones_name'];
+			$tzt_id		= $tztopt['time_zones_id'];
+			$tzt_off		= $tztopt['time_zones_offset'];
+			$tzt_dst		= $tztopt['time_zones_dst_offset'];
 			echo "\t\t\t<tr>\n";
-			echo "\t\t\t\t<td>".$tzt_abbr."</td>\n";
-			echo "\t\t\t\t<td><a href=\"the-time-zone.php?tzid=".$tzt_id."\">".$tzt_name."</a></td>\n";
+			echo "\t\t\t\t<td><a href=\"the-time-zone.php?tzid=".$tzt_id."\">"._($tzt_name)."</a></td>\n";
 			echo "\t\t\t\t<td>".$tzt_off."</td>\n";
 			echo "\t\t\t\t<td>".$tzt_dst."</td>\n";
+			echo "\t\t\t\t<td><a href=\"edit-time-zone.php?tzid=".$tzt_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t<td><a href=\"delete-time-zone.php?tzid=".$tzt_id."\">"._('Delete')."</a></td>\n";
 			echo "\t\t\t</tr>\n";
 		}
 ?>
+			</table>
 		</article>
 <?php
-include_once "main-footer.php";
+include_once "dash-footer.php";
 ?>
