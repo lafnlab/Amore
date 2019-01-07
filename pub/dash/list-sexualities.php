@@ -45,7 +45,7 @@ include_once "dash-nav.php";
 <!-- gets a list of sexualities -->
 		<article class="w3-col w3-panel w3-cell m9">
 			<table class="w3-card-2 w3-theme-l3 w3-padding">
-				<caption><?php echo _('Genders'); ?></caption>
+				<caption><?php echo _('Sexualities'); ?></caption>
 <?php
 		$sxuq = "SELECT * FROM sexualities ORDER BY sexualities_name ASC";
 		$sxuquery = mysqli_query($dbconn,$sxuq);
