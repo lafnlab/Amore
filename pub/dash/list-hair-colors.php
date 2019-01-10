@@ -44,8 +44,12 @@ include_once "dash-nav.php";
 ?>
 <!-- gets a list of hair colors -->
 		<article class="w3-col w3-panel w3-cell m9">
-			<table class="w3-card-2 w3-theme-l3 w3-padding">
-				<caption><?php echo _('Hair colors'); ?></caption>
+			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
+				<span><?php echo _('Add a hair color ')."<a href=\"add-hair-color.php\">"._('here').".</a>";?></span>
+			</div>
+			<div class="w3-card-2 w3-theme-l3 w3-padding">
+			<h4><?php echo _($pagetitle); ?></h4>
+				<table>
 <?php
 		$harq = "SELECT * FROM hair_colors ORDER BY hair_colors_color ASC";
 		$harquery = mysqli_query($dbconn,$harq);
@@ -54,13 +58,14 @@ include_once "dash-nav.php";
 			$har_name	= $haropt['hair_colors_color'];
 			$har_id		= $haropt['hair_colors_id'];
 			echo "\t\t\t\t<tr>\n";
-			echo "\t\t\t\t\t<td><a href=\"the-hair-color.php?hid=".$har_id."\">"._($har_name)."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"edit-hair-color.php?hid=".$har_id."\">"._('Edit')."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"delete-hair-color.php?hid=".$har_id."\">"._('Delete')."</a></td>\n";
-			echo "\t\t\t\t</tr>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"the-hair-color.php?hid=".$har_id."\">"._($har_name)."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"edit-hair-color.php?hid=".$har_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"delete-hair-color.php?hid=".$har_id."\">"._('Delete')."</a></td>\n";
+			echo "\t\t\t\t\t</tr>\n";
 		}
 ?>
-			</table>
+				</table>
+			</div>
 		</article>
 <?php
 include_once "dash-footer.php";

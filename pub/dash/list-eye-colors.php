@@ -44,8 +44,12 @@ include_once "dash-nav.php";
 ?>
 <!-- gets a list of eye colors -->
 		<article class="w3-col w3-panel w3-cell m9">
-			<table class="w3-card-2 w3-theme-l3 w3-padding">
-				<caption><?php echo _('Eye colors'); ?></caption>
+			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
+				<span><?php echo _('Add an eye color ')."<a href=\"add-eye-color.php\">"._('here').".</a>";?></span>
+			</div>
+			<div class="w3-card-2 w3-theme-l3 w3-padding">
+			<h4><?php echo _($pagetitle); ?></h4>
+				<table>
 <?php
 		$eyeq = "SELECT * FROM eye_colors ORDER BY eye_colors_color ASC";
 		$eyequery = mysqli_query($dbconn,$eyeq);
@@ -54,13 +58,14 @@ include_once "dash-nav.php";
 			$eye_name	= $eyeopt['eye_colors_color'];
 			$eye_id		= $eyeopt['eye_colors_id'];
 			echo "\t\t\t\t<tr>\n";
-			echo "\t\t\t\t\t<td><a href=\"the-eye-color.php?eid=".$eye_id."\">"._($eye_name)."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"edit-eye-color.php?eid=".$eye_id."\">"._('Edit')."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"delete-eye-color.php?eid=".$eye_id."\">"._('Delete')."</a></td>\n";
-			echo "\t\t\t\t</tr>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"the-eye-color.php?eid=".$eye_id."\">"._($eye_name)."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"edit-eye-color.php?eid=".$eye_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"delete-eye-color.php?eid=".$eye_id."\">"._('Delete')."</a></td>\n";
+			echo "\t\t\t\t\t</tr>\n";
 		}
 ?>
-			</table>
+				</table>
+			</div>
 		</article>
 <?php
 include_once "dash-footer.php";

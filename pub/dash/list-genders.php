@@ -44,8 +44,12 @@ include_once "dash-nav.php";
 ?>
 <!-- gets a list of genders -->
 		<article class="w3-col w3-panel w3-cell m9">
-			<table class="w3-card-2 w3-theme-l3 w3-padding">
-				<caption><?php echo _('Genders'); ?></caption>
+			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
+				<span><?php echo _('Add a gender ')."<a href=\"add-gender.php\">"._('here').".</a>";?></span>
+			</div>
+			<div class="w3-card-2 w3-theme-l3 w3-padding">
+			<h4><?php echo _($pagetitle); ?></h4>
+				<table>
 <?php
 		$genq = "SELECT * FROM genders ORDER BY genders_name ASC";
 		$genquery = mysqli_query($dbconn,$genq);
@@ -54,13 +58,14 @@ include_once "dash-nav.php";
 			$gen_name	= $genopt['genders_name'];
 			$gen_id		= $genopt['genders_id'];
 			echo "\t\t\t\t<tr>\n";
-			echo "\t\t\t\t\t<td><a href=\"the-gender.php?gid=".$gen_id."\">"._($gen_name)."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"edit-gender.php?gid=".$gen_id."\">"._('Edit')."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"delete-gender.php?gid=".$gen_id."\">"._('Delete')."</a></td>\n";
-			echo "\t\t\t\t</tr>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"the-gender.php?gid=".$gen_id."\">"._($gen_name)."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"edit-gender.php?gid=".$gen_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"delete-gender.php?gid=".$gen_id."\">"._('Delete')."</a></td>\n";
+			echo "\t\t\t\t\t</tr>\n";
 		}
 ?>
-			</table>
+				</table>
+			</div>
 		</article>
 <?php
 include_once "dash-footer.php";

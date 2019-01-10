@@ -44,14 +44,18 @@ include_once "dash-nav.php";
 ?>
 <!-- gets a list of currencies -->
 		<article class="w3-col w3-panel w3-cell m9">
-			<table class="w3-card-2 w3-theme-l3 w3-padding">
-				<caption><?php echo _('Currencies'); ?></caption>
-				<tr>
-					<td><?php echo _('ISO code'); ?></td>
-					<td><?php echo _('Currency name'); ?></td>
-					<td><?php echo _('Symbol'); ?></td>
-					<td><?php echo _('Digital?'); ?></td>
-				</tr>
+			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
+				<span><?php echo _('Add a currency ')."<a href=\"add-currency.php\">"._('here').".</a>";?></span>
+			</div>
+			<div class="w3-card-2 w3-theme-l3 w3-padding">
+				<h4><?php echo _($pagetitle); ?></h4>
+				<table>
+					<tr>
+						<td><?php echo _('ISO code'); ?></td>
+						<td><?php echo _('Currency name'); ?></td>
+						<td><?php echo _('Symbol'); ?></td>
+						<td><?php echo _('Digital?'); ?></td>
+					</tr>
 <?php
 		$dinq = "SELECT * FROM currencies ORDER BY currencies_name ASC";
 		$dinquery = mysqli_query($dbconn,$dinq);
@@ -68,17 +72,18 @@ include_once "dash-nav.php";
 			} else {
 				$digital = _('Yes');
 			}
-			echo "\t\t\t\t<tr>\n";
-			echo "\t\t\t\t\t<td>".$din_iso."</td>\n";
-			echo "\t\t\t\t\t<td><a href=\"the-currency.php?did=".$din_id."\">"._($din_name)."</a></td>\n";
-			echo "\t\t\t\t\t<td>".$din_sym."</td>\n";
-			echo "\t\t\t\t\t<td>".$digital."</td>\n";
-			echo "\t\t\t\t\t<td><a href=\"edit-currency.php?did=".$din_id."\">"._('Edit')."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"delete-currency.php?did=".$din_id."\">"._('Delete')."</a></td>\n";
-			echo "\t\t\t\t</tr>\n";
+			echo "\t\t\t\t\t<tr>\n";
+			echo "\t\t\t\t\t\t<td>".$din_iso."</td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"the-currency.php?did=".$din_id."\">"._($din_name)."</a></td>\n";
+			echo "\t\t\t\t\t\t<td>".$din_sym."</td>\n";
+			echo "\t\t\t\t\t\t<td>".$digital."</td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"edit-currency.php?did=".$din_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"delete-currency.php?did=".$din_id."\">"._('Delete')."</a></td>\n";
+			echo "\t\t\t\t\t</tr>\n";
 		}
 ?>
-			</table>
+				</table>
+			</div>
 		</article>
 <?php
 include_once "dash-footer.php";

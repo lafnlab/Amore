@@ -43,8 +43,11 @@ include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
+			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
+				<span><?php echo _('Add a user ')."<a href=\"add-user.php\">"._('here').".</a>";?></span>
+			</div>
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+			<h4><?php echo _($pagetitle); ?></h4>
 				<table>
 <?php
 				$usq = "SELECT * FROM users ORDER BY user_name ASC";

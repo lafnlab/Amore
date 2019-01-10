@@ -43,8 +43,12 @@ include_once "dash-nav.php";
 ?>
 <!-- gets a list of spoken languages -->
 		<article class="w3-col w3-panel w3-cell m9">
-			<table class="w3-card-2 w3-theme-l3 w3-padding">
-				<caption><?php echo _('Spoken languages'); ?></caption>
+			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
+				<span><?php echo _('Add a spoken language ')."<a href=\"add-spoken-language.php\">"._('here').".</a>";?></span>
+			</div>
+			<div class="w3-card-2 w3-theme-l3 w3-padding">
+			<h4><?php echo _($pagetitle); ?></h4>
+				<table>
 <?php
 		$spkq = "SELECT * FROM spoken_languages ORDER BY spoken_languages_name ASC";
 		$spkquery = mysqli_query($dbconn,$spkq);
@@ -52,14 +56,15 @@ include_once "dash-nav.php";
 		while ($spkopt = mysqli_fetch_assoc($spkquery)) {
 			$spk_name	= $spkopt['spoken_languages_name'];
 			$spk_id		= $spkopt['spoken_languages_id'];
-			echo "\t\t\t\t<tr>\n";
-			echo "\t\t\t\t\t<td><a href=\"the-spoken-language.php?spid=".$spk_id."\">"._($spk_name)."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"edit-spoken-language.php?spid=".$spk_id."\">"._('Edit')."</a></td>\n";
-			echo "\t\t\t\t\t<td><a href=\"delete-spoken-language.php?spid=".$spk_id."\">"._('Delete')."</a></td>\n";
+			echo "\t\t\t\t\t<tr>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"the-spoken-language.php?spid=".$spk_id."\">"._($spk_name)."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"edit-spoken-language.php?spid=".$spk_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"delete-spoken-language.php?spid=".$spk_id."\">"._('Delete')."</a></td>\n";
 			echo "\t\t\t\t</tr>\n";
 		}
 ?>
-			</table>
+				</table>
+			</div>
 		</article>
 <?php
 include_once "dash-footer.php";
