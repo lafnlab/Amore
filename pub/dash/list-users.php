@@ -60,6 +60,8 @@ include_once "dash-nav.php";
 					echo "\t\t\t\t\t<tr>\n";
 					echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
 					echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
+					echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
+					echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
 					echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
 					echo "\t\t\t\t\t</tr>\n";
 				}
