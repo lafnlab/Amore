@@ -71,8 +71,8 @@ if (isset($_POST['currsubmit'])) {
 		$currdigi	= 0;
 	}
 
-		$craddq 	= "UPDATE currencies SET currencies_name='".$currname."', currencies_iso='".$curriso."', currencies_symbol='".$currsym."', currencies_digital='".$currdigi."' WHERE currencies_id='".$currid."'";
-		$craddquery	= mysqli_query($dbconn,$craddq);
+		$crupdq 	= "UPDATE currencies SET currencies_name='".$currname."', currencies_iso='".$curriso."', currencies_symbol='".$currsym."', currencies_digital='".$currdigi."' WHERE currencies_id='".$currid."'";
+		$crupdquery	= mysqli_query($dbconn,$crupdq);
 
 		redirect('list-currencies.php');
 

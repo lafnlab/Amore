@@ -60,8 +60,8 @@ if (isset($_POST['eyesubmit'])) {
 	$eyid			= $_POST['eyeid'];
 	$eycolor		= nicetext($_POST['eyecolor']);
 
-		$eyaddq 	= "UPDATE eye_colors SET eye_colors_color='".$eycolor."' WHERE eye_colors_id='".$eyid."'";
-		$eyaddquery	= mysqli_query($dbconn,$eyaddq);
+		$eyupdq 	= "UPDATE eye_colors SET eye_colors_color='".$eycolor."' WHERE eye_colors_id='".$eyid."'";
+		$eyupdquery	= mysqli_query($dbconn,$eyupdq);
 		redirect('list-eye-colors.php');
 
 } // if isset $_POST 'eyesubmit'
