@@ -77,10 +77,10 @@ if ($message != '' || NULL) {
 					<table>
 						<tr>
 							<td class="inputlabel"><label for="spkname"><?php echo _('Spoken language name');?></label></td>
-							<td><input type="text" name="spkname" id="spkname" class="inputtext" required maxlength="100"></td>
+							<td><input type="text" name="spkname" id="spkname" class="w3-input w3-border w3-margin-bottom" required maxlength="100"></td>
 						</tr>
 					</table>
-					<input type="submit" name="spksubmit" id="spksubmit" class="button" value="<?php echo _('Submit'); ?>">
+					<input type="submit" name="spksubmit" id="spksubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Submit'); ?>">
 				</form>
 			</div>
 		</article>

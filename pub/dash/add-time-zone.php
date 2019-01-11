@@ -80,22 +80,22 @@ if ($message != '' || NULL) {
 					<table>
 						<tr>
 							<td class="inputlabel"><label for="tzabbr"><?php echo _('Time zone abbreviation');?></label></td>
-							<td><input type="text" name="tzabbr" id="tzabbr" class="inputtext" maxlength="100"></td>
+							<td><input type="text" name="tzabbr" id="tzabbr" class="w3-input w3-border w3-margin-bottom" maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzname"><?php echo _('Time zone name');?></label></td>
-							<td><input type="text" name="tzname" id="tzname" class="inputtext" required maxlength="100"></td>
+							<td><input type="text" name="tzname" id="tzname" class="w3-input w3-border w3-margin-bottom" required maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzoffset"><?php echo _('Time zone offset');?></label></td>
-							<td><input type="text" name="tzoffset" id="tzoffset" class="inputtext" required value="+00:00" maxlength="100"></td>
+							<td><input type="text" name="tzoffset" id="tzoffset" class="w3-input w3-border w3-margin-bottom" required value="+00:00" maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzdstoff"><?php echo _('Time zone DST offset');?></label></td>
-							<td><input type="text" name="tzdstoff" id="tzdstoff" class="inputtext" required value="+00:00"maxlength="100"></td>
+							<td><input type="text" name="tzdstoff" id="tzdstoff" class="w3-input w3-border w3-margin-bottom" required value="+00:00"maxlength="100"></td>
 						</tr>
 					</table>
-					<input type="submit" name="tztsubmit" id="tztsubmit" class="button" value="<?php echo _('Submit'); ?>">
+					<input type="submit" name="tztsubmit" id="tztsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Submit'); ?>">
 				</form>
 			</div>
 		</article>
