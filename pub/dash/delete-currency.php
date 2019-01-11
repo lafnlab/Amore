@@ -47,3 +47,4 @@ if ($sel_id != '') {
 	$dindelquery = mysqli_query($dbconn,$dindelq);
 	redirect("list-currencies.php");
 }
+?>
