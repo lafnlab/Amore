@@ -7,8 +7,11 @@
  * since Amore version 0.1
  *
  */
+ if(isset($_COOKIE['loc'])) {
+	$user_locale = $_COOKIE['loc'];
+ }
 
- 	// have Amore use the right localization
+  	// have Amore use the right localization
 	putenv("LC_MESSAGES=".$user_locale);
 	setlocale(LC_MESSAGES, $user_locale);
 

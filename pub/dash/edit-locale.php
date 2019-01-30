@@ -55,11 +55,10 @@ if ($sel_id != '') {
 }
 
 if ($i18ctry != "") {
-	$pagetitle 	= _("Edit ").$i18lang."_".$i18ctry;
+	$pagetitle 	= $i18lang."_".$i18ctry;
 } else {
-	$pagetitle	= _("Edit ").$i18lang;
+	$pagetitle	= $i18lang;
 }
-#$message		= 'test message';
 
 // PROCESSING
 if (isset($_POST['i18submit'])) {
@@ -87,7 +86,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo $pagetitle; ?></h4>
+				<h4><?php echo _("Edit ").$pagetitle; ?></h4>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 				<input type="hidden" name="i18id" value="<?php echo $i18id; ?>">
 					<table>

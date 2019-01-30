@@ -74,7 +74,6 @@ if (isset($sel_id)) {
 }
 $objdescription = _("Dashboard for ").$usrname;
 $visitortitle = $usrname;
-$pagetitle = _("Edit your profile");
 
 // POST FORM SUBMISSION PROCESSING
 if (isset($_POST['prosubmit'])) {
@@ -160,7 +159,7 @@ include_once "dash-nav.php";
 ?>
 			<article class="w3-col w3-panel w3-cell m8">
 				<div class="w3-card-2 w3-theme-l3 w3-padding">
-					<h4><?php echo $pagetitle; ?></h4>
+					<h4><?php echo _("Edit your profile"); ?></h4>
 				<table>
 					<form id="editprofile" class="w3-card-2 w3-theme-l3 w3-padding maincard" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?uid=".$usrid); ?>">
 					<tr>

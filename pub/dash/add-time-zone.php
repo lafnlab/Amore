@@ -36,9 +36,6 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle 	= _("Add a time zone");
-#$message		= 'test message';
-
 // PROCESSING
 if (isset($_POST['tztsubmit'])) {
 
@@ -75,7 +72,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo $pagetitle; ?></h4>
+				<h4><?php echo _("Add a time zone"); ?></h4>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<table>
 						<tr>

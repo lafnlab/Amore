@@ -36,9 +36,6 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle = _("List of eye colors");
-
-
 include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
@@ -48,7 +45,7 @@ include_once "dash-nav.php";
 				<span><?php echo _('Add an eye color ')."<a href=\"add-eye-color.php\">"._('here').".</a>";?></span>
 			</div>
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-			<h4><?php echo $pagetitle; ?></h4>
+			<h4><?php echo _("List of eye colors"); ?></h4>
 				<table>
 <?php
 		$eyeq = "SELECT * FROM eye_colors ORDER BY eye_colors_color ASC";

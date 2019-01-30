@@ -59,7 +59,11 @@ if (isset($sel_id)) {
 		$usrid		= $usropt['user_id'];
 		$usrname		= $usropt['user_name'];
 	}
+
+	include "localization.php";
 }
+
+
 $objdescription = _("Dashboard for ").$usrname;
 $visitortitle = $usrname;
 $pagetitle = _("Hello, ").$visitortitle;
@@ -105,8 +109,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 		echo "</a></span>\n";
 		echo "\t\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t\t<!-- future functionality on span below -->\n";
-		echo "\t\t\t\t\t<a href=\"#\" title=\"Reply\">⮪0</a>&nbsp;<a href=\"#\" title=\"Upvote\">⤊0</a>&nbsp;<a href=\"#\" title=\"Downvote\">⤋0</a>&nbsp;<a href=\"#\" title=\"Favorite\">🎔 0</a>&nbsp;…\n";
-		echo "\t\t\t\t</div>\n";
+		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪0</a>&nbsp;<a href=\"#\" title=\""._('Upvote')."\">⤊0</a>&nbsp;<a href=\"#\" title=\""._('Downvote')."\">⤋0</a>&nbsp;<a href=\"#\" title=\""._('Favorite')."\">🎔 0</a>&nbsp;…\n";		echo "\t\t\t\t</div>\n";
 	}
 } else {
 		echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";

@@ -90,8 +90,6 @@ if (isset($sel_id)) {
 }
 
 $visitortitle = $usrname;
-$pagetitle 	= _("Add a post");
-#$message		= 'test message';
 
 // PROCESSING
 if (isset($_POST['addpostsubmit'])) {

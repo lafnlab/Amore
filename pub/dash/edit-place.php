@@ -54,9 +54,6 @@ if ($sel_id != '') {
 	}
 }
 
-$pagetitle 	= _("Edit ").$planame;
-#$message		= 'test message';
-
 // PROCESSING
 if (isset($_POST['placesubmit'])) {
 
@@ -81,7 +78,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo $pagetitle; ?></h4>
+				<h4><?php echo _("Edit ").$planame; ?></h4>
 			<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 			<input type="hidden" name="placeid" value="<?php echo $plaid; ?>">
 				<table>

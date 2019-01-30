@@ -36,9 +36,6 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle = _("List of currencies");
-
-
 include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
@@ -48,7 +45,7 @@ include_once "dash-nav.php";
 				<span><?php echo _('Add a currency ')."<a href=\"add-currency.php\">"._('here').".</a>";?></span>
 			</div>
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo $pagetitle; ?></h4>
+				<h4><?php echo _("List of currencies"); ?></h4>
 				<table>
 					<tr>
 						<td><?php echo _('ISO code'); ?></td>
