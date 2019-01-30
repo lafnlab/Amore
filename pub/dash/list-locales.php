@@ -1,8 +1,8 @@
 <?php
 /*
- * pub/dash/list-time-zones.php
+ * pub/dash/list-locales.php
  *
- * Displays a list of time zones in the database.
+ * Displays a list of locales in the database.
  *
  * since Amore version 0.1
  *
@@ -36,36 +36,36 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle = "List of time zones";
+$pagetitle = _("List of locales");
 
 
 include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
-<!-- gets a list of time zones -->
+<!-- gets a list of locales -->
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
-				<span><?php echo _('Add a time zone ')."<a href=\"add-time-zone.php\">"._('here').".</a>";?></span>
+				<span><?php echo _('Add a locale ')."<a href=\"add-locale.php\">"._('here').".</a>";?></span>
 			</div>
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-			<h4><?php echo _($pagetitle); ?></h4>
+			<h4><?php echo $pagetitle; ?></h4>
 				<table>
 <?php
-		$tztq = "SELECT * FROM time_zones ORDER BY time_zones_name ASC";
-		$tztquery = mysqli_query($dbconn,$tztq);
+		$i18q = "SELECT * FROM locales ORDER BY locales_language,locales_country ASC";
+		$i18query = mysqli_query($dbconn,$i18q);
 
-		while ($tztopt = mysqli_fetch_assoc($tztquery)) {
-			$tzt_abbr	= $tztopt['time_zones_abbr'];
-			$tzt_name	= $tztopt['time_zones_name'];
-			$tzt_id		= $tztopt['time_zones_id'];
-			$tzt_off		= $tztopt['time_zones_offset'];
-			$tzt_dst		= $tztopt['time_zones_dst_offset'];
-			echo "\t\t\t\t\t<tr>\n";
-			echo "\t\t\t\t\t\t<td><a href=\"the-time-zone.php?tzid=".$tzt_id."\">"._($tzt_name)."</a></td>\n";
-			echo "\t\t\t\t\t\t<td>".$tzt_off."</td>\n";
-			echo "\t\t\t\t\t\t<td>".$tzt_dst."</td>\n";
-			echo "\t\t\t\t\t\t<td><a href=\"edit-time-zone.php?tzid=".$tzt_id."\">"._('Edit')."</a></td>\n";
-			echo "\t\t\t\t\t\t<td><a href=\"delete-time-zone.php?tzid=".$tzt_id."\">"._('Delete')."</a></td>\n";
+		while ($i18opt = mysqli_fetch_assoc($i18query)) {
+			$i18_lang	= $i18opt['locales_language'];
+			$i18_ctry	= $i18opt['locales_country'];
+			$i18_id		= $i18opt['locales_id'];
+			echo "\t\t\t\t<tr>\n";
+			if ($i18_ctry != '') {
+				echo "\t\t\t\t\t\t<td><a href=\"the-locale.php?i18id=".$i18_id."\">".$i18_lang."_".$i18_ctry."</a></td>\n";
+			} else {
+				echo "\t\t\t\t\t\t<td><a href=\"the-locale.php?i18id=".$i18_id."\">".$i18_lang."</a></td>\n";
+			}
+			echo "\t\t\t\t\t\t<td><a href=\"edit-locale.php?i18id=".$i18_id."\">"._('Edit')."</a></td>\n";
+			echo "\t\t\t\t\t\t<td><a href=\"delete-locale.php?i18id=".$i18_id."\">"._('Delete')."</a></td>\n";
 			echo "\t\t\t\t\t</tr>\n";
 		}
 ?>

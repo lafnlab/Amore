@@ -36,7 +36,7 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle = "List of nationalities";
+$pagetitle = _("List of nationalities");
 
 
 include_once "dash-header.php";
@@ -48,7 +48,7 @@ include_once "dash-nav.php";
 				<span><?php echo _('Add a nationality ')."<a href=\"add-nationality.php\">"._('here').".</a>";?></span>
 			</div>
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+				<h4><?php echo $pagetitle; ?></h4>
 				<table>
 <?php
 		$natq = "SELECT * FROM nationalities ORDER BY nationalities_name ASC";

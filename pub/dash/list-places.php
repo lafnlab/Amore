@@ -36,7 +36,7 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle = "List of  places";
+$pagetitle = _("List of places");
 
 
 include_once "dash-header.php";
