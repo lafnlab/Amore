@@ -156,8 +156,8 @@ if ($message != '' || NULL) {
 	echo "\t\t\t<div class=\"w3-col m6 w3-row-padding w3-panel\">\n";
 	echo "\t\t\t\t<!-- statistics section -->\n";
 	echo "\t\t\t\t<div class=\"w3-card-2 w3-padding w3-theme-l3\">\n";
-	echo "\t\t\t\t<span>Number of ".$users_are_called." = ".user_quantity($user)."</span><br>\n";
-	echo "\t\t\t\t<span>Number of ".$posts_are_called." = ".post_quantity($post)."</span><br>\n";
+	echo "\t\t\t\t<span>"._("Number of ").$users_are_called." = ".user_quantity($user)."</span><br>\n";
+	echo "\t\t\t\t<span>"._("Number of ").$posts_are_called." = ".post_quantity($post)."</span><br>\n";
 	echo "\t\t\t\t</div>\n";
 	echo "\t\t\t</div> <!-- end MIDDLE COLUMN -->\n\n";
 
@@ -165,7 +165,7 @@ if ($message != '' || NULL) {
 	if (post_quantity($posts) > 0) {
 		echo "\t\t\t<div class=\"w3-col m3 w3-row-padding w3-panel\">\n";
 		echo "\t\t\t<h2 class=\"w3-center\">"._('Recent posts')."</h2>\n";
-		$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC";
+		$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" LIMIT 50 ORDER BY posts_timestamp DESC";
 		$pst_query = mysqli_query($dbconn,$pst_q);
 		while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
 			$postid		= $pst_opt['posts_id'];

@@ -63,6 +63,8 @@ if(isset($_POST['loginsubmit'])) {
  				session_start();
 				setcookie("id",$id,0);
 				setcookie("uname",$uname,0);
+				$loginq = "UPDATE users SET user_last_login='".date('Y-m-d H:i:s')."' WHERE user_id='".$id."'";
+				$loginquery = mysqli_query($dbconn,$loginq);
 				redirect("dash/my-profile.php?uid=".$id);
 
 /* if the password is incorrect							*/
@@ -73,7 +75,7 @@ if(isset($_POST['loginsubmit'])) {
 
 /* the user IS NOT in the db								*/
 	} else {
-		$message = "User not found";
+		$message = _("User not found");
 
 	}
 
@@ -85,7 +87,7 @@ if(isset($_POST['loginsubmit'])) {
     session_destroy();
 }
 
-$pagetitle = "Login to ".$website_name;
+$pagetitle = _("Login to ").$website_name;
 include_once "main-header.php";
 ?>
 <?php
@@ -102,7 +104,7 @@ if ($message != '' || NULL) {
 
 			<div class="w3-col w3-panel w3-cell m6 l4">
 				<form id="basicform" method="post" class="w3-card-2 w3-theme-l3 w3-padding maincard" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-					<h2 class="w3-center"><?php echo  _("Login to ").$website_name; ?></h2>
+					<h2 class="w3-center"><?php echo  $pagetitle; ?></h2>
 					<p>
 						<label for="loginuser"><?php echo _('Username'); ?></label>
 						<input type="text" name="loginuser" id="loginuser" class="w3-input w3-border w3-margin-bottom" required maxlength="50">

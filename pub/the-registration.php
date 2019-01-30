@@ -112,19 +112,19 @@ if($open_registration == FALSE) {
 /* if a password is verified							*/
 				if(isset($upass2)) {
 					if($upass1 !== $upass2) {
-						$message = "Passphrases do not match";
+						$message = _("Passphrases do not match");
 					}
 				} else {
-					$message = "Please verify the passphrase";
+					$message = _("Please verify the passphrase");
 				}
 
 /* if it is too short, error                    */
             if(strlen($upass1) < 16) {
-                $message = "Passphrase is too short.";
+                $message = _("Passphrase is too short.");
 
 /* Is the password complex enough?              */
             } else if (!preg_match("/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/",$upass1)){
-                $message = "Password is not complex";
+                $message = _("Password is not complex");
             } else {
 /* encrypt the password                         */
                 $hash_pass = password_hash($upass1,PASSWORD_DEFAULT);
@@ -140,9 +140,9 @@ if($open_registration == FALSE) {
 
 /* if age < 18, show an error                   */
             if(user_age($udob) < 18) {
-                $message = "You are too young";
+                $message = _("You are too young");
             } else if (user_age($udob) > 110) {
-                $message = "Your date of birth had a typo. Try again";
+                $message = _("Your date of birth had a typo. Try again");
             }
         }
 
@@ -164,7 +164,7 @@ if($open_registration == FALSE) {
     session_destroy();
 }
 
-$pagetitle = "Create an account";
+$pagetitle = _("Create an account");
 include_once "main-header.php";
 ?>
 <?php
@@ -191,7 +191,7 @@ if ($message != '' || NULL) {
 			</div>
 			<div class="w3-col w3-panel w3-cell m6 l4">
 			<form id="basicform" method="post" class="w3-card-2 w3-theme-l3 w3-padding maincard" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-					<h2 class="w3-center"><?php echo _($pagetitle); ?></h2>
+					<h2 class="w3-center"><?php echo $pagetitle; ?></h2>
 					<p>
 						<label for="acctname"><?php echo _('Username');?></label>
 						<input type="text" name="acctname" id="acctname" class="w3-input w3-border w3-margin-bottom" required maxlength="50">

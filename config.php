@@ -9,7 +9,7 @@
  * since Amore version 0.1
  *
  */
- 
+
 #
 # $metalang is the default language. Since i18n isn't setup yet, this default
 # to English unless the site admin changes it.
@@ -30,7 +30,7 @@ $siteurl = "http://blackh3art.media.dating";
 #
 # $metadescription is a summary of the website that may appear on websites
 # See https://moz.com/learn/seo/meta-description
-$metadescription = "Amore is open-source PHP/MySQL software for the Fediverse - a decentralized social network of thousands of different communities.";
+$metadescription = _("Amore is open-source PHP/MySQL software for the Fediverse - a decentralized social network of thousands of different communities.");
 
 #
 # $greeting is a generic greeting for any visitor to the site.
@@ -46,16 +46,16 @@ $visitortitle = "Guest";
 #
 # $posts_are_called allows the admin to change the name of the posts on their site.
 # Twitter has tweets. Mastodon has toots. This site can define their own name.
-$posts_are_called	= "Posts";	// plural form
-$post_is_called	= "Post";	// singular form
+$posts_are_called	= _("Posts");	// plural form
+$post_is_called	= _("Post");	// singular form
 
-$reposts_are_called	= "Reposts";	// plural form
-$repost_is_called		= "Repost";		// singular form
+$reposts_are_called	= _("Reposts");	// plural form
+$repost_is_called		= _("Repost");		// singular form
 
 #
 # $users_are_called allows the admin to change the name of the users on their site.
-$users_are_called	= "Users";	// plural form
-$user_is_called	= "User";	// singular form
+$users_are_called	= _("Users");	// plural form
+$user_is_called	= _("User");	// singular form
 
 #
 # $open_registration determines whether potential users can create their own accounts.
