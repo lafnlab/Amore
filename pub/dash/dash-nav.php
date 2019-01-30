@@ -17,14 +17,14 @@
 			<nav class="w3-col w3-panel w3-cell m3">
 				<div class="w3-card-2 w3-theme-l3 w3-padding">
 					<ul>
-						<li><a href="#" title="Home will show posts from everyone the user is following, including their own.">Home</a></li>
-						<li><a href="#" title="Mentions will show any posts where the user is mentioned.">Mentions</a></li>
-						<li><a href="#" title="Messages will be private/direct messages between friends.">Messages</a></li>
-						<li><a href="#" title="A list of the user's friends (Friends follow each other).">Friends</a></li>
-						<li><a href="#" title="A list of accounts the user follows.">Following</a></li>
-						<li><a href="#" title="A list of accounts that follow this user.">Followers</a></li>
-						<li><a href="#" title="Lists created by the user">Lists</a></li>
-						<li><a href="#" title="A list of the user's favorites">Favorites</a></li>
+						<li><a href="#" title="<?php echo _("Home will show posts from everyone the user is following, including their own."); ?>"><?php echo _("Home"); ?></a></li>
+						<li><a href="#" title="<?php echo _("Mentions will show any posts where the user is mentioned."); ?>"><?php echo _("Mentions"); ?></a></li>
+						<li><a href="#" title="<?php echo _("Messages will be private/direct messages between friends."); ?>"><?php echo _("Messages"); ?></a></li>
+						<li><a href="#" title="<?php echo _("A list of the user's friends (Friends follow each other)."); ?>"><?php echo _("Friends"); ?></a></li>
+						<li><a href="#" title="<?php echo _("A list of accounts the user follows."); ?>"><?php echo _("Following"); ?></a></li>
+						<li><a href="#" title="<?php echo _("A list of accounts that follow this user."); ?>"><?php echo _("Followers"); ?></a></li>
+						<li><a href="#" title="<?php echo _("Lists created by the user."); ?>"><?php echo _("Lists"); ?></a></li>
+						<li><a href="#" title="<?php echo _("A list of the user's favorites."); ?>"><?php echo _("Favorites"); ?></a></li>
 					</ul>
 				</div>
 <?php
@@ -47,6 +47,7 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t\t\t<li><a href=\"list-sexualities.php\">"._('List sexualities')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-spoken-languages.php\">"._('List spoken languages')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-time-zones.php\">"._('List time zones')."</a></li>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"list-users.php\">"._('List users')."</a></li>\n";
 			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t</div>\n";
 		}
