@@ -24,7 +24,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="shortcut icon" href="favicon.ico">
-	<title><?php echo _($pagetitle); ?></title>
+	<title><?php echo $pagetitle; ?></title>
 	<meta name="description" content="<?php echo $website_description; ?>">
 	<meta property="og:title" content="<?php echo $pagetitle; ?>">
 	<meta property="og:description" content="<?php echo $$website_description; ?>">
