@@ -36,7 +36,7 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle 	= "Add a currency";
+$pagetitle 	= _("Add a currency");
 #$message		= 'test message';
 
 // PROCESSING
@@ -58,8 +58,8 @@ if (isset($_POST['currsubmit'])) {
 
 		$craddq 	= "INSERT INTO currencies (currencies_id, currencies_name, currencies_iso, currencies_symbol, currencies_digital) VALUES ('$currid','$currname','$curriso','$currsym','$currdigi')";
 		$craddquery	= mysqli_query($dbconn,$craddq);
-		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
-#		redirect('index.php');
+#		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
+		redirect('list-currencies.php');
 	} else {
 		#$message 	= "There was an error while processing. Please try again.";
 #		redirect('index.html');
@@ -77,7 +77,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+				<h4><?php echo $pagetitle; ?></h4>
 				<table>
 					<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 

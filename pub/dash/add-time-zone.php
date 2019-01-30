@@ -36,7 +36,7 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle 	= "Add a time zone";
+$pagetitle 	= _("Add a time zone");
 #$message		= 'test message';
 
 // PROCESSING
@@ -56,8 +56,8 @@ if (isset($_POST['tztsubmit'])) {
 
 		$tzaddq 	= "INSERT INTO time_zones (time_zones_id, time_zones_abbreviation, time_zones_name, time_zones_offset, time_zones_dst_offset) VALUES ('$tzid','$tzabbr','$tzname','$tzoffset','$tzdstoffset')";
 		$tzaddquery	= mysqli_query($dbconn,$tzaddq);
-		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
-#		redirect('index.php');
+#		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
+		redirect('list-time-zones.php');
 	} else {
 		#$message 	= "There was an error while processing. Please try again.";
 #		redirect('index.html');
@@ -75,7 +75,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+				<h4><?php echo $pagetitle; ?></h4>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<table>
 						<tr>

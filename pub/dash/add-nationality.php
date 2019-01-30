@@ -36,7 +36,7 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$max_post_length			= $mysiteopt['max_post_length'];
 }
 
-$pagetitle 	= "Add a nationality";
+$pagetitle 	= _("Add a nationality");
 #$message		= 'test message';
 
 // PROCESSING
@@ -53,8 +53,8 @@ if (isset($_POST['natsubmit'])) {
 
 		$naaddq 	= "INSERT INTO nationalities (nationalities_id, nationalities_name) VALUES ('$naid','$naname')";
 		$naaddquery	= mysqli_query($dbconn,$naaddq);
-		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
-#		redirect('index.php');
+#		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
+		redirect('list-nationalities.php');
 	} else {
 		#$message 	= "There was an error while processing. Please try again.";
 #		redirect('index.html');
@@ -72,7 +72,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+				<h4><?php echo $pagetitle; ?></h4>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<table>
 						<tr>
