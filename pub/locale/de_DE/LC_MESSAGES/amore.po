@@ -1,22 +1,22 @@
-# Amore v0.2 English language translation.
-# This file is distributed under the same license as the Amore package.
-# Michael Hawkes <translations@dating.media>, 2019.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Amore v0.2\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-30 09:17-0500\n"
-"PO-Revision-Date: 2019-01-30 10:15-0500\n"
-"Language-Team: Amore English Translations <amore.en@dating.media>\n"
+"PO-Revision-Date: 2019-01-30 13:51-0500\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
 "Last-Translator: Michael Hawkes <translations@dating.media>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"Language: de_DE\n"
 
 #.
 #. * pub/main-footer.php
@@ -36,12 +36,12 @@ msgstr ""
 #.
 #: pub/main-footer.php:14 pub/dash/dash-footer.php:14
 msgid "Powered by "
-msgstr "Powered by "
+msgstr "Unterstützt von "
 
 #: pub/main-header.php:39 pub/dash/my-profile.php:96
 #: pub/dash/dash-header.php:40
 msgid "Hello, "
-msgstr "Hello, "
+msgstr "Hallo, "
 
 #.
 #. * pub/main-nav.php
@@ -53,64 +53,66 @@ msgstr "Hello, "
 #.
 #: pub/main-nav.php:28
 msgid "Home will show all of the user's posts own."
-msgstr "Home will show of the user's posts."
+msgstr "Heim zeigt alle Beiträge des Benutzers an."
 
 #: pub/main-nav.php:29 pub/dash/dash-nav.php:21
 msgid "Mentions will show any posts where the user is mentioned."
-msgstr "Mentions will show any posts where the user is mentioned."
+msgstr ""
+"Bei Erwähnungen werden alle Beiträge angezeigt, bei denen der Benutzer "
+"erwähnt wird."
 
 #: pub/main-nav.php:30 pub/dash/dash-nav.php:23
 msgid "A list of the user's friends (Friends follow each other)."
-msgstr "A list of the user's friends (Friends follow each other)."
+msgstr "Eine Liste der Freunde des Benutzers (Freunde folgen einander)."
 
 #: pub/main-nav.php:31 pub/dash/dash-nav.php:24
 msgid "A list of accounts the user follows."
-msgstr "A list of accounts the user follows."
+msgstr "Eine Liste der Konten, denen der Benutzer folgt."
 
 #: pub/main-nav.php:32 pub/dash/dash-nav.php:25
 msgid "A list of accounts that follow this user."
-msgstr "A list of accounts that follow this user."
+msgstr "Eine Liste der Konten, die diesem Benutzer folgen."
 
 #: pub/main-nav.php:33 pub/dash/dash-nav.php:26
 msgid "Lists created by the user."
-msgstr "Lists created by the user."
+msgstr "Vom Benutzer erstellte Listen."
 
 #: pub/main-nav.php:34 pub/dash/dash-nav.php:27
 msgid "A list of the user's favorites."
-msgstr "A list of the user's favorites."
+msgstr "Eine Liste der Favoriten des Benutzers."
 
 #: pub/the-user.php:18 pub/the-post.php:18 pub/the-login.php:17
 #: pub/the-registration.php:18 pub/index.php:22
 msgid "Guest"
-msgstr "Guest"
+msgstr "Gast"
 
 #: pub/the-user.php:103 pub/the-post.php:88
 msgid "Reply"
-msgstr "Reply"
+msgstr "Antworten"
 
 #: pub/the-user.php:103 pub/the-post.php:88
 msgid "Upvote"
-msgstr "Upvote"
+msgstr "Positiv bewertet"
 
 #: pub/the-user.php:103 pub/the-post.php:88
 msgid "Downvote"
-msgstr "Downvote"
+msgstr "Negativ bewertet"
 
 #: pub/the-user.php:103 pub/the-post.php:88
 msgid "Favorite"
-msgstr "Favorite"
+msgstr "Favorit"
 
 #: pub/the-user.php:108 pub/dash/my-profile.php:146
 msgid "There are no posts at the moment"
-msgstr "There are no posts at the moment."
+msgstr "Zur Zeit sind keine Beiträge vorhanden."
 
 #: pub/dash/list-genders.php:39
 msgid "List of genders"
-msgstr "List of genders"
+msgstr "Liste der Geschlechter"
 
 #: pub/dash/list-genders.php:48
 msgid "Add a gender "
-msgstr "Add a gender "
+msgstr "Fügen Sie ein Geschlecht hinzu "
 
 #: pub/dash/list-genders.php:48 pub/dash/list-locales.php:48
 #: pub/dash/list-eye-colors.php:48 pub/dash/list-spoken-languages.php:47
@@ -119,7 +121,7 @@ msgstr "Add a gender "
 #: pub/dash/list-sexualities.php:48 pub/dash/list-time-zones.php:48
 #: pub/dash/list-places.php:49
 msgid "here"
-msgstr "here"
+msgstr "hier"
 
 #: pub/dash/list-genders.php:62 pub/dash/list-locales.php:67
 #: pub/dash/list-eye-colors.php:62 pub/dash/list-spoken-languages.php:61
@@ -131,7 +133,7 @@ msgstr "here"
 #: pub/dash/list-places.php:177 pub/dash/list-places.php:199
 #: pub/dash/list-places.php:221
 msgid "Edit"
-msgstr "Edit"
+msgstr "Bearbeiten"
 
 #: pub/dash/list-genders.php:63 pub/dash/list-locales.php:68
 #: pub/dash/list-eye-colors.php:63 pub/dash/list-spoken-languages.php:62
@@ -143,7 +145,7 @@ msgstr "Edit"
 #: pub/dash/list-places.php:178 pub/dash/list-places.php:200
 #: pub/dash/list-places.php:222
 msgid "Delete"
-msgstr "Delete"
+msgstr "Löschen"
 
 #: pub/dash/edit-gender.php:53 pub/dash/edit-eye-color.php:54
 #: pub/dash/edit-place.php:57 pub/dash/edit-nationality.php:55
@@ -152,11 +154,11 @@ msgstr "Delete"
 #: pub/dash/edit-currency.php:58 pub/dash/edit-hair-color.php:55
 #: pub/dash/edit-spoken-language.php:55
 msgid "Edit "
-msgstr "Edit "
+msgstr "Bearbeiten "
 
 #: pub/dash/edit-gender.php:83 pub/dash/add-gender.php:79
 msgid "Gender name"
-msgstr "Gender name"
+msgstr "Geschlecht Name"
 
 #: pub/dash/edit-gender.php:87 pub/dash/edit-eye-color.php:88
 #: pub/dash/edit-place.php:112 pub/dash/edit-nationality.php:89
@@ -165,22 +167,22 @@ msgstr "Gender name"
 #: pub/dash/edit-hair-color.php:90 pub/dash/edit-spoken-language.php:89
 #: pub/dash/edit-profile.php:389
 msgid "Update"
-msgstr "Update"
+msgstr "Aktualisieren"
 
 #: pub/dash/the-currency.php:66 pub/dash/edit-currency.php:96
 #: pub/dash/list-currencies.php:55 pub/dash/add-currency.php:85
 msgid "Currency name"
-msgstr "Currency name"
+msgstr "Währungsname"
 
 #: pub/dash/the-currency.php:67 pub/dash/edit-currency.php:100
 #: pub/dash/list-currencies.php:54 pub/dash/add-currency.php:89
 msgid "ISO code"
-msgstr "ISO code"
+msgstr "ISO-Code"
 
 #: pub/dash/the-currency.php:68 pub/dash/edit-currency.php:104
 #: pub/dash/list-currencies.php:56 pub/dash/add-currency.php:93
 msgid "Symbol"
-msgstr "Symbol"
+msgstr "Währungszeichen"
 
 #: pub/dash/the-currency.php:69
 msgid "Digital"
@@ -188,19 +190,19 @@ msgstr "Digital"
 
 #: pub/dash/the-currency.php:77 pub/dash/list-currencies.php:73
 msgid "Yes"
-msgstr "Yes"
+msgstr "Ja"
 
 #: pub/dash/the-currency.php:79 pub/dash/list-currencies.php:71
 msgid "No"
-msgstr "No"
+msgstr "Nein"
 
 #: pub/dash/add-nationality.php:39
 msgid "Add a nationality"
-msgstr "Add a nationality"
+msgstr "Fügen Sie eine Nationalität hinzu"
 
 #: pub/dash/add-nationality.php:79 pub/dash/edit-nationality.php:85
 msgid "Nationality name"
-msgstr "Nationality name"
+msgstr "Nationalität Name"
 
 #: pub/dash/add-nationality.php:83 pub/dash/add-time-zone.php:98
 #: pub/dash/add-eye-color.php:83 pub/dash/add-locale.php:88
@@ -208,40 +210,41 @@ msgstr "Nationality name"
 #: pub/dash/add-currency.php:101 pub/dash/add-sexuality.php:83
 #: pub/dash/add-place.php:99 pub/dash/add-spoken-language.php:83
 msgid "Submit"
-msgstr "Submit"
+msgstr "Einreichen"
 
 #: pub/dash/list-locales.php:39
 msgid "List of locales"
-msgstr "List of locales"
+msgstr "Liste der Locales"
 
 #: pub/dash/list-locales.php:48
 msgid "Add a locale "
-msgstr "Add a locale "
+msgstr "Fügen Sie ein Locale hinzu "
 
 #: pub/dash/list-eye-colors.php:39
 msgid "List of eye colors"
-msgstr "List of eye colors"
+msgstr "Liste der Augenfarben"
 
 #: pub/dash/list-eye-colors.php:48
 msgid "Add an eye color "
-msgstr "Add an eye color "
+msgstr "Fügen Sie eine Augenfarbe hinzu "
 
 #: pub/dash/edit-eye-color.php:54
 msgid " eye color"
-msgstr " eye color"
+msgstr " Augenfarbe"
 
 #: pub/dash/edit-eye-color.php:84 pub/dash/add-eye-color.php:79
 #: pub/dash/edit-profile.php:223
 msgid "Eye color"
-msgstr "Eye color"
+msgstr "Augenfarbe"
 
 #: pub/dash/edit-place.php:89 pub/dash/add-place.php:80
 msgid "Place name"
-msgstr "Place name"
+msgstr "Ortsname"
 
+# The parents of this place (i.e. Europe is the parent of Germany)
 #: pub/dash/edit-place.php:93 pub/dash/add-place.php:84
 msgid "Place parent"
-msgstr "Place parent"
+msgstr "Eltern platzieren"
 
 #.
 #. * pub/dash/dash-nav.php
@@ -256,102 +259,102 @@ msgid ""
 "Home will show posts from everyone the user is following, including their "
 "own."
 msgstr ""
-"Home will show posts from everyone the user is following, including their "
-"own."
+"Heim zeigt Beiträge von allen, denen der Benutzer folgt, einschließlich der "
+"eigenen."
 
 #: pub/dash/dash-nav.php:20 pub/index.php:57
 msgid "Home"
-msgstr "Home"
+msgstr "Heim"
 
 #: pub/dash/dash-nav.php:21
 msgid "Mentions"
-msgstr "Mentions"
+msgstr "Erwähnungen"
 
 #: pub/dash/dash-nav.php:22
 msgid "Messages will be private/direct messages between friends."
-msgstr "Messages will be private/direct messages between friends."
+msgstr "Nachrichten sind private / direkte Nachrichten zwischen Freunden."
 
 #: pub/dash/dash-nav.php:22
 msgid "Messages"
-msgstr "Messages"
+msgstr "Nachtrichten"
 
 #: pub/dash/dash-nav.php:23
 msgid "Friends"
-msgstr "Friends"
+msgstr "Freunde"
 
 #: pub/dash/dash-nav.php:24
 msgid "Following"
-msgstr "Following"
+msgstr "Folgenden"
 
 #: pub/dash/dash-nav.php:25
 msgid "Followers"
-msgstr "Followers"
+msgstr "Anhänger"
 
 #: pub/dash/dash-nav.php:26
 msgid "Lists"
-msgstr "Lists"
+msgstr "Listen"
 
 #: pub/dash/dash-nav.php:27
 msgid "Favorites"
-msgstr "Favorites"
+msgstr "Favoriten"
 
 #: pub/dash/dash-nav.php:40
 msgid "List currencies"
-msgstr "List currencies"
+msgstr "Liste der Währungen"
 
 #: pub/dash/dash-nav.php:41
 msgid "List eye colors"
-msgstr "List eye colors"
+msgstr "Liste der Augenfarben"
 
 #: pub/dash/dash-nav.php:42
 msgid "List genders"
-msgstr "List genders"
+msgstr "Liste der Geschlechter"
 
 #: pub/dash/dash-nav.php:43
 msgid "List hair colors"
-msgstr "List hair colors"
+msgstr "Liste der Haarfarben"
 
 #: pub/dash/dash-nav.php:44
 msgid "List locales"
-msgstr "List locales"
+msgstr "Liste der Locales"
 
 #: pub/dash/dash-nav.php:45
 msgid "List nationalities"
-msgstr "List nationalities"
+msgstr "Liste der Nationalitäten"
 
 #: pub/dash/dash-nav.php:46
 msgid "List places"
-msgstr "List places"
+msgstr "Liste der Orte"
 
 #: pub/dash/dash-nav.php:47
 msgid "List sexualities"
-msgstr "List sexualities"
+msgstr "Liste der Sexualitäten"
 
 #: pub/dash/dash-nav.php:48
 msgid "List spoken languages"
-msgstr "List spoken languages"
+msgstr "Liste der gesprochenen Sprachen"
 
 #: pub/dash/dash-nav.php:49
 msgid "List time zones"
-msgstr "List time zones"
+msgstr "Liste der Zeitzonen"
 
 #: pub/dash/dash-nav.php:50
 msgid "List users"
-msgstr "List users"
+msgstr "Liste der Benutzer"
 
 #: pub/dash/my-profile.php:94 pub/dash/edit-profile.php:75
 msgid "Dashboard for "
-msgstr "Dashboard for "
+msgstr "Dashboard für "
 
 #. echo bindtextdomain($textdomain, $_SERVER['DOCUMENT_ROOT']."/locale");
 #. echo $textdomain;
 #: pub/dash/my-profile.php:105 pub/dash/add-post.php:130
 msgid "What are you doing?"
-msgstr "What are you doing?"
+msgstr "Was machen Sie?"
 
 #: pub/dash/my-profile.php:106 pub/dash/add-post.php:131
 msgid "EVERYONE"
-msgstr "Everyone"
+msgstr "Jeder"
 
 #: pub/dash/my-profile.php:107 pub/dash/add-post.php:132
 msgid "FEDIVERSE"
@@ -359,76 +362,78 @@ msgstr "Fediverse"
 
 #: pub/dash/my-profile.php:108 pub/dash/add-post.php:133
 msgid "INSTANCE"
-msgstr "Instance"
+msgstr "Beispiel"
 
 #: pub/dash/my-profile.php:109 pub/dash/add-post.php:134
 msgid "FOLLOWERS"
-msgstr "Followers"
+msgstr "Anhänger"
 
 #: pub/dash/my-profile.php:110 pub/dash/add-post.php:135
 msgid "FRIENDS"
-msgstr "Friends"
+msgstr "Freunde"
 
 #: pub/dash/my-profile.php:111 pub/dash/add-post.php:136
 msgid "PRIVATE"
-msgstr "Private"
+msgstr "Privat"
 
 #: pub/dash/my-profile.php:112 pub/dash/add-post.php:137
 msgid "SELF"
-msgstr "Self"
+msgstr "Selbst"
 
+# As in "Post this message", to post
 #. plural form
 #: pub/dash/my-profile.php:113 pub/dash/add-post.php:138 config.php:50
 msgid "Post"
-msgstr "Post"
+msgstr "Senden"
 
 #: pub/dash/edit-sexuality.php:85 pub/dash/add-sexuality.php:79
 msgid "Sexuality name"
-msgstr "Sexuality name"
+msgstr "Name der Sexualität"
 
 #: pub/dash/edit-locale.php:95 pub/dash/add-locale.php:80
 msgid "Locale language"
-msgstr "Locale language"
+msgstr "Sprache"
 
 #: pub/dash/edit-locale.php:99 pub/dash/add-locale.php:84
 msgid "Locale country"
-msgstr "Locale country"
+msgstr "Land"
 
 #: pub/dash/add-time-zone.php:39
 msgid "Add a time zone"
-msgstr "Add a time zone"
+msgstr "Fügen Sie eine Zeitzone hinzu"
 
 #: pub/dash/add-time-zone.php:82 pub/dash/edit-time-zone.php:90
 msgid "Time zone abbreviation"
-msgstr "Time zone abbreviation"
+msgstr "Zeitzonenabkürzung"
 
 #: pub/dash/add-time-zone.php:86 pub/dash/edit-time-zone.php:94
 msgid "Time zone name"
-msgstr "Time zone name"
+msgstr "Name der Zeitzone"
 
 #: pub/dash/add-time-zone.php:90 pub/dash/edit-time-zone.php:98
 msgid "Time zone offset"
-msgstr "Time zone offset"
+msgstr "Zeitzonenversatz"
 
+# DST = Daylight Savings Time
 #: pub/dash/add-time-zone.php:94 pub/dash/edit-time-zone.php:102
 msgid "Time zone DST offset"
-msgstr "Time zone DST offset"
+msgstr "Zeitzone DST-Offset"
 
 #: pub/dash/list-spoken-languages.php:39
 msgid "List of spoken languages"
-msgstr "List of spoken languages"
+msgstr "Liste der gesprochenen Sprachen"
 
 #: pub/dash/list-spoken-languages.php:47
 msgid "Add a spoken language "
-msgstr "Add a spoken language "
+msgstr "Fügen Sie eine gesprochene Sprache hinzu "
 
 #: pub/dash/list-nationalities.php:39
 msgid "List of nationalities"
-msgstr "List of nationalities"
+msgstr "Liste der Nationalitäten"
 
 #: pub/dash/list-nationalities.php:48
 msgid "Add a nationality "
-msgstr "Add a nationality "
+msgstr "Fügen Sie eine Nationalität hinzu "
 
 #: pub/dash/the-user.php:68
 msgid "ID"
@@ -440,39 +445,39 @@ msgstr "Email"
 
 #: pub/dash/the-user.php:74 pub/the-registration.php:208 pub/index.php:142
 msgid "Date of birth"
-msgstr "Date of birth"
+msgstr "Geburtsdatum"
 
 #: pub/dash/the-user.php:77
 msgid "Joined"
-msgstr "Joined"
+msgstr "Beigetreten"
 
 #: pub/dash/the-user.php:80
 msgid "Last login"
-msgstr "Last login"
+msgstr "Letzte Anmeldung"
 
 #: pub/dash/add-eye-color.php:39
 msgid "Add an eye color"
-msgstr "Add an eye color"
+msgstr "Fügen Sie eine Augenfarbe hinzu"
 
 #: pub/dash/list-users.php:39
 msgid "List of users"
-msgstr "List of users"
+msgstr "Liste der Benutzer"
 
 #: pub/dash/list-users.php:47
 msgid "Add a user "
-msgstr "Add a user"
+msgstr "Fügen Sie eine Benutzer hinzu "
 
 #: pub/dash/list-users.php:63
 msgid "Suspend"
-msgstr "Suspend"
+msgstr "Einstellen"
 
 #: pub/dash/list-users.php:64
 msgid "Ban"
-msgstr "Ban"
+msgstr "Verbeiten"
 
 #: pub/dash/add-locale.php:39
 msgid "Add a locale"
-msgstr "Add a locale"
+msgstr "Fügen Sie ein Locale hinzu "
 
 #: pub/dash/edit-currency.php:108 pub/dash/list-currencies.php:57
 #: pub/dash/add-currency.php:97
@@ -481,20 +486,20 @@ msgstr "Digital?"
 
 #: pub/dash/list-currencies.php:39
 msgid "List of currencies"
-msgstr "List of currencies"
+msgstr "Liste der Währungen"
 
 #: pub/dash/list-currencies.php:48
 msgid "Add a currency "
-msgstr "Add a currency "
+msgstr "Fügen Sie eine Währung hinzu "
 
 #: pub/dash/edit-hair-color.php:86 pub/dash/add-hair-color.php:79
 #: pub/dash/edit-profile.php:243
 msgid "Hair color"
-msgstr "Hair color"
+msgstr "Haarfarbe"
 
 #: pub/dash/add-gender.php:39
 msgid "Add a gender"
-msgstr "Add a gender"
+msgstr "Fügen Sie ein Geschlecht hinzu"
 
 #: pub/dash/the-time-zone.php:66
 msgid "Name"
@@ -502,149 +507,149 @@ msgstr "Name"
 
 #: pub/dash/the-time-zone.php:67
 msgid "Offset"
-msgstr "Offset"
+msgstr "Versatz"
 
 #: pub/dash/the-time-zone.php:68
 msgid "DST offset"
-msgstr "DST offset"
+msgstr "DST-Offset"
 
 #: pub/dash/add-hair-color.php:39
 msgid "Add a hair color"
-msgstr "Add a hair color"
+msgstr "Fügen Sie eine Haarfarbe hinzu"
 
 #: pub/dash/list-hair-colors.php:39
 msgid "List of hair colors"
-msgstr "List of hair colors"
+msgstr "Liste der Haarfarben"
 
 #: pub/dash/list-hair-colors.php:48
 msgid "Add a hair color "
-msgstr "Add a hair color "
+msgstr "Fügen Sie eine Haarfarbe hinzu "
 
 #: pub/dash/list-sexualities.php:39
 msgid "List of sexualities"
-msgstr "List of sexualities"
+msgstr "Liste der Sexualitäten"
 
 #: pub/dash/list-sexualities.php:48
 msgid "Add a sexuality "
-msgstr "Add a sexuality "
+msgstr "Fügen Sie eine Sexualität hinzu "
 
 #: pub/dash/the-place.php:66
 msgid "is part of"
-msgstr "is part of"
+msgstr "ist ein Teil von"
 
 #: pub/dash/add-post.php:93
 msgid "Add a post"
-msgstr "Add a post"
+msgstr "Einen Beitrag hinzufügen"
 
 #: pub/dash/add-currency.php:39
 msgid "Add a currency"
-msgstr "Add a currency"
+msgstr "Fügen Sie eine Währung hinzu "
 
 #: pub/dash/add-sexuality.php:39
 msgid "Add a sexuality"
-msgstr "Add a sexuality"
+msgstr "Fügen Sie eine Sexualität hinzu "
 
 #: pub/dash/list-time-zones.php:39
 msgid "List of time zones"
-msgstr "List of time zones"
+msgstr "Liste der Zeitzonen"
 
 #: pub/dash/list-time-zones.php:48
 msgid "Add a time zone "
-msgstr "Add a time zone "
+msgstr "Fügen Sie eine Zeitzone hinzu "
 
 #: pub/dash/the-locale.php:67
 msgid "Language"
-msgstr "Language"
+msgstr "Sprache"
 
 #: pub/dash/the-locale.php:68
 msgid "Country"
-msgstr "Country"
+msgstr "Land"
 
 #: pub/dash/add-place.php:39
 msgid "Add a place/location)"
-msgstr "Add a place/location"
+msgstr "Einen Ort hinzufügen"
 
 #: pub/dash/list-places.php:39
 msgid "List of places"
-msgstr "List of places"
+msgstr "Liste der Orte"
 
 #: pub/dash/list-places.php:49
 msgid "Add a place "
-msgstr "Add a place "
+msgstr "Einen Ort hinzufügen "
 
 #: pub/dash/list-places.php:52
 msgid "Africa"
-msgstr "Africa"
+msgstr "Afrika"
 
 #: pub/dash/list-places.php:74
 msgid "Antarctica"
-msgstr "Antarctica"
+msgstr "Antarktis"
 
 #: pub/dash/list-places.php:98
 msgid "Asia"
-msgstr "Asia"
+msgstr "Asien"
 
 #: pub/dash/list-places.php:120
 msgid "Caribbean"
-msgstr "Caribbean"
+msgstr "Karibik"
 
 #: pub/dash/list-places.php:142
 msgid "Europe"
-msgstr "Europe"
+msgstr "Europa"
 
 #: pub/dash/list-places.php:164
 msgid "North America"
-msgstr "North America"
+msgstr "Nordamerika"
 
 #: pub/dash/list-places.php:186
 msgid "Oceania"
-msgstr "Oceania"
+msgstr "Ozeanien"
 
 #: pub/dash/list-places.php:208
 msgid "South America"
-msgstr "South America"
+msgstr "Südamerika"
 
 #: pub/dash/edit-spoken-language.php:85 pub/dash/add-spoken-language.php:79
 msgid "Spoken language name"
-msgstr "Spoken language name"
+msgstr "Name der gesprochenen Sprache"
 
 #: pub/dash/edit-profile.php:77
 msgid "Edit your profile"
-msgstr "Edit your profile"
+msgstr "Bearbeite dein Profil"
 
 #: pub/dash/edit-profile.php:167 pub/the-login.php:109
 #: pub/the-registration.php:196 pub/the-login.old.php:86 pub/index.php:111
 #: pub/index.php:130
 msgid "Username"
-msgstr "Username"
+msgstr "Benutzername"
 
 #: pub/dash/edit-profile.php:171
 msgid "Display name"
-msgstr "Display name"
+msgstr "Anzeigename"
 
 #: pub/dash/edit-profile.php:175
 msgid "Description/bio"
-msgstr "Description/short bio"
+msgstr "Beschreibung / Bio"
 
 #: pub/dash/edit-profile.php:179
 msgid "Email address"
-msgstr "Email address"
+msgstr "E-Mail-Addresse"
 
 #: pub/dash/edit-profile.php:183
 msgid "Gender"
-msgstr "Gender"
+msgstr "Geschlecht"
 
 #: pub/dash/edit-profile.php:203
 msgid "Sexuality"
-msgstr "Sexuality"
+msgstr "Sexualität"
 
 #: pub/dash/edit-profile.php:263
 msgid "Location"
-msgstr "Location"
+msgstr "Ort"
 
 #: pub/dash/edit-profile.php:283
 msgid "Nationality"
-msgstr "Nationality"
+msgstr "Nationalität"
 
 #: pub/dash/edit-profile.php:303
 msgid "Locale"
@@ -652,43 +657,43 @@ msgstr "Locale"
 
 #: pub/dash/edit-profile.php:331
 msgid "Languages spoken"
-msgstr "Languages spoken"
+msgstr "Gesprochene Sprachen"
 
 #: pub/dash/edit-profile.php:352
 msgid "Time zone"
-msgstr "Time zone"
+msgstr "Zeitzone"
 
 #: pub/dash/edit-profile.php:373
 msgid "Height (inches)"
-msgstr "Height (inches)"
+msgstr "Höhe in Zoll"
 
 #: pub/dash/edit-profile.php:377
 msgid "Height (cm)"
-msgstr "Height (cm)"
+msgstr "Höhe in cm"
 
 #: pub/dash/edit-profile.php:381
 msgid "Weight (pounds)"
-msgstr "Weight (pounds)"
+msgstr "Gewicht in Pfund"
 
 #: pub/dash/edit-profile.php:385
 msgid "Weight (kilos)"
-msgstr "Weight (kilos)"
+msgstr "Gewicht in Kilo"
 
 #: pub/dash/add-spoken-language.php:39
 msgid "Add a spoken language"
-msgstr "Add a spoken language"
+msgstr "Fügen Sie eine gesprochene Sprache hinzu"
 
 #: pub/the-login.php:72 pub/the-login.old.php:56 pub/the-login.old.php:62
 msgid "There was a problem. Please try again."
-msgstr "There was a problem. Please try again."
+msgstr "Es gab ein Problem. Bitte versuche es erneut."
 
 #: pub/the-login.php:78
 msgid "User not found"
-msgstr "User not found"
+msgstr "Benutzer wurde nicht gefunden."
 
 #: pub/the-login.php:90 pub/the-login.old.php:73 pub/index.php:109
 msgid "Login to "
-msgstr "Login to "
+msgstr "Einloggen in "
 
 #: pub/the-login.php:113 pub/the-registration.php:200 pub/the-login.old.php:90
 #: pub/index.php:115 pub/index.php:134
@@ -698,199 +703,199 @@ msgstr "Passphrase"
 #: pub/the-login.php:116 pub/the-login.old.php:95 pub/index.php:118
 #: pub/index.php:150
 msgid "Login"
-msgstr "Login"
+msgstr "Einloggen"
 
 #: pub/the-login.php:120 pub/the-registration.php:167 pub/the-login.old.php:99
 msgid "Create an account"
-msgstr "Create an account"
+msgstr "Ein Konto erstellen"
 
 #: pub/the-registration.php:115
 msgid "Passphrases do not match"
-msgstr "Passphrases do not match."
+msgstr "Passphrasen passen nicht zusammen"
 
 #: pub/the-registration.php:118
 msgid "Please verify the passphrase"
-msgstr "Please verify the passphrase."
+msgstr "Bitte überprüfen Sie die Passphrase"
 
 #: pub/the-registration.php:123
 msgid "Passphrase is too short."
-msgstr "Passphrase is too short."
+msgstr "Die Passphrase ist zu kurz."
 
 #: pub/the-registration.php:127
 msgid "Password is not complex"
-msgstr "Password is not complex."
+msgstr "Passwort ist nicht komplex"
 
 #: pub/the-registration.php:143
 msgid "You are too young"
-msgstr "You are too young."
+msgstr "Du bist zu jung"
 
 #: pub/the-registration.php:145
 msgid "Your date of birth had a typo. Try again"
-msgstr "Your date of birth had a typo. Try again."
+msgstr "Ihr Geburtsdatum hatte einen Tippfehler. Versuchen Sie es nochmal."
 
 #: pub/the-registration.php:182
 msgid "Password must be at least 16 characters long"
-msgstr "Password must be at least 16 characters long."
+msgstr "Die Passphrase muss mindestens 16 Zeichen lang sein."
 
 #: pub/the-registration.php:183
 msgid "Password must have:"
-msgstr "Password must have:"
+msgstr "Passphrase muss Folgendes haben:"
 
 #: pub/the-registration.php:185
 msgid "at least one lowercase letter"
-msgstr "at least one lowercase letter"
+msgstr "mindestens ein Kleinbuchstabe"
 
 #: pub/the-registration.php:186
 msgid "at least one uppercase letter"
-msgstr "at least one UPPERCASE letter"
+msgstr "Mindestens ein Großbuchstabe"
 
 #: pub/the-registration.php:187
 msgid "at least one numeral"
-msgstr "at least one numeral"
+msgstr "mindestens eine Ziffer"
 
 #: pub/the-registration.php:188
 msgid "at least one character that is not a number or a letter."
-msgstr "at least one character that is not a number or a letter."
+msgstr "mindestens ein Zeichen, das weder eine Zahl noch ein Buchstabe ist."
 
 #: pub/the-registration.php:204 pub/index.php:138
 msgid "Verify passphrase"
-msgstr "Verify passphrase"
+msgstr "Überprüfen Sie die Passphrase"
 
 #: pub/the-registration.php:211 pub/index.php:145
 msgid "Register"
-msgstr "Register"
+msgstr "Registrieren"
 
 #: pub/index.php:128
 msgid "Registration for "
-msgstr "Registration for "
+msgstr "Registrierung für "
 
 #: pub/index.php:149
 msgid "Already a user?"
-msgstr "Already a user?"
+msgstr "Schon ein Benutzer?"
 
 #: pub/index.php:159 pub/index.php:160
 msgid "Number of "
-msgstr "Number of "
+msgstr "Anzahl von "
 
 #: pub/index.php:167
 msgid "Recent posts"
-msgstr "Recent posts"
+msgstr "Kürzliche Posts"
 
 #: functions.php:79
 msgid "A few seconds ago"
-msgstr "A few seconds ago"
+msgstr "Vor ein paar Sekunden"
 
 #: functions.php:81
 msgid "About half a minute ago"
-msgstr "About half a minute ago"
+msgstr "Vor ungefähr einer halben Minute"
 
 #: functions.php:83
 msgid "A minute ago"
-msgstr "A minute ago"
+msgstr "Vor einer Minute"
 
 #: functions.php:85
 msgid "A couple of minutes ago"
-msgstr "A couple of minutes ago"
+msgstr "Vor ein paar Minuten"
 
 #: functions.php:87
 msgid "A few minutes ago"
-msgstr "A few minutes ago"
+msgstr "Vor ein paar Minuten"
 
 #: functions.php:89
 msgid "Several minutes ago"
-msgstr "Several minutes ago"
+msgstr "Vor einigen Minuten"
 
 #: functions.php:91
 msgid "About 10 minutes ago"
-msgstr "About 10 minutes ago"
+msgstr "Vor ungefähr 10 Minuten"
 
 #: functions.php:93
 msgid "About 15 minutes ago"
-msgstr "About 15 minutes ago"
+msgstr "Vor ungefähr 15 Minuten"
 
 #: functions.php:95
 msgid "About 20 minutes ago"
-msgstr "About 20 minutes ago"
+msgstr "Vor ungefähr 20 Minuten"
 
 #: functions.php:97
 msgid "About half an hour ago"
-msgstr "About half an hour ago"
+msgstr "Vor ungefähr einer halben Stunde"
 
 #: functions.php:99
 msgid "About an hour ago"
-msgstr "About an hour ago"
+msgstr "Vor ungefähr einer Stunde"
 
 #: functions.php:101
 msgid "A couple of hours ago"
-msgstr "A couple of hours ago"
+msgstr "Vor ein paar Stunden"
 
 #: functions.php:103
 msgid "A few hours ago"
-msgstr "A few hours ago"
+msgstr "Vor ein paar Stunden"
 
 #: functions.php:105
 msgid "Several hours ago"
-msgstr "Several hours ago"
+msgstr "Vor einigen Stunden"
 
 #: functions.php:107
 msgid "About half a day ago"
-msgstr "About half a day ago"
+msgstr "Vor etwa einem halben Tag"
 
 #: functions.php:109
 msgid "Almost a day ago"
-msgstr "Almost a day ago"
+msgstr "Vor fast einem Tag"
 
 #: functions.php:111
 msgid "Yesterday"
-msgstr "Yesterday"
+msgstr "Gestern"
 
 #: functions.php:113
 msgid "A couple of days ago"
-msgstr "A couple of days ago"
+msgstr "Vor ein paar Tagen"
 
 #: functions.php:115
 msgid "A few days ago"
-msgstr "A few days ago"
+msgstr "Vor ein paar Tagen"
 
 #: functions.php:117
 msgid "Several days ago"
-msgstr "Several days ago"
+msgstr "Vor einigen Tagen"
 
 #: functions.php:119
 msgid "Last week"
-msgstr "Last week"
+msgstr "Letzte Woche"
 
 #: functions.php:121
 msgid "A few weeks ago"
-msgstr "A few weeks ago"
+msgstr "Vor ein paar Wochen"
 
 #: functions.php:123
 msgid "Last month"
-msgstr "Last month"
+msgstr "Im vergangenen Monat"
 
 #: functions.php:125
 msgid "A few months ago"
-msgstr "A few months ago"
+msgstr "Vor ein paar Monaten"
 
 #: functions.php:127
 msgid "About half a year ago"
-msgstr "About half a year ago"
+msgstr "Vor etwa einem halben Jahr"
 
 #: functions.php:129
 msgid "Around a year ago"
-msgstr "Around a year ago"
+msgstr "Vor etwa einem Jahr"
 
 #: functions.php:131
 msgid "More than a year ago"
-msgstr "More than a year ago"
+msgstr "Vor mehr als einem Jahr"
 
 #: functions.php:133
 msgid "More than two years ago"
-msgstr "More than two years ago"
+msgstr "Vor mehr als zwei Jahren"
 
 #: functions.php:135
 msgid "More than three years ago"
-msgstr "More than three years ago"
+msgstr "Vor mehr als drei Jahren"
 
 #.
 #. $metadescription is a summary of the website that may appear on websites
@@ -900,8 +905,8 @@ msgid ""
 "Amore is open-source PHP/MySQL software for the Fediverse - a decentralized "
 "social network of thousands of different communities."
 msgstr ""
-"Amore is open-source PHP/MySQL software for the Fediverse - a decentralized "
-"social network of thousands of different communities."
+"Amore ist Open-Source-PHP / MySQL-Software für das Fediverse - ein "
+"dezentrales soziales Netzwerk aus Tausenden verschiedener Gemeinschaften."
 
 #.
 #. $posts_are_called allows the admin to change the name of the posts on their site.
@@ -925,9 +930,9 @@ msgstr "Repost"
 #. $users_are_called allows the admin to change the name of the users on their site.
 #: config.php:57
 msgid "Users"
-msgstr "Users"
+msgstr "Benutzer"
 
 #. plural form
 #: config.php:58
 msgid "User"
-msgstr "User"
+msgstr "Nutzer"

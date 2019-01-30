@@ -1,22 +1,22 @@
-# Amore v0.2 English language translation.
-# This file is distributed under the same license as the Amore package.
-# Michael Hawkes <translations@dating.media>, 2019.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Amore v0.2\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-30 09:17-0500\n"
-"PO-Revision-Date: 2019-01-30 10:15-0500\n"
-"Language-Team: Amore English Translations <amore.en@dating.media>\n"
+"PO-Revision-Date: 2019-01-30 11:01-0500\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
 "Last-Translator: Michael Hawkes <translations@dating.media>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"Language: en_GB\n"
 
 #.
 #. * pub/main-footer.php
@@ -36,7 +36,7 @@ msgstr ""
 #.
 #: pub/main-footer.php:14 pub/dash/dash-footer.php:14
 msgid "Powered by "
-msgstr "Powered by "
+msgstr "Created with "
 
 #: pub/main-header.php:39 pub/dash/my-profile.php:96
 #: pub/dash/dash-header.php:40
@@ -53,7 +53,7 @@ msgstr "Hello, "
 #.
 #: pub/main-nav.php:28
 msgid "Home will show all of the user's posts own."
-msgstr "Home will show of the user's posts."
+msgstr "Home will show all of this user's posts."
 
 #: pub/main-nav.php:29 pub/dash/dash-nav.php:21
 msgid "Mentions will show any posts where the user is mentioned."
@@ -77,7 +77,7 @@ msgstr "Lists created by the user."
 
 #: pub/main-nav.php:34 pub/dash/dash-nav.php:27
 msgid "A list of the user's favorites."
-msgstr "A list of the user's favorites."
+msgstr "A list of the user's favourites."
 
 #: pub/the-user.php:18 pub/the-post.php:18 pub/the-login.php:17
 #: pub/the-registration.php:18 pub/index.php:22
@@ -98,11 +98,11 @@ msgstr "Downvote"
 
 #: pub/the-user.php:103 pub/the-post.php:88
 msgid "Favorite"
-msgstr "Favorite"
+msgstr "Favourite"
 
 #: pub/the-user.php:108 pub/dash/my-profile.php:146
 msgid "There are no posts at the moment"
-msgstr "There are no posts at the moment."
+msgstr "There are no posts at this time."
 
 #: pub/dash/list-genders.php:39
 msgid "List of genders"
@@ -220,20 +220,20 @@ msgstr "Add a locale "
 
 #: pub/dash/list-eye-colors.php:39
 msgid "List of eye colors"
-msgstr "List of eye colors"
+msgstr "List of eye colours"
 
 #: pub/dash/list-eye-colors.php:48
 msgid "Add an eye color "
-msgstr "Add an eye color "
+msgstr "Add an eye colour "
 
 #: pub/dash/edit-eye-color.php:54
 msgid " eye color"
-msgstr " eye color"
+msgstr " eye colour"
 
 #: pub/dash/edit-eye-color.php:84 pub/dash/add-eye-color.php:79
 #: pub/dash/edit-profile.php:223
 msgid "Eye color"
-msgstr "Eye color"
+msgstr "Eye colour"
 
 #: pub/dash/edit-place.php:89 pub/dash/add-place.php:80
 msgid "Place name"
@@ -293,7 +293,7 @@ msgstr "Lists"
 
 #: pub/dash/dash-nav.php:27
 msgid "Favorites"
-msgstr "Favorites"
+msgstr "Favourites"
 
 #: pub/dash/dash-nav.php:40
 msgid "List currencies"
@@ -301,7 +301,7 @@ msgstr "List currencies"
 
 #: pub/dash/dash-nav.php:41
 msgid "List eye colors"
-msgstr "List eye colors"
+msgstr "List eye colours"
 
 #: pub/dash/dash-nav.php:42
 msgid "List genders"
@@ -309,7 +309,7 @@ msgstr "List genders"
 
 #: pub/dash/dash-nav.php:43
 msgid "List hair colors"
-msgstr "List hair colors"
+msgstr "List hair colours"
 
 #: pub/dash/dash-nav.php:44
 msgid "List locales"
@@ -452,7 +452,7 @@ msgstr "Last login"
 
 #: pub/dash/add-eye-color.php:39
 msgid "Add an eye color"
-msgstr "Add an eye color"
+msgstr "Add an eye colour"
 
 #: pub/dash/list-users.php:39
 msgid "List of users"
@@ -460,7 +460,7 @@ msgstr "List of users"
 
 #: pub/dash/list-users.php:47
 msgid "Add a user "
-msgstr "Add a user"
+msgstr "Add a user "
 
 #: pub/dash/list-users.php:63
 msgid "Suspend"
@@ -490,7 +490,7 @@ msgstr "Add a currency "
 #: pub/dash/edit-hair-color.php:86 pub/dash/add-hair-color.php:79
 #: pub/dash/edit-profile.php:243
 msgid "Hair color"
-msgstr "Hair color"
+msgstr "Hair colour"
 
 #: pub/dash/add-gender.php:39
 msgid "Add a gender"
@@ -510,15 +510,15 @@ msgstr "DST offset"
 
 #: pub/dash/add-hair-color.php:39
 msgid "Add a hair color"
-msgstr "Add a hair color"
+msgstr "Add an hair colour"
 
 #: pub/dash/list-hair-colors.php:39
 msgid "List of hair colors"
-msgstr "List of hair colors"
+msgstr "List of hair colours"
 
 #: pub/dash/list-hair-colors.php:48
 msgid "Add a hair color "
-msgstr "Add a hair color "
+msgstr "Add a hair colour "
 
 #: pub/dash/list-sexualities.php:39
 msgid "List of sexualities"
@@ -684,7 +684,7 @@ msgstr "There was a problem. Please try again."
 
 #: pub/the-login.php:78
 msgid "User not found"
-msgstr "User not found"
+msgstr "User not found."
 
 #: pub/the-login.php:90 pub/the-login.old.php:73 pub/index.php:109
 msgid "Login to "
@@ -730,11 +730,11 @@ msgstr "Your date of birth had a typo. Try again."
 
 #: pub/the-registration.php:182
 msgid "Password must be at least 16 characters long"
-msgstr "Password must be at least 16 characters long."
+msgstr "Passphrase must be at least 16 characters long."
 
 #: pub/the-registration.php:183
 msgid "Password must have:"
-msgstr "Password must have:"
+msgstr "Passphrase must have:"
 
 #: pub/the-registration.php:185
 msgid "at least one lowercase letter"
@@ -742,7 +742,7 @@ msgstr "at least one lowercase letter"
 
 #: pub/the-registration.php:186
 msgid "at least one uppercase letter"
-msgstr "at least one UPPERCASE letter"
+msgstr "at least one UPPRECASE letter"
 
 #: pub/the-registration.php:187
 msgid "at least one numeral"
