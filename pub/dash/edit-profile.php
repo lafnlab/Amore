@@ -42,23 +42,39 @@ if (isset($sel_id)) {
 		redirect("../index.php");
 	}
 
-	$usrq = "SELECT * FROM users WHERE user_id=\"".$sel_id."\"";
+	$usrq = "SELECT * FROM users WHERE user_id='".$sel_id."'";
 	$usrquery = mysqli_query($dbconn,$usrq);
 	while($usropt = mysqli_fetch_assoc($usrquery)) {
 		$usrid		= $usropt['user_id'];
 		$usrname		= $usropt['user_name'];
+		$usremail	= $usropt['user_email'];
+		$usrlevel	= $usropt['user_level'];
+		$usrsince	= $usropt['user_created'];
+	}
+
+	$uspq = "SELECT * FROM user_profiles WHERE user_profiles_id='".$sel_id."'";
+	$uspquery = mysqli_query($dbconn,$uspq);
+	while($uspopt = mysqli_fetch_assoc($uspquery)) {
+		$uspdname	= $uspopt['user_display_name'];
+		$uspgendr	= $uspopt['user_profiles_gender'];
+		$uspsexul	= $uspopt['user_profiles_sexuality'];
+		$uspeye		= $uspopt['user_profiles_eye_color'];
+		$usphair		= $uspopt['user_profiles_hair_color'];
+		$uspplace	= $uspopt['user_profiles_location'];
+		$uspnat		= $uspopt['user_profiles_nationality'];
+		$uspi18n		= $uspopt['user_profiles_locale'];
+		$uspspkn		= $uspopt['user_profiles_spoken_language'];
+		$usptime		= $uspopt['user_profiles_time_zone'];
+		$uspbio		= $uspopt['user_profiles_description'];
+		$usphin		= $uspopt['user_profiles_height_in'];
+		$usphcm		= $uspopt['user_profiles_height_cm'];
+		$uspwlb		= $uspopt['user_profiles_weight_lbs'];
+		$uspwkg		= $uspopt['user_profiles_weight_kg'];
 	}
 }
 $objdescription = _("Dashboard for ").$usrname;
 $visitortitle = $usrname;
-$pagetitle = _("Hello, ").$visitortitle;
-
-// PRE FORM SUBMISSION PROCESSING
- /*
-  * When we get to version 0.2, this will check the profile table for the userid
-  * and will pre-populate the values in the form with what it finds.
-  */
-
+$pagetitle = _("Edit your profile");
 
 // POST FORM SUBMISSION PROCESSING
 if (isset($_POST['prosubmit'])) {
@@ -143,20 +159,25 @@ include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>
 			<article class="w3-col w3-panel w3-cell m8">
-				<table class="w3-card-2 w3-theme-l3 w3-padding">
+				<div class="w3-card-2 w3-theme-l3 w3-padding">
+					<h4><?php echo $pagetitle; ?></h4>
+				<table>
 					<form id="editprofile" class="w3-card-2 w3-theme-l3 w3-padding maincard" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?uid=".$usrid); ?>">
-					<caption class="w3-center"><?php echo _('Edit your profile'); ?></caption>
+					<tr>
+						<td><label for="prouname"><?php echo _('Username');?></label></td>
+						<td>@&nbsp;<input type="text" name="prouname" id="prouname" class="w3-border w3-margin-bottom" maxlength="255" value="<?php echo $usrname; ?>">&nbsp;@<?php echo short_url($website_url); ?></td>
+					</tr>
 					<tr>
 						<td><label for="proname"><?php echo _('Display name');?></label></td>
-						<td><input type="text" name="proname" id="proname" class="w3-input w3-border w3-margin-bottom" maxlength="255"></td>
+						<td><input type="text" name="proname" id="proname" class="w3-input w3-border w3-margin-bottom" maxlength="255" value="<?php echo $uspdname; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="prodesc"><?php echo _('Description/bio');?></label></td>
-						<td><input type="text" name="prodesc" id="prodesc" class="w3-input w3-border w3-margin-bottom" maxlength="255"></td>
+						<td><input type="text" name="prodesc" id="prodesc" class="w3-input w3-border w3-margin-bottom" maxlength="255" value="<?php echo $uspbio; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="proemail"><?php echo _('Email address');?></label></td>
-						<td><input type="email" name="proemail" id="proemail" class="w3-input w3-border w3-margin-bottom" maxlength="255"></td>
+						<td><input type="email" name="proemail" id="proemail" class="w3-input w3-border w3-margin-bottom" maxlength="255" valur="<?php echo $usremail; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="progen"><?php echo _('Gender');?></label></td>
@@ -168,7 +189,11 @@ include_once "dash-nav.php";
 $genq = "SELECT * FROM genders ORDER BY genders_name ASC";
 $genquery = mysqli_query($dbconn,$genq);
 while($genopt = mysqli_fetch_assoc($genquery)) {
-	echo "\t\t\t\t\t<option value=\"".$genopt['genders_id']."\">".$genopt['genders_name']."</option>\n";
+	if ($genopt['genders_id']=== $uspgendr) {
+		echo "\t\t\t\t\t<option value=\"".$genopt['genders_id']."\" selected>".$genopt['genders_name']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$genopt['genders_id']."\">".$genopt['genders_name']."</option>\n";
+	}
 }
 ?>
 							</select>
@@ -184,7 +209,11 @@ while($genopt = mysqli_fetch_assoc($genquery)) {
 $sxuq = "SELECT * FROM sexualities ORDER BY sexualities_name ASC";
 $sxuquery = mysqli_query($dbconn,$sxuq);
 while($sxuopt = mysqli_fetch_assoc($sxuquery)) {
-	echo "\t\t\t\t\t<option value=\"".$sxuopt['sexualities_id']."\">".$sxuopt['sexualities_name']."</option>\n";
+	if ($sxuopt['sexualities_id'] === $uspsexul) {
+		echo "\t\t\t\t\t<option value=\"".$sxuopt['sexualities_id']."\" selected>".$sxuopt['sexualities_name']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$sxuopt['sexualities_id']."\">".$sxuopt['sexualities_name']."</option>\n";
+	}
 }
 ?>
 							</select>
@@ -200,7 +229,11 @@ while($sxuopt = mysqli_fetch_assoc($sxuquery)) {
 $eyeq = "SELECT * FROM eye_colors ORDER BY eye_colors_color ASC";
 $eyequery = mysqli_query($dbconn,$eyeq);
 while($eyeopt = mysqli_fetch_assoc($eyequery)) {
-	echo "\t\t\t\t\t<option value=\"".$eyeopt['eye_colors_id']."\">".$eyeopt['eye_colors_color']."</option>\n";
+	if ($eyeopt['eye_colors_id'] === $uspeye) {
+		echo "\t\t\t\t\t<option value=\"".$eyeopt['eye_colors_id']."\" selected>".$eyeopt['eye_colors_color']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$eyeopt['eye_colors_id']."\">".$eyeopt['eye_colors_color']."</option>\n";
+	}
 }
 ?>
 							</select>
@@ -216,7 +249,11 @@ while($eyeopt = mysqli_fetch_assoc($eyequery)) {
 $harq = "SELECT * FROM hair_colors ORDER BY hair_colors_color ASC";
 $harquery = mysqli_query($dbconn,$harq);
 while($haropt = mysqli_fetch_assoc($harquery)) {
-	echo "\t\t\t\t\t<option value=\"".$haropt['hair_colors_id']."\">".$haropt['hair_colors_color']."</option>\n";
+	if ($haropt['hair_colors_id'] === $usphair) {
+		echo "\t\t\t\t\t<option value=\"".$haropt['hair_colors_id']."\" selected>".$haropt['hair_colors_color']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$haropt['hair_colors_id']."\">".$haropt['hair_colors_color']."</option>\n";
+	}
 }
 ?>
 							</select>
@@ -232,7 +269,11 @@ while($haropt = mysqli_fetch_assoc($harquery)) {
 $locq = "SELECT * FROM locations ORDER BY locations_name ASC";
 $locquery = mysqli_query($dbconn,$locq);
 while($locopt = mysqli_fetch_assoc($locquery)) {
-	echo "\t\t\t\t\t<option value=\"".$locopt['locations_id']."\">".$locopt['locations_name']."</option>\n";
+	if ($locopt['locations_id'] === $uspplace) {
+			echo "\t\t\t\t\t<option value=\"".$locopt['locations_id']."\" selected>".$locopt['locations_name']."</option>\n";
+		} else {
+			echo "\t\t\t\t\t<option value=\"".$locopt['locations_id']."\">".$locopt['locations_name']."</option>\n";
+		}
 }
 ?>
 							</select>
@@ -248,7 +289,11 @@ while($locopt = mysqli_fetch_assoc($locquery)) {
 $natq = "SELECT * FROM nationalities ORDER BY nationalities_name ASC";
 $natquery = mysqli_query($dbconn,$natq);
 while($natopt = mysqli_fetch_assoc($natquery)) {
-	echo "\t\t\t\t\t<option value=\"".$natopt['nationalities_id']."\">".$natopt['nationalities_name']."</option>\n";
+	if ($natopt['nationalities_id'] === $uspnat) {
+		echo "\t\t\t\t\t<option value=\"".$natopt['nationalities_id']."\" selected>".$natopt['nationalities_name']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$natopt['nationalities_id']."\">".$natopt['nationalities_name']."</option>\n";
+	}
 }
 ?>
 							</select>
@@ -264,7 +309,19 @@ while($natopt = mysqli_fetch_assoc($natquery)) {
 $i18q = "SELECT * FROM locales ORDER BY locales_language ASC";
 $i18query = mysqli_query($dbconn,$i18q);
 while($i18opt = mysqli_fetch_assoc($i18query)) {
-	echo "\t\t\t\t\t<option value=\"".$i18opt['locales_id']."\">".$i18opt['locales_language']."-".$i18opt['locales_country']."</option>\n";
+	if ($i18opt['locales_id'] === $uspi18n) {
+		if ($i18opt['locales_country'] != '') {
+			echo "\t\t\t\t\t<option value=\"".$i18opt['locales_id']."\" selected>".$i18opt['locales_language']."_".$i18opt['locales_country']."</option>\n";
+		} else {
+						echo "\t\t\t\t\t<option value=\"".$i18opt['locales_id']."\" selected>".$i18opt['locales_language']."</option>\n";
+		}
+	} else {
+		if ($i18opt['locales_country'] != '') {
+			echo "\t\t\t\t\t<option value=\"".$i18opt['locales_id']."\">".$i18opt['locales_language']."_".$i18opt['locales_country']."</option>\n";
+		} else {
+			echo "\t\t\t\t\t<option value=\"".$i18opt['locales_id']."\">".$i18opt['locales_language']."</option>\n";
+		}
+	}
 }
 ?>
 							</select>
@@ -281,7 +338,11 @@ while($i18opt = mysqli_fetch_assoc($i18query)) {
 $spkq = "SELECT * FROM spoken_languages ORDER BY spoken_languages_name ASC";
 $spkquery = mysqli_query($dbconn,$spkq);
 while($spkopt = mysqli_fetch_assoc($spkquery)) {
-	echo "\t\t\t\t\t<option value=\"".$spkopt['spoken_languages_id']."\">".$spkopt['spoken_languages_name']."</option>\n";
+	if ($spkopt['spoken_languages_id'] === $uspspkn) {
+		echo "\t\t\t\t\t<option value=\"".$spkopt['spoken_languages_id']."\" selected>".$spkopt['spoken_languages_name']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$spkopt['spoken_languages_id']."\">".$spkopt['spoken_languages_name']."</option>\n";
+	}
 }
 ?>
 							</select>
@@ -297,33 +358,39 @@ while($spkopt = mysqli_fetch_assoc($spkquery)) {
 $tztq = "SELECT * FROM time_zones ORDER BY time_zones_name ASC";
 $tztquery = mysqli_query($dbconn,$tztq);
 while($tztopt = mysqli_fetch_assoc($tztquery)) {
-	echo "\t\t\t\t\t<option value=\"".$tztopt['time_zones_id']."\">".$tztopt['time_zones_name']."</option>\n";
+	if ($tztopt['time_zones_id'] === $usptime) {
+		echo "\t\t\t\t\t<option value=\"".$tztopt['time_zones_id']."\" selected>".$tztopt['time_zones_name']."</option>\n";
+	} else {
+		echo "\t\t\t\t\t<option value=\"".$tztopt['time_zones_id']."\">".$tztopt['time_zones_name']."</option>\n";
+	}
 }
+
 ?>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td><label for="prohin"><?php echo _('Height (inches)');?></label></td>
-						<td><input type="number" name="prohin" id="prohin" class="w3-input w3-border w3-margin-bottom" min="24" max="100"></td>
+						<td><input type="number" name="prohin" id="prohin" class="w3-input w3-border w3-margin-bottom" min="24" max="100" value="<?php echo $usphin; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="prohcm"><?php echo _('Height (cm)');?></label></td>
-						<td><input type="number" name="prohcm" id="prohcm" class="w3-input w3-border w3-margin-bottom" min="61" max="272"></td>
+						<td><input type="number" name="prohcm" id="prohcm" class="w3-input w3-border w3-margin-bottom" min="61" max="272" value="<?php echo $usphcm; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="prowlbs"><?php echo _('Weight (pounds)');?></label></td>
-						<td><input type="number" name="prowlbs" id="prowlbs" class="w3-input w3-border w3-margin-bottom" min="80" max="1400"></td>
+						<td><input type="number" name="prowlbs" id="prowlbs" class="w3-input w3-border w3-margin-bottom" min="80" max="1400" value="<?php echo $uspwlbs; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="prowkg"><?php echo _('Weight (kilos)');?></label></td>
-						<td><input type="number" name="prowkg" id="prowkg" class="w3-input w3-border w3-margin-bottom" min="36" max="635"></td>
+						<td><input type="number" name="prowkg" id="prowkg" class="w3-input w3-border w3-margin-bottom" min="36" max="635" value="<?php echo $uspwkg; ?>"></td>
 					</tr>
 					<tr>
 						<td><input type="submit" id="prosubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" name="prosubmit" value="<?php echo _('Update'); ?>"></td>
 					</tr>
 			</form>
 				</table>
+				</div>
 			</article>
 <?php
 include_once "dash-footer.php";

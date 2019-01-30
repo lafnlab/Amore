@@ -54,7 +54,7 @@ if ($sel_id != '') {
 		$tztdst		= $tztopt['time_zones_dst_offset'];
 	}
 }
-$pagetitle 	= "Edit ".$tztname;
+$pagetitle 	= _("Edit ").$tztname;
 #$message		= 'test message';
 
 // PROCESSING
@@ -82,25 +82,25 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+				<h4><?php echo $pagetitle; ?></h4>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 				<input type="hidden" name="tzid" value="<?php echo $tztid; ?>">
 					<table>
 						<tr>
 							<td class="inputlabel"><label for="tzabbr"><?php echo _('Time zone abbreviation');?></label></td>
-							<td><input type="text" name="tzabbr" id="tzabbr" class="w3-input w3-border w3-margin-bottom" maxlength="100"></td>
+							<td><input type="text" name="tzabbr" id="tzabbr" class="w3-input w3-border w3-margin-bottom" value="<?php echo $tztabbr; ?>" maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzname"><?php echo _('Time zone name');?></label></td>
-							<td><input type="text" name="tzname" id="tzname" class="w3-input w3-border w3-margin-bottom" required maxlength="100"></td>
+							<td><input type="text" name="tzname" id="tzname" class="w3-input w3-border w3-margin-bottom" required value="<?php echo _($tztname); ?>" maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzoffset"><?php echo _('Time zone offset');?></label></td>
-							<td><input type="text" name="tzoffset" id="tzoffset" class="w3-input w3-border w3-margin-bottom" required value="+00:00" maxlength="100"></td>
+							<td><input type="text" name="tzoffset" id="tzoffset" class="w3-input w3-border w3-margin-bottom" required value="+00:00" value="<?php echo $tztoff; ?>" maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzdstoff"><?php echo _('Time zone DST offset');?></label></td>
-							<td><input type="text" name="tzdstoff" id="tzdstoff" class="w3-input w3-border w3-margin-bottom" required value="+00:00"maxlength="100"></td>
+							<td><input type="text" name="tzdstoff" id="tzdstoff" class="w3-input w3-border w3-margin-bottom" required value="+00:00" value="<?php echo $tztdst; ?>" maxlength="100"></td>
 						</tr>
 					</table>
 					<input type="submit" name="tztsubmit" id="tztsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">

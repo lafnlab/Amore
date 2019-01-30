@@ -54,7 +54,7 @@ if ($sel_id != '') {
 	}
 }
 
-$pagetitle 	= "Edit ".$planame;
+$pagetitle 	= _("Edit ").$planame;
 #$message		= 'test message';
 
 // PROCESSING
@@ -81,7 +81,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _($pagetitle); ?></h4>
+				<h4><?php echo $pagetitle; ?></h4>
 			<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 			<input type="hidden" name="placeid" value="<?php echo $plaid; ?>">
 				<table>
@@ -111,7 +111,7 @@ if ($message != '' || NULL) {
 				</table>
 				<input type="submit" name="placesubmit" id="placesubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
 			</form>
-</div>
+			</div>
 		</article>
 
 <?php
