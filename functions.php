@@ -137,23 +137,34 @@ function timediff($time) {
 
 }
 
- // get the number of users
- function user_quantity($users) {
+// get the number of users
+function user_quantity($users) {
  	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
  	$userqq = "SELECT * FROM users";
  	$userqquery = mysqli_query($dbconn,$userqq);
  	$userqty = mysqli_num_rows($userqquery);
 
  	return $userqty;
- }
+}
 
- // get the number of posts
- function post_quantity($posts) {
+// get the number of posts
+function post_quantity($posts) {
  	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
  	$postqq = "SELECT * FROM posts";
  	$postqquery = mysqli_query($dbconn,$postqq);
  	$postqty = mysqli_num_rows($postqquery);
 
  	return $postqty;
- }
+}
+
+// returns the url minus https:// or http://
+function short_url($url) {
+	return preg_replace('/(http:\/\/|https:\/\/)/i', '', $url);
+}
+
+ // returns an array of the accounts this user follows
+ # function user_follows($following)
+
+ // returns an array of accounts that follow this user
+ # function user_followers($followers)
 ?>

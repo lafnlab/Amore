@@ -25,7 +25,7 @@ $sitetitle = "Amore";
 # $siteurl is the url of the website. The site admin should change this to
 # whatever is most appropriate for the site.
 # Be sure to omit the trailing slash "/" from the end of the url.
-$siteurl = "http://blackh3art.media.dating";
+$siteurl = "https://www.example.com";
 
 #
 # $metadescription is a summary of the website that may appear on websites
