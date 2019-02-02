@@ -1,0 +1,936 @@
+# Amore v0.2 Ukrainian language translation.
+# This file is distributed under the same license as the Amore package.
+# Michael Hawkes <translations@dating.media>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Amore v0.2\n"
+"Report-Msgid-Bugs-To: <translations@dating.media>\n"
+"POT-Creation-Date: 2019-01-30 09:17-0500\n"
+"PO-Revision-Date: 2019-02-02 10:24-0500\n"
+"Language-Team: Amore Ukrainian Translation <amore.uk@dating.media>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: Michael Hawkes <translations@dating.media>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: uk_UA\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#.
+#. * pub/main-footer.php
+#. *
+#. * This footer ends the HTML for each public facing webpage in Amore.
+#. *
+#. * since Amore version 0.1
+#. *
+#.
+#.
+#. * pub/dash/dash-footer.php
+#. *
+#. * This footer ends the HTML for all dashboard pages in Amore.
+#. *
+#. * since Amore version 0.1
+#. *
+#.
+#: pub/main-footer.php:14 pub/dash/dash-footer.php:14
+msgid "Powered by "
+msgstr "Працює на "
+
+#: pub/main-header.php:39 pub/dash/my-profile.php:96
+#: pub/dash/dash-header.php:40
+msgid "Hello, "
+msgstr "Здрастуйте, "
+
+#.
+#. * pub/main-nav.php
+#. *
+#. * This is a navigation menu for some public facing webpages in Amore.
+#. *
+#. * since Amore version 0.1
+#. *
+#.
+#: pub/main-nav.php:28
+msgid "Home will show all of the user's posts own."
+msgstr ""
+"На головній сторінці буде показано всі власні повідомлення користувача."
+
+#: pub/main-nav.php:29 pub/dash/dash-nav.php:21
+msgid "Mentions will show any posts where the user is mentioned."
+msgstr ""
+"Примітки показуватимуть будь-які повідомлення, в яких згадується користувач."
+
+#: pub/main-nav.php:30 pub/dash/dash-nav.php:23
+msgid "A list of the user's friends (Friends follow each other)."
+msgstr "Список друзів користувачів (друзі йдуть один за одним)."
+
+#: pub/main-nav.php:31 pub/dash/dash-nav.php:24
+msgid "A list of accounts the user follows."
+msgstr "Слідує список облікових записів користувачів."
+
+#: pub/main-nav.php:32 pub/dash/dash-nav.php:25
+msgid "A list of accounts that follow this user."
+msgstr "Список облікових записів, які слідують за цим користувачем."
+
+#: pub/main-nav.php:33 pub/dash/dash-nav.php:26
+msgid "Lists created by the user."
+msgstr "Списки, створені користувачем."
+
+#: pub/main-nav.php:34 pub/dash/dash-nav.php:27
+msgid "A list of the user's favorites."
+msgstr "Список вибраних користувачів."
+
+#: pub/the-user.php:18 pub/the-post.php:18 pub/the-login.php:17
+#: pub/the-registration.php:18 pub/index.php:22
+msgid "Guest"
+msgstr "Гість"
+
+#: pub/the-user.php:103 pub/the-post.php:88
+msgid "Reply"
+msgstr "Відповісти"
+
+#: pub/the-user.php:103 pub/the-post.php:88
+msgid "Upvote"
+msgstr "Голосувати за"
+
+#: pub/the-user.php:103 pub/the-post.php:88
+msgid "Downvote"
+msgstr "Голосувати проти"
+
+#: pub/the-user.php:103 pub/the-post.php:88
+msgid "Favorite"
+msgstr "Улюблений"
+
+#: pub/the-user.php:108 pub/dash/my-profile.php:146
+msgid "There are no posts at the moment"
+msgstr "На даний момент немає повідомлень."
+
+#: pub/dash/list-genders.php:39
+msgid "List of genders"
+msgstr "Список статей"
+
+#: pub/dash/list-genders.php:48
+msgid "Add a gender "
+msgstr "Додати стать "
+
+#: pub/dash/list-genders.php:48 pub/dash/list-locales.php:48
+#: pub/dash/list-eye-colors.php:48 pub/dash/list-spoken-languages.php:47
+#: pub/dash/list-nationalities.php:48 pub/dash/list-users.php:47
+#: pub/dash/list-currencies.php:48 pub/dash/list-hair-colors.php:48
+#: pub/dash/list-sexualities.php:48 pub/dash/list-time-zones.php:48
+#: pub/dash/list-places.php:49
+msgid "here"
+msgstr "тут"
+
+#: pub/dash/list-genders.php:62 pub/dash/list-locales.php:67
+#: pub/dash/list-eye-colors.php:62 pub/dash/list-spoken-languages.php:61
+#: pub/dash/list-nationalities.php:62 pub/dash/list-users.php:62
+#: pub/dash/list-currencies.php:80 pub/dash/list-hair-colors.php:62
+#: pub/dash/list-sexualities.php:62 pub/dash/list-time-zones.php:67
+#: pub/dash/list-places.php:65 pub/dash/list-places.php:111
+#: pub/dash/list-places.php:133 pub/dash/list-places.php:155
+#: pub/dash/list-places.php:177 pub/dash/list-places.php:199
+#: pub/dash/list-places.php:221
+msgid "Edit"
+msgstr "Редагувати"
+
+#: pub/dash/list-genders.php:63 pub/dash/list-locales.php:68
+#: pub/dash/list-eye-colors.php:63 pub/dash/list-spoken-languages.php:62
+#: pub/dash/list-nationalities.php:63 pub/dash/list-users.php:65
+#: pub/dash/list-currencies.php:81 pub/dash/list-hair-colors.php:63
+#: pub/dash/list-sexualities.php:63 pub/dash/list-time-zones.php:68
+#: pub/dash/list-places.php:66 pub/dash/list-places.php:112
+#: pub/dash/list-places.php:134 pub/dash/list-places.php:156
+#: pub/dash/list-places.php:178 pub/dash/list-places.php:200
+#: pub/dash/list-places.php:222
+msgid "Delete"
+msgstr "Видалити"
+
+#: pub/dash/edit-gender.php:53 pub/dash/edit-eye-color.php:54
+#: pub/dash/edit-place.php:57 pub/dash/edit-nationality.php:55
+#: pub/dash/edit-sexuality.php:55 pub/dash/edit-locale.php:58
+#: pub/dash/edit-locale.php:60 pub/dash/edit-time-zone.php:57
+#: pub/dash/edit-currency.php:58 pub/dash/edit-hair-color.php:55
+#: pub/dash/edit-spoken-language.php:55
+msgid "Edit "
+msgstr "Редагувати "
+
+#: pub/dash/edit-gender.php:83 pub/dash/add-gender.php:79
+msgid "Gender name"
+msgstr "Статі ім'я"
+
+#: pub/dash/edit-gender.php:87 pub/dash/edit-eye-color.php:88
+#: pub/dash/edit-place.php:112 pub/dash/edit-nationality.php:89
+#: pub/dash/edit-sexuality.php:89 pub/dash/edit-locale.php:103
+#: pub/dash/edit-time-zone.php:106 pub/dash/edit-currency.php:119
+#: pub/dash/edit-hair-color.php:90 pub/dash/edit-spoken-language.php:89
+#: pub/dash/edit-profile.php:389
+msgid "Update"
+msgstr "Оновлення"
+
+#: pub/dash/the-currency.php:66 pub/dash/edit-currency.php:96
+#: pub/dash/list-currencies.php:55 pub/dash/add-currency.php:85
+msgid "Currency name"
+msgstr "Валюта ім'я"
+
+#: pub/dash/the-currency.php:67 pub/dash/edit-currency.php:100
+#: pub/dash/list-currencies.php:54 pub/dash/add-currency.php:89
+msgid "ISO code"
+msgstr "Код ISO"
+
+#: pub/dash/the-currency.php:68 pub/dash/edit-currency.php:104
+#: pub/dash/list-currencies.php:56 pub/dash/add-currency.php:93
+msgid "Symbol"
+msgstr "Символ"
+
+#: pub/dash/the-currency.php:69
+msgid "Digital"
+msgstr "Цифровий"
+
+#: pub/dash/the-currency.php:77 pub/dash/list-currencies.php:73
+msgid "Yes"
+msgstr "Так"
+
+#: pub/dash/the-currency.php:79 pub/dash/list-currencies.php:71
+msgid "No"
+msgstr "Ні"
+
+#: pub/dash/add-nationality.php:39
+msgid "Add a nationality"
+msgstr "Додайте національність"
+
+#: pub/dash/add-nationality.php:79 pub/dash/edit-nationality.php:85
+msgid "Nationality name"
+msgstr "Національності ім'я"
+
+#: pub/dash/add-nationality.php:83 pub/dash/add-time-zone.php:98
+#: pub/dash/add-eye-color.php:83 pub/dash/add-locale.php:88
+#: pub/dash/add-gender.php:83 pub/dash/add-hair-color.php:83
+#: pub/dash/add-currency.php:101 pub/dash/add-sexuality.php:83
+#: pub/dash/add-place.php:99 pub/dash/add-spoken-language.php:83
+msgid "Submit"
+msgstr "Надіслати"
+
+#: pub/dash/list-locales.php:39
+msgid "List of locales"
+msgstr "Список локалей"
+
+#: pub/dash/list-locales.php:48
+msgid "Add a locale "
+msgstr "Додати мову"
+
+#: pub/dash/list-eye-colors.php:39
+msgid "List of eye colors"
+msgstr "Список кольорів очей"
+
+#: pub/dash/list-eye-colors.php:48
+msgid "Add an eye color "
+msgstr "Додайте колір очей"
+
+#: pub/dash/edit-eye-color.php:54
+msgid " eye color"
+msgstr " колір очей"
+
+#: pub/dash/edit-eye-color.php:84 pub/dash/add-eye-color.php:79
+#: pub/dash/edit-profile.php:223
+msgid "Eye color"
+msgstr "Колір очей"
+
+#: pub/dash/edit-place.php:89 pub/dash/add-place.php:80
+msgid "Place name"
+msgstr "Місце ім'я"
+
+#: pub/dash/edit-place.php:93 pub/dash/add-place.php:84
+msgid "Place parent"
+msgstr "Батько місця"
+
+#.
+#. * pub/dash/dash-nav.php
+#. *
+#. * This is a navigation menu for all dashboard pages in Amore.
+#. *
+#. * since Amore version 0.1
+#. *
+#.
+#: pub/dash/dash-nav.php:20
+msgid ""
+"Home will show posts from everyone the user is following, including their "
+"own."
+msgstr ""
+"На головній сторінці показуватимуться публікації від всіх користувачів, "
+"включаючи їхні."
+
+#: pub/dash/dash-nav.php:20 pub/index.php:57
+msgid "Home"
+msgstr "Головна"
+
+#: pub/dash/dash-nav.php:21
+msgid "Mentions"
+msgstr "Згадки"
+
+#: pub/dash/dash-nav.php:22
+msgid "Messages will be private/direct messages between friends."
+msgstr "Повідомлення будуть приватними / прямими повідомленнями між друзями."
+
+#: pub/dash/dash-nav.php:22
+msgid "Messages"
+msgstr "Повідомлення"
+
+#: pub/dash/dash-nav.php:23
+msgid "Friends"
+msgstr "Друзі"
+
+#: pub/dash/dash-nav.php:24
+msgid "Following"
+msgstr "Наступні"
+
+#: pub/dash/dash-nav.php:25
+msgid "Followers"
+msgstr "Послідовники"
+
+#: pub/dash/dash-nav.php:26
+msgid "Lists"
+msgstr "Списки"
+
+#: pub/dash/dash-nav.php:27
+msgid "Favorites"
+msgstr "Вибране"
+
+#: pub/dash/dash-nav.php:40
+msgid "List currencies"
+msgstr "Список валют"
+
+#: pub/dash/dash-nav.php:41
+msgid "List eye colors"
+msgstr "Список кольорів очей"
+
+#: pub/dash/dash-nav.php:42
+msgid "List genders"
+msgstr "Список статей"
+
+#: pub/dash/dash-nav.php:43
+msgid "List hair colors"
+msgstr "Список кольорів волосся"
+
+#: pub/dash/dash-nav.php:44
+msgid "List locales"
+msgstr "Список локалей"
+
+#: pub/dash/dash-nav.php:45
+msgid "List nationalities"
+msgstr "Список національностей"
+
+#: pub/dash/dash-nav.php:46
+msgid "List places"
+msgstr "Список місць"
+
+#: pub/dash/dash-nav.php:47
+msgid "List sexualities"
+msgstr "Список сексуальності"
+
+#: pub/dash/dash-nav.php:48
+msgid "List spoken languages"
+msgstr "Список розмовних мов"
+
+#: pub/dash/dash-nav.php:49
+msgid "List time zones"
+msgstr "Список часових поясів"
+
+#: pub/dash/dash-nav.php:50
+msgid "List users"
+msgstr "Список користувачів"
+
+#: pub/dash/my-profile.php:94 pub/dash/edit-profile.php:75
+msgid "Dashboard for "
+msgstr "Інформаційна панель для"
+
+#. echo bindtextdomain($textdomain, $_SERVER['DOCUMENT_ROOT']."/locale");
+#. echo $textdomain;
+#: pub/dash/my-profile.php:105 pub/dash/add-post.php:130
+msgid "What are you doing?"
+msgstr "Що ви робите?"
+
+#: pub/dash/my-profile.php:106 pub/dash/add-post.php:131
+msgid "EVERYONE"
+msgstr "Всі"
+
+#: pub/dash/my-profile.php:107 pub/dash/add-post.php:132
+msgid "FEDIVERSE"
+msgstr "Fediverse"
+
+#: pub/dash/my-profile.php:108 pub/dash/add-post.php:133
+msgid "INSTANCE"
+msgstr "Примірник"
+
+#: pub/dash/my-profile.php:109 pub/dash/add-post.php:134
+msgid "FOLLOWERS"
+msgstr "Послідовники"
+
+#: pub/dash/my-profile.php:110 pub/dash/add-post.php:135
+msgid "FRIENDS"
+msgstr "Друзі"
+
+#: pub/dash/my-profile.php:111 pub/dash/add-post.php:136
+msgid "PRIVATE"
+msgstr "Приватний"
+
+#: pub/dash/my-profile.php:112 pub/dash/add-post.php:137
+msgid "SELF"
+msgstr "Себе"
+
+#. plural form
+#: pub/dash/my-profile.php:113 pub/dash/add-post.php:138 config.php:50
+msgid "Post"
+msgstr "Пост"
+
+#: pub/dash/edit-sexuality.php:85 pub/dash/add-sexuality.php:79
+msgid "Sexuality name"
+msgstr "Сексуальність ім'я"
+
+#: pub/dash/edit-locale.php:95 pub/dash/add-locale.php:80
+msgid "Locale language"
+msgstr "Мова"
+
+#: pub/dash/edit-locale.php:99 pub/dash/add-locale.php:84
+msgid "Locale country"
+msgstr "Країна"
+
+#: pub/dash/add-time-zone.php:39
+msgid "Add a time zone"
+msgstr "Додати часовий пояс"
+
+#: pub/dash/add-time-zone.php:82 pub/dash/edit-time-zone.php:90
+msgid "Time zone abbreviation"
+msgstr "Скорочення часових поясів"
+
+#: pub/dash/add-time-zone.php:86 pub/dash/edit-time-zone.php:94
+msgid "Time zone name"
+msgstr "Назва часового поясу"
+
+#: pub/dash/add-time-zone.php:90 pub/dash/edit-time-zone.php:98
+msgid "Time zone offset"
+msgstr "Часовий пояс зміщений"
+
+#: pub/dash/add-time-zone.php:94 pub/dash/edit-time-zone.php:102
+msgid "Time zone DST offset"
+msgstr "Часовий пояс DST зміщений"
+
+#: pub/dash/list-spoken-languages.php:39
+msgid "List of spoken languages"
+msgstr "Список розмовних мов"
+
+#: pub/dash/list-spoken-languages.php:47
+msgid "Add a spoken language "
+msgstr "Додайте розмовну мову"
+
+#: pub/dash/list-nationalities.php:39
+msgid "List of nationalities"
+msgstr "Список національностей"
+
+#: pub/dash/list-nationalities.php:48
+msgid "Add a nationality "
+msgstr "Додайте національність "
+
+#: pub/dash/the-user.php:68
+msgid "ID"
+msgstr "Ідентифікатор"
+
+#: pub/dash/the-user.php:71
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: pub/dash/the-user.php:74 pub/the-registration.php:208 pub/index.php:142
+msgid "Date of birth"
+msgstr "Дата народження"
+
+#: pub/dash/the-user.php:77
+msgid "Joined"
+msgstr "Дата приєднання"
+
+#: pub/dash/the-user.php:80
+msgid "Last login"
+msgstr "Дата останнього входу"
+
+#: pub/dash/add-eye-color.php:39
+msgid "Add an eye color"
+msgstr "Додайте колір очей"
+
+#: pub/dash/list-users.php:39
+msgid "List of users"
+msgstr "Список користувачів"
+
+#: pub/dash/list-users.php:47
+msgid "Add a user "
+msgstr "Додати користувача"
+
+#: pub/dash/list-users.php:63
+msgid "Suspend"
+msgstr "Призупинити"
+
+#: pub/dash/list-users.php:64
+msgid "Ban"
+msgstr "Заборона"
+
+#: pub/dash/add-locale.php:39
+msgid "Add a locale"
+msgstr "Додати мову"
+
+#: pub/dash/edit-currency.php:108 pub/dash/list-currencies.php:57
+#: pub/dash/add-currency.php:97
+msgid "Digital?"
+msgstr "Цифровий?"
+
+#: pub/dash/list-currencies.php:39
+msgid "List of currencies"
+msgstr "Список валют"
+
+#: pub/dash/list-currencies.php:48
+msgid "Add a currency "
+msgstr "Додати валюту "
+
+#: pub/dash/edit-hair-color.php:86 pub/dash/add-hair-color.php:79
+#: pub/dash/edit-profile.php:243
+msgid "Hair color"
+msgstr "Колір волосся"
+
+#: pub/dash/add-gender.php:39
+msgid "Add a gender"
+msgstr "Додати стать"
+
+#: pub/dash/the-time-zone.php:66
+msgid "Name"
+msgstr "Ім'я"
+
+#: pub/dash/the-time-zone.php:67
+msgid "Offset"
+msgstr "Зміщений"
+
+#: pub/dash/the-time-zone.php:68
+msgid "DST offset"
+msgstr "DST Зміщений"
+
+#: pub/dash/add-hair-color.php:39
+msgid "Add a hair color"
+msgstr "Додайте колір волосся"
+
+#: pub/dash/list-hair-colors.php:39
+msgid "List of hair colors"
+msgstr "Список кольорів волосся"
+
+#: pub/dash/list-hair-colors.php:48
+msgid "Add a hair color "
+msgstr "Додайте колір волосся "
+
+#: pub/dash/list-sexualities.php:39
+msgid "List of sexualities"
+msgstr "Список сексуальності"
+
+#: pub/dash/list-sexualities.php:48
+msgid "Add a sexuality "
+msgstr "Додайте сексуальність"
+
+#: pub/dash/the-place.php:66
+msgid "is part of"
+msgstr "є частиною"
+
+#: pub/dash/add-post.php:93
+msgid "Add a post"
+msgstr "Додати публікацію"
+
+#: pub/dash/add-currency.php:39
+msgid "Add a currency"
+msgstr "Додати валюту"
+
+#: pub/dash/add-sexuality.php:39
+msgid "Add a sexuality"
+msgstr "Додайте сексуальність"
+
+#: pub/dash/list-time-zones.php:39
+msgid "List of time zones"
+msgstr "Список часових поясів"
+
+#: pub/dash/list-time-zones.php:48
+msgid "Add a time zone "
+msgstr "Додати часовий пояс "
+
+#: pub/dash/the-locale.php:67
+msgid "Language"
+msgstr "Мова"
+
+#: pub/dash/the-locale.php:68
+msgid "Country"
+msgstr "Країна"
+
+#: pub/dash/add-place.php:39
+msgid "Add a place/location)"
+msgstr "Додати місце"
+
+#: pub/dash/list-places.php:39
+msgid "List of places"
+msgstr "Список місць"
+
+#: pub/dash/list-places.php:49
+msgid "Add a place "
+msgstr "Додати місце"
+
+#: pub/dash/list-places.php:52
+msgid "Africa"
+msgstr "Африка"
+
+#: pub/dash/list-places.php:74
+msgid "Antarctica"
+msgstr "Антарктида"
+
+#: pub/dash/list-places.php:98
+msgid "Asia"
+msgstr "Азія"
+
+#: pub/dash/list-places.php:120
+msgid "Caribbean"
+msgstr "Кариби"
+
+#: pub/dash/list-places.php:142
+msgid "Europe"
+msgstr "Європа"
+
+#: pub/dash/list-places.php:164
+msgid "North America"
+msgstr "Північна Америка"
+
+#: pub/dash/list-places.php:186
+msgid "Oceania"
+msgstr "Океанія"
+
+#: pub/dash/list-places.php:208
+msgid "South America"
+msgstr "Південна Америка"
+
+#: pub/dash/edit-spoken-language.php:85 pub/dash/add-spoken-language.php:79
+msgid "Spoken language name"
+msgstr "Назва мови"
+
+#: pub/dash/edit-profile.php:77
+msgid "Edit your profile"
+msgstr "Відредагуйте свій профіль"
+
+#: pub/dash/edit-profile.php:167 pub/the-login.php:109
+#: pub/the-registration.php:196 pub/the-login.old.php:86 pub/index.php:111
+#: pub/index.php:130
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: pub/dash/edit-profile.php:171
+msgid "Display name"
+msgstr "Відображувана назва"
+
+#: pub/dash/edit-profile.php:175
+msgid "Description/bio"
+msgstr "Опис / коротка біографія"
+
+#: pub/dash/edit-profile.php:179
+msgid "Email address"
+msgstr "Адреса електронної пошти"
+
+#: pub/dash/edit-profile.php:183
+msgid "Gender"
+msgstr "Стать"
+
+#: pub/dash/edit-profile.php:203
+msgid "Sexuality"
+msgstr "Сексуальність"
+
+#: pub/dash/edit-profile.php:263
+msgid "Location"
+msgstr "Розташування"
+
+#: pub/dash/edit-profile.php:283
+msgid "Nationality"
+msgstr "Громадянство"
+
+#: pub/dash/edit-profile.php:303
+msgid "Locale"
+msgstr "Мова інтерфейсу"
+
+#: pub/dash/edit-profile.php:331
+msgid "Languages spoken"
+msgstr "Розмовні мови"
+
+#: pub/dash/edit-profile.php:352
+msgid "Time zone"
+msgstr "Часовий пояс"
+
+#: pub/dash/edit-profile.php:373
+msgid "Height (inches)"
+msgstr "Висота (дюйми)"
+
+#: pub/dash/edit-profile.php:377
+msgid "Height (cm)"
+msgstr "Висота (сантиметри)"
+
+#: pub/dash/edit-profile.php:381
+msgid "Weight (pounds)"
+msgstr "Вага (фунтів)"
+
+#: pub/dash/edit-profile.php:385
+msgid "Weight (kilos)"
+msgstr "Вага (кілограми)"
+
+#: pub/dash/add-spoken-language.php:39
+msgid "Add a spoken language"
+msgstr "Додайте розмовну мову"
+
+#: pub/the-login.php:72 pub/the-login.old.php:56 pub/the-login.old.php:62
+msgid "There was a problem. Please try again."
+msgstr "Виникла проблема. Будь ласка спробуйте ще раз."
+
+#: pub/the-login.php:78
+msgid "User not found"
+msgstr "Користувача не знайдено"
+
+#: pub/the-login.php:90 pub/the-login.old.php:73 pub/index.php:109
+msgid "Login to "
+msgstr "Увійдіть до "
+
+#: pub/the-login.php:113 pub/the-registration.php:200 pub/the-login.old.php:90
+#: pub/index.php:115 pub/index.php:134
+msgid "Passphrase"
+msgstr "Парольна фраза"
+
+#: pub/the-login.php:116 pub/the-login.old.php:95 pub/index.php:118
+#: pub/index.php:150
+msgid "Login"
+msgstr "Вхід"
+
+#: pub/the-login.php:120 pub/the-registration.php:167 pub/the-login.old.php:99
+msgid "Create an account"
+msgstr "Створити аккаунт"
+
+#: pub/the-registration.php:115
+msgid "Passphrases do not match"
+msgstr "Парольні фрази не збігаються"
+
+#: pub/the-registration.php:118
+msgid "Please verify the passphrase"
+msgstr "Перевірте парольну фразу"
+
+#: pub/the-registration.php:123
+msgid "Passphrase is too short."
+msgstr "Парольна фраза занадто коротка."
+
+#: pub/the-registration.php:127
+msgid "Password is not complex"
+msgstr "Парольна фраза не є складною"
+
+#: pub/the-registration.php:143
+msgid "You are too young"
+msgstr "Ви занадто молоді"
+
+#: pub/the-registration.php:145
+msgid "Your date of birth had a typo. Try again"
+msgstr "Ваша дата народження мала помилку. Спробуйте ще раз."
+
+#: pub/the-registration.php:182
+msgid "Password must be at least 16 characters long"
+msgstr "Пароль має містити принаймні 16 символів"
+
+#: pub/the-registration.php:183
+msgid "Password must have:"
+msgstr "Пароль має містити:"
+
+#: pub/the-registration.php:185
+msgid "at least one lowercase letter"
+msgstr "хоча б одну маленьку букву"
+
+#: pub/the-registration.php:186
+msgid "at least one uppercase letter"
+msgstr "хоча б одну велику літеру"
+
+#: pub/the-registration.php:187
+msgid "at least one numeral"
+msgstr "щонайменше одну цифру"
+
+#: pub/the-registration.php:188
+msgid "at least one character that is not a number or a letter."
+msgstr "принаймні один символ, який не є номером або літерою."
+
+#: pub/the-registration.php:204 pub/index.php:138
+msgid "Verify passphrase"
+msgstr "Підтвердьте парольну фразу"
+
+#: pub/the-registration.php:211 pub/index.php:145
+msgid "Register"
+msgstr "Реєстрація"
+
+#: pub/index.php:128
+msgid "Registration for "
+msgstr "Реєстрація для"
+
+#: pub/index.php:149
+msgid "Already a user?"
+msgstr "Ви вже користуєтеся?"
+
+#: pub/index.php:159 pub/index.php:160
+msgid "Number of "
+msgstr "Число"
+
+#: pub/index.php:167
+msgid "Recent posts"
+msgstr "Останні повідомлення"
+
+#: functions.php:79
+msgid "A few seconds ago"
+msgstr "Кілька секунд тому"
+
+#: functions.php:81
+msgid "About half a minute ago"
+msgstr "Близько півгодини тому"
+
+#: functions.php:83
+msgid "A minute ago"
+msgstr "Хвилина тому"
+
+#: functions.php:85
+msgid "A couple of minutes ago"
+msgstr "Пару хвилин тому"
+
+#: functions.php:87
+msgid "A few minutes ago"
+msgstr "Кілька хвилин тому"
+
+#: functions.php:89
+msgid "Several minutes ago"
+msgstr "Кілька хвилин тому"
+
+#: functions.php:91
+msgid "About 10 minutes ago"
+msgstr "Близько 10 хвилин тому"
+
+#: functions.php:93
+msgid "About 15 minutes ago"
+msgstr "Близько 15 хвилин тому"
+
+#: functions.php:95
+msgid "About 20 minutes ago"
+msgstr "Близько 20 хвилин тому"
+
+#: functions.php:97
+msgid "About half an hour ago"
+msgstr "Близько півгодини тому"
+
+#: functions.php:99
+msgid "About an hour ago"
+msgstr "Близько години тому"
+
+#: functions.php:101
+msgid "A couple of hours ago"
+msgstr "Пару годин тому"
+
+#: functions.php:103
+msgid "A few hours ago"
+msgstr "Кілька годин тому"
+
+#: functions.php:105
+msgid "Several hours ago"
+msgstr "Кілька годин тому"
+
+#: functions.php:107
+msgid "About half a day ago"
+msgstr "Близько півдня тому"
+
+#: functions.php:109
+msgid "Almost a day ago"
+msgstr "Майже день тому"
+
+#: functions.php:111
+msgid "Yesterday"
+msgstr "Вчора"
+
+#: functions.php:113
+msgid "A couple of days ago"
+msgstr "Пару днів тому"
+
+#: functions.php:115
+msgid "A few days ago"
+msgstr "Декілька днів тому"
+
+#: functions.php:117
+msgid "Several days ago"
+msgstr "Кілька днів тому"
+
+#: functions.php:119
+msgid "Last week"
+msgstr "Минулого тижня"
+
+#: functions.php:121
+msgid "A few weeks ago"
+msgstr "Кілька тижнів том"
+
+#: functions.php:123
+msgid "Last month"
+msgstr "Останній місяць"
+
+#: functions.php:125
+msgid "A few months ago"
+msgstr "Кілька місяців тому"
+
+#: functions.php:127
+msgid "About half a year ago"
+msgstr "Близько півроку тому"
+
+#: functions.php:129
+msgid "Around a year ago"
+msgstr "Близько року тому"
+
+#: functions.php:131
+msgid "More than a year ago"
+msgstr "Більше року тому"
+
+#: functions.php:133
+msgid "More than two years ago"
+msgstr "Більше двох років тому"
+
+#: functions.php:135
+msgid "More than three years ago"
+msgstr "Більше трьох років тому"
+
+#.
+#. $metadescription is a summary of the website that may appear on websites
+#. See https://moz.com/learn/seo/meta-description
+#: config.php:33
+msgid ""
+"Amore is open-source PHP/MySQL software for the Fediverse - a decentralized "
+"social network of thousands of different communities."
+msgstr ""
+"Amore - програмне забезпечення з відкритим вихідним кодом для PHP / MySQL "
+"для Fediverse - децентралізована соціальна мережа тисяч різних громад."
+
+#.
+#. $posts_are_called allows the admin to change the name of the posts on their site.
+#. Twitter has tweets. Mastodon has toots. This site can define their own name.
+#: config.php:49
+msgid "Posts"
+msgstr "Пости"
+
+#. singular form
+#: config.php:52
+msgid "Reposts"
+msgstr "Репости"
+
+#. plural form
+#: config.php:53
+msgid "Repost"
+msgstr "Репост"
+
+#. singular form
+#.
+#. $users_are_called allows the admin to change the name of the users on their site.
+#: config.php:57
+msgid "Users"
+msgstr "Користувачі"
+
+#. plural form
+#: config.php:58
+msgid "User"
+msgstr "Користувач"
