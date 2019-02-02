@@ -52,8 +52,11 @@ if ($sel_id != '') {
 		$i18ctry		= $i18opt['locales_country'];
 	}
 }
-
-$pagetitle = $i18lang."-".$i18ctry;
+if ($i18_ctry != '') {
+	$pagetitle = $i18lang."_".$i18ctry;
+} else {
+	$pagetitle = $i18lang;
+}
 include_once "dash-header.php";
 include_once "dash-nav.php";
 ?>

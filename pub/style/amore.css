@@ -9,10 +9,10 @@
  *
  */
 
- .maincard {
- 	margin: auto;
- }
- 
+.maincard {
+	margin: auto;
+}
+
 /* 'borrowing' from w3.css https://www.w3schools.com/w3css/w3css_color_generator.asp */
 .w3-theme-l5 {
 	color:#000 !important;
