@@ -507,4 +507,3 @@ INSERT INTO `time_zones` (`time_zones_id`, `time_zones_abbreviation`, `time_zone
 ('ẞþÙтoávPDд', '', 'Asia/Kuching', '+08:00', '+08:00'),
 ('ẞмzæhQРАУб', '', 'Australia/Canberra', '+10:00', '+11:00'),
 ('ẞНúíÝKМÊÂt', '', 'Asia/Baghdad', '+03:00', '+03:00');
-COMMIT;

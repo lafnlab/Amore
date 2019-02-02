@@ -195,4 +195,3 @@ INSERT INTO `nationalities` (`nationalities_id`, `nationalities_name`) VALUES
 ('ьtДКыçÊzm4', 'TUVALUAN'),
 ('яQìsВдЮщÕù', 'GEORGIAN'),
 ('ẞФì0ыуèßÙе', 'BURUNDIAN');
-COMMIT;

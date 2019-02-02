@@ -257,4 +257,3 @@ INSERT INTO `locations` (`locations_id`, `locations_name`, `locations_parent`) V
 ('юХkЙagÕëцå', 'PELAGIE', '0000000001'),
 ('ЯСът0VAîóр', 'CEUTA', '0000000001'),
 ('ẞòнтÛiÈÉÜs', 'CAYMANIS', '0000000004,KôÉwмØbNхХ');
-COMMIT;
