@@ -7,6 +7,16 @@
  * since Amore version 0.1
  *
  */
+
+   	// have Amore use the right localization
+	putenv("LC_MESSAGES=".$default_locale);
+	setlocale(LC_MESSAGES, $default_locale);
+
+	// set the textdomain
+	$textdomain = "amore";
+	bindtextdomain($textdomain, "locale");
+	bind_textdomain_codeset($textdomain, 'UTF-8');
+	textdomain($textdomain);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $default_locale; ?>">

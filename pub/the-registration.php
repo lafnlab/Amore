@@ -84,7 +84,7 @@ if($open_registration == FALSE) {
             if(in_array($unamel,$banned_user_names)) {
 
 /* if it's banned, show an error                */
-                $message = "Username is banned";
+                $message = "Username is banned.";
 
             } else {
 
@@ -94,7 +94,7 @@ if($open_registration == FALSE) {
                 if (mysqli_num_rows($origuname_q) <> 0) {
 
 /* error if it's already taken                  */
-                    $message = "username is taken";
+                    $message = "Username is taken.";
                     unset($uname);
                 } #else {
                   #  $name = "ok";
@@ -124,7 +124,7 @@ if($open_registration == FALSE) {
 
 /* Is the password complex enough?              */
             } else if (!preg_match("/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/",$upass1)){
-                $message = _("Password is not complex");
+                $message = _("Passphrase is not complex");
             } else {
 /* encrypt the password                         */
                 $hash_pass = password_hash($upass1,PASSWORD_DEFAULT);
@@ -140,9 +140,9 @@ if($open_registration == FALSE) {
 
 /* if age < 18, show an error                   */
             if(user_age($udob) < 18) {
-                $message = _("You are too young");
+                $message = _("You are too young.");
             } else if (user_age($udob) > 110) {
-                $message = _("Your date of birth had a typo. Try again");
+                $message = _("Your date of birth had a typo. Try again.");
             }
         }
 
@@ -164,7 +164,6 @@ if($open_registration == FALSE) {
     session_destroy();
 }
 
-$pagetitle = _("Create an account");
 include_once "main-header.php";
 ?>
 <?php
@@ -179,8 +178,8 @@ if ($message != '' || NULL) {
 		<div class="w3-cell-row w3-container">
 			<div class="w3-col w3-cell m3 l4">
 				<p>
-					<?php echo _('Password must be at least 16 characters long'); ?>.<br><br>
-					<?php echo _('Password must have:'); ?>
+					<?php echo _('Passphrase must be at least 16 characters long.'); ?>.<br><br>
+					<?php echo _('Passphrase must have:'); ?>
 					<ul>
 						<li><?php echo _('at least one lowercase letter'); ?></li>
 						<li><?php echo _('at least one uppercase letter'); ?></li>
@@ -191,7 +190,7 @@ if ($message != '' || NULL) {
 			</div>
 			<div class="w3-col w3-panel w3-cell m6 l4">
 			<form id="basicform" method="post" class="w3-card-2 w3-theme-l3 w3-padding maincard" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-					<h2 class="w3-center"><?php echo $pagetitle; ?></h2>
+					<h2 class="w3-center"><?php echo _("Create an account"); ?></h2>
 					<p>
 						<label for="acctname"><?php echo _('Username');?></label>
 						<input type="text" name="acctname" id="acctname" class="w3-input w3-border w3-margin-bottom" required maxlength="50">
@@ -208,7 +207,7 @@ if ($message != '' || NULL) {
 						<label for="acctdob"><?php echo _('Date of birth');?></label>
 						<input type="date" name="acctdob" id="acctdob" class="w3-input w3-border w3-margin-bottom" required min="1900-01-01">
 					</p>
-				<input type="submit" name="acctsubmit" id="acctsubmit" class="w3-button w3-button-hover w3-block w3-theme-d3 w3-section w3-padding" value="<?php echo _('Register'); ?>">
+				<input type="submit" name="acctsubmit" id="acctsubmit" class="w3-button w3-button-hover w3-block w3-theme-d3 w3-section w3-padding" value="<?php echo _('TO REGISTER'); ?>">
 			</form>
 			</div>
 			<div class="w3-col w3-cell m3 l4">&nbsp;</div> <!-- empty div for the purpose of positioning -->

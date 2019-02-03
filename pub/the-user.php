@@ -8,7 +8,6 @@
  */
 
 include_once	"../conn.php";
-#include_once	"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
 // see if a session is set and get the username, if so.
