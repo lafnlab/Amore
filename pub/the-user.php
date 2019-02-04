@@ -10,12 +10,6 @@
 include_once	"../conn.php";
 include			"../functions.php";
 
-// see if a session is set and get the username, if so.
-if (isset($_COOKIE['uname'])) {
-	$visitortitle = $_COOKIE['uname'];
-} else {
-	$visitortitle = _('Guest');
-}
 
 // get the ID for the user whose page this is
 if (isset($_GET["uid"])) {

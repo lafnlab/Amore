@@ -115,7 +115,7 @@ if ($message != '' || NULL) {
 		echo "\t\t\t\t\t\t\t<label for=\"loginpass\">"._('Passphrase')."</label>\n";
 		echo "\t\t\t\t\t\t\t<input type=\"password\" name=\"loginpass\" id=\"loginpass\" class=\"w3-input w3-border w3-margin-bottom\" required>\n";
 		echo "\t\t\t\t\t\t</p>\n";
-		echo "\t\t\t\t\t\t<input type=\"submit\" name=\"loginsubmit\" id=\"loginsubmit\" class=\"w3-button w3-block w3-theme-d3 w3-section w3-padding\" value=\""._('Login')."\">\n";
+		echo "\t\t\t\t\t\t<input type=\"submit\" name=\"loginsubmit\" id=\"loginsubmit\" class=\"w3-button w3-block w3-theme-d3 w3-section w3-padding\" value=\""._('TO LOGIN')."\">\n";
 		echo "\t\t\t\t\t</form>\n";
 		echo "\t\t\t\t</div>\n";
 		echo "\t\t\t</div> <!-- end LEFT COLUMN -->\n\n";
@@ -142,12 +142,12 @@ if ($message != '' || NULL) {
 		echo "\t\t\t\t\t\t\t<label for=\"acctdob\">"._('Date of birth')."</label>\n";
 		echo "\t\t\t\t\t\t\t<input type=\"date\" name=\"acctdob\" id=\"acctdob\" class=\"w3-input w3-border w3-margin-bottom\" required min=\"1900-01-01\">\n";
 		echo "\t\t\t\t\t\t</p>\n";
-		echo "\t\t\t\t\t\t<input type=\"submit\" name=\"acctsubmit\" id=\"acctsubmit\" class=\"w3-button w3-block w3-theme-d3 w3-section w3-padding\" value=\""._('Register')."\">\n";
+		echo "\t\t\t\t\t\t<input type=\"submit\" name=\"acctsubmit\" id=\"acctsubmit\" class=\"w3-button w3-block w3-theme-d3 w3-section w3-padding\" value=\""._('TO REGISTER')."\">\n";
 		echo "\t\t\t\t\t</form>\n";
 		echo "\t\t\t\t\t<hr>\n";
 		echo "\t\t\t\t\t<p>\n";
 		echo "\t\t\t\t\t\t"._('Already a user?')."\n";
-		echo "\t\t\t\t\t\t<a href=\"the-login.php\">"._('Login')."</a>\n";
+		echo "\t\t\t\t\t\t<a href=\"the-login.php\">"._('TO LOGIN')."</a>\n";
 		echo "\t\t\t\t\t</p>\n";
 		echo "\t\t\t\t</div>\n";
 		echo "\t\t\t</div> <!-- end LEFT COLUMN -->\n\n";
@@ -165,7 +165,7 @@ if ($message != '' || NULL) {
 	if (post_quantity($posts) > 0) {
 		echo "\t\t\t<div class=\"w3-col m3 w3-row-padding w3-panel\">\n";
 		echo "\t\t\t<h2 class=\"w3-center\">"._('Recent posts')."</h2>\n";
-		$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC LIMIT 50";
+		$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" LIMIT 50 ORDER BY posts_timestamp DESC";
 		$pst_query = mysqli_query($dbconn,$pst_q);
 		while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
 			$postid		= $pst_opt['posts_id'];

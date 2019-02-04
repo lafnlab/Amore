@@ -8,16 +8,15 @@
  */
 
 include_once	"../conn.php";
-#include_once	"../config.php"; // use the configuration table instead
 include			"../functions.php";
 
-// see if a session is set and get the username, if so.
+/**
+ * see if cookie is set
+ * if so, send them to their profile page.
+ */
 if (isset($_COOKIE['id'])) {
 	redirect("dash/my-profile.php?uid=".$_COOKIE['id']);
-} else {
-	$visitortitle = _('Guest');
 }
-
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
@@ -50,114 +49,85 @@ if($open_registration == FALSE) {
 
 } else if(isset($_POST['acctsubmit'])) {
 /* if $_POST['acctsubmit'] is set                  */
+#	$message = "Testing registration";
 
-/* if a user id is set                          	*/
-    if(isset($uid)) {
+	$regname		= nicetext($_POST["acctname"]);
+	$regpass1	= $_POST["acctpass1"];
+	$regpass2	= $_POST["acctpass2"];
+	$regdob		= $_POST["acctdob"];
 
-        // uncomment for testing
-        #session_start();
+/**
+ * If the username is set, see if it is already being used
+ */
+	if (isset($regname)) {
+		$origuname		= "SELECT * FROM users WHERE user_name='".$regname."'";
+      $origunameq		= mysqli_query($dbconn, $origuname);
+		while ($orignameopt = mysqli_fetch_assoc($orignameq)) {
 
-/* and session is not set                      		*/
-        if(!session_id()) {
+			$nametest = $orignameopt["user_name"];
 
-/* if a userid is set, but a session is not, unset the user id and send them to the home page */
-            unset($uid);
-            redirect("index.php");
-        } else {
+			if ($regname === $nametest) {
+				$message = "USERNAME_TAKEN";
+				unset($regname);
+			}
+     }
+	} // end if isset $regname
 
-/* if a userid is set and a session is set, go to the profile page */
-            redirect("dash/my-profile.php?uid=".$uid);
-        }
+/**
+ * Time to see if the passphrase works well
+ */
+	if (isset($regpass1)) {
+		if (isset($regpass2)) {
 
-/* else a user id is not set                    */
-    } else {
-        $uname			= $_POST['acctname'];
-        $upass1		= $_POST['acctpass1'];
-        $upass2		= $_POST['acctpass2'];
-        $udob			= $_POST['acctdob'];
+			// Can the user type the same passphrase twice without typos?
+			if ($regpass1 !== $regpass2) {
+				$message	= "PASSPHRASE_MISMATCH";
+			}
+		}
 
-/* if the username is set                       */
-        if(isset($uname)) {
+		// Is the passphrase at least 16 characters long?
+		if (strlen($regpass1) < 16) {
+			$message = "SHORT_PASSPHRASE";
 
-/* check if the username is banned             */
-            $unamel = strtolower($uname);
-            if(in_array($unamel,$banned_user_names)) {
+		// Is the passphrase complex?
+		} else if (!preg_match("/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/",$regpass1)) {
+			$message = "NOT_COMPLEX";
+		} else {
 
-/* if it's banned, show an error                */
-                $message = "Username is banned.";
+			// if it gets this far without errors, we're good
+			$hash_pass = password_hash($regpass1,PASSWORD_DEFAULT);
+		}
 
-            } else {
+	} // end if isset $regpass1
 
-/* check if username is already being used      */
-                $origuname     = "SELECT * FROM users WHERE user_name='".$uname."'";
-                $origuname_q   = mysqli_query($dbconn, $origuname);
-                if (mysqli_num_rows($origuname_q) <> 0) {
+/**
+ * Let's see if the user is old enough to join
+ */
+	if (isset($regdob)) {
 
-/* error if it's already taken                  */
-                    $message = "Username is taken.";
-                    unset($uname);
-                } #else {
-                  #  $name = "ok";
-                #}
-            }
+		if (user_age($regdob) < 18) {
+			$message = "TOO_YOUNG";
+		} else if (user_age($regdob) > 110) {
+			$message = "TOO_OLD";
+		}
+	} // end if isset $regdob
 
-/* if username is not set, something is wrong. redirect them to main page */
-        } else {
-            redirect("index.php");
-        }
-
-/* if a password is set                         */
-        if(isset($upass1)) {
-
-/* if a password is verified							*/
-				if(isset($upass2)) {
-					if($upass1 !== $upass2) {
-						$message = _("Passphrases do not match");
-					}
-				} else {
-					$message = _("Please verify the passphrase");
-				}
-
-/* if it is too short, error                    */
-            if(strlen($upass1) < 16) {
-                $message = _("Passphrase is too short.");
-
-/* Is the password complex enough?              */
-            } else if (!preg_match("/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/",$upass1)){
-                $message = _("Passphrase is not complex");
-            } else {
-/* encrypt the password                         */
-                $hash_pass = password_hash($upass1,PASSWORD_DEFAULT);
-            }
-
-/* if the password is not set, something is wrong. redirect them to the main page */
-        } else {
-            redirect("index.php");
-        }
-
-/* if a date of birth is set                    */
-        if(isset($udob)) {
-
-/* if age < 18, show an error                   */
-            if(user_age($udob) < 18) {
-                $message = _("You are too young.");
-            } else if (user_age($udob) > 110) {
-                $message = _("Your date of birth had a typo. Try again.");
-            }
-        }
-
-/* if we made it this far, start a session, create an id, enter user in DB, and go to the profile page */
-        if (!isset($message)) {
-            $uid 				= makeid($newid);
-            $udatecreate	= date('Y-m-d H:i:s');
-            $new_query = "INSERT INTO users (user_id, user_name, user_pass, user_email, user_dob, user_outbox, user_inbox, user_liked, user_follows, user_followers, user_created, user_last_login) VALUES ('$uid', '$uname', '$hash_pass', '', '$udob', '', '', '', '', '', '$udatecreate', '$udatecreate')";
-#		$message = $new_query;
-				$new_add = mysqli_query($dbconn,$new_query);
-				session_start();
-				redirect("dash/my-profile.php?uid=".$uid);
-        }
-    }
-
+/**
+ * If we made it this far, create an ID, start a session, set cookies, etc.
+ */
+	if (!isset($message)) {
+		$uid				= makeid($newid);
+		$udatecreate	= date('Y-m-d H:i:s');
+		$newq1			= "INSERT INTO users (user_id, user_name, user_pass, user_date_of_birth, user_created, user_last_login) VALUES ('$uid', '$regname', '$hash_pass', '$regdob', '$udatecreate', '$udatecreate')";
+		$newq2			= "INSERT INTO user_profiles (user_profiles_id) VALUES ('$uid')";
+#$message = "SQL";
+		$newquery1		= mysqli_query($dbconn,$newq1);
+		$newquery2		= mysqli_query($dbconn,$newq2);
+		session_start();
+		setcookie("uname",$regname,0);
+		setcookie("id",$uid,0);
+		redirect("dash/my-profile.php?uid=".$uid);
+	}
 /* else if $_post['acctsubmit'] is not set      */
 } else {
     unset($uid);
@@ -166,20 +136,39 @@ if($open_registration == FALSE) {
 
 include_once "main-header.php";
 ?>
-<?php
-if ($message != '' || NULL) {
-	echo header_message($message);
-}
-?>
 	<!-- THE CONTAINER for the main content -->
 	<main class="w3-container w3-content" style="max-width:1400px;margin-top:40px;">
-
-		<!-- THE GRID -->
+<?php
+switch ($message) {
+	case "USERNAME_TAKEN":
+		echo _("That username is already taken. Please choose another.");
+		break;
+	case "PASSPHRASE_MISMATCH":
+		echo _("The passphrases do not match. Please try again.");
+		break;
+	case "SHORT_PASSPHRASE":
+		echo _("The passphrase is too short. Please try again.");
+		break;
+	case "NOT_COMPLEX":
+		echo _("The passphrase is not complex. Please try again.");
+		break;
+	case "TOO_YOUNG":
+		echo _("You are too young to join this website");
+		break;
+	case "TOO_OLD":
+		echo _("There was a typo in your date of birth. Please try again.");
+		break;
+	case "SQL":
+		echo $newq1;
+		break;
+}
+?>
+	<!-- THE GRID -->
 		<div class="w3-cell-row w3-container">
 			<div class="w3-col w3-cell m3 l4">
 				<p>
-					<?php echo _('Passphrase must be at least 16 characters long.'); ?>.<br><br>
-					<?php echo _('Passphrase must have:'); ?>
+					<?php echo _('Passphrase must be at least 16 characters long.'); ?><br><br>
+					<?php echo _('Passphrase must have:')."\n"; ?>
 					<ul>
 						<li><?php echo _('at least one lowercase letter'); ?></li>
 						<li><?php echo _('at least one uppercase letter'); ?></li>

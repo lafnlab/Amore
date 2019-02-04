@@ -54,7 +54,12 @@
 		} else {
 			echo "<a href=\"the-login.php\">";
 		}
-		echo $visitortitle;
+		// see if a session is set and get the username, if so.
+		if (isset($_COOKIE['uname'])) {
+			echo $_COOKIE['uname'];
+		} else {
+			echo _('Guest');
+		}
 		echo "</a>&nbsp;|&nbsp;";
 		echo "<a href=\"\#\">&#9776;</a>";
 ?>
