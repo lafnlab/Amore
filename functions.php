@@ -137,34 +137,61 @@ function timediff($time) {
 
 }
 
-// get the number of users
-function user_quantity($users) {
+ // get the number of users
+ function user_quantity($users) {
  	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
  	$userqq = "SELECT * FROM users";
  	$userqquery = mysqli_query($dbconn,$userqq);
  	$userqty = mysqli_num_rows($userqquery);
 
  	return $userqty;
+ }
+
+ // get the number of active users over the past six months
+function users_half_year($sometimes_users) {
+	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+
+	$usershalfyear = 0;
+
+	$usershalfyearq = "SELECT * FROM users";
+	$usershalfyearquery = mysqli_query($dbconn,$usershalfyearq);
+	while ($usershalfyearopt = mysqli_fetch_assoc($usershalfyearquery)) {
+		$lastlogin	= strtotime($usershalfyearopt['user_last_login']);
+		$now			= strtotime('now');
+		if (($now - $lastlogin) < 15778800) { // 15778800 is six months in seconds
+			$usershalfyear++;
+		}
+	}
+
+	return $usershalfyear;
 }
 
-// get the number of posts
-function post_quantity($posts) {
+ // get the number of active users over the past month
+ function users_past_month($active_users) {
+	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+
+	$usersmonthqty = 0;
+
+	$usersmonthq = "SELECT * FROM users";
+	$usersmonthquery = mysqli_query($dbconn,$usersmonthq);
+	while ($usersmonthopt = mysqli_fetch_assoc($usersmonthquery)) {
+		$lastlogin	= strtotime($usersmonthopt['user_last_login']);
+		$now			= strtotime('now');
+		if (($now - $lastlogin) < 2629800) { // 2629800 is one month in seconds
+			$usersmonthqty++;
+		}
+	}
+
+	return $usersmonthqty;
+ }
+
+ // get the number of posts
+ function post_quantity($posts) {
  	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
  	$postqq = "SELECT * FROM posts";
  	$postqquery = mysqli_query($dbconn,$postqq);
  	$postqty = mysqli_num_rows($postqquery);
 
  	return $postqty;
-}
-
-// returns the url minus https:// or http://
-function short_url($url) {
-	return preg_replace('/(http:\/\/|https:\/\/)/i', '', $url);
-}
-
- // returns an array of the accounts this user follows
- # function user_follows($following)
-
- // returns an array of accounts that follow this user
- # function user_followers($followers)
+ }
 ?>
