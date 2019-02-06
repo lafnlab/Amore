@@ -9,7 +9,6 @@
  */
 
 include_once	"../../conn.php";
-#include_once	"../config.php";
 include			"../../functions.php";
 
 if (isset($_GET["eid"])) {
@@ -82,7 +81,7 @@ if ($message != '' || NULL) {
 							<td><input type="text" name="eyecolor" id="eyecolor" class="w3-input w3-border w3-margin-bottom" value="<?php echo $eyecolor; ?>" maxlength="100"></td>
 						</tr>
 					</table>
-					<input type="submit" name="eyesubmit" id="eyesubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
+					<input type="submit" name="eyesubmit" id="eyesubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>">
 				</form>
 			</div>
 		</article>

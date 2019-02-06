@@ -1,6 +1,14 @@
 <?php
+/*
+ * pub/dash/edit-profile.php
+ *
+ * A user can edit their profile.
+ *
+ * since Amore version 0.2
+ *
+ */
+
 include_once "../../conn.php";
-#include_once "../config.php";
 include "../../functions.php";
 
 if (isset($_GET["uid"])) {
@@ -378,14 +386,14 @@ while($tztopt = mysqli_fetch_assoc($tztquery)) {
 					</tr>
 					<tr>
 						<td><label for="prowlbs"><?php echo _('Weight (pounds)');?></label></td>
-						<td><input type="number" name="prowlbs" id="prowlbs" class="w3-input w3-border w3-margin-bottom" min="80" max="1400" value="<?php echo $uspwlbs; ?>"></td>
+						<td><input type="number" name="prowlbs" id="prowlbs" class="w3-input w3-border w3-margin-bottom" min="80" max="1400" value="<?php echo $uspwlb; ?>"></td>
 					</tr>
 					<tr>
 						<td><label for="prowkg"><?php echo _('Weight (kilos)');?></label></td>
 						<td><input type="number" name="prowkg" id="prowkg" class="w3-input w3-border w3-margin-bottom" min="36" max="635" value="<?php echo $uspwkg; ?>"></td>
 					</tr>
 					<tr>
-						<td><input type="submit" id="prosubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" name="prosubmit" value="<?php echo _('Update'); ?>"></td>
+						<td><input type="submit" id="prosubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" name="prosubmit" value="<?php echo _('TO UPDATE'); ?>"></td>
 					</tr>
 			</form>
 				</table>

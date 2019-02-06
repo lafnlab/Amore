@@ -9,7 +9,6 @@
  */
 
 include_once	"../../conn.php";
-#include_once	"../config.php";
 include			"../../functions.php";
 
 if (isset($_GET["did"])) {
@@ -113,7 +112,7 @@ if ($message != '' || NULL) {
 
 					</tr>
 					<tr>
-						<td><input type="submit" name="currsubmit" id="currsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>"></td>
+						<td><input type="submit" name="currsubmit" id="currsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>"></td>
 					</tr>
 					</form>
 				</table>

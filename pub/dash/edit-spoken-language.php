@@ -83,7 +83,7 @@ if ($message != '' || NULL) {
 							<td><input type="text" name="spkname" id="spkname" class="w3-input w3-border w3-margin-bottom" maxlength="100" value="<?php echo $spkname; ?>"></td>
 						</tr>
 					</table>
-					<input type="submit" name="spksubmit" id="spksubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
+					<input type="submit" name="spksubmit" id="spksubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>">
 				</form>
 			</div>
 		</article>

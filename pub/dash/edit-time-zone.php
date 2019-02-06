@@ -9,7 +9,6 @@
  */
 
 include_once	"../../conn.php";
-#include_once	"../config.php";
 include			"../../functions.php";
 
 if (isset($_GET["tzid"])) {
@@ -94,14 +93,14 @@ if ($message != '' || NULL) {
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzoffset"><?php echo _('Time zone offset');?></label></td>
-							<td><input type="text" name="tzoffset" id="tzoffset" class="w3-input w3-border w3-margin-bottom" required value="+00:00" value="<?php echo $tztoff; ?>" maxlength="100"></td>
+							<td><input type="text" name="tzoffset" id="tzoffset" class="w3-input w3-border w3-margin-bottom" required value="<?php echo $tztoff; ?>" maxlength="100"></td>
 						</tr>
 						<tr>
 							<td class="inputlabel"><label for="tzdstoff"><?php echo _('Time zone DST offset');?></label></td>
-							<td><input type="text" name="tzdstoff" id="tzdstoff" class="w3-input w3-border w3-margin-bottom" required value="+00:00" value="<?php echo $tztdst; ?>" maxlength="100"></td>
+							<td><input type="text" name="tzdstoff" id="tzdstoff" class="w3-input w3-border w3-margin-bottom" required value="<?php echo $tztdst; ?>" maxlength="100"></td>
 						</tr>
 					</table>
-					<input type="submit" name="tztsubmit" id="tztsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
+					<input type="submit" name="tztsubmit" id="tztsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>">
 				</form>
 			</div>
 		</article>

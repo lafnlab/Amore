@@ -106,7 +106,7 @@ if ($message != '' || NULL) {
 						</td>
 					</tr>
 				</table>
-				<input type="submit" name="placesubmit" id="placesubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
+				<input type="submit" name="placesubmit" id="placesubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>">
 			</form>
 			</div>
 		</article>

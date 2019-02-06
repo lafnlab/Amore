@@ -9,7 +9,6 @@
  */
 
 include_once	"../../conn.php";
-#include_once	"../config.php";
 include			"../../functions.php";
 
 if (isset($_GET["hid"])) {
@@ -84,7 +83,7 @@ if ($message != '' || NULL) {
 							<td><input type="text" name="harcolor" id="harcolor" class="w3-input w3-border w3-margin-bottom" maxlength="100" value="<?php echo $harcolor; ?>"></td>
 						</tr>
 					</table>
-					<input type="submit" name="harsubmit" id="harsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
+					<input type="submit" name="harsubmit" id="harsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>">
 				</form>
 			</div>
 		</article>

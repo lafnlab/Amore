@@ -9,7 +9,6 @@
  */
 
 include_once	"../../conn.php";
-#include_once	"../config.php";
 include			"../../functions.php";
 
 
@@ -99,7 +98,7 @@ if ($message != '' || NULL) {
 							<td><input type="text" name="i18ctry" id="i18ctry" class="w3-input w3-border w3-margin-bottom" maxlength="5" value="<?php echo $i18ctry; ?>"></td>
 						</tr>
 					</table>
-					<input type="submit" name="i18submit" id="i18submit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('Update'); ?>">
+					<input type="submit" name="i18submit" id="i18submit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" value="<?php echo _('TO UPDATE'); ?>">
 				</form>
 			</div>
 		</article>
