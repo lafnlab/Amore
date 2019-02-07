@@ -9,4 +9,5 @@ INSERT INTO `genders` (`genders_id`, `genders_name`) VALUES
 ('ÞLЛWnÝЫUËР', 'GENDERQUEER'),
 ('фХöüJпnQюì', 'CISGENDER FEMALE'),
 ('фЭÞQeÁkíßh', 'TRANSGENDER FEMALE'),
-('ЧîБRIДZТiÙ', 'TRANSGENDER MALE');
+('ЧîБRIДZТiÙ', 'TRANSGENDER MALE'),
+('сñËu1RÊìXo', 'BOT');
