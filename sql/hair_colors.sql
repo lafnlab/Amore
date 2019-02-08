@@ -8,4 +8,5 @@ INSERT INTO `hair_colors` (`hair_colors_id`, `hair_colors_color`) VALUES
 ('ÚÑÉÿ3ãкбSõ', 'SOME GREY'),
 ('жÎбnføЕяшь', 'DARK BROWN'),
 ('ОхJIнЦÆоÒã', 'BALD'),
-('ЭЧШыVüСЮьm', 'AUBURN');
+('ЭЧШыVüСЮьm', 'AUBURN'),
+('bçÔWÙöj1чЧ', 'BLACK');
