@@ -5,4 +5,5 @@ INSERT INTO sexualities (sexualities_id, sexualities_name) VALUES
 ('ÏтÀлØРCyьС', 'HOMOSEXUAL'),
 ('SèðКЧgÛТH9', 'BISEXUAL'),
 ('хЬéyГnÝыБЯ', 'EVOLVING'),
-('яÆÚГôcЧÎdУ', 'QUEER');
+('яÆÚГôcЧÎdУ', 'QUEER'),
+('éÁЧâþГBUяú', 'BOT');
