@@ -11,7 +11,6 @@
  */
 
 include_once "../conn.php";
-#include_once "../config.php"; // use the configuration table instead.
 include "../functions.php";
 
 // see if a session is set. If so, redirect them to their dashboard.
@@ -79,17 +78,17 @@ if ($message != '' || NULL) {
 	fclose($nodeinfometa);
 
 // create or update the nodeinfo/1.0 file
-	$nodeinfo1 = fopen("nodeinfo/1.0", "w") or die("Unable to open or create nodeinfo 1.0 file");
+	$nodeinfo1 = fopen("nodeinfo/1.0.jsonld", "w") or die("Unable to open or create nodeinfo 1.0 file");
 
-	$json1 = "{\"version\":\"1.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.2\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":".users_half_year($sometimes_users).",\"activeMonth\":".users_past_month($active_users)."},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$website_name."\"}}";
+	$json1 = "{\"version\":\"1.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.3-alpha\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":".users_half_year($sometimes_users).",\"activeMonth\":".users_past_month($active_users)."},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$website_name."\"}}";
 
 	fwrite($nodeinfo1,$json1);
 	fclose($nodeinfo1);
 
 // create or update nodeinfo/2.0 file
-	$nodeinfo2 = fopen("nodeinfo/2.0", "w") or die("Unable to open or create nodeinfo 2.0 file");
+	$nodeinfo2 = fopen("nodeinfo/2.0.jsonld", "w") or die("Unable to open or create nodeinfo 2.0 file");
 
-	$json2 = "{\"version\":\"2.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.2\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":".users_half_year($sometimes_users).",\"activeMonth\":".users_past_month($active_users)."},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$website_name."\"}}";
+	$json2 = "{\"version\":\"2.0\",\"software\":{\"name\":\"amore\",\"version\":\"v0.3-alpha\"},\"protocols\":{\"inbound\":[],\"outbound\":[]},\"services\":{\"inbound\":[],\"outbound\":[]},\"openRegistrations\":".$open.",\"usage\":{\"users\":{\"total\":".user_quantity($users).",\"activeHalfyear\":".users_half_year($sometimes_users).",\"activeMonth\":".users_past_month($active_users)."},\"localPosts\":".post_quantity($posts).",\"localComments\":},\"metadata\":{\"nodeName\":\"".$website_name."\"}}";
 
 	fwrite($nodeinfo2,$json2);
 	fclose($nodeinfo2);
@@ -154,6 +153,11 @@ if ($message != '' || NULL) {
 	}
 	echo "\t\t\t\t<!-- MIDDLE COLUMN -->\n";
 	echo "\t\t\t<div class=\"w3-col m6 w3-row-padding w3-panel\">\n";
+	echo "\t\t\t\t<div class=\"w3-card-2 w3-padding w3-margin-bottom w3-theme-l3\">\n";
+	echo "\t\t\t\t<h2>".$website_name."</h2>\n";
+	echo "\t\t\t\t<p><b>".$website_description."</b></p>\n";
+	echo "\t\t\t\t<p>".$metadescription."</p>\n";
+	echo "\t\t\t\t</div>\n";
 	echo "\t\t\t\t<!-- statistics section -->\n";
 	echo "\t\t\t\t<div class=\"w3-card-2 w3-padding w3-theme-l3\">\n";
 	echo "\t\t\t\t<span>"._("Number of ").$users_are_called." = ".user_quantity($user)."</span><br>\n";
@@ -183,7 +187,7 @@ if ($message != '' || NULL) {
 			$now = date('Y-m-d H:i:s');
 
 			echo "\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
-			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"the-user.php?uid=".$postby."\">".$byname."</a>&nbsp;";
+			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"the-user.php?uname=".$byname."\">".$byname."</a>&nbsp;";
 			echo "<a href=\"the-post.php?pid=".$postid."\">".$posttime;
 			echo "</a></span>\n";
 			echo "\t\t\t\t<p class=\"mainpageposttext\">".$posttext."</p>\n";

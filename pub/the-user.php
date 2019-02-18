@@ -12,10 +12,17 @@ include			"../functions.php";
 
 
 // get the ID for the user whose page this is
-if (isset($_GET["uid"])) {
-	$sel_id = $_GET["uid"];
+#if (isset($_GET["uid"])) {
+#	$sel_id = $_GET["uid"];
+#} else {
+#	$sel_id = "";
+#}
+
+// get the user info
+if (isset($_GET["uname"])) {
+	$name = $_GET["uname"];
 } else {
-	$sel_id = "";
+	$name = "";
 }
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
@@ -41,9 +48,9 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 	$favorite_is_called		= $mysiteopt['favorite_is_called'];
 }
 
-if ($sel_id != '') {
+if ($name != '') {
 
-	$usrq = "SELECT * FROM users WHERE user_id=\"".$sel_id."\"";
+	$usrq = "SELECT * FROM users WHERE user_name=\"".$name."\"";
 	$usrquery = mysqli_query($dbconn,$usrq);
 	while($usr_opt = mysqli_fetch_assoc($usrquery)) {
 		$userid		= $usr_opt['user_id'];
@@ -52,14 +59,11 @@ if ($sel_id != '') {
 		$userlast	= $usr_opt['user_last_seen'];
 	}
 
-	// get posts from this user
-#		$pst_q = "SELECT * FROM posts WHERE posts_by=\"".$postby."\" AND WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC";
-#		$pst_query = mysqli_query($dbconn,$pst_q);
-#		while($pst_opt = mysqli_fetch_assoc($pst_query)) {
-#			$pstid	= $pst_opt['posts_id'];
-#			$psttime	= $pst_opt['posts_timestamp'];
-#			$psttext	= $pst_opt['posts_text'];
-#		}
+	$usrq2 = "SELECT * FROM user_profiles WHERE user_profiles_id=\"".$userid."\"";
+	$usrquery2 = mysqli_query($dbconn,$usrq2);
+	while($usropt2 = mysqli_fetch_assoc($usrquery2)) {
+		$userbio = $usropt2['user_profiles_description'];
+	}
 }
 
 $pagetitle = $website_name." &gt; ".$username;

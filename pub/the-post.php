@@ -75,7 +75,7 @@ include_once 'main-header.php';
 			<article class="w3-col w3-panel w3-cell m6">
 				<div class="w3-card-2 w3-theme-l3 w3-padding maincard">
 <?php
-		echo "\t\t\t\t<span class=\"showpostby\"><a href=\"the-user.php?uid=".$postby."\">".$byname."</a>&nbsp;";
+		echo "\t\t\t\t<span class=\"showpostby\"><a href=\"the-user.php?uname=".$byname."\">".$byname."</a>&nbsp;";
 		echo $posttime."</span>\n";
 		echo "\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t<!-- future functionality on span below -->\n";
