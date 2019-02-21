@@ -79,7 +79,7 @@ include_once "main-header.php";
 		echo $posttime."</span>\n";
 		echo "\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t<!-- future functionality on span below -->\n";
-		echo "\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪0</a>&nbsp;<a href=\"#\" title=\""._('Upvote')."\">⤊0</a>&nbsp;<a href=\"#\" title=\""._('Downvote')."\">⤋0</a>&nbsp;<a href=\"#\" title=\""._('Favorite')."\">🎔 0</a>&nbsp;…\n";
+		echo "\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"#\" title=\""._('Like')."\">🎔</a>&nbsp;<a href=\"#\" title=\""._('Dislike')."\">💔</a>&nbsp;\n";
 ?>
 				</div>
 			</article>

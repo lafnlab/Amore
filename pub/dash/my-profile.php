@@ -109,7 +109,8 @@ if (mysqli_num_rows($pst_query) <> 0) {
 		echo "</a></span>\n";
 		echo "\t\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t\t<!-- future functionality on span below -->\n";
-		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪0</a>&nbsp;<a href=\"#\" title=\""._('Upvote')."\">⤊0</a>&nbsp;<a href=\"#\" title=\""._('Downvote')."\">⤋0</a>&nbsp;<a href=\"#\" title=\""._('Favorite')."\">🎔 0</a>&nbsp;…\n";		echo "\t\t\t\t</div>\n";
+		echo "\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"#\" title=\""._('Like')."\">🎔</a>&nbsp;<a href=\"#\" title=\""._('Dislike')."\">💔</a>&nbsp;\n";
+		echo "\t\t\t\t</div>\n";
 	}
 } else {
 		echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
