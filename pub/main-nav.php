@@ -19,7 +19,7 @@
 					<p>
 					<?php echo "@".$username; ?><br>
 					<?php echo "@".$username."@".short_url($website_url); ?><br>
-					Lorem ipsum biographical information<br>
+					<?php echo $userbio; ?><br>
 					<?php echo _("Posts:"); ?> ###<br>
 					<?php echo _("Friends:"); ?> ###<br>
 					<?php echo _("Followers:"); ?> ###<br>

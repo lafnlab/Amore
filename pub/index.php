@@ -68,7 +68,6 @@ if ($message != '' || NULL) {
 	echo header_message($message);
 }
 include "the-feeds.php";
-echo $json2;
 ?>
 
 		<!-- The Grid -->
@@ -164,8 +163,8 @@ echo $json2;
 			$now = date('Y-m-d H:i:s');
 
 			echo "\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
-			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"the-user.php?uname=".$byname."\">".$byname."</a>&nbsp;";
-			echo "<a href=\"the-post.php?pid=".$postid."\">".$posttime;
+			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"".$website_url."/user/".$byname."/\">".$byname."</a>&nbsp;";
+			echo "<a href=\"".$website_url."/post/".$postid."/\">".$posttime;
 			echo "</a></span>\n";
 			echo "\t\t\t\t<p class=\"mainpageposttext\">".$posttext."</p>\n";
 			echo "\t\t\t</div>\n";

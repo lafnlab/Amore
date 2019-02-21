@@ -14,6 +14,8 @@ include "conn.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
+$metadescription = _("<i>Amore</i> is open-source PHP/MySQL software for the Fediverse - a decentralized social network of thousands of different communities.");
+
 // creates a 10 character ID
 function makeid($newid) {
 	// the characters we will use
@@ -62,6 +64,11 @@ function redirect($location) {
 // get the date of birth, return the age
 function user_age($userage) {
     return floor((time() - strtotime($userage))/31556926);
+}
+
+// strip the protocol from a url
+function short_url($url) {
+	return preg_replace('/(https:\/\/)|(http:\/\/)/i', '', $url);
 }
 
 // make time differences nice looking
@@ -194,4 +201,15 @@ function users_half_year($sometimes_users) {
 
  	return $postqty;
  }
+
+// get the date of the latest post for the Atom feed
+function atom_updated($time) {
+	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+	$postqq = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC LIMIT 1";
+	$postqquery = mysqli_query($dbconn,$postqq);
+	while ($postopt = mysqli_fetch_assoc($postqquery)) {
+		$updated = $postopt['posts_timestamp'];
+		return date("c", strtotime($updated));
+	}
+}
 ?>

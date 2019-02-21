@@ -26,11 +26,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<title><?php echo _($pagetitle); ?></title>
 	<meta name="description" content="<?php echo $website_description; ?>">
-	<meta property="og:title" content="<?php echo $pagetitle; ?>">
-	<meta property="og:description" content="<?php echo $$website_description; ?>">
-	<meta property="og:type" content="website">
-	<meta property="og:site_title" content="<?php echo $website_name; ?>">
-	<link href="style/amore.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo $website_url; ?>/style/amore.css" rel="stylesheet" type="text/css">
 	<script type="application/json">
 		{
 			"@context": "https://www.w3.org/ns/activitystreams",

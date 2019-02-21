@@ -69,6 +69,7 @@ if ($name != '') {
 $pagetitle = $website_name." &gt; ".$username;
 include_once 'main-header.php';
 include_once 'main-nav.php';
+include_once "the-user-feeds.php";
 ?>
 			<article class="w3-col w3-panel w3-cell m8">
 <?php
@@ -93,7 +94,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 
 		echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
 		echo "\t\t\t\t\t<span class=\"showpostby\">".$username."&nbsp;";
-		echo "<a href=\"the-post.php?pid=".$postid."\">".$posttime;
+		echo "<a href=\"".$website_url."/post/".$postid."/\">".$posttime;
 		echo "</a></span>\n";
 		echo "\t\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t\t<!-- future functionality on span below -->\n";
