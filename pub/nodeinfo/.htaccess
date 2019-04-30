@@ -1,0 +1,12 @@
+# set header stuff for nodeinfo files
+<FilesMatch "(1|2)\.0">
+	AddType 'application/json; charset=utf-8' .json .jsonld
+	Header set Accept application/json
+	Header set Content-Type application/json
+</FilesMatch>
+
+#<Files 2.0>
+#	AddType 'application/json; charset=utf-8' .json .jsonld
+#	Header set Accept application/json
+#	Header set Content-Type application/json
+#</Files>
