@@ -14,7 +14,7 @@ include "conn.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-$metadescription = _("<i>Amore</i> is open-source PHP/MySQL software for the Fediverse - a decentralized social network of thousands of different communities.");
+$metadescription = _("<i>Amore</i> is open-source PHP/MySQL software that will be part of the Fediverse - a decentralized social network of thousands of different communities.");
 
 // creates a 10 character ID
 function makeid($newid) {
