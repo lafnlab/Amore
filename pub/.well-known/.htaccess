@@ -1,0 +1,6 @@
+# set header stuff for nodeinfo
+<Files nodeinfo>
+	AddType 'application/json; charset=utf-8' .json .jsonld
+	Header set Accept application/json
+	Header set Content-Type application/json
+</Files>
