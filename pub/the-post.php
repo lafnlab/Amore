@@ -49,7 +49,7 @@ if ($sel_id != '') {
 		$postid		= $pst_opt['posts_id'];
 		$postby		= $pst_opt['posts_by'];
 		$posttime	= $pst_opt['posts_timestamp'];
-		$posttext	= $pst_opt['posts_text'];
+		$posttext	= htmlspecialchars_decode($pst_opt['posts_text']);
 		$postlang	= $pst_opt['posts_language'];
 		$postpriv	= $pst_opt['posts_privacy_level'];
 	}
