@@ -152,23 +152,23 @@ mysqli_set_charset($dbconn, "utf8");
 //
   $currencies_tbl_comment = _("Table for currencies/money.");
 
-	$create_currencies_tbl = "CREATE TABLE currencies (
-		currency_id varchar(10) NOT NULL,
-		currency_name tinytext NOT NULL,
-  	currency_iso tinytext NOT NULL,
-  	currency_symbol varchar(15) NOT NULL DEFAULT '¤',
-  	currency_digital tinyint(1) NOT NULL,
-  	PRIMARY KEY (currency_id),
-  	UNIQUE KEY currency_iso (currency_iso(5))
-	) DEFAULT CHARSET=utf8 COMMENT='".$currencies_tbl_comment."'";
+  $create_currencies_tbl = "CREATE TABLE currencies (
+    currency_id varchar(10) NOT NULL,
+    currency_name tinytext NOT NULL,
+    currency_iso tinytext NOT NULL,
+    currency_symbol varchar(15) NOT NULL DEFAULT '¤',
+    currency_digital tinyint(1) NOT NULL,
+    PRIMARY KEY (currency_id),
+    UNIQUE KEY currency_iso (currency_iso(5))
+  ) DEFAULT CHARSET=utf8 COMMENT='".$currencies_tbl_comment."'";
 
-	if (mysqli_query($dbconn,$create_currencies_tbl)) {
-		/* translators: Do not translate currencies in following message */
-		echo _("Table <i>currencies</i> successfully created.")."\n\n";
-	} else {
-		/* translators: Do not translate currencies in following message */
-		echo _("Error: Could not create table <i>currencies</i>.")."\n\n";
-	}
+  if (mysqli_query($dbconn,$create_currencies_tbl)) {
+    /* translators: Do not translate currencies in following message */
+    echo _("Table <i>currencies</i> successfully created.")."\n\n";
+  } else {
+    /* translators: Do not translate currencies in following message */
+    echo _("Error: Could not create table <i>currencies</i>.")."\n\n";
+  }
 
 
 //
@@ -176,6 +176,7 @@ mysqli_set_charset($dbconn, "utf8");
 // Table will be filled via data-fill.php
 //
   $eye_colors_tbl_comment = _("Table for eye colors.");
+
   $create_eye_colors_tbl = "CREATE TABLE eye_colors (
     eye_color_id varhar(10) NOT NULL,
     eye_color_name tinytext NOT NULL,
@@ -327,16 +328,16 @@ mysqli_set_charset($dbconn, "utf8");
 // Some of these are aspirational
 //
   $fill_privacy_levels_tbl = "INSERT INTO privacy_levels (
-                              privacy_level_id,
-                              privacy_level_name
-                            ) VALUES
-                            ('РЖFÂå1ÔÏúL','INSTANCE'),
-                            ('6ьötХ5áзÚZ','EVERYONE'),
-                            ('ñToùòхаþOЪ','SELF'),
-                            ('ÓÇfXЦИфЕaù','PRIVATE'),
-                            ('óСПõöRærÊh','FOLLOWERS'),
-                            ('ÞБЯÍcOъøДS','FRIENDS'),
-                            ('щÊдrûOftÐÿ','FEDIVERSE')";
+                            privacy_level_id,
+                            privacy_level_name
+                          ) VALUES
+                          ('РЖFÂå1ÔÏúL','INSTANCE'),
+                          ('6ьötХ5áзÚZ','EVERYONE'),
+                          ('ñToùòхаþOЪ','SELF'),
+                          ('ÓÇfXЦИфЕaù','PRIVATE'),
+                          ('óСПõöRærÊh','FOLLOWERS'),
+                          ('ÞБЯÍcOъøДS','FRIENDS'),
+                          ('щÊдrûOftÐÿ','FEDIVERSE')";
 
   if (mysqli_query($dbconn,$fill_privacy_levels_tbl)) {
   	/* translators: Do not translate privacy_levels in following message */
