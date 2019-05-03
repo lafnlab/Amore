@@ -71,80 +71,79 @@ mysqli_set_charset($dbconn, "utf8");
   $federation_info_field_comment = _("The default setting is yes.");
   $fediverse_network_field_comment = _("The default setting is yes.");
 
-	$create_configuration_tbl = "CREATE TABLE configuration (
-		primary_key varchar(10) NOT NULL,
-		website_url tinytext NOT NULL,
-		website_name tinytext NOT NULL,
-		website_description text NOT NULL,
-		default_locale tinytext NOT NULL,
-		open_registrations BOOLEAN DEFAULT 0 COMMENT '".$open_registration_field_comment."',
-		admin_account tinytext NOT NULL COMMENT '".$admin_account_field_comment."',
-		admin_email tinytext NOT NULL,
-	  posts_are_called tinytext NOT NULL,
-  	post_is_called tinytext NOT NULL,
-  	reposts_are_called tinytext NOT NULL,
-  	repost_is_called tinytext NOT NULL,
-  	users_are_called tinytext NOT NULL,
-  	user_is_called tinytext NOT NULL,
-  	favorites_are_called tinytext NOT NULL,
-  	favorite_is_called tinytext NOT NULL,
-  	max_post_length smallint NOT NULL DEFAULT 500,
-  	banned_user_names text NOT NULL,
-  	list_with_the_federation_info BOOLEAN NOT NULL DEFAULT 1 COMMENT '".$federation_info_field_comment."',
-  	list_with_fediverse_network BOOLEAN NOT NULL DEFAULT 1 COMMENT '".$fediverse_network_field_comment."',
-  	PRIMARY KEY (primary_key),
-	) DEFAULT CHARSET=utf8 COMMENT='".$configuration_tbl_comment."'";
+  $create_configuration_tbl = "CREATE TABLE configuration (
+    primary_key varchar(10) NOT NULL,
+    website_url tinytext NOT NULL,
+    website_name tinytext NOT NULL,
+    website_description text NOT NULL,
+    default_locale tinytext NOT NULL,
+    open_registrations BOOLEAN DEFAULT 0 COMMENT '".$open_registration_field_comment."',
+    admin_account tinytext NOT NULL COMMENT '".$admin_account_field_comment."',
+    admin_email tinytext NOT NULL,
+    posts_are_called tinytext NOT NULL,
+    post_is_called tinytext NOT NULL,
+    reposts_are_called tinytext NOT NULL,
+    repost_is_called tinytext NOT NULL,
+    users_are_called tinytext NOT NULL,
+    user_is_called tinytext NOT NULL,
+    favorites_are_called tinytext NOT NULL,
+    favorite_is_called tinytext NOT NULL,
+    max_post_length smallint NOT NULL DEFAULT 500,
+    banned_user_names text NOT NULL,
+    list_with_the_federation_info BOOLEAN NOT NULL DEFAULT 1 COMMENT '".$federation_info_field_comment."',
+    list_with_fediverse_network BOOLEAN NOT NULL DEFAULT 1 COMMENT '".$fediverse_network_field_comment."',
+    PRIMARY KEY (primary_key),
+  ) DEFAULT CHARSET=utf8 COMMENT='".$configuration_tbl_comment."'";
 
-	if (mysqli_query($dbconn,$create_configuration_tbl)) {
-		/* translators: Do not translate configuration in following message */
-		echo _("Table <i>configuration</i> successfully created.")."\n\n";
-	} else {
-		/* translators: Do not translate configuration in following message */
-		echo _("Error: Could not create table <i>configuration</i>.")."\n\n";
-	}
+  if (mysqli_query($dbconn,$create_configuration_tbl)) {
+    /* translators: Do not translate configuration in following message */
+    echo _("Table <i>configuration</i> successfully created.")."\n\n";
+  } else {
+    /* translators: Do not translate configuration in following message */
+    echo _("Error: Could not create table <i>configuration</i>.")."\n\n";
+  }
 
 //
 // Fill the configuration table with some default data
 //
   $default_website_description = _("Another fine website made with Amore.");
 
-	$fill_configuration_tbl = "INSERT INTO configuration (
-										primary_key,
-										website_name,
-										website_description,
-										default_locale,
-										admin_account,
-										posts_are_called,
-										post_is_called,
-										reposts_are_called,
-										repost_is_called,
-										users_are_called,
-										user_is_called,
-										favorites_are_called,
-										favorite_is_called
-										) VALUES (
-										'".makeid($newid)."',
-										'Amore',
-										'".$default_website_description."',
-										'en-US',
-										'admin',
-										'posts',
-										'post',
-										'reposts',
-										'repost',
-										'users',
-										'user',
-										'favorites',
-										'favorite'
-										)";
+  $fill_configuration_tbl = "INSERT INTO configuration (
+                    primary_key,
+                    website_name,
+                    website_description,
+                    default_locale,
+                    admin_account,
+                    posts_are_called,
+                    post_is_called,
+                    reposts_are_called,
+                    repost_is_called,
+                    users_are_called,
+                    user_is_called,
+                    favorites_are_called,
+                    favorite_is_called
+                  ) VALUES (
+                    '".makeid($newid)."',
+                    'Amore',
+                    '".$default_website_description."',
+                    'en-US',
+                    'admin',
+                    'posts',
+                    'post',
+                    'reposts',
+                    'repost',
+                    'users',
+                    'user',
+                    'favorites',
+                    'favorite')";
 
-	if (mysqli_query($dbconn,$fill_configuration_tbl)) {
-		/* translators: Do not translate configuration in following message */
-		echo _("Default data added to table <i>configuration</i>.")."\n\n";
-	} else {
-		/* translators: Do not translate configuration in following message */
-		echo _("Error: Could not add data to table <i>configuration</i>.")."\n\n";
-	}
+  if (mysqli_query($dbconn,$fill_configuration_tbl)) {
+    /* translators: Do not translate configuration in following message */
+    echo _("Default data added to table <i>configuration</i>.")."\n\n";
+  } else {
+    /* translators: Do not translate configuration in following message */
+    echo _("Error: Could not add data to table <i>configuration</i>.")."\n\n";
+  }
 
 
 //
