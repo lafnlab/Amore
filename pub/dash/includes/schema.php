@@ -360,6 +360,9 @@ mysqli_set_charset($dbconn, "utf8");
     post_timestamp datetime NOT NULL,
     post_text text NOT NULL,
     post_privacy_level varchar(10) NOT NULL DEFAULT '6ьötХ5áзÚZ' COMMENT '".$post_privacy_level_comment."',
+    post_shares text NOT NULL,
+    post_likes text NOT NULL,
+    post_dislikes text NOT NULL,
     PRIMARY KEY (post_id)
   ) DEFAULT CHARSET=utf8 COMMENT='".$posts_tbl_comment."'";
 
