@@ -43,23 +43,23 @@ mysqli_set_charset($dbconn, "utf8");
 //
 // Fill the actor_types table with some default data
 //
-	$fill_actor_types_tbl = "INSERT INTO actor_types (
-									actor_type_id,
-									actor_type_name
-									) VALUES
-									('ЛNgòЧPуùMF', 'APPLICATION'),
-									('ПøÎÐцйþоNT', 'GROUP'),
-									('ХÉdôüzÍГùф', 'PERSON'),
-									('ъÅåCÒ7ÚщSã', 'SERVICE'),
-									('ЪшoеуЦFfиË', 'ORGANIZATION')";
+  $fill_actor_types_tbl = "INSERT INTO actor_types (
+                  actor_type_id,
+                  actor_type_name
+                ) VALUES
+                ('ЛNgòЧPуùMF', 'APPLICATION'),
+                ('ПøÎÐцйþоNT', 'GROUP'),
+                ('ХÉdôüzÍГùф', 'PERSON'),
+                ('ъÅåCÒ7ÚщSã', 'SERVICE'),
+                ('ЪшoеуЦFfиË', 'ORGANIZATION')";
 
-	if (mysqli_query($dbconn,$fill_actor_types_tbl)) {
-		/* translators: Do not translate actor_types in following message */
-		echo _("Default data added to table <i>actor_types</i>.")."\n\n";
-	} else {
-		/* translators: Do not translate actor_types in following message */
-		echo _("Error: Could not add data to table <i>actor_types</i>.")."\n\n";
-	}
+  if (mysqli_query($dbconn,$fill_actor_types_tbl)) {
+    /* translators: Do not translate actor_types in following message */
+    echo _("Default data added to table <i>actor_types</i>.")."\n\n";
+  } else {
+    /* translators: Do not translate actor_types in following message */
+    echo _("Error: Could not add data to table <i>actor_types</i>.")."\n\n";
+  }
 
 
 //
@@ -524,5 +524,5 @@ mysqli_set_charset($dbconn, "utf8");
 //
 // Now that the tables are created, let's fill most of them
 //
-include_once "data-fill.php";
+include_once  "data-fill.php";
 ?>
