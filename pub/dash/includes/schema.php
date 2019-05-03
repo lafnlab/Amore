@@ -340,10 +340,10 @@ mysqli_set_charset($dbconn, "utf8");
                           ('щÊдrûOftÐÿ','FEDIVERSE')";
 
   if (mysqli_query($dbconn,$fill_privacy_levels_tbl)) {
-  	/* translators: Do not translate privacy_levels in following message */
-  	echo _("Default data added to table <i>privacy_levels</i>.")."\n\n";
+    /* translators: Do not translate privacy_levels in following message */
+    echo _("Default data added to table <i>privacy_levels</i>.")."\n\n";
   } else {
-  	/* translators: Do not translate privacy_levels in following message */
+    /* translators: Do not translate privacy_levels in following message */
     echo _("Error: Could not add data to table <i>privacy_levels</i>.")."\n\n";
   }
 
@@ -504,14 +504,14 @@ mysqli_set_charset($dbconn, "utf8");
 // Fill the user_levels table with some default data
 //
   $fill_user_levels_tbl = "INSERT INTO user_levels (
-                            user_level_id,
-                            user_level_name
-                          ) VALUES
-                          ('sеÔÞLÉзBТт', 'USER'),
-                          ('ÛГUojЭПEЯÉ', 'MODERATOR'),
-                          ('ДÖÍsöÊкÔnц', 'TRANSLATOR'),
-                          ('ЗиóВéèàwVO', 'ADMINISTRATOR'),
-                          ('ЮêlùсdzЕХР', 'GUIDE')";
+                      user_level_id,
+                      user_level_name
+                    ) VALUES
+                    ('sеÔÞLÉзBТт', 'USER'),
+                    ('ÛГUojЭПEЯÉ', 'MODERATOR'),
+                    ('ДÖÍsöÊкÔnц', 'TRANSLATOR'),
+                    ('ЗиóВéèàwVO', 'ADMINISTRATOR'),
+                    ('ЮêlùсdzЕХР', 'GUIDE')";
 
   if (mysqli_query($dbconn,$fill_user_levels_tbl)) {
     /* translators: Do not translate user_levels in following message */
