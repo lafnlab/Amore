@@ -25,20 +25,20 @@ mysqli_set_charset($dbconn, "utf8");
 //
   $actor_types_tbl_comment = _("Table for ActivityStreams Actor types.");
 
-	$create_actor_types_tbl = "CREATE TABLE actor_types (
-		actor_type_id varchar(10) NOT NULL,
-		actor_type_name tinytext NOT NULL,
-		PRIMARY KEY (actor_type_id),
-		UNIQUE KEY actor_type_name (actor_type_name(20))
-	) DEFAULT CHARSET=utf8 COMMENT='".$actor_types_tbl_comment."'";
+  $create_actor_types_tbl = "CREATE TABLE actor_types (
+    actor_type_id varchar(10) NOT NULL,
+    actor_type_name tinytext NOT NULL,
+    PRIMARY KEY (actor_type_id),
+    UNIQUE KEY actor_type_name (actor_type_name(20))
+  ) DEFAULT CHARSET=utf8 COMMENT='".$actor_types_tbl_comment."'";
 
-	if (mysqli_query($dbconn,$create_actor_types_tbl)) {
-		/* translators: Do not translate actor_types in following message */
-		echo _("Table <i>actor_types</i> successfully created.")."\n\n";
-	} else {
-		/* translators: Do not translate actor_types in following message */
-		echo _("Error: Could not create table <i>actor_types</i>.")."\n\n";
-	}
+  if (mysqli_query($dbconn,$create_actor_types_tbl)) {
+    /* translators: Do not translate actor_types in following message */
+    echo _("Table <i>actor_types</i> successfully created.")."\n\n";
+  } else {
+    /* translators: Do not translate actor_types in following message */
+    echo _("Error: Could not create table <i>actor_types</i>.")."\n\n";
+  }
 
 //
 // Fill the actor_types table with some default data
