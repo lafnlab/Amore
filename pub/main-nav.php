@@ -7,6 +7,22 @@
  * since Amore version 0.1
  *
  */
+
+ // get number of posts
+# this function below isn't working at the moment. Try the variables below that.
+# $postsbyqty = user_post_quantity($userid);
+$postsbyq = "SELECT * FROM posts WHERE posts_by='".$userid."'";
+$postsbyquery = mysqli_query($dbconn,$postsbyq);
+$postsbyqty = mysqli_num_rows($postsbyquery);
+
+// get number of followers and number of accounts being followed
+$followersq = "SELECT * FROM users where user_id='".$userid."'";
+$followersquery = mysqli_query($dbconn,$followersq);
+while ($followersopt = mysqli_fetch_assoc($followersquery)) {
+	$followersqty = count(explode(",",$followersopt['user_followers']));
+	$followingqty = count(explode(",",$followersopt['user_follows']));
+}
+
 ?>
 	<!-- THE CONTAINER for the main content -->
 	<main class="w3-container w3-content" style="max-width:1400px;margin-top:40px;">
@@ -20,10 +36,10 @@
 					<?php echo "@".$username; ?><br>
 					<?php echo "@".$username."@".short_url($website_url); ?><br>
 					<?php echo $userbio; ?><br>
-					<?php echo _("Posts:"); ?> ###<br>
+					<?php echo _("Posts:")." ".$postsbyqty; ?><br>
 					<?php echo _("Friends:"); ?> ###<br>
-					<?php echo _("Followers:"); ?> ###<br>
-					<?php echo _("Following:"); ?> ###<br>
+					<?php echo _("Followers:")." ".$followersqty; ?><br>
+					<?php echo _("Following:")." ".$followingqty; ?><br>
 					</p>
 					<ul>
 						<li><a href="#" title="<?php echo _("Home will show all of the user's posts."); ?>"><?php echo _("Home"); ?></a></li>

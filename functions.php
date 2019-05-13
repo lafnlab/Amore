@@ -202,6 +202,22 @@ function users_half_year($sometimes_users) {
  	return $postqty;
  }
 
+// Get the number of a user's posts from user_outbox in users table
+function user_post_quantity($userid) {
+	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+	$postsbyq = "SELECT * FROM posts WHERE posts_by='".$userid."'";
+ 	$postsbyquery = mysqli_query($dbconn,$postsbyq);
+ 	$postsbyqty = mysqli_num_rows($postsbyquery);
+
+ 	return $postsbyqty;
+}
+
+// get the number of the user's friends
+
+// get the number of the user's followers
+
+// get the number of accounts the user is following
+
 // get the date of the latest post for the Atom feed
 function atom_updated($time) {
 	$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
@@ -212,4 +228,5 @@ function atom_updated($time) {
 		return date("c", strtotime($updated));
 	}
 }
+
 ?>
