@@ -1,6 +1,5 @@
 # Amore
-![alt text](https://github.com/lafnlab/Amore/blob/master/pub/style/plain-amore-icon-2.png "Amore icon")
-*Amore* ~~is~~ will be &ast;AMP dating app software for the [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
+![alt text](https://github.com/lafnlab/Amore/blob/master/pub/style/plain-amore-icon-2.png "Amore icon") *Amore* ~~is~~ will be &ast;AMP dating app software for the [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
 
 **Requires**
 + PHP 7.2
