@@ -1,4 +1,5 @@
 # Amore
+![Amore icon](https://github.com/lafnlan/Amore/blob/master/pub/style/plain-amore-icon-2.png)
 *Amore* ~~is~~ will be &ast;AMP dating app software for the [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
 
 **Requires**
