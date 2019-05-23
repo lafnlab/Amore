@@ -9,7 +9,6 @@
  */
 
 include_once	"../../conn.php";
-#include_once	"../config.php";
 include			"../../functions.php";
 
 if (isset($_GET["uid"])) {
