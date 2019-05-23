@@ -58,9 +58,11 @@ include_once "main-header.php";
         </div>
         <div class="w3-card-2 w3-padding w3-margin-bottom w3-theme-l3">
           <h2><?php echo _("Website statistics"); ?></h2>
-          # of total accounts
-          # of accounts active in past 30 days
-          # of accounts active in the past 6 months
+          <ul>
+            <li><?php echo _("Total number of accounts: ").user_quantity($user); ?></li>
+            <li><?php echo _("Number of signed-in users in the past 30 days: ").users_past_month($active_users); ?></li>
+            <li><?php echo _("Number of signed-in users in the past 180 months: ").users_half_year($sometimes_users); ?></li>
+          </ul>
         </div>
         <div class="w3-card-2 w3-padding w3-margin-bottom w3-theme-l3">
           <h2><?php echo _("User statistics"); ?></h2>
