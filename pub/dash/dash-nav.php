@@ -44,6 +44,7 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t\t\t<li><a href=\"list-locales.php\">"._('List locales')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-nationalities.php\">"._('List nationalities')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-places.php\">"._('List places')."</a></li>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"list-relationship-statuses.php\">"._('List relationship statuses')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-sexualities.php\">"._('List sexualities')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-spoken-languages.php\">"._('List spoken languages')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-time-zones.php\">"._('List time zones')."</a></li>\n";
