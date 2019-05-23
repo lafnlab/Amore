@@ -186,6 +186,36 @@ CREATE TABLE `posts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `relationship_statuses`
+--
+
+CREATE TABLE `relationship_statuses` (
+  `relationship_status_id` varchar(10) NOT NULL,
+  `relationship_status_name` tinytext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for relationship_statuses';
+
+--
+-- Dumping data for table `relationship_statuses`
+--
+
+INSERT INTO `relationship_statuses` (`relationship_status_id`, `relationship_status_name`) VALUES
+('9PÄå0kÃúeÔ', 'SEEING SOMEONE'),
+('ÄÆäxndО8оÀ', 'DIVORCED'),
+('àйuÛаÌзЬÀE', 'PREFER NOT TO ANSWER'),
+('jвÜлæûАюцY', 'SEEING MORE THAN ONE PERSON'),
+('QÃLHХЬrзÏç', 'WIDOWED'),
+('ûÁAéøhЩпâэ', 'IN A RELATIONSHIP WITH MORE THEN ONE PERSON'),
+('ùУçÕÒýАхhI', 'SEPARATED'),
+('vOЪÒóоÎðЕõ', 'COMPLICATED'),
+('зХÏcÝЧiпHÔ', 'IN MORE THAN ONE RELATIONSHIP'),
+('мøYТPАä4зÂ', 'SINGLE'),
+('ОГî2tçqW9Ø', 'IN A RELATIONSHIP'),
+('щЮМфОÓþÐÕâ', 'ENGAGED'),
+('ъyлØøЪАẞCe', 'MARRIED');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `spoken_languages`
 --
 
