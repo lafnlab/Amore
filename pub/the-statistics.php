@@ -58,7 +58,23 @@ include_once "main-header.php";
         </div>
         <div class="w3-card-2 w3-padding w3-margin-bottom w3-theme-l3">
           <h2><?php echo _("Website statistics"); ?></h2>
-          
+          # of total accounts
+          # of accounts active in past 30 days
+          # of accounts active in the past 6 months
+        </div>
+        <div class="w3-card-2 w3-padding w3-margin-bottom w3-theme-l3">
+          <h2><?php echo _("User statistics"); ?></h2>
+          # of accounts by gender
+          # of accounts by sexuality
+          # of accounts by location
+          # of accounts by nationality
+          # of accounts by spoken language
+          # of accounts by relationship status
+          # of accounts by eye color
+          # of accounts by hair color
+          # of accounts by time zone
+          # of accounts by user level
+          # of accounts by actor type
         </div>
       </div>
     </div> <!-- end w3-row -->

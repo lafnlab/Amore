@@ -278,11 +278,13 @@ CREATE TABLE `time_zones` (
 CREATE TABLE `users` (
   `user_id` varchar(10) NOT NULL,
   `user_name` tinytext NOT NULL,
+  `user_display_name` tinytext NOT NULL,
   `user_pass` tinytext NOT NULL,
   `user_email` tinytext NOT NULL,
   `user_level` varchar(10) NOT NULL,
   `user_actor_type` varchar(10) NOT NULL,
-  `user_dob` date NOT NULL,
+  `user_date_of_birth` date NOT NULL,
+  `user_date_of_birth_privacy` varchar(10) NOT NULL,
   `user_outbox` text NOT NULL COMMENT 'collection of messages by the user',
   `user_inbox` text NOT NULL COMMENT 'collection of messages to the user',
   `user_liked` text NOT NULL COMMENT 'collection of items the user likes',
@@ -292,6 +294,21 @@ CREATE TABLE `users` (
   `user_priv_key` text NOT NULL,
   `user_pub_key` text NOT NULL,
   `user_avatar` tinytext COMMENT 'full path to user avatar',
+  `user_gender` varchar(10) NOT NULL,
+  `user_gender_privacy` varchar(10) NOT NULL,
+  `user_sexuality` varchar(10) NOT NULL,
+  `user_sexuality_privacy` varchar(10) NOT NULL,
+  `user_eye_color` varchar(10) NOT NULL,
+  `user_hair_color` varchar(10) NOT NULL,
+  `user_location` varchar(10) NOT NULL,
+  `user_location_privacy` varchar(10) NOT NULL,
+  `user_nationality` varchar(10) NOT NULL,
+  `user_nationality_privacy` varchar(10) NOT NULL,
+  `user_locale` varchar(10) NOT NULL,
+  `user_spoken_language` varchar(60) NOT NULL,
+  `user_time_zone` varchar(10) NOT NULL,
+  `user_time_zone_privacy` varchar(10) NOT NULL,
+  `user_bio` tinytext NOT NULL,
   `user_created` datetime NOT NULL,
   `user_last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for user accounts';
@@ -349,7 +366,7 @@ CREATE TABLE `user_profiles` (
 ALTER TABLE `actor_types`
   ADD PRIMARY KEY (`actor_type_id`),
   ADD UNIQUE KEY `actor_type_name` (`actor_type_name`(20));
-  
+
 --
 -- Indexes for table `currencies`
 --
