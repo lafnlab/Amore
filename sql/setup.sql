@@ -41,6 +41,13 @@ CREATE TABLE `configuration` (
   `favorite_is_called` tinytext NOT NULL,
   `max_post_length` smallint NOT NULL DEFAULT 500,
   `banned_user_names` text NOT NULL,
+  `allow_user_age_privacy` varchar(10) NOT NULL,
+  `allow_user_gender_privacy` varchar(10) NOT NULL,
+  `allow_user_sexuality_privacy` varchar(10) NOT NULL,
+  `allow_user_relationship_status_privacy` varchar(10) NOT NULL,
+  `allow_user_location_privacy` varchar(10) NOT NULL,
+  `allow_user_nationality_privacy` varchar(10) NOT NULL,
+  `allow_user_time_zone_privacy` varchar(10) NOT NULL,
   `list_with_the_federation_info` BOOLEAN NOT NULL DEFAULT 1 COMMENT 'default is yes',
   `list_with_fediverse_network` BOOLEAN NOT NULL DEFAULT 1 COMMENT 'default is yes'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for website configuration';
@@ -298,6 +305,8 @@ CREATE TABLE `users` (
   `user_gender_privacy` varchar(10) NOT NULL,
   `user_sexuality` varchar(10) NOT NULL,
   `user_sexuality_privacy` varchar(10) NOT NULL,
+  `user_relationship_status` varchar(10) NOT NULL,
+  `user_relationship_status_privacy` varchar(10) NOT NULL,
   `user_eye_color` varchar(10) NOT NULL,
   `user_hair_color` varchar(10) NOT NULL,
   `user_location` varchar(10) NOT NULL,
