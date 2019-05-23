@@ -1,4 +1,24 @@
 --
+-- Table structure for table `actor_types`
+--
+
+CREATE TABLE `actor_types` (
+  `actor_type_id` varchar(10) NOT NULL,
+  `actor_type_name` tinytext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for ActivityPub Actor types';
+
+--
+-- Dumping data for table `actor_types`
+--
+
+INSERT INTO `actor_types` (`actor_type_id`, `actor_type_name`) VALUES
+('ЛNgòЧPуùMF', 'APPLICATION'),
+('ПøÎÐцйþоNT', 'GROUP'),
+('ХÉdôüzÍГùф', 'PERSON'),
+('ъÅåCÒ7ÚщSã', 'SERVICE'),
+('ЪшoеуЦFfиË', 'ORGANIZATION');
+
+--
 -- Table structure for table `configuration`
 --
 
@@ -260,12 +280,18 @@ CREATE TABLE `users` (
   `user_name` tinytext NOT NULL,
   `user_pass` tinytext NOT NULL,
   `user_email` tinytext NOT NULL,
-  `user_date_of_birth` date NOT NULL,
-  `user_outbox` mediumtext NOT NULL COMMENT 'collection of messages by the user',
-  `user_inbox` mediumtext NOT NULL COMMENT 'collection of messages to the user',
-  `user_liked` mediumtext NOT NULL COMMENT 'collection of items the user likes',
-  `user_follows` mediumtext NOT NULL COMMENT 'collection of accts the user follows',
-  `user_followers` mediumtext NOT NULL COMMENT 'collection of accts that follow the user',
+  `user_level` varchar(10) NOT NULL,
+  `user_actor_type` varchar(10) NOT NULL,
+  `user_dob` date NOT NULL,
+  `user_outbox` text NOT NULL COMMENT 'collection of messages by the user',
+  `user_inbox` text NOT NULL COMMENT 'collection of messages to the user',
+  `user_liked` text NOT NULL COMMENT 'collection of items the user likes',
+  `user_disliked` text NOT NULL COMMENT 'collection of items the user dislikes',
+  `user_follows` text NOT NULL COMMENT 'collection of accts the user follows',
+  `user_followers` text NOT NULL COMMENT 'collection of accts that follow the user',
+  `user_priv_key` text NOT NULL,
+  `user_pub_key` text NOT NULL,
+  `user_avatar` tinytext COMMENT 'full path to user avatar',
   `user_created` datetime NOT NULL,
   `user_last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table for user accounts';
@@ -317,6 +343,13 @@ CREATE TABLE `user_profiles` (
 -- Indexes for dumped tables
 --
 
+--
+-- Indexes for table `actor_types`
+--
+ALTER TABLE `actor_types`
+  ADD PRIMARY KEY (`actor_type_id`),
+  ADD UNIQUE KEY `actor_type_name` (`actor_type_name`(20));
+  
 --
 -- Indexes for table `currencies`
 --
