@@ -123,7 +123,7 @@ mysqli_set_charset($dbconn, "utf8");
                     favorites_are_called,
                     favorite_is_called
                   ) VALUES (
-                    '".makeid($newid)."',
+                    '".$siteid."',
                     'Amore',
                     '".$default_website_description."',
                     'en-US',
@@ -372,6 +372,56 @@ mysqli_set_charset($dbconn, "utf8");
   } else {
     /* translators: Do not translate posts in following message */
     echo _("Error: Could not create table <i>posts</i>.")."\n\n";
+  }
+
+
+//
+// Create the relationship_statuses table
+//
+  $relationship_statuses_tbl_comment = _("Table for relationship statuses");
+
+  $create_relationship_statuses_tbl = "CREATE TABLE relationship_statuses (
+    relationship_status_id varchar(10) NOT NULL,
+    relationship_status_name tinytext NOT NULL,
+    PRIMARY KEY (relationship_status_id),
+    UNIQUE KEY relationship_status_name (relationship_status_name(30))
+  ) DEFAULT CHARSET=utf8 COMMENT='".$relationship_statuses_tbl_comment."'";
+
+  if (mysqli_query($dbconn,$create_relationship_statuses_tbl)) {
+    /* translators: Do not translate relationship_statuses in following message */
+    echo _("Table <i>relationship_statuses</i> successfully created.")."\n\n";
+  } else {
+    /* translators: Do not translate relationship_statuses in following message */
+    echo _("Error: Could not create table <i>relationship_statuses</i>.")."\n\n";
+  }
+
+//
+// Fill the relationship_statuses table
+//
+  $fill_relationship_statuses_tbl = "INSERT INTO relationship_statuses (
+                              relationship_status_id,
+                              relationship_status_name
+                            ) VALUES
+                            ('9PÄå0kÃúeÔ', 'SEEING SOMEONE'),
+                            ('ÄÆäxndО8оÀ', 'DIVORCED'),
+                            ('àйuÛаÌзЬÀE', 'PREFER NOT TO ANSWER'),
+                            ('jвÜлæûАюцY', 'SEEING MORE THAN ONE PERSON'),
+                            ('QÃLHХЬrзÏç', 'WIDOWED'),
+                            ('ûÁAéøhЩпâэ', 'IN A RELATIONSHIP WITH MORE THEN ONE PERSON'),
+                            ('ùУçÕÒýАхhI', 'SEPARATED'),
+                            ('vOЪÒóоÎðЕõ', 'COMPLICATED'),
+                            ('зХÏcÝЧiпHÔ', 'IN MORE THAN ONE RELATIONSHIP'),
+                            ('мøYТPАä4зÂ', 'SINGLE'),
+                            ('ОГî2tçqW9Ø', 'IN A RELATIONSHIP'),
+                            ('щЮМфОÓþÐÕâ', 'ENGAGED'),
+                            ('ъyлØøЪАẞCe', 'MARRIED')";
+
+  if (mysqli_query($dbconn,$fill_relationship_statuses_tbl)) {
+    /* translators: Do not translate relationship_statuses in following message */
+    echo _("Default data added to table <i>relationship_statuses</i>.")."\n\n";
+  } else {
+    /* translators: Do not translate relationship_statuses in following message */
+    echo _("Error: Could not add data to table <i>relationship_statuses</i>.")."\n\n";
   }
 
 
