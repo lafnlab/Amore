@@ -42,7 +42,7 @@ if (isset($_POST['sxusubmit'])) {
 	$sxname		= nicetext($_POST['sxuname']);
 
 	// is the id unique in this table?
-	$idq = "SELECT * FROM sexualities WHERE sexualities_id=\'".$naid."\'";
+	$idq = "SELECT * FROM sexualities WHERE sexualities_id=\'".$sxid."\'";
 	$idquery = mysqli_query($dbconn,$idq);
 	$message = $idq;
 	if ($idquery == FALSE) {
