@@ -57,7 +57,7 @@ if (isset($_POST['sxusubmit'])) {
 	$sxid			= $_POST['sxuid'];
 	$sxname		= nicetext($_POST['sxuname']);
 
-		$sxupdq 	= "UPDATE sexuaities SET sexualities_name='".$sxname."' WHERE sexualities_id='".$sxid."'";
+		$sxupdq 	= "UPDATE sexualities SET sexualities_name='".$sxname."' WHERE sexualities_id='".$sxid."'";
 		$sxupdquery	= mysqli_query($dbconn,$sxupdq);
 		redirect('list-sexualites.php');
 
