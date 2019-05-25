@@ -10,7 +10,76 @@
  *
  */
 
-include_once "../conn.php";
+ /**
+  * If ../conn.php does not exist...
+  */
+ if(!file_exists("../conn.php")) {
+
+ 	/**
+ 	 * ...and conn.php does not exist...
+ 	 */
+ 	if (!file_exists("conn.php")) {
+
+ 		/**
+ 		 * redirect user to install page.
+ 		 */
+ 		header("Location: dash/admin/install.php");
+ 	} else {
+
+ 		/**
+ 		 * conn.php does exist
+ 		 * redirect user to post-install page
+ 		 */
+ 		header("Location: dash/admin/post-install.php");
+ 	}
+ } else {
+
+ 	/**
+ 	 * ../conn.php does exist
+ 	 * Let us include it, then verify its constants
+ 	 */
+
+ 	include "../conn.php";
+
+ 	/**
+ 	 * if $global_count === 5 at the end then all global variables are set.
+ 	 * if $global_count < 5 then something is missing.
+ 	 */
+
+ 	$global_count = 0;
+
+ 	if (DBHOST != "") {
+ 		#echo DBHOST;
+ 	 	$global_count++;
+ 	}
+
+ 	if (DBNAME != "") {
+ 		$global_count++;
+ 	}
+
+ 	if (DBUSER != "") {
+ 		$global_count++;
+ 	}
+
+ 	if (DBPASS != "") {
+ 		$global_count++;
+ 	}
+
+ 	if (SITEKEY != "") {
+ 		$global_count++;
+ 	}
+
+ 	/**
+ 	 *
+ 	 * If all of the global variables are set, move forward
+ 	 * If some of the global variables are missing, redirect to dash/admin/repair.php.
+ 	 */
+ 	if ($global_count < 5) {
+ 		header("Location: dash/admin/repair.php");
+ 	}
+ 	#echo $global_count;
+ }
+
 include "../functions.php";
 
 // see if a session is set. If so, redirect them to their dashboard.
