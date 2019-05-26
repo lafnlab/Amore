@@ -21,14 +21,14 @@ include       "../../../functions.php";
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
 
-if (isset($_POST['startsubmit'])) {
+if (isset($_POST['amosubmit'])) {
 
 	/**
 	 * collect our form data
 	 */
-	$amouser   = $_POST['amouser'];
-	$amopass1  = $_POST['amopass1'];
-	$amopass2  = $_POST['amopass2'];
+	$amouser		= $_POST['amoadmin'];
+	$amopass1	= $_POST['amopass1'];
+	$amopass2	= $_POST['amopass2'];
 
 /**
  * Time to see if the passphrase works well
@@ -61,13 +61,14 @@ if (isset($_POST['startsubmit'])) {
 		/**
 		 * Create our first user
 		 */
-		$uid          = makeid($newid);
+		$uid				= makeid($newid);
 		$udatecreate	= date('Y-m-d H:i:s');
-		$firstuserq		= "INSERT INTO users (user_id,user_name,user_pass,user_level,user_actor_type,user_created,user_last_login) VALUES ('".$uid."','".$amouser."','".$hash_pass."','ЗиóВéèàwVO','ХÉdôüzÍГùф','".$udatecreate."','".$udatecreate."')";
+		$firstuserq		= "INSERT INTO users (user_id, user_name, user_pass, user_level, user_actor_type, user_created, user_last_login) VALUES ('".$uid."', '".$amouser."', '".$hash_pass."', 'ЗиóВéèàwVO', 'ХÉdôüzÍГùф', '".$udatecreate."', '".$udatecreate."')";
 		$firstadminq	= "INSERT INTO configuration (admin_account) VALUES ('".$uid."')";
 
-		$firstuserquery   = mysqli_query($dbconn,$firstuserq);
-		$firstadminquery  = mysqli_query($dbconn,$firstadminq);
+		$message = $firstuserq."<br>\n\n".$firstadminq;
+		$firstuserquery		= mysqli_query($dbconn,$firstuserq);
+		$firstadminquery		= mysqli_query($dbconn,$firstadminq);
 
 		redirect("final.php");
 	} // end if !isset $message
@@ -112,15 +113,15 @@ switch ($message) {
 				<p><?php echo _("We're almost done!"); ?></p>
 				<p><?php echo _("Let's create an admin user that can configure and control the website."); ?></p>
 				<p>
-					<label for"amoadmin"><?php echo _("Username"); ?></label>
+					<label for "amoadmin"><?php echo _("Username"); ?></label>
 					<input type="text" name="amoadmin" id="amoadmin" class="w3-input w3-border w3-margin-bottom" maxlength="30" required title="<?php echo _("The admin user will be the first user account entered in the database."); ?>">
 				</p>
 				<p>
-					<label for"amopass1"><?php echo _("Passphrase"); ?></label>
+					<label for "amopass1"><?php echo _("Passphrase"); ?></label>
 					<input type="password" name="amopass1" id="amopass1" class="w3-input w3-border w3-margin-bottom" maxlength="255" required title="<?php echo _("Passphrase must be at least 16 characters long."); ?>">
 				</p>
 				<p>
-					<label for"amopass2"><?php echo _("Verify passphrase"); ?></label>
+					<label for "amopass2"><?php echo _("Verify passphrase"); ?></label>
 					<input type="password" name="amopass2" id="amopass2" class="w3-input w3-border w3-margin-bottom" maxlength="255" required title="<?php echo _("Verify your passphrase."); ?>">
 				</p>
 				<p>

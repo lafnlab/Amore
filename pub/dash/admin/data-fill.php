@@ -8,15 +8,15 @@
  *
  */
 
- /*
-  * conn.php may not have been put in its proper spot yet
-  */
- if (file_exists("../../../conn.php")) {
- 	include_once  "../../../conn.php";
- } else if (file_exists("../../conn.php")) {
- 	include_once "../../conn.php";
- } else die("Unable to find file conn.php. Have you moved it to the correct directory?");
- include       "../../../functions.php";
+/*
+ * conn.php may not have been put in its proper spot yet
+ */
+if (file_exists("../../../conn.php")) {
+	include_once  "../../../conn.php";
+} else if (file_exists("../../conn.php")) {
+	include_once "../../conn.php";
+} else die("Unable to find file conn.php. Have you moved it to the correct directory?");
+include       "../../../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
@@ -196,10 +196,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_currencies_tbl)) {
     /* translators: Do not translate currencies in following message */
-    echo _("Default data added to table <i>currencies</i>.")."\n\n";
+    echo _("Default data added to table <i>currencies</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate currencies in following message */
-    echo _("Error: Could not add data to table <i>currencies</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>currencies</i>.")."<br>\n\n";
   }
 
 
@@ -221,10 +221,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_eye_colors_tbl)) {
     /* translators: Do not translate eye_colors in following message */
-    echo _("Default data added to table <i>eye_colors</i>.")."\n\n";
+    echo _("Default data added to table <i>eye_colors</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate eye_colors in following message */
-    echo _("Error: Could not add data to table <i>eye_colors</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>eye_colors</i>.")."<br>\n\n";
   }
 
 
@@ -249,10 +249,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_genders_tbl)) {
     /* translators: Do not translate genders in following message */
-    echo _("Default data added to table <i>genders</i>.")."\n\n";
+    echo _("Default data added to table <i>genders</i>.")."<br>\n\n";
     } else {
     /* translators: Do not translate genders in following message */
-    echo _("Error: Could not add data to table <i>genders</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>genders</i>.")."<br>\n\n";
   }
 
 
@@ -276,10 +276,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_hair_colors_tbl)) {
     /* translators: Do not translate hair_colors in following message */
-    echo _("Default data added to table <i>hair_colors</i>.")."\n\n";
+    echo _("Default data added to table <i>hair_colors</i>.")."<br>\n\n";
     } else {
     /* translators: Do not translate hair_colors in following message */
-    echo _("Error: Could not add data to table <i>hair_colors</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>hair_colors</i>.")."<br>\n\n";
   }
 
 
@@ -561,10 +561,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_locations_tbl)) {
     /* translators: Do not translate locations in following message */
-    echo _("Default data added to table <i>locations</i>.")."\n\n";
+    echo _("Default data added to table <i>locations</i>.")."<br>\n\n";
     } else {
     /* translators: Do not translate locations in following message */
-    echo _("Error: Could not add data to table <i>locations </i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>locations </i>.")."<br>\n\n";
   }
 
 
@@ -647,10 +647,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_nationalities_tbl)) {
     /* translators: Do not translate nationalities in following message */
-    echo _("Default data added to table <i>nationalities</i>.")."\n\n";
+    echo _("Default data added to table <i>nationalities</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate nationalities in following message */
-    echo _("Error: Could not add data to table <i>nationalities</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>nationalities</i>.")."<br>\n\n";
   }
 
 
@@ -671,10 +671,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_sexualities_tbl)) {
     /* translators: Do not translate sexualities in following message */
-    echo _("Default data added to table <i>sexualities</i>.")."\n\n";
+    echo _("Default data added to table <i>sexualities</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate sexualities in following message */
-    echo _("Error: Could not add data to table <i>sexualities</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>sexualities</i>.")."<br>\n\n";
   }
 
 
@@ -831,7 +831,6 @@ mysqli_set_charset($dbconn, "utf8");
                 ('ÍẞyзbъdëOf', 'Asia/Anadyr', '+12:00', '+12:00'),
                 ('J3dâÆр6ÏbЕ', 'America/Bahia', '-03:00', '-03:00'),
                 ('jÀNxâÍFðÉМ', 'America/Noronha', '-02:00', '-02:00'),
-                ('JbrßниЦжDо', 'Coordinated Universal Time', '+00:00', '+00:00'),
                 ('jîòô3ÞaùнХ', 'Asia/Pyongyang', '+09:00', '+09:00'),
                 ('JöéØühÏKæя', 'Asia/Ashkhabad', '+05:00', '+05:00'),
                 ('JRÕъ2nIWyô', 'America/Danmarkshavn', '+00:00', '+00:00'),
@@ -1152,7 +1151,7 @@ mysqli_set_charset($dbconn, "utf8");
                 ('ън8ÃAИLГе6', 'Asia/Urumqi', '+06:00', '+06:00'),
                 ('ы1юgДktQëп', 'Indian/Mauritius', '+04:00', '+04:00'),
                 ('ыБИäôBбøРЛ', 'Asia/Thimbu', '+06:00', '+06:00'),
-                ('ЫГТlUêЛкùÞ', 'GMT', 'Greenwich Mean Time', '+00:00', '+00:00'),
+                ('ЫГТlUêЛкùÞ', 'Greenwich Mean Time', '+00:00', '+00:00'),
                 ('ЫтБsXРуЯZИ', 'America/Goose Bay', '-04:00', '-03:00'),
                 ('ыХ9oyçéÒНÊ', 'Atlantic/South Georgia', '-02:00', '-02:00'),
                 ('ыЪYЛQÅюЧwé', 'Etc/GMT+4', '-04:00', '-04:00'),
@@ -1198,9 +1197,14 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_time_zones_tbl)) {
     /* translators: Do not translate time_zones in following message */
-    echo _("Default data added to table <i>time_zones</i>.")."\n\n";
+    echo _("Default data added to table <i>time_zones</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate time_zones in following message */
-    echo _("Error: Could not add data to table <i>time_zones</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>time_zones</i>.")."<br>\n\n";
   }
+
+//
+// Now that the tables are filled, let us go to post-install.php
+//
+redirect("post-install.php");
 ?>

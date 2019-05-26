@@ -8,6 +8,9 @@
  *
  */
 
+include "../../../functions.php"; // needed to make a sitekey
+
+
 /**
  *
  * Let us verify that the ../../../conn.php file does or does not exist.
@@ -79,7 +82,7 @@ if (isset($_POST['startsubmit'])) {
 	$dbuser	= $_POST['dbuser'];
 	$dbpass1	= $_POST['dbpass1'];
 	$dbpass2	= $_POST['dbpass2'];
-	$sitekey	= $_POST['sitekey'];
+	$sitekey	= makeid($newid);
 
 /**
  * Time to see if the passphrase works well
@@ -98,7 +101,7 @@ if (isset($_POST['startsubmit'])) {
 			$message = "SHORT_PASSPHRASE";
 
 		// Is the passphrase complex?
-		} else if (!preg_match("/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/",$dbpass1)) {
+		} else if (!preg_match("/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})[\s\S]{8,}$/",$dbpass1)) {
 			$message = "NOT_COMPLEX";
 		}
 	} // end if isset $dbpass1
@@ -120,19 +123,19 @@ if (isset($_POST['startsubmit'])) {
 		$conndata .= " * since Amore version 0.1\n";
 		$conndata .= " *\n";
 		$conndata .= " */\n\n";
-		$conndata .= "define(\"DBHOST\",\"".$dbhost."\")\;\n";
-		$conndata .= "define(\"DBNAME\",\"".$dbname."\")\;\n";
-		$conndata .= "define(\"DBUSER\",\"".$dbuser."\")\;\n";
-		$conndata .= "define(\"DBPASS\",\"".$dbpass1."\")\;\n";
-		$conndata .= "define(\"SITEKEY\",\"".$sitekey."\")\;\n";
+		$conndata .= "define(\"DBHOST\",\"".$dbhost."\");\n";
+		$conndata .= "define(\"DBNAME\",\"".$dbname."\");\n";
+		$conndata .= "define(\"DBUSER\",\"".$dbuser."\");\n";
+		$conndata .= "define(\"DBPASS\",\"".$dbpass1."\");\n";
+		$conndata .= "define(\"SITEKEY\",\"".$sitekey."\");\n";
 		$conndata .= "?>";
 
 		// let us try to write to it.
 		fwrite($connmeta,$conndata);
 		fclose($connmeta);
 
-		include_once "schema.php";
-		header("Location: post-install.php");
+		#include_once "schema.php";
+		header("Location: schema.php");
 	} // end if !isset $message
 }
 /**
@@ -141,7 +144,7 @@ if (isset($_POST['startsubmit'])) {
 
 $pagetitle = _("Welcome to Amore");
 include_once "admin-header.php";
-include "../../../functions.php"; // needed to make a sitekey
+
 ?>
 	<!-- THE CONTAINER for the main content -->
 	<main class="w3-container w3-content" style="max-width:1400px;margin-top:40px;">
@@ -168,7 +171,6 @@ switch ($message) {
 						<li><?php echo _('at least one lowercase letter'); ?></li>
 						<li><?php echo _('at least one uppercase letter'); ?></li>
 						<li><?php echo _('at least one numeral'); ?></li>
-						<li><?php echo _('at least one character that is not a number or a letter.'); ?></li>
 					</ul>
 				</p>
 			</div>
@@ -197,10 +199,6 @@ switch ($message) {
 					<input type="text" name="dbpass2" id="dbpass2" class="w3-input w3-border w3-margin-bottom" maxlength="255" required title="<?php echo _("Verify your passphrase."); ?>">
 				</p>
 				<p>
-					<label for"sitekey"><?php echo _("Sitekey"); ?></label>
-					<input type="text" name="sitekey" id="sitekey" class="w3-input w3-border w3-margin-bottom" maxlength="10" required disabled value="<?php echo makeid($newid); ?>" title="<?php echo _("This is used in some queries. You do not need to do anything with it."); ?>">
-				</p>
-				<p>
 					<input type="submit" name="startsubmit" id="startsubmit" class="w3-button w3-button-hover w3-block w3-theme-d3 w3-section w3-padding" value="<?php echo _('START SUBMIT'); ?>">
 				</p>
 			</form>
@@ -208,5 +206,5 @@ switch ($message) {
 			<div class="w3-col w3-cell m3 l4">&nbsp;</div> <!-- empty div for the purpose of positioning -->
 		</div> <!-- end THE GRID -->
 <?php
-	 include_once "admin-footer.php";
+include_once "admin-footer.php";
 ?>

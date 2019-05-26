@@ -8,15 +8,15 @@
  *
  */
 
- /*
-  * conn.php may not have been put in its proper spot yet
-  */
- if (file_exists("../../../conn.php")) {
- 	include_once  "../../../conn.php";
- } else if (file_exists("../../conn.php")) {
- 	include_once "../../conn.php";
- } else die("Unable to find file conn.php. Have you moved it to the correct directory?");
- include       "../../../functions.php";
+/*
+ * conn.php may not have been put in its proper spot yet
+ */
+if (file_exists("../../../conn.php")) {
+	include_once  "../../../conn.php";
+} else if (file_exists("../../conn.php")) {
+	include_once "../../conn.php";
+} else die("Unable to find file conn.php. Have you moved it to the correct directory?");
+include       "../../../functions.php";
 
 $dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 mysqli_set_charset($dbconn, "utf8");
@@ -41,10 +41,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_actor_types_tbl)) {
     /* translators: Do not translate actor_types in following message */
-    echo _("Table <i>actor_types</i> successfully created.")."\n\n";
+    echo _("Table <i>actor_types</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate actor_types in following message */
-    echo _("Error: Could not create table <i>actor_types</i>.")."\n\n";
+    echo _("Error: Could not create table <i>actor_types</i>.")."<br>\n\n";
   }
 
 //
@@ -62,10 +62,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_actor_types_tbl)) {
     /* translators: Do not translate actor_types in following message */
-    echo _("Default data added to table <i>actor_types</i>.")."\n\n";
+    echo _("Default data added to table <i>actor_types</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate actor_types in following message */
-    echo _("Error: Could not add data to table <i>actor_types</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>actor_types</i>.")."<br>\n\n";
   }
 
 
@@ -104,17 +104,17 @@ mysqli_set_charset($dbconn, "utf8");
     allow_user_location_privacy varchar(10) NOT NULL,
     allow_user_nationality_privacy varchar(10) NOT NULL,
     allow_user_time_zone_privacy varchar(10) NOT NULL,
-    list_with_the_federation_info BOOLEAN NOT NULL DEFAULT 1 COMMENT '".$federation_info_field_comment."',
-    list_with_fediverse_network BOOLEAN NOT NULL DEFAULT 1 COMMENT '".$fediverse_network_field_comment."',
-    PRIMARY KEY (primary_key),
+    list_with_the_federation_info BOOLEAN DEFAULT 1 COMMENT '".$federation_info_field_comment."',
+    list_with_fediverse_network BOOLEAN DEFAULT 1 COMMENT '".$fediverse_network_field_comment."',
+    PRIMARY KEY (primary_key)
   ) DEFAULT CHARSET=utf8 COMMENT='".$configuration_tbl_comment."'";
 
   if (mysqli_query($dbconn,$create_configuration_tbl)) {
     /* translators: Do not translate configuration in following message */
-    echo _("Table <i>configuration</i> successfully created.")."\n\n";
+    echo _("Table <i>configuration</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate configuration in following message */
-    echo _("Error: Could not create table <i>configuration</i>.")."\n\n";
+    echo _("Error: Could not create table <i>configuration</i>.")."<br>\n\n";
   }
 
 //
@@ -127,7 +127,6 @@ mysqli_set_charset($dbconn, "utf8");
                     website_name,
                     website_description,
                     default_locale,
-                    admin_account,
                     posts_are_called,
                     post_is_called,
                     reposts_are_called,
@@ -141,7 +140,6 @@ mysqli_set_charset($dbconn, "utf8");
                     'Amore',
                     '".$default_website_description."',
                     'en-US',
-                    'admin',
                     'posts',
                     'post',
                     'reposts',
@@ -153,10 +151,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_configuration_tbl)) {
     /* translators: Do not translate configuration in following message */
-    echo _("Default data added to table <i>configuration</i>.")."\n\n";
+    echo _("Default data added to table <i>configuration</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate configuration in following message */
-    echo _("Error: Could not add data to table <i>configuration</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>configuration</i>.")."<br>\n\n";
   }
 
 
@@ -178,10 +176,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_currencies_tbl)) {
     /* translators: Do not translate currencies in following message */
-    echo _("Table <i>currencies</i> successfully created.")."\n\n";
+    echo _("Table <i>currencies</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate currencies in following message */
-    echo _("Error: Could not create table <i>currencies</i>.")."\n\n";
+    echo _("Error: Could not create table <i>currencies</i>.")."<br>\n\n";
   }
 
 
@@ -192,7 +190,7 @@ mysqli_set_charset($dbconn, "utf8");
   $eye_colors_tbl_comment = _("Table for eye colors.");
 
   $create_eye_colors_tbl = "CREATE TABLE eye_colors (
-    eye_color_id varhar(10) NOT NULL,
+    eye_color_id varchar(10) NOT NULL,
     eye_color_name tinytext NOT NULL,
     PRIMARY KEY (eye_color_id),
     UNIQUE KEY eye_color_name (eye_color_name(20))
@@ -200,10 +198,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_eye_colors_tbl)) {
     /* translators: Do not translate eye_colors in following message */
-    echo _("Table <i>eye_colors</i> successfully created.")."\n\n";
+    echo _("Table <i>eye_colors</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate eye_colors in following message */
-    echo _("Error: Could not create table <i>eye_colors</i>.")."\n\n";
+    echo _("Error: Could not create table <i>eye_colors</i>.")."<br>\n\n";
   }
 
 
@@ -222,10 +220,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_genders_tbl)) {
     /* translators: Do not translate genders in following message */
-    echo _("Table <i>genders</i> successfully created.")."\n\n";
+    echo _("Table <i>genders</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate genders in following message */
-    echo _("Error: Could not create table <i>genders</i>.")."\n\n";
+    echo _("Error: Could not create table <i>genders</i>.")."<br>\n\n";
   }
 
 
@@ -244,10 +242,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_hair_colors_tbl)) {
     /* translators: Do not translate hair_colors in following message */
-    echo _("Table <i>hair_colors</i> successfully created.")."\n\n";
+    echo _("Table <i>hair_colors</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate hair_colors in following message */
-    echo _("Error: Could not create table <i>hair_colors</i>.")."\n\n";
+    echo _("Error: Could not create table <i>hair_colors</i>.")."<br>\n\n";
   }
 
 
@@ -266,10 +264,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_locales_tbl)) {
     /* translators: Do not translate locales in following message */
-    echo _("Table <i>locales</i> successfully created.")."\n\n";
+    echo _("Table <i>locales</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate locales in following message */
-    echo _("Error: Could not create table <i>locales</i>.")."\n\n";
+    echo _("Error: Could not create table <i>locales</i>.")."<br>\n\n";
   }
 
 
@@ -288,10 +286,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_locations_tbl)) {
     /* translators: Do not translate locations in following message */
-    echo _("Table <i>locations</i> successfully created.")."\n\n";
+    echo _("Table <i>locations</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate locations in following message */
-    echo _("Error: Could not create table <i>locations</i>.")."\n\n";
+    echo _("Error: Could not create table <i>locations</i>.")."<br>\n\n";
   }
 
 
@@ -310,10 +308,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_nationalities_tbl)) {
     /* translators: Do not translate nationalities in following message */
-    echo _("Table <i>nationalities</i> successfully created.")."\n\n";
+    echo _("Table <i>nationalities</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate nationalities in following message */
-    echo _("Error: Could not create table <i>nationalities</i>.")."\n\n";
+    echo _("Error: Could not create table <i>nationalities</i>.")."<br>\n\n";
   }
 
 
@@ -331,10 +329,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_privacy_levels_tbl)) {
     /* translators: Do not translate privacy_levels in following message */
-    echo _("Table <i>privacy_levels</i> successfully created.")."\n\n";
+    echo _("Table <i>privacy_levels</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate privacy_levels in following message */
-    echo _("Error: Could not create table <i>privacy_levels</i>.")."\n\n";
+    echo _("Error: Could not create table <i>privacy_levels</i>.")."<br>\n\n";
   }
 
 //
@@ -355,10 +353,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_privacy_levels_tbl)) {
     /* translators: Do not translate privacy_levels in following message */
-    echo _("Default data added to table <i>privacy_levels</i>.")."\n\n";
+    echo _("Default data added to table <i>privacy_levels</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate privacy_levels in following message */
-    echo _("Error: Could not add data to table <i>privacy_levels</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>privacy_levels</i>.")."<br>\n\n";
   }
 
 
@@ -382,10 +380,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_posts_tbl)) {
     /* translators: Do not translate posts in following message */
-    echo _("Table <i>posts</i> successfully created.")."\n\n";
+    echo _("Table <i>posts</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate posts in following message */
-    echo _("Error: Could not create table <i>posts</i>.")."\n\n";
+    echo _("Error: Could not create table <i>posts</i>.")."<br>\n\n";
   }
 
 
@@ -403,10 +401,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_relationship_statuses_tbl)) {
     /* translators: Do not translate relationship_statuses in following message */
-    echo _("Table <i>relationship_statuses</i> successfully created.")."\n\n";
+    echo _("Table <i>relationship_statuses</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate relationship_statuses in following message */
-    echo _("Error: Could not create table <i>relationship_statuses</i>.")."\n\n";
+    echo _("Error: Could not create table <i>relationship_statuses</i>.")."<br>\n\n";
   }
 
 //
@@ -432,10 +430,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_relationship_statuses_tbl)) {
     /* translators: Do not translate relationship_statuses in following message */
-    echo _("Default data added to table <i>relationship_statuses</i>.")."\n\n";
+    echo _("Default data added to table <i>relationship_statuses</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate relationship_statuses in following message */
-    echo _("Error: Could not add data to table <i>relationship_statuses</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>relationship_statuses</i>.")."<br>\n\n";
   }
 
 
@@ -454,10 +452,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_spoken_languages_tbl)) {
     /* translators: Do not translate spoken_languages in following message */
-    echo _("Table <i>spoken_languages</i> successfully created.")."\n\n";
+    echo _("Table <i>spoken_languages</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate spoken_languages in following message */
-    echo _("Error: Could not create table <i>spoken_languages</i>.")."\n\n";
+    echo _("Error: Could not create table <i>spoken_languages</i>.")."<br>\n\n";
   }
 
 
@@ -476,10 +474,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_sexualities_tbl)) {
     /* translators: Do not translate sexualities in following message */
-    echo _("Table <i>sexualities</i> successfully created.")."\n\n";
+    echo _("Table <i>sexualities</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate sexualities in following message */
-    echo _("Error: Could not create table <i>sexualities</i>.")."\n\n";
+    echo _("Error: Could not create table <i>sexualities</i>.")."<br>\n\n";
   }
 
 
@@ -488,23 +486,23 @@ mysqli_set_charset($dbconn, "utf8");
 // Table will be filled via data-fill.php
 //
   $time_zones_tbl_comment = _("Table for time zones");
-  $DST_offset_comment = _("Offset if Daylight Savings Time is used")
+  $DST_offset_comment = _("Offset if Daylight Savings Time is used");
 
   $create_time_zones_tbl = "CREATE TABLE time_zones (
     time_zone_id varchar(10) NOT NULL,
     time_zone_name tinytext NOT NULL,
     time_zone_offset tinytext NOT NULL,
-    time_zone_DST_offset tinytext NOT NULL COMMENT='".$DST_offset_comment."',
+    time_zone_DST_offset tinytext NOT NULL COMMENT '".$DST_offset_comment."',
     PRIMARY KEY (time_zone_id),
     UNIQUE KEY time_zone_name (time_zone_name(30))
   ) DEFAULT CHARSET=utf8 COMMENT='".$time_zones_tbl_comment."'";
 
   if (mysqli_query($dbconn,$create_time_zones_tbl)) {
     /* translators: Do not translate time_zones in following message */
-    echo _("Table <i>time_zones</i> successfully created.")."\n\n";
+    echo _("Table <i>time_zones</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate time_zones in following message */
-    echo _("Error: Could not create table <i>time_zones</i>.")."\n\n";
+    echo _("Error: Could not create table <i>time_zones</i>.")."<br>\n\n";
   }
 
 
@@ -517,7 +515,7 @@ mysqli_set_charset($dbconn, "utf8");
   $create_users_tbl = "CREATE TABLE users (
     user_id varchar(10) NOT NULL,
     user_name tinytext NOT NULL,
-    user_display_name tinytext NOT NULL COMMENT='".$display_name_field_comment."',
+    user_display_name tinytext NOT NULL COMMENT '".$display_name_field_comment."',
     user_pass tinytext NOT NULL,
     user_email tinytext NOT NULL,
     user_date_of_birth date NOT NULL,
@@ -551,11 +549,18 @@ mysqli_set_charset($dbconn, "utf8");
     user_time_zone_privacy varchar(10) NOT NULL,
     user_bio tinytext NOT NULL,
     user_created datetime NOT NULL,
-    user_last_login datetime NOT NULL
+    user_last_login datetime NOT NULL,
     PRIMARY KEY (user_id),
     UNIQUE KEY user_name (user_name(20))
   ) DEFAULT CHARSET=utf8 COMMENT='".$users_tbl_comment."'";
 
+  if (mysqli_query($dbconn,$create_users_tbl)) {
+    /* translators: Do not translate users in following message */
+    echo _("Table <i>users</i> successfully created.")."<br>\n\n";
+  } else {
+    /* translators: Do not translate users in following message */
+    echo _("Error: Could not create table <i>users</i>.")."<br>\n\n";
+  }
 
 
 //
@@ -572,10 +577,10 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$create_user_levels_tbl)) {
     /* translators: Do not translate user_levels in following message */
-    echo _("Table <i>user_levels</i> successfully created.")."\n\n";
+    echo _("Table <i>user_levels</i> successfully created.")."<br>\n\n";
   } else {
     /* translators: Do not translate user_levels in following message */
-    echo _("Error: Could not create table <i>user_levels</i>.")."\n\n";
+    echo _("Error: Could not create table <i>user_levels</i>.")."<br>\n\n";
   }
 
 //
@@ -593,14 +598,14 @@ mysqli_set_charset($dbconn, "utf8");
 
   if (mysqli_query($dbconn,$fill_user_levels_tbl)) {
     /* translators: Do not translate user_levels in following message */
-    echo _("Default data added to table <i>user_levels</i>.")."\n\n";
+    echo _("Default data added to table <i>user_levels</i>.")."<br>\n\n";
   } else {
     /* translators: Do not translate user_levels in following message */
-    echo _("Error: Could not add data to table <i>user_levels</i>.")."\n\n";
+    echo _("Error: Could not add data to table <i>user_levels</i>.")."<br>\n\n";
   }
 
 //
 // Now that the tables are created, let's fill most of them
 //
-include_once  "data-fill.php";
+redirect("data-fill.php");
 ?>
