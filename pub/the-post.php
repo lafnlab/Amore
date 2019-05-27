@@ -43,15 +43,14 @@ while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
 
 if ($sel_id != '') {
 
-	$pstq = "SELECT * FROM posts WHERE posts_id=\"".$sel_id."\"";
+	$pstq = "SELECT * FROM posts WHERE post_id=\"".$sel_id."\"";
 	$pstquery = mysqli_query($dbconn,$pstq);
 	while($pst_opt = mysqli_fetch_assoc($pstquery)) {
-		$postid		= $pst_opt['posts_id'];
-		$postby		= $pst_opt['posts_by'];
-		$posttime	= $pst_opt['posts_timestamp'];
-		$posttext	= htmlspecialchars_decode($pst_opt['posts_text']);
-		$postlang	= $pst_opt['posts_language'];
-		$postpriv	= $pst_opt['posts_privacy_level'];
+		$postid		= $pst_opt['post_id'];
+		$postby		= $pst_opt['post_by'];
+		$posttime	= $pst_opt['post_timestamp'];
+		$posttext	= htmlspecialchars_decode($pst_opt['post_text']);
+		$postpriv	= $pst_opt['post_privacy_level'];
 	}
 
 		$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
