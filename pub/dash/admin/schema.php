@@ -95,6 +95,8 @@ mysqli_set_charset($dbconn, "utf8");
     user_is_called tinytext NOT NULL,
     favorites_are_called tinytext NOT NULL,
     favorite_is_called tinytext NOT NULL,
+		dislikes_are_called tinytext NOT NULL,
+		dislike_is_called tinytext NOT NULL,
     max_post_length smallint NOT NULL DEFAULT 500,
     banned_user_names text NOT NULL,
     allow_user_age_privacy varchar(10) NOT NULL,
