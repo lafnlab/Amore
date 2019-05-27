@@ -214,15 +214,14 @@ include "the-feeds.php";
 	if (post_quantity($posts) > 0) {
 		echo "\t\t\t<div class=\"w3-col m3 w3-row-padding w3-panel\">\n";
 		echo "\t\t\t<h2 class=\"w3-center\">"._('Recent posts')."</h2>\n";
-		$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC LIMIT 50";
+		$pst_q = "SELECT * FROM posts WHERE post_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY post_timestamp DESC LIMIT 50";
 		$pst_query = mysqli_query($dbconn,$pst_q);
 		while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
-			$postid		= $pst_opt['posts_id'];
-			$postby		= $pst_opt['posts_by'];
-			$posttime	= $pst_opt['posts_timestamp'];
-			$posttext	= htmlspecialchars_decode($pst_opt['posts_text']);
-			$postlang	= $pst_opt['posts_language'];
-			$postpriv	= $pst_opt['posts_privacy_level'];
+			$postid		= $pst_opt['post_id'];
+			$postby		= $pst_opt['post_by'];
+			$posttime	= $pst_opt['post_timestamp'];
+			$posttext	= htmlspecialchars_decode($pst_opt['post_text']);
+			$postpriv	= $pst_opt['post_privacy_level'];
 
 			$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
 			$by_query = mysqli_query($dbconn,$by_q);
