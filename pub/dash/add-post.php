@@ -48,7 +48,7 @@ if (isset($sel_id)) {
 	/* but $_COOKIE['id'] is not set											*/
 	if(!isset($_COOKIE['id'])) {
 		unset($sel_id);
-		redirect("index.php");
+		redirect("../index.php");
 	}
 
 	$usrq = "SELECT * FROM users WHERE user_id=\"".$sel_id."\"";
@@ -57,34 +57,6 @@ if (isset($sel_id)) {
 		$usrid		= $usropt['user_id'];
 		$usrname		= $usropt['user_name'];
 	}
-
-	// get the user's preferred locale and have Amore use that localization
-	$usrpq = "SELECT * FROM user_profiles WHERE user_profiles_id=\"".$sel_id."\"";
-	$usrpquery = mysqli_query($dbconn,$usrpq);
-	while($usrpopt = mysqli_fetch_assoc($usrpquery)) {
-
-		// get the user's locale from the user_profiles table
-		$usrploc = $usrpopt['user_profiles_locale'];
-
-		// since that only returns the locale ID, we need to get the language and country from the locales table
-		$usrlocq = "SELECT * FROM locales WHERE locales_id=\"".$usrploc."\"";
-		$usrlocquery = mysqli_query($dbconn,$usrlocq);
-		while($usrlocopt = mysqli_fetch_assoc($usrlocquery)) {
-			$uloclang = $usrlocopt['locales_language'];
-			$ulocctry = $usrlocopt['locales_country'];
-
-			// if the country exists in this locale, separate it from the language with and underscore
-			if ($ulocctry != '') {
-				$user_locale = $uloclang."_".$ulocctry;
-			} else {
-
-				// otherwise just use the language code
-				$user_locale = $uloclang;
-			} // end if $ulocctry != ''
-
-		} // end while $usrlocopt
-
-	} // end while $usrpopt
 
 }
 
@@ -97,7 +69,7 @@ if (isset($_POST['addpostsubmit'])) {
 	$postby			= $_GET['uid']; // despite the form being posted, we get the ID via GET
 	$posttime		= date('Y-m-d H:i:s');
 	$postmsg			= nicetext($_POST['addposttext']);
-	$postprv			= $_POST['addpostradio'];
+	$postprv			= "6ьötХ5áзÚZ";
 
 	// is this a post or a message? A message will start with DM (or is marked private privacy level)
 	if ($postprv == "ÓÇfXЦИфЕaù" or substr($postmsg,0,3) === "DM " or substr($postmsg,0,3) === "dm ") {
@@ -107,9 +79,9 @@ if (isset($_POST['addpostsubmit'])) {
 
 	} else {
 #		$message = "message is not private";
-		$postq = "INSERT INTO posts (posts_id, posts_by, posts_timestamp, posts_text, posts_language, posts_privacy_level) VALUES ('$postid','$postby','$posttime','$postmsg','en','$postprv')";
+		$postq = "INSERT INTO posts (post_id, post_by, post_timestamp, post_text, post_privacy_level) VALUES ('$postid','$postby','$posttime','$postmsg','$postprv')";
 		$postadd	= mysqli_query($dbconn,$postq);
-		redirect("my-profile.php?uid=".$sel_id);
+		redirect("index.php?uid=".$sel_id);
 	}
 
 } // if isset $_POST 'addpostsubmit'
@@ -125,6 +97,8 @@ if ($message != '' || NULL) {
 			<article class="w3-col w3-panel w3-cell m9">
 				<form class="w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom" id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php?uid=".$usrid); ?>">
 					<input type="text" id="addposttext" class="w3-input w3-border w3-margin-bottom" name="addposttext" maxlength="<?php echo $max_post_length; ?>" required placeholder="<?php echo _('What are you doing?'); ?>"><br>
+					<!-- This isn't being used so we will save it for later versions -->
+					<!--
 					<input type="radio" class="w3-radio" name="addpostradio" value="6ьötХ5áзÚZ" checked><?php echo _("EVERYONE"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="щÊдrûOftÐÿ" ><?php echo _("FEDIVERSE"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="РЖFÂå1ÔÏúL" ><?php echo _("INSTANCE"); ?>&nbsp;&nbsp;
@@ -132,6 +106,7 @@ if ($message != '' || NULL) {
 					<input type="radio" class="w3-radio" name="addpostradio" value="ÞБЯÍcOъøДS" ><?php echo _("FRIENDS"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="ÓÇfXЦИфЕaù" ><?php echo _("PRIVATE"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="ñToùòхаþOЪ" ><?php echo _("SELF"); ?>&nbsp;&nbsp;
+					-->
 					<input type="submit" id="addpostsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" name="addpostsubmit" value="<?php echo _('Post'); ?>">
 				</form>
 			</article>
