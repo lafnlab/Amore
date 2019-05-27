@@ -1,11 +1,12 @@
 <?php
 /*
- * pub/dash/my-profile.php
+ * pub/dash/index.php
  *
  * This is the home page for a logged in user in Amore.
  * It shows recent posts and has a form for them to post.
+ * Most of this was previously in the my-profile.php file.
  *
- * since Amore version 0.1
+ * since Amore version 0.3
  *
  */
 
@@ -50,7 +51,7 @@ if (isset($sel_id)) {
 	/* but $_COOKIE['id'] is not set											*/
 	if(!isset($_COOKIE['id'])) {
 		unset($sel_id);
-		redirect("index.php");
+		redirect("../index.php");
 	}
 
 	$usrq = "SELECT * FROM users WHERE user_id=\"".$sel_id."\"";
@@ -74,18 +75,17 @@ if (isset($_GET["pid"])) {
 // get information about this post
 if ($post_id != '') {
 
-	$pstq = "SELECT * FROM posts WHERE posts_id=\"".$post_id."\"";
+	$pstq = "SELECT * FROM posts WHERE post_id=\"".$post_id."\"";
 	$pstquery = mysqli_query($dbconn,$pstq);
 	while($pst_opt = mysqli_fetch_assoc($pstquery)) {
-		$postid		= $pst_opt['posts_id'];
-		$postby		= $pst_opt['posts_by'];
-		$posttime	= $pst_opt['posts_timestamp'];
-		$posttext	= $pst_opt['posts_text'];
-		$postlang	= $pst_opt['posts_language'];
-		$postpriv	= $pst_opt['posts_privacy_level'];
-		$postshar	= $pst_opt['posts_shares'];
-		$postlike	= $pst_opt['posts_likes'];
-		$postdisl	= $pst_opt['posts_dislikes'];
+		$postid		= $pst_opt['post_id'];
+		$postby		= $pst_opt['post_by'];
+		$posttime	= $pst_opt['post_timestamp'];
+		$posttext	= $pst_opt['post_text'];
+		$postpriv	= $pst_opt['post_privacy_level'];
+		$postshar	= $pst_opt['post_shares'];
+		$postlike	= $pst_opt['post_likes'];
+		$postdisl	= $pst_opt['post_dislikes'];
 	}
 
 		$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
@@ -104,7 +104,7 @@ if (isset($_GET["type"])) {
 				// if the user is not logged in, refer them to the login page
 				// then bring them back here afterwards.
 				setcookie('referer',$_SERVER['SERVER_NAME']."/post/".$post_id);
-				redirect('the-login.php');
+				redirect('../the-login.php');
 			} else {
 				// if the user is logged in
 				$uid = urldecode($_COOKIE['id']);
@@ -143,12 +143,12 @@ if (isset($_GET["type"])) {
 				 */
 
 				// get the posts_likes for this post
-				$plikesq = "SELECT * FROM posts WHERE posts_id='".$post_id."'";
+				$plikesq = "SELECT * FROM posts WHERE post_id='".$post_id."'";
 				$plikesquery = mysqli_query($dbconn,$plikesq);
 				while ($plikesopt = mysqli_fetch_assoc($plikesquery)) {
 
 					// returns an array
-					$plikes = preg_split(',',$plikesopt['posts_likes']);
+					$plikes = preg_split(',',$plikesopt['post_likes']);
 
 					// encode the url for this post
 					$plikesuser = "@".$uname."@".short_url($website_url);
@@ -160,7 +160,7 @@ if (isset($_GET["type"])) {
 					$plikesjoin = join(',',$plikes);
 
 					// put the joined string into user_liked for this user
-					$plikesaddq = "UPDATE posts SET posts_likes='".$plikesjoin."' WHERE posts_id='".$post_id."'";
+					$plikesaddq = "UPDATE posts SET post_likes='".$plikesjoin."' WHERE post_id='".$post_id."'";
 					$plikesaddquery = mysqli_query($dbconn,$plikesaddq);
 
 				} // end while $plikesopt
@@ -173,7 +173,7 @@ if (isset($_GET["type"])) {
 				// if the user is not logged in, refer them to the login page
 				// then bring them back here afterwards.
 				setcookie('referer',$_SERVER['SERVER_NAME']."/post/".$post_id);
-				redirect('the-login.php');
+				redirect('../the-login.php');
 			} else {
 				// if the user is logged in
 				$uid = urldecode($_COOKIE['id']);
@@ -212,12 +212,12 @@ if (isset($_GET["type"])) {
 				 */
 
 				// get the posts_likes for this post
-				$pdislikesq = "SELECT * FROM posts WHERE posts_id='".$post_id."'";
+				$pdislikesq = "SELECT * FROM posts WHERE post_id='".$post_id."'";
 				$pdislikesquery = mysqli_query($dbconn,$pdislikesq);
 				while ($pdislikesopt = mysqli_fetch_assoc($pdislikesquery)) {
 
 					// returns an array
-					$pdislikes = preg_split(',',$pdislikesopt['posts_dislikes']);
+					$pdislikes = preg_split(',',$pdislikesopt['post_dislikes']);
 
 					// encode the url for this post
 					$pdislikesuser = "@".$uname."@".short_url($website_url);
@@ -229,7 +229,7 @@ if (isset($_GET["type"])) {
 					$pdislikesjoin = join(',',$pdislikes);
 
 					// put the joined string into user_liked for this user
-					$pdislikesaddq = "UPDATE posts SET posts_dislikes='".$pdislikesjoin."' WHERE posts_id='".$post_id."'";
+					$pdislikesaddq = "UPDATE posts SET post_dislikes='".$pdislikesjoin."' WHERE post_id='".$post_id."'";
 					$pdislikesaddquery = mysqli_query($dbconn,$pdislikesaddq);
 
 				} // end while $pdislikesopt
@@ -249,6 +249,8 @@ include_once "dash-nav.php";
 			<article class="w3-col w3-panel w3-cell m9">
 				<form class="w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom" id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php?uid=".$usrid); ?>">
 					<input type="text" id="addposttext" class="w3-input w3-border w3-margin-bottom" name="addposttext" maxlength="<?php echo $max_post_length; ?>" required placeholder="<?php echo _('What are you doing?'); ?>"><br>
+					<!-- This isn't being used so we will save it for later versions -->
+					<!--
 					<input type="radio" class="w3-radio" name="addpostradio" value="6ьötХ5áзÚZ" checked><?php echo _("EVERYONE"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="щÊдrûOftÐÿ" ><?php echo _("FEDIVERSE"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="РЖFÂå1ÔÏúL" ><?php echo _("INSTANCE"); ?>&nbsp;&nbsp;
@@ -256,23 +258,23 @@ include_once "dash-nav.php";
 					<input type="radio" class="w3-radio" name="addpostradio" value="ÞБЯÍcOъøДS" ><?php echo _("FRIENDS"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="ÓÇfXЦИфЕaù" ><?php echo _("PRIVATE"); ?>&nbsp;&nbsp;
 					<input type="radio" class="w3-radio" name="addpostradio" value="ñToùòхаþOЪ" ><?php echo _("SELF"); ?>&nbsp;&nbsp;
+					-->
 					<input type="submit" id="addpostsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" name="addpostsubmit" value="<?php echo _('Post'); ?>">
 				</form>
 <?php
 // let's see if there are any posts to view
-$pst_q = "SELECT * FROM posts WHERE posts_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY posts_timestamp DESC";
+$pst_q = "SELECT * FROM posts WHERE post_privacy_level=\"6ьötХ5áзÚZ\" ORDER BY post_timestamp DESC";
 $pst_query = mysqli_query($dbconn,$pst_q);
 if (mysqli_num_rows($pst_query) <> 0) {
 	while ($pst_opt = mysqli_fetch_assoc($pst_query)) {
-		$postid		= $pst_opt['posts_id'];
-		$postby		= $pst_opt['posts_by'];
-		$posttime	= $pst_opt['posts_timestamp'];
-		$posttext	= htmlspecialchars_decode($pst_opt['posts_text']);
-		$postlang	= $pst_opt['posts_lang'];
-		$postpriv	= $pst_opt['posts_priv'];
-		$postshar	= $pst_opt['posts_shares'];
-		$postlike	= $pst_opt['posts_likes'];
-		$postdisl	= $pst_opt['posts_dislikes'];
+		$postid		= $pst_opt['post_id'];
+		$postby		= $pst_opt['post_by'];
+		$posttime	= $pst_opt['post_timestamp'];
+		$posttext	= htmlspecialchars_decode($pst_opt['post_text']);
+		$postpriv	= $pst_opt['post_privacy_level'];
+		$postshar	= $pst_opt['post_shares'];
+		$postlike	= $pst_opt['post_likes'];
+		$postdisl	= $pst_opt['post_dislikes'];
 
 		$by_q = "SELECT * FROM users WHERE user_id=\"".$postby."\"";
 		$by_query = mysqli_query($dbconn,$by_q);
@@ -311,7 +313,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 	}
 } else {
 		echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
-		echo _("There are no posts at the moment");
+		echo "\t\t\t\t\t"._("There are no posts at the moment")."\n";
 #		echo $pst_q;
 		echo "\t\t\t\t</div>\n";
 }
