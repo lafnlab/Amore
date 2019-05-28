@@ -1,6 +1,6 @@
 # Amore
 
-(https://raw.githubusercontent.com/lafnlab/Amore/master/pub/favicon.ico) *Amore* ~~is~~ will be open source dating app software for the [Fediverse](https://en.wikipedia.org/wiki/Fediverse). It is written in PHP 7.&ast; and uses MariaDB/MySQL for the database.
+!(https://raw.githubusercontent.com/lafnlab/Amore/master/pub/favicon.ico) *Amore* ~~is~~ will be open source dating app software for the [Fediverse](https://en.wikipedia.org/wiki/Fediverse). It is written in PHP 7.&ast; and uses MariaDB/MySQL for the database.
 
 The current version of *Amore* is version 0.3 and is in early-beta status. This means it's missing a lot of features, and may not work as expected. However, early-adopters are welcome to try it out.
 
