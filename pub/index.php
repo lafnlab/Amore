@@ -80,8 +80,9 @@
  	#echo $global_count;
  }
 
-include "../functions.php";
-require_once "includes/configuration-data.php";
+include        "../functions.php";
+require        "includes/database-connect.php";
+require_once   "includes/configuration-data.php";
 
 // see if a session is set. If so, redirect them to their dashboard.
 
@@ -208,8 +209,8 @@ include "the-feeds.php";
 			$now = date('Y-m-d H:i:s');
 
 			echo "\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
-			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"".$website_url."/user/".$byname."/\">".$byname."</a>&nbsp;";
-			echo "<a href=\"".$website_url."/post/".$postid."/\">".$posttime;
+			echo "\t\t\t\t<span class=\"mainpagepostby\"><a href=\"".$website_url."user/".$byname."/\">".$byname."</a>&nbsp;";
+			echo "<a href=\"".$website_url."post/".$postid."/\">".$posttime;
 			echo "</a></span>\n";
 			echo "\t\t\t\t<p class=\"mainpageposttext\">".$posttext."</p>\n";
 			echo "\t\t\t</div>\n";
