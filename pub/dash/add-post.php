@@ -10,6 +10,8 @@
 
 include_once	"../../conn.php";
 include			"../../functions.php";
+require			"../includes/database-connect.php";
+require_once	"../includes/configuration-data.php";
 
 if (isset($_GET["uid"])) {
 	$sel_id = $_GET["uid"];
