@@ -40,13 +40,13 @@
 <body class="w3-theme-l5">
 	<div class="w3-top">
 	<header class="w3-container w3-bar w3-large w3-theme-d1">
-		<div class="w3-left w3-padding"><a href="<?php echo $website_url; ?>/index.php"><?php echo $website_name; // $sitetitle doesn't get i18n ?></a></div>
+		<div class="w3-left w3-padding"><a href="<?php echo $website_url; ?>index.php"><?php echo $website_name; // $sitetitle doesn't get i18n ?></a></div>
 		<div class="w3-right w3-padding"><?php
 		echo _('Hello, ');
 		// if a user is logged in, display their username and link to dash/my-profile.php
 		// if a user isn't logged in, display $visitortitle and link to the-login.php
 		if (isset($_COOKIE['uname'])) {
-			echo "<a href=\"dash/my-profile.php?uid=".$_COOKIE['id']."\">";
+			echo "<a href=\"dash/index.php?uid=".$_COOKIE['id']."\">";
 		} else {
 			echo "<a href=\"the-login.php\">";
 		}
