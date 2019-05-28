@@ -83,6 +83,7 @@ if (isset($_POST['startsubmit'])) {
 	$dbpass1	= $_POST['dbpass1'];
 	$dbpass2	= $_POST['dbpass2'];
 	$sitekey	= makeid($newid);
+	$version = "Amore v0.3-beta";
 
 /**
  * Time to see if the passphrase works well
@@ -128,6 +129,7 @@ if (isset($_POST['startsubmit'])) {
 		$conndata .= "define(\"DBUSER\",\"".$dbuser."\");\n";
 		$conndata .= "define(\"DBPASS\",\"".$dbpass1."\");\n";
 		$conndata .= "define(\"SITEKEY\",\"".$sitekey."\");\n";
+		$conndata .= "define(\"VERSION\",\"".$version."\");\n";
 		$conndata .= "?>";
 
 		// let us try to write to it.
