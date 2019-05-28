@@ -11,7 +11,7 @@
 		</div> <!-- end The Grid -->
 	</main> <!-- end The Container -->
 	<footer class="w3-container w3-large w3-theme-d1">
-		<span><?php echo _("Powered by "); ?><a href="https://github.com/lafnlab/Amore"><?php echo VERSION; ?></span>
+		<span><?php echo _("Powered by "); ?><a href="https://github.com/lafnlab/Amore"><?php echo VERSION; ?></a></span>
 	</footer>
 </body>
 </html>
