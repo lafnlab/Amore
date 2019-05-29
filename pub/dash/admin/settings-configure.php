@@ -1,6 +1,6 @@
 <?php
 /*
- * pub/dash/settings-configure.php
+ * pub/dash/admin/settings-configure.php
  *
  * This page allows admin users to set the website's primary configuration.
  *
