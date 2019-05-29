@@ -16,10 +16,8 @@ if (file_exists("../../../conn.php")) {
 } else if (file_exists("../../conn.php")) {
 	include_once "../../conn.php";
 } else die("Unable to find file conn.php. Have you moved it to the correct directory?");
-include       "../../../functions.php";
-
-$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-mysqli_set_charset($dbconn, "utf8");
+include			"../../../functions.php";
+require			"../../includes/database-connect.php";
 
 if (isset($_POST['amosubmit'])) {
 
