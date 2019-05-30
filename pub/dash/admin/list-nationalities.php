@@ -25,7 +25,7 @@ include_once "admin-nav.php";
 				<h4><?php echo _("List of nationalities"); ?></h4>
 				<table>
 <?php
-		$natq = "SELECT * FROM nationalities ORDER BY nationalities_name ASC";
+		$natq = "SELECT * FROM nationalities ORDER BY nationality_name ASC";
 		$natquery = mysqli_query($dbconn,$natq);
 
 		while ($natopt = mysqli_fetch_assoc($natquery)) {
