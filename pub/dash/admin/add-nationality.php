@@ -1,6 +1,6 @@
 <?php
 /*
- * pub/dash/add-nationality.php
+ * pub/dash/admin/add-nationality.php
  *
  * Adds a nationality to the database.
  *
@@ -8,32 +8,11 @@
  *
  */
 
-include_once	"../../conn.php";
-include			"../../functions.php";
+include_once	"../../../conn.php";
+include			"../../../functions.php";
+require			"../../includes/database-connect.php";
+require_once	"../../includes/configuration-data.php";
 
-$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-mysqli_set_charset($dbconn, "utf8");
-
-// let's get the configuration data
-
-$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
-$mysitequery = mysqli_query($dbconn,$mysiteq);
-while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
-	$website_url				= $mysiteopt['website_url'];
-	$website_name				= $mysiteopt['website_name'];
-	$website_description		= $mysiteopt['website_description'];
-	$default_locale			= $mysiteopt['default_locale'];
-	$open_registration		= $mysiteopt['open_registrations'];
-	$posts_are_called			= $mysiteopt['posts_are_called'];
-	$post_is_called			= $mysiteopt['post_is_called'];
-	$reposts_are_called		= $mysiteopt['reposts_are_called'];
-	$repost_is_called			= $mysiteopt['repost_is_called'];
-	$users_are_called			= $mysiteopt['users_are_called'];
-	$user_is_called			= $mysiteopt['user_is_called'];
-	$favorites_are_called	= $mysiteopt['favorites_are_called'];
-	$favorite_is_called		= $mysiteopt['favorite_is_called'];
-	$max_post_length			= $mysiteopt['max_post_length'];
-}
 
 // PROCESSING
 if (isset($_POST['natsubmit'])) {
@@ -42,12 +21,12 @@ if (isset($_POST['natsubmit'])) {
 	$naname		= nicetext($_POST['natname']);
 
 	// is the id unique in this table?
-	$idq = "SELECT * FROM nationalities WHERE nationalities_id=\'".$naid."\'";
+	$idq = "SELECT * FROM nationalities WHERE nationality_id=\'".$naid."\'";
 	$idquery = mysqli_query($dbconn,$idq);
 	$message = $idq;
 	if ($idquery == FALSE) {
 
-		$naaddq 	= "INSERT INTO nationalities (nationalities_id, nationalities_name) VALUES ('$naid','$naname')";
+		$naaddq 	= "INSERT INTO nationalities (nationality_id, nationality_name) VALUES ('$naid','$naname')";
 		$naaddquery	= mysqli_query($dbconn,$naaddq);
 #		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
 		redirect('list-nationalities.php');
@@ -58,8 +37,8 @@ if (isset($_POST['natsubmit'])) {
 
 } // if isset $_POST 'natsubmit'
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "admin-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -82,5 +61,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>
