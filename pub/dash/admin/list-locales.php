@@ -25,7 +25,7 @@ include_once "admin-nav.php";
 			<h4><?php echo _("List of locales"); ?></h4>
 				<table>
 <?php
-		$i18q = "SELECT * FROM locales ORDER BY locales_language,locales_country ASC";
+		$i18q = "SELECT * FROM locales ORDER BY locale_language,locale_country ASC";
 		$i18query = mysqli_query($dbconn,$i18q);
 
 		while ($i18opt = mysqli_fetch_assoc($i18query)) {
