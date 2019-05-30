@@ -1,6 +1,6 @@
 <?php
 /*
- * pub/dash/edit-locale.php
+ * pub/dash/admin/edit-locale.php
  *
  * Edit a locale in the database.
  *
@@ -8,8 +8,10 @@
  *
  */
 
-include_once	"../../conn.php";
-include			"../../functions.php";
+include_once	"../../../conn.php";
+include			"../../../functions.php";
+require			"../../includes/database-connect.php";
+require_once	"../../includes/configuration-data.php";
 
 
 if (isset($_GET["i18id"])) {
@@ -18,38 +20,15 @@ if (isset($_GET["i18id"])) {
 	$sel_id = "";
 }
 
-$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-mysqli_set_charset($dbconn, "utf8");
-
-// let's get the configuration data
-
-$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
-$mysitequery = mysqli_query($dbconn,$mysiteq);
-while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
-	$website_url				= $mysiteopt['website_url'];
-	$website_name				= $mysiteopt['website_name'];
-	$website_description		= $mysiteopt['website_description'];
-	$default_locale			= $mysiteopt['default_locale'];
-	$open_registration		= $mysiteopt['open_registrations'];
-	$posts_are_called			= $mysiteopt['posts_are_called'];
-	$post_is_called			= $mysiteopt['post_is_called'];
-	$reposts_are_called		= $mysiteopt['reposts_are_called'];
-	$repost_is_called			= $mysiteopt['repost_is_called'];
-	$users_are_called			= $mysiteopt['users_are_called'];
-	$user_is_called			= $mysiteopt['user_is_called'];
-	$favorites_are_called	= $mysiteopt['favorites_are_called'];
-	$favorite_is_called		= $mysiteopt['favorite_is_called'];
-	$max_post_length			= $mysiteopt['max_post_length'];
-}
 
 if ($sel_id != '') {
 
-	$i18q = "SELECT * FROM locales WHERE locales_id=\"".$sel_id."\"";
+	$i18q = "SELECT * FROM locales WHERE locale_id=\"".$sel_id."\"";
 	$i18query = mysqli_query($dbconn,$i18q);
 	while($i18opt = mysqli_fetch_assoc($i18query)) {
-		$i18id		= $i18opt['locales_id'];
-		$i18lang		= $i18opt['locales_language'];
-		$i18ctry		= $i18opt['locales_country'];
+		$i18id		= $i18opt['locale_id'];
+		$i18lang		= $i18opt['locale_language'];
+		$i18ctry		= $i18opt['locale_country'];
 	}
 }
 
@@ -68,15 +47,15 @@ if (isset($_POST['i18submit'])) {
 
 
 
-		$i18updq 	= "UPDATE locales SET locales_language='".$i18lang."',locales_country='".$i18ctry."' WHERE locales_id='".$i18id."'";
+		$i18updq 	= "UPDATE locales SET locale_language='".$i18lang."',locale_country='".$i18ctry."' WHERE locale_id='".$i18id."'";
 		$i18updquery	= mysqli_query($dbconn,$i18updq);
 		redirect('list-locales.php');
 
 
 } // if isset $_POST 'i18submit'
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "admin-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -104,5 +83,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>
