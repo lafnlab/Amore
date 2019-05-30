@@ -26,12 +26,12 @@ if (isset($_POST['currsubmit'])) {
 	}
 
 	// is the id unique in this table?
-	$idq = "SELECT * FROM currencies WHERE currencies_id=\'".$currid."\'";
+	$idq = "SELECT * FROM currencies WHERE currency_id=\'".$currid."\'";
 	$idquery = mysqli_query($dbconn,$idq);
 	$message = $idq;
 	if ($idquery == FALSE) {
 
-		$craddq 	= "INSERT INTO currencies (currencies_id, currencies_name, currencies_iso, currencies_symbol, currencies_digital) VALUES ('$currid','$currname','$curriso','$currsym','$currdigi')";
+		$craddq 	= "INSERT INTO currencies (currency_id, currency_name, currency_iso, currency_symbol, currency_digital) VALUES ('$currid','$currname','$curriso','$currsym','$currdigi')";
 		$craddquery	= mysqli_query($dbconn,$craddq);
 #		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
 		redirect('list-currencies.php');
@@ -41,8 +41,8 @@ if (isset($_POST['currsubmit'])) {
 	}
 
 } // if isset $_POST 'currsubmit'
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "../dash-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -80,5 +80,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>

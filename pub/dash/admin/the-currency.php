@@ -22,20 +22,20 @@ if (isset($_GET["did"])) {
 
 if ($sel_id != '') {
 
-	$dinq = "SELECT * FROM currencies WHERE currencies_id=\"".$sel_id."\"";
+	$dinq = "SELECT * FROM currencies WHERE currency_id=\"".$sel_id."\"";
 	$dinquery = mysqli_query($dbconn,$dinq);
 	while($dinopt = mysqli_fetch_assoc($dinquery)) {
-		$dinid		= $dinopt['currencies_id'];
-		$dinname		= $dinopt['currencies_name'];
-		$diniso		= $dinopt['currencies_iso'];
-		$dinsym		= $dinopt['currencies_symbol'];
-		$dindig		= $dinopt['currencies_digital'];
+		$dinid		= $dinopt['currency_id'];
+		$dinname		= $dinopt['currency_name'];
+		$diniso		= $dinopt['currency_iso'];
+		$dinsym		= $dinopt['currency_symbol'];
+		$dindig		= $dinopt['currency_digital'];
 	}
 }
 
 $pagetitle = $dinname;
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "../dash-nav.php";
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<table class="w3-card-2 w3-theme-l3 w3-padding">
@@ -61,5 +61,5 @@ include_once "dash-nav.php";
 		</table>
 	</article>
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>

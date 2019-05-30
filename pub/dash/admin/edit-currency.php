@@ -21,14 +21,14 @@ if (isset($_GET["did"])) {
 
 if ($sel_id != '') {
 
-	$dinq = "SELECT * FROM currencies WHERE currencies_id=\"".$sel_id."\"";
+	$dinq = "SELECT * FROM currencies WHERE currency_id=\"".$sel_id."\"";
 	$dinquery = mysqli_query($dbconn,$dinq);
 	while($dinopt = mysqli_fetch_assoc($dinquery)) {
-		$dinid		= $dinopt['currencies_id'];
-		$dinname		= $dinopt['currencies_name'];
-		$diniso		= $dinopt['currencies_iso'];
-		$dinsym		= $dinopt['currencies_symbol'];
-		$dindig		= $dinopt['currencies_digital'];
+		$dinid		= $dinopt['currency_id'];
+		$dinname		= $dinopt['currency_name'];
+		$diniso		= $dinopt['currency_iso'];
+		$dinsym		= $dinopt['currency_symbol'];
+		$dindig		= $dinopt['currency_digital'];
 	}
 }
 
@@ -45,15 +45,15 @@ if (isset($_POST['currsubmit'])) {
 		$currdigi	= 0;
 	}
 
-		$crupdq 	= "UPDATE currencies SET currencies_name='".$currname."', currencies_iso='".$curriso."', currencies_symbol='".$currsym."', currencies_digital='".$currdigi."' WHERE currencies_id='".$currid."'";
+		$crupdq 	= "UPDATE currencies SET currency_name='".$currname."', currency_iso='".$curriso."', currency_symbol='".$currsym."', currency_digital='".$currdigi."' WHERE currency_id='".$currid."'";
 		$crupdquery	= mysqli_query($dbconn,$crupdq);
 
 		redirect('list-currencies.php');
 
 } // if isset $_POST 'currsubmit'
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "../dash-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -98,5 +98,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>

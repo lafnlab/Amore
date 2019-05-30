@@ -21,7 +21,7 @@ if (isset($_GET["did"])) {
 
 
 if ($sel_id != '') {
-	$dindelq = "DELETE FROM currencies WHERE currencies_id='".$sel_id."'";
+	$dindelq = "DELETE FROM currencies WHERE currency_id='".$sel_id."'";
 	$dindelquery = mysqli_query($dbconn,$dindelq);
 	redirect("list-currencies.php");
 }

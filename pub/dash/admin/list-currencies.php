@@ -14,9 +14,10 @@ require			"../../includes/database-connect.php";
 require_once	"../../includes/configuration-data.php";
 
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "../dash-nav.php";
 ?>
+
 <!-- gets a list of currencies -->
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-d3 w3-padding w3-margin-bottom">
@@ -32,15 +33,15 @@ include_once "dash-nav.php";
 						<td><?php echo _('Digital?'); ?></td>
 					</tr>
 <?php
-		$dinq = "SELECT * FROM currencies ORDER BY currencies_name ASC";
+		$dinq = "SELECT * FROM currencies ORDER BY currency_name ASC";
 		$dinquery = mysqli_query($dbconn,$dinq);
 
 		while ($dinopt = mysqli_fetch_assoc($dinquery)) {
-			$din_digi	= $dinopt['currencies_digital'];
-			$din_sym		= $dinopt['currencies_symbol'];
-			$din_name	= $dinopt['currencies_name'];
-			$din_iso		= $dinopt['currencies_iso'];
-			$din_id		= $dinopt['currencies_id'];
+			$din_digi	= $dinopt['currency_digital'];
+			$din_sym		= $dinopt['currency_symbol'];
+			$din_name	= $dinopt['currency_name'];
+			$din_iso		= $dinopt['currency_iso'];
+			$din_id		= $dinopt['currency_id'];
 
 			if ($din_digi == 0) {
 				$digital = _("No");
@@ -61,5 +62,5 @@ include_once "dash-nav.php";
 			</div>
 		</article>
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>
