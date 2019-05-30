@@ -24,6 +24,7 @@ if (isset($_POST['amosubmit'])) {
 	/**
 	 * collect our form data
 	 */
+	$amosite		= $_POST['amositename'];
 	$amouser		= $_POST['amoadmin'];
 	$amopass1	= $_POST['amopass1'];
 	$amopass2	= $_POST['amopass2'];
@@ -62,7 +63,7 @@ if (isset($_POST['amosubmit'])) {
 		$uid				= makeid($newid);
 		$udatecreate	= date('Y-m-d H:i:s');
 		$firstuserq		= "INSERT INTO users (user_id, user_name, user_pass, user_level, user_actor_type, user_created, user_last_login) VALUES ('".$uid."', '".$amouser."', '".$hash_pass."', 'ЗиóВéèàwVO', 'ХÉdôüzÍГùф', '".$udatecreate."', '".$udatecreate."')";
-		$firstadminq	= "INSERT INTO configuration (admin_account) VALUES ('".$uid."')";
+		$firstadminq	= "INSERT INTO configuration (website_name, admin_account) VALUES ('".$amosite."', '".$uid."')";
 
 		$message = $firstuserq."<br>\n\n".$firstadminq;
 		$firstuserquery		= mysqli_query($dbconn,$firstuserq);
@@ -107,9 +108,11 @@ switch ($message) {
 			</div>
 			<div class="w3-col w3-panel w3-cell m6 l4">
 				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-				<h3><?php echo _("Create admin user"); ?></h3>
-				<p><?php echo _("We're almost done!"); ?></p>
-				<p><?php echo _("Let's create an admin user that can configure and control the website."); ?></p>
+				<h3><?php echo _("We're almost done!"); ?></h3>
+				<p>
+					<label for "amositename"><?php echo _("Site name"); ?></label>
+					<input type="text" name="amositename" id="amositename" class="w3-input w3-border w3-margin-bottom" maxlength="255" required title="<?php echo _("The name of the website."); ?>">
+				</p>
 				<p>
 					<label for "amoadmin"><?php echo _("Username"); ?></label>
 					<input type="text" name="amoadmin" id="amoadmin" class="w3-input w3-border w3-margin-bottom" maxlength="30" required title="<?php echo _("The admin user will be the first user account entered in the database."); ?>">
