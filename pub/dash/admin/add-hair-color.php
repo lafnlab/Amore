@@ -1,6 +1,6 @@
 <?php
 /*
- * pub/dash/add-hair-color.php
+ * pub/dash/admin/add-hair-color.php
  *
  * Adds a hair color to the database.
  *
@@ -8,32 +8,11 @@
  *
  */
 
-include_once	"../../conn.php";
-include			"../../functions.php";
+include_once	"../../../conn.php";
+include			"../../../functions.php";
+require			"../../includes/database-connect.php";
+require_once	"../../includes/configuration-data.php";
 
-$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-mysqli_set_charset($dbconn, "utf8");
-
-// let's get the configuration data
-
-$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
-$mysitequery = mysqli_query($dbconn,$mysiteq);
-while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
-	$website_url				= $mysiteopt['website_url'];
-	$website_name				= $mysiteopt['website_name'];
-	$website_description		= $mysiteopt['website_description'];
-	$default_locale			= $mysiteopt['default_locale'];
-	$open_registration		= $mysiteopt['open_registrations'];
-	$posts_are_called			= $mysiteopt['posts_are_called'];
-	$post_is_called			= $mysiteopt['post_is_called'];
-	$reposts_are_called		= $mysiteopt['reposts_are_called'];
-	$repost_is_called			= $mysiteopt['repost_is_called'];
-	$users_are_called			= $mysiteopt['users_are_called'];
-	$user_is_called			= $mysiteopt['user_is_called'];
-	$favorites_are_called	= $mysiteopt['favorites_are_called'];
-	$favorite_is_called		= $mysiteopt['favorite_is_called'];
-	$max_post_length			= $mysiteopt['max_post_length'];
-}
 
 // PROCESSING
 if (isset($_POST['harsubmit'])) {
@@ -42,12 +21,12 @@ if (isset($_POST['harsubmit'])) {
 	$hacolor		= nicetext($_POST['harcolor']);
 
 	// is the id unique in this table?
-	$idq = "SELECT * FROM hair_colors WHERE hair_colors_id=\'".$haid."\'";
+	$idq = "SELECT * FROM hair_colors WHERE hair_color_id=\'".$haid."\'";
 	$idquery = mysqli_query($dbconn,$idq);
 	$message = $idq;
 	if ($idquery == FALSE) {
 
-		$hraddq 	= "INSERT INTO hair_colors (hair_colors_id, hair_colors_color) VALUES ('$haid','$hacolor')";
+		$hraddq 	= "INSERT INTO hair_colors (hair_color_id, hair_color_name) VALUES ('$haid','$hacolor')";
 		$hraddquery	= mysqli_query($dbconn,$hraddq);
 #		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
 		redirect('list-hair-colors.php');
@@ -58,8 +37,8 @@ if (isset($_POST['harsubmit'])) {
 
 } // if isset $_POST 'harsubmit'
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "admin-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -82,5 +61,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>
