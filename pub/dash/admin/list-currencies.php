@@ -15,7 +15,7 @@ require_once	"../../includes/configuration-data.php";
 
 
 include_once "admin-header.php";
-include_once "../dash-nav.php";
+include_once "admin-nav.php";
 ?>
 
 <!-- gets a list of currencies -->

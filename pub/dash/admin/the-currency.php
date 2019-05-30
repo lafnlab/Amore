@@ -35,7 +35,7 @@ if ($sel_id != '') {
 
 $pagetitle = $dinname;
 include_once "admin-header.php";
-include_once "../dash-nav.php";
+include_once "admin-nav.php";
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<table class="w3-card-2 w3-theme-l3 w3-padding">

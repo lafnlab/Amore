@@ -21,7 +21,7 @@ if (isset($sel_id)) {
 	/* but $_COOKIE['id'] is not set											*/
 	if(!isset($_COOKIE['id'])) {
 		unset($sel_id);
-		redirect("../index.php");
+		redirect("../../index.php");
 	}
 
 	$usrq = "SELECT * FROM users WHERE user_id=\"".$sel_id."\"";
@@ -31,7 +31,7 @@ if (isset($sel_id)) {
 		$usrname		= $usropt['user_name'];
 	}
 
-	include "localization.php";
+	include "../localization.php";
 }
 
 if (isset($_POST['configsubmit'])){
@@ -69,8 +69,8 @@ if (isset($_POST['configsubmit'])){
 
 $pagetitle = $website_name._(" configuration");
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "admin-nav.php";
 ?>
 			<article class="w3-col w3-panel w3-cell m9">
 				<h3><?php echo _("Website configuration"); ?></h3>
@@ -171,5 +171,5 @@ include_once "dash-nav.php";
 				</form>
 			</article>
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>

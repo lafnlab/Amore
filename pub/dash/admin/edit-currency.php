@@ -53,7 +53,7 @@ if (isset($_POST['currsubmit'])) {
 } // if isset $_POST 'currsubmit'
 
 include_once "admin-header.php";
-include_once "../dash-nav.php";
+include_once "admin-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
