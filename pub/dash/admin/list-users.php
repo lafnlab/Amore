@@ -23,8 +23,8 @@ include_once "admin-nav.php";
 			</div>
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
 			<h4><?php echo _("List of users"); ?></h4>
-				<table>
-					<tr>
+				<table class="w3-table w3-striped">
+					<tr class="w3-theme-d3">
 						<th><?php echo _('Username'); ?></th>
 						<th><?php echo _('Display name'); ?></th>
 						<th><?php echo _('User level'); ?></th>

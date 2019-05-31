@@ -51,28 +51,75 @@ if ($sel_id != '') {
 		$usertzPRV			= $useropt['user_time_zone_privacy'];
 		$userbio				= $useropt['user_bio'];
 		$userfollows		= $useropt['user_follows'];
-		$userfollowers		= $useropt['user_followers'];			
+		$userfollowers		= $useropt['user_followers'];
 		$usersince			= $useropt['user_created'];
 		$userlast			= $useropt['user_last_login'];
 	}
 }
 
-$pagetitle = $dinname;
+if ($userdname !== "") {
+	$pagetitle = $userdname;
+} else {
+	$pagetitle = $username;
+}
+
 include_once "admin-header.php";
 include_once "admin-nav.php";
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4 id="basicform"><?php echo _($username); ?></h4>
-				<table>
+				<h4 id="basicform"><?php echo _($pagetitle); ?></h4>
+				<table class="w3-table">
 					<tr>
 						<td><?php echo _('ID'); ?></td><td><?php echo $userid;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Username'); ?></td><td><?php echo $username;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Display name'); ?></td><td><?php echo $userdname;?></td>
 					</tr>
 					<tr>
 						<td><?php echo _('Email'); ?></td><td><?php echo $useremail;?></td>
 					</tr>
 					<tr>
 						<td><?php echo _('Date of birth'); ?></td><td><?php echo $userdob;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('User level'); ?></td><td><?php echo $userlevel;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Actor type'); ?></td><td><?php echo $usertype;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Gender'); ?></td><td><?php echo $usergender;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Sexuality'); ?></td><td><?php echo $usersexual;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Relationship status'); ?></td><td><?php echo $userrelsat;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Eye color'); ?></td><td><?php echo $usereyes;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Hair color'); ?></td><td><?php echo $userhair;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Location'); ?></td><td><?php echo $userplace;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Nationality'); ?></td><td><?php echo $usernation;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Locale'); ?></td><td><?php echo $userlocale;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Time zone'); ?></td><td><?php echo $usertz;?></td>
+					</tr>
+					<tr>
+						<td><?php echo _('Bio'); ?></td><td><?php echo $userbio;?></td>
 					</tr>
 					<tr>
 						<td><?php echo _('Joined'); ?></td><td><?php echo $usersince;?></td>
