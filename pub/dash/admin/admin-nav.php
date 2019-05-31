@@ -37,9 +37,9 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-top\">\n";
 			echo "\t\t\t\t\t<h5>"._('Users')."</h5>\n";
 			echo "\t\t\t\t\t<ul>\n";
-			echo "\t\t\t\t\t\t<li><a href=\"../list-users.php\">"._('All users')."</a></li>\n";
-			echo "\t\t\t\t\t\t<li><a href=\"../add-user.php\">"._('Add a user')."</a></li>\n";
-			echo "\t\t\t\t\t\t<li><a href=\"../my-profile.php\">"._('Your profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"list-users.php\">"._('All users')."</a></li>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"add-user.php\">"._('Add a user')."</a></li>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"../my-profile.php\">"._('My profile')."</a></li>\n";
 			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t<h5>"._('Settings')."</h5>\n";
 			echo "\t\t\t\t\t<ul>\n";
