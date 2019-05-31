@@ -1,6 +1,6 @@
 <?php
 /*
- * pub/dash/add-sexuality.php
+ * pub/dash/admin/add-sexuality.php
  *
  * Adds a sexuality to the database.
  *
@@ -8,32 +8,11 @@
  *
  */
 
-include_once	"../../conn.php";
-include			"../../functions.php";
+include_once	"../../../conn.php";
+include			"../../../functions.php";
+require			"../../includes/database-connect.php";
+require_once	"../../includes/configuration-data.php";
 
-$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-mysqli_set_charset($dbconn, "utf8");
-
-// let's get the configuration data
-
-$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
-$mysitequery = mysqli_query($dbconn,$mysiteq);
-while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
-	$website_url				= $mysiteopt['website_url'];
-	$website_name				= $mysiteopt['website_name'];
-	$website_description		= $mysiteopt['website_description'];
-	$default_locale			= $mysiteopt['default_locale'];
-	$open_registration		= $mysiteopt['open_registrations'];
-	$posts_are_called			= $mysiteopt['posts_are_called'];
-	$post_is_called			= $mysiteopt['post_is_called'];
-	$reposts_are_called		= $mysiteopt['reposts_are_called'];
-	$repost_is_called			= $mysiteopt['repost_is_called'];
-	$users_are_called			= $mysiteopt['users_are_called'];
-	$user_is_called			= $mysiteopt['user_is_called'];
-	$favorites_are_called	= $mysiteopt['favorites_are_called'];
-	$favorite_is_called		= $mysiteopt['favorite_is_called'];
-	$max_post_length			= $mysiteopt['max_post_length'];
-}
 
 // PROCESSING
 if (isset($_POST['sxusubmit'])) {
@@ -42,12 +21,12 @@ if (isset($_POST['sxusubmit'])) {
 	$sxname		= nicetext($_POST['sxuname']);
 
 	// is the id unique in this table?
-	$idq = "SELECT * FROM sexualities WHERE sexualities_id=\'".$sxid."\'";
+	$idq = "SELECT * FROM sexualities WHERE sexuality_id=\'".$sxid."\'";
 	$idquery = mysqli_query($dbconn,$idq);
 	$message = $idq;
 	if ($idquery == FALSE) {
 
-		$sxaddq 	= "INSERT INTO sexualities (sexualities_id, sexualities_name) VALUES ('$sxid','$sxname')";
+		$sxaddq 	= "INSERT INTO sexualities (sexuality_id, sexuality_name) VALUES ('$sxid','$sxname')";
 		$sxaddquery	= mysqli_query($dbconn,$sxaddq);
 #		$message 	= "Operation complete. Add another section or click <a href=\"/\">here</a> to return to the main page.";
 		redirect('list-sexualities.php');
@@ -58,8 +37,8 @@ if (isset($_POST['sxusubmit'])) {
 
 } // if isset $_POST 'sxusubmit'
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "admin-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -82,5 +61,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>
