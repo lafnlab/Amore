@@ -13,7 +13,7 @@ include			"../../../functions.php";
 require			"../../includes/database-connect.php";
 require_once	"../../includes/configuration-data.php";
 
-
+$pagetitle = _("List of users");
 include_once "admin-header.php";
 include_once "admin-nav.php";
 ?>
@@ -24,6 +24,15 @@ include_once "admin-nav.php";
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
 			<h4><?php echo _("List of users"); ?></h4>
 				<table>
+					<tr>
+						<th><?php echo _('Username'); ?></th>
+						<th><?php echo _('Display name'); ?></th>
+						<th><?php echo _('User level'); ?></th>
+						<th><?php echo _('Account type'); ?></th>
+						<th><?php echo _('User since'); ?></th>
+						<th><?php echo _('Last logged in'); ?></th>
+						<th colspan="4"><?php echo _('Actions'); ?></th>
+					</tr>
 <?php
 				$usq = "SELECT * FROM users ORDER BY user_name ASC";
 				$usquery = mysqli_query($dbconn,$usq);
@@ -38,14 +47,14 @@ include_once "admin-nav.php";
 					$usrlast				= $usopt['user_last_login'];
 
 					// get the user_level_name
-					$levelq = "SELECT * FROM user_levels WHERE user_level_id=".$usrlevel;
+					$levelq = "SELECT * FROM user_levels WHERE user_level_id='".$usrlevel."'";
 					$levelquery = mysqli_query($dbconn,$levelq);
 					while ($levelopt = mysqli_fetch_assoc($levelquery)) {
 						$level	= $levelopt['user_level_name'];
 					}
 
 					// get the actor_type_name
-					$actorq = "SELECT * FROM actor_types WHERE actor_type_id=".$usertype;
+					$actorq = "SELECT * FROM actor_types WHERE actor_type_id='".$usrtype."'";
 					$actorquery = mysqli_query($dbconn,$actorq);
 					while ($actoropt = mysqli_fetch_assoc($actorquery)) {
 						$actor	= $actoropt['actor_type_name'];
