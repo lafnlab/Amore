@@ -1,6 +1,6 @@
 <?php
 /*
- * pub/dash/edit-place.php
+ * pub/dash/admin/edit-place.php
  *
  * Edit a place in the database.
  *
@@ -8,8 +8,10 @@
  *
  */
 
-include_once	"../../conn.php";
-include			"../../functions.php";
+include_once	"../../../conn.php";
+include			"../../../functions.php";
+require			"../../includes/database-connect.php";
+require_once	"../../includes/configuration-data.php";
 
 if (isset($_GET["plid"])) {
 	$sel_id = $_GET["plid"];
@@ -17,38 +19,15 @@ if (isset($_GET["plid"])) {
 	$sel_id = "";
 }
 
-$dbconn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-mysqli_set_charset($dbconn, "utf8");
-
-// let's get the configuration data
-
-$mysiteq = "SELECT * FROM configuration WHERE primary_key='".SITEKEY."'";
-$mysitequery = mysqli_query($dbconn,$mysiteq);
-while ($mysiteopt = mysqli_fetch_assoc($mysitequery)) {
-	$website_url				= $mysiteopt['website_url'];
-	$website_name				= $mysiteopt['website_name'];
-	$website_description		= $mysiteopt['website_description'];
-	$default_locale			= $mysiteopt['default_locale'];
-	$open_registration		= $mysiteopt['open_registrations'];
-	$posts_are_called			= $mysiteopt['posts_are_called'];
-	$post_is_called			= $mysiteopt['post_is_called'];
-	$reposts_are_called		= $mysiteopt['reposts_are_called'];
-	$repost_is_called			= $mysiteopt['repost_is_called'];
-	$users_are_called			= $mysiteopt['users_are_called'];
-	$user_is_called			= $mysiteopt['user_is_called'];
-	$favorites_are_called	= $mysiteopt['favorites_are_called'];
-	$favorite_is_called		= $mysiteopt['favorite_is_called'];
-	$max_post_length			= $mysiteopt['max_post_length'];
-}
 
 if ($sel_id != '') {
 
-	$plaq = "SELECT * FROM locations WHERE locations_id=\"".$sel_id."\"";
+	$plaq = "SELECT * FROM locations WHERE location_id=\"".$sel_id."\"";
 	$plaquery = mysqli_query($dbconn,$plaq);
 	while($plaopt = mysqli_fetch_assoc($plaquery)) {
-		$plaid		= $plaopt['locations_id'];
-		$planame		= $plaopt['locations_name'];
-		$plaparent 	= $plaopt['locations_parent'];
+		$plaid		= $plaopt['location_id'];
+		$planame		= $plaopt['location_name'];
+		$plaparent 	= $plaopt['location_parent'];
 		$parents		= mb_split(',', $plaparent);
 	}
 }
@@ -61,14 +40,14 @@ if (isset($_POST['placesubmit'])) {
 	$plparent	= join(',',$_POST['placeparent']); // allows for multiple options
 
 
-		$plupdq 	= "UPDATE locations SET locations_name='".$plname."',locations_parent='".$plparent."' WHERE locations_id='".$plid."'";
+		$plupdq 	= "UPDATE locations SET location_name='".$plname."',location_parent='".$plparent."' WHERE location_id='".$plid."'";
 		$plupdquery	= mysqli_query($dbconn,$plupdq);
 		redirect('list-places.php');
 
 } // if isset $_POST 'placesubmit'
 
-include_once "dash-header.php";
-include_once "dash-nav.php";
+include_once "admin-header.php";
+include_once "admin-nav.php";
 ?>
 <?php
 if ($message != '' || NULL) {
@@ -91,13 +70,13 @@ if ($message != '' || NULL) {
 						<td>
 							<select multiple name="placeparent[]" id="placeparent" class="w3-input w3-border w3-margin-bottom">
 <?php
-		$parentq = "SELECT * FROM locations ORDER BY locations_parent,locations_name ASC";
+		$parentq = "SELECT * FROM locations ORDER BY location_parent,location_name ASC";
 		$parentquery = mysqli_query($dbconn,$parentq);
 		while ($parentopt = mysqli_fetch_assoc($parentquery)) {
-			if (in_array($parentopt['locations_id'],$parents)) {
-				echo "\t\t\t\t\t\t\t\t\t<option selected value=\"".$parentopt['locations_id']."\">".$parentopt['locations_name']."</option>\n";
+			if (in_array($parentopt['location_id'],$parents)) {
+				echo "\t\t\t\t\t\t\t\t\t<option selected value=\"".$parentopt['location_id']."\">".$parentopt['location_name']."</option>\n";
 			} else {
-				echo "\t\t\t\t\t\t\t\t\t<option value=\"".$parentopt['locations_id']."\">".$parentopt['locations_name']."</option>\n";
+				echo "\t\t\t\t\t\t\t\t\t<option value=\"".$parentopt['location_id']."\">".$parentopt['location_name']."</option>\n";
 			}
 		}
 ?>
@@ -111,5 +90,5 @@ if ($message != '' || NULL) {
 		</article>
 
 <?php
-include_once "dash-footer.php";
+include_once "admin-footer.php";
 ?>
