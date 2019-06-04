@@ -86,37 +86,103 @@ include_once "admin-nav.php";
 						<td><?php echo _('Date of birth'); ?></td><td><?php echo $userdob;?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('User level'); ?></td><td><?php echo $userlevel;?></td>
+						<td><?php echo _('User level'); ?></td><td><?php
+	$levelq = "SELECT * FROM user_levels WHERE user_level_id='".$userlevel."'";
+	$levelquery = mysqli_query($dbconn,$levelq);
+	while ($levelopt = mysqli_fetch_assoc($levelquery)) {
+		echo $levelopt['user_level_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Actor type'); ?></td><td><?php echo $usertype;?></td>
+						<td><?php echo _('Actor type'); ?></td><td><?php
+	$actorq = "SELECT * FROM actor_types WHERE actor_type_id='".$usertype."'";
+	$actorquery = mysqli_query($dbconn,$actorq);
+	while ($actoropt = mysqli_fetch_assoc($actorquery)) {
+		echo $actoropt['actor_type_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Gender'); ?></td><td><?php echo $usergender;?></td>
+						<td><?php echo _('Gender'); ?></td><td><?php
+	$genderq = "SELECT * FROM genders WHERE gender_id='".$usergender."'";
+	$genderquery = mysqli_query($dbconn,$genderq);
+	while ($genderopt = mysqli_fetch_assoc($genderquery)) {
+		echo $genderopt['gender_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Sexuality'); ?></td><td><?php echo $usersexual;?></td>
+						<td><?php echo _('Sexuality'); ?></td><td><?php
+	$sexualq = "SELECT * FROM sexualities WHERE sexuality_id='".$usersexual."'";
+	$sexualquery = mysqli_query($dbconn,$sexualq);
+	while ($sexualopt = mysqli_fetch_assoc($sexualquery)) {
+		echo $sexualopt['sexuality_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Relationship status'); ?></td><td><?php echo $userrelsat;?></td>
+						<td><?php echo _('Relationship status'); ?></td><td><?php
+	$relstatq = "SELECT * FROM relationship_statuses WHERE relationship_status_id='".$userrelstat."'";
+	$relstatquery = mysqli_query($dbconn,$relstatq);
+	while ($relstatopt = mysqli_fetch_assoc($relstatquery)) {
+		echo $relstatopt['relationship_status_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Eye color'); ?></td><td><?php echo $usereyes;?></td>
+						<td><?php echo _('Eye color'); ?></td><td><?php
+	$eyesq = "SELECT * FROM eye_colors WHERE eye_color_id='".$usereyes."'";
+	$eyesquery = mysqli_query($dbconn,$eyesq);
+	while ($eyesopt = mysqli_fetch_assoc($eyesquery)) {
+		echo $eyesopt['eye_color_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Hair color'); ?></td><td><?php echo $userhair;?></td>
+						<td><?php echo _('Hair color'); ?></td><td><?php
+	$hairq = "SELECT * FROM hair_colors WHERE hair_color_id='".$userhair."'";
+	$hairquery = mysqli_query($dbconn,$hairq);
+	while ($hairopt = mysqli_fetch_assoc($hairquery)) {
+		echo $hairopt['hair_color_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Location'); ?></td><td><?php echo $userplace;?></td>
+						<td><?php echo _('Location'); ?></td><td><?php
+	$placeq = "SELECT * FROM locations WHERE location_id='".$userplace."'";
+	$placequery = mysqli_query($dbconn,$placeq);
+	while ($placeopt = mysqli_fetch_assoc($placequery)) {
+		echo $placeopt['location_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Nationality'); ?></td><td><?php echo $usernation;?></td>
+						<td><?php echo _('Nationality'); ?></td><td><?php
+	$natq = "SELECT * FROM nationalities WHERE nationality_id='".$usernation."'";
+	$natquery = mysqli_query($dbconn,$natq);
+	while ($natopt = mysqli_fetch_assoc($natquery)) {
+		echo $natopt['nationality_name'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Locale'); ?></td><td><?php echo $userlocale;?></td>
+						<td><?php echo _('Locale'); ?></td><td><?php
+	$localeq = "SELECT * FROM locales WHERE locale_id='".$userlocale."'";
+	$localequery = mysqli_query($dbconn,$localeq);
+	while ($localeopt = mysqli_fetch_assoc($localequery)) {
+		echo $localeopt['locale_language']."_".$localeopt['locale_country'];
+	}
+?></td>
 					</tr>
 					<tr>
-						<td><?php echo _('Time zone'); ?></td><td><?php echo $usertz;?></td>
+						<td><?php echo _('Time zone'); ?></td><td><?php
+	$tzq = "SELECT * FROM time_zones WHERE time_zone_id='".$usertz."'";
+	$tzquery = mysqli_query($dbconn,$tzq);
+	while ($tzopt = mysqli_fetch_assoc($tzquery)) {
+		echo $tzopt['time_zone_name'];
+	}
+?></td>
 					</tr>
 					<tr>
 						<td><?php echo _('Bio'); ?></td><td><?php echo $userbio;?></td>
