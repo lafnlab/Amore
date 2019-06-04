@@ -40,6 +40,9 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t\t\t<li><a href=\"list-users.php\">"._('All users')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"add-user.php\">"._('Add a user')."</a></li>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"../my-profile.php?uid=".$_COOKIE['id']."\">"._('My profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t<ul>\n";
+			echo "\t\t\t\t\t\t\t\t<li><a href=\"../edit-profile.php?uid=".$_COOKIE['id']."\">"._('Edit profile')."</a></li>";
+			echo "\t\t\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t<h5>"._('Settings')."</h5>\n";
 			echo "\t\t\t\t\t<ul>\n";
