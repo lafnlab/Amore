@@ -48,7 +48,7 @@ if ($message != '' || NULL) {
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
-				<h4><?php echo _("Add a place/location)"; ?></h4>
+				<h4><?php echo _("Add a place/location"); ?></h4>
 			<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 				<table>
 					<tr>
@@ -57,7 +57,7 @@ if ($message != '' || NULL) {
 					</tr>
 					<tr>
 						<td class="inputlabel"><label for="placeparent"><?php echo _('Place parent'); ?></label></td>
-						<!-- this list is an imperfect mess, at best. It will be improved at some point -->
+						the-relationship-status<!-- this list is an imperfect mess, at best. It will be improved at some point -->
 						<td>
 							<select multiple name="placeparent[]" id="placeparent" class="w3-input w3-border w3-margin-bottom">
 <?php
