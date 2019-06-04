@@ -451,11 +451,7 @@ if ($message != '' || NULL) {
 					<tr>
 						<td><?php echo _('Bio'); ?></td>
 						<td>
-							<textarea name="usrbio" id="usrbio" class="w3-input w3-border w3-margin-bottom">
-<?php
-								echo $userbio;
-?>
-							</textarea>
+							<textarea name="usrbio" id="usrbio" class="w3-input w3-border w3-margin-bottom"><?php echo $userbio; ?></textarea>
 						</td>
 					</tr>
 					<tr>
