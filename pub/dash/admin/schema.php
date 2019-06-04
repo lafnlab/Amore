@@ -548,6 +548,8 @@ require			"../../includes/database-connect.php";
     user_time_zone varchar(10) NOT NULL,
     user_time_zone_privacy varchar(10) NOT NULL,
     user_bio tinytext NOT NULL,
+    user_is_suspended datetime,
+    user_is_banned BOOLEAN DEFAULT 0,
     user_created datetime NOT NULL,
     user_last_login datetime NOT NULL,
     PRIMARY KEY (user_id),

@@ -45,6 +45,8 @@ include_once "admin-nav.php";
 					$usrtype				= $usopt['user_actor_type'];
 					$usrsince			= $usopt['user_created'];
 					$usrlast				= $usopt['user_last_login'];
+					$usrsusp				= $usopt['user_is_suspended'];
+					$usrban				= $usopt['user_is_banned'];
 
 					// get the user_level_name
 					$levelq = "SELECT * FROM user_levels WHERE user_level_id='".$usrlevel."'";
@@ -60,18 +62,51 @@ include_once "admin-nav.php";
 						$actor	= $actoropt['actor_type_name'];
 					}
 
-					echo "\t\t\t\t\t<tr>\n";
-					echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
-					echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
-					echo "\t\t\t\t\t\t<td>".$level."</td>\n";
-					echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
-					echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
-					echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
-					echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
-					echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
-					echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
-					echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
-					echo "\t\t\t\t\t</tr>\n";
+					// if a user is not banned and not suspended, they are shown on this list
+					if ($usrban == 0) {
+						if ($usrsusp == '0000-00-00 00:00:00') {
+							echo "\t\t\t\t\t<tr>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
+							echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$level."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
+							echo "\t\t\t\t\t<tr>\n";
+						} else {
+							// the user is suspended
+							echo "\t\t\t\t\t<tr class=\"w3-amber w3-hover-grey\">\n";
+							echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
+							echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$level."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
+							echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
+							echo "\t\t\t\t\t<tr>\n";
+						}
+					} else {
+						// the user is banned
+						echo "\t\t\t\t\t<tr class=\"w3-red w3-hover-black\">\n";
+						echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
+						echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
+						echo "\t\t\t\t\t\t<td>".$level."</td>\n";
+						echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
+						echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
+						echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
+						echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
+						echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
+						echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
+						echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
+						echo "\t\t\t\t\t<tr>\n";
+					}
 				}
 ?>
 				</table>

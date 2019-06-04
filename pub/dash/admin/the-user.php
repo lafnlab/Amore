@@ -52,9 +52,17 @@ if ($sel_id != '') {
 		$userbio				= $useropt['user_bio'];
 		$userfollows		= $useropt['user_follows'];
 		$userfollowers		= $useropt['user_followers'];
+		$usersuspended		= $useropt['user_is_suspended'];
+		$userbanned			= $useropt['user_is_banned'];
 		$usersince			= $useropt['user_created'];
 		$userlast			= $useropt['user_last_login'];
 	}
+}
+
+if ($usersuspended !== '0000-00-00 00:00:00') {
+	$message = "SUSPENDED";
+} else if ($userbanned <> 0) {
+	$message = "BANNED";
 }
 
 if ($userdname !== "") {
@@ -65,6 +73,16 @@ if ($userdname !== "") {
 
 include_once "admin-header.php";
 include_once "admin-nav.php";
+?>
+<?php
+switch ($message) {
+	case "SUSPENDED":
+		echo _("This user is currently suspended from the website.");
+		break;
+	case "BANNED":
+		echo _("The user had been banned from this website.");
+		break;
+}
 ?>
 		<article class="w3-col w3-panel w3-cell m9">
 			<div class="w3-card-2 w3-theme-l3 w3-padding">
