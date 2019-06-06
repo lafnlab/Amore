@@ -39,8 +39,27 @@ if (isset($_POST['userban'])) {
 	// make a random passphrase and scramble it
 	$permaban = password_hash(makeid($newid),PASSWORD_DEFAULT);
 
+	// add them to list of banned usernames
+	$bannameq = "SELECT * FROM configuration";
+	$bannamequery = mysqli_query($dbconn,$bannameq);
+	while ($bannameopt = mysqli_fetch_assoc($bannamequery)) {
+
+	// turns a comma separated string into an array
+	$banned = explode(",",$bannameopt["banned_user_names"]);
+
+	// push the user name into the array
+	$banned[] = $_POST['username'];
+
+	// join the array into a string
+	$bannedjoin = implode(",",$banned);
+
+	// put the joined string into user_liked for this user
+	$bannedaddq = "UPDATE configuration SET banned_user_names='".$bannedjoin."'";
+	$bannedaddquery = mysqli_query($dbconn,$bannedaddq);
+	} // end while bannameopt
+
 	// clear their profile
-	$usrbanq = "UPDATE users SET user_display_name='', user_pass='".$permaban."', user_email='', user_date_of_birth='', user_date_of_birth_privacy='', user_level='', user_actor_type='', user_outbox='', user_inbox='', user_liked='', user_disliked='', user_follows='', user_followers='', user_priv_key='', user_pub_key='', user_avatar='', user_gender='', user_gender_privacy='', user_sexuality='', user_sexuality_privacy='', user_relationship_status='', user_relationship_status_privacy='', user_eye_color='', user_hair_color='', user_location='', user_location_privacy='', user_nationality='', user_nationality_privacy='', user_locale='', user_spoken_language='', user_time_zone='', user_time_zone_privacy='', user_bio='', user_is_banned=1 WHERE user_id='".$_POST['userid']."'";
+	$usrbanq = "UPDATE users SET user_display_name='', user_pass='".$permaban."', user_email='', user_date_of_birth='', user_date_of_birth_privacy='', user_level='', user_actor_type='', user_outbox='', user_inbox='', user_liked='', user_disliked='', user_follows='', user_followers='', user_priv_key='', user_pub_key='', user_avatar='', user_gender='', user_gender_privacy='', user_sexuality='', user_sexuality_privacy='', user_relationship_status='', user_relationship_status_privacy='', user_eye_color='', user_hair_color='', user_location='', user_location_privacy='', user_nationality='', user_nationality_privacy='', user_locale='', user_spoken_language='', user_time_zone='', user_time_zone_privacy='', user_bio='', user_is_banned=1, user_banned_on='".strtotime('now')."', user_banned_by='".$_COOKIE['id']."' WHERE user_id='".$_POST['userid']."'";
 
 	$usrbanquery = mysqli_query($dbconn,$usrbanq);
 	redirect("list-users.php");
@@ -70,6 +89,8 @@ if ($message != '' || NULL) {
 				<p><?php echo _("Are you sure you want to ban this user?"); ?></p>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<input type="hidden" name="userid" id="userid" value="<?php echo $userid; ?>">
+					<input type="hidden" name="username" id="username" value="<?php echo $username; ?>">
+					<input type="hidden" name="userdname" id="userdname" value="<?php echo $userdname; ?>">
 					<table>
 						<tr>
 							<td><input type="submit" name="userban" id="userban" class="w3-button w3-button-hover w3-block w3-theme-d3 w3-section w3-padding" value="<?php echo _('YES'); ?>"></td>
