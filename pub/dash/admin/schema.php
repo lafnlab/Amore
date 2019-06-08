@@ -71,10 +71,9 @@ require			"../../includes/database-connect.php";
 // Create the configuration table
 //
   $configuration_tbl_comment = _("Table for website configuration.");
-  $open_registration_field_comment = _("The default is closed registrations.");
   $admin_account_field_comment = _("This will be the first account created.");
-  $federation_info_field_comment = _("The default setting is yes.");
-  $fediverse_network_field_comment = _("The default setting is yes.");
+  $default_yes = _("The default setting is yes.");
+  $default_no	= _("The default setting is no.");
 
   $create_configuration_tbl = "CREATE TABLE configuration (
     primary_key varchar(10) NOT NULL,
@@ -82,7 +81,7 @@ require			"../../includes/database-connect.php";
     website_name tinytext NOT NULL,
     website_description text NOT NULL,
     default_locale tinytext NOT NULL,
-    open_registrations BOOLEAN DEFAULT 0 COMMENT '".$open_registration_field_comment."',
+    open_registrations BOOLEAN DEFAULT 0 COMMENT '".$default_no."',
     admin_account tinytext NOT NULL COMMENT '".$admin_account_field_comment."',
     admin_email tinytext NOT NULL,
     posts_are_called tinytext NOT NULL,
@@ -104,8 +103,20 @@ require			"../../includes/database-connect.php";
     allow_user_location_privacy varchar(10) NOT NULL,
     allow_user_nationality_privacy varchar(10) NOT NULL,
     allow_user_time_zone_privacy varchar(10) NOT NULL,
-    list_with_the_federation_info BOOLEAN DEFAULT 1 COMMENT '".$federation_info_field_comment."',
-    list_with_fediverse_network BOOLEAN DEFAULT 1 COMMENT '".$fediverse_network_field_comment."',
+    display_home_page_login_form BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_users_quantity BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_posts_quantity BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_statistics_link BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_about_link BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_privacy_policy_link BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_site_description BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_meta_description BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_admin_info BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    display_home_page_timeline BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    list_with_the_federation_info BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    list_with_fediverse_network BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    list_with_amore_social BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
+    list_with_dating_media BOOLEAN DEFAULT 1 COMMENT '".$default_yes."',
     PRIMARY KEY (primary_key)
   ) DEFAULT CHARSET=utf8 COMMENT='".$configuration_tbl_comment."'";
 
