@@ -72,6 +72,9 @@ if (isset($_POST['userdelete'])) {
 
 } else if (isset($_POST['usercancel'])) {
 
+	// still must get the form data, even if we cancel
+	$uid			= $_POST['userid'];
+
 	redirect("index.php?uid=".$uid);
 }
 
@@ -96,7 +99,7 @@ if ($message != '' || NULL) {
 				❗ <i><?php echo _("NOTE: Deleting your profile will remove your profile and all of your posts from our database. You will not be able to login to $website_name again. Your username - $username - will not be made available to other users."); ?></i>
 				<p><?php echo _("Are you sure you want to delete your profile?"); ?></p>
 				<form id="basicform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-				<input type="hidden" name="usrid" value="<?php echo $userid; ?>">
+				<input type="hidden" name="userid" value="<?php echo $userid; ?>">
 				<input type="hidden" name="username" id="username" value="<?php echo $username; ?>">
 				<input type="hidden" name="userdname" id="userdname" value="<?php echo $userdname; ?>">
 				<table>
