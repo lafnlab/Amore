@@ -43,6 +43,7 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t\t\t\t<ul>\n";
 			echo "\t\t\t\t\t\t\t\t<li><a href=\"edit-profile.php?uid=".$_COOKIE['id']."\">"._('Edit profile')."</a></li>\n";
 			echo "\t\t\t\t\t\t\t\t<li><a href=\"delete-profile.php?uid=".$_COOKIE['id']."\">"._('Delete profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t\t<li><a href=\"change-passphrase.php?uid=".$_COOKIE['id']."\">"._('Change passphrase')."</a></li>\n";
 			echo "\t\t\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t<h5>"._('Settings')."</h5>\n";
@@ -69,6 +70,18 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t\t\t\t\t<li><a href=\"admin/list-time-zones.php\">"._('Time zones')."</a></li>\n";
 			echo "\t\t\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t\t</li>\n";
+			echo "\t\t\t\t\t</ul>\n";
+			echo "\t\t\t\t</div>\n";
+		} else if ($level === 'sеÔÞLÉзBТт') {
+			echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-top\">\n";
+			echo "\t\t\t\t\t<h5>"._('Users')."</h5>\n";
+			echo "\t\t\t\t\t<ul>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"my-profile.php?uid=".$_COOKIE['id']."\">"._('My profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t<ul>\n";
+			echo "\t\t\t\t\t\t\t\t<li><a href=\"edit-profile.php?uid=".$_COOKIE['id']."\">"._('Edit profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t\t<li><a href=\"delete-profile.php?uid=".$_COOKIE['id']."\">"._('Delete profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t\t<li><a href=\"change-passphrase.php?uid=".$_COOKIE['id']."\">"._('Change passphrase')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t</div>\n";
 		}
