@@ -290,7 +290,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=like\" title=\""._('Like')."\">🎔&nbsp;".$likes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=dislike\" title=\""._('Dislike')."\">💔&nbsp;".$dislikes."</a>&nbsp;<a href=\"#\" title=\""._('Flag for moderation')."\">⚐</a>&nbsp;";
 
 		if ($usrlevel === 'ЗиóВéèàwVO') {
-		echo "<a href=\"delete-post.php?pid=".$postid."\">⛝</a>\n";
+		echo "<a href=\"admin/delete-post.php?pid=".$postid."\">⛝</a>\n";
 		}
 		echo "\t\t\t\t</div>\n";
 	}
