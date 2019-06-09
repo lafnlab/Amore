@@ -85,7 +85,7 @@ if (isset($_POST['usrsubmit'])) {
 	$utz			= $_POST['usrtz'];
 	$ubio			= nicetext($_POST['usrbio']);
 
-	$usrupdq	= "UPDATE users SET user_name='".$uname."', user_display_name='".$udname."', user_email='".$uemail."', user_date_of_birth='".$udob."', user_date_of_birth_privacy='".$udobprv."', user_level='".$ulevel."', user_actor_type='".$uactor."', user_gender='".$ugender."', user_gender_privacy='".$ugenprv."', user_sexuality='".$usexual."', user_sexuality_privacy='".$usexprv."', user_relationship_status='".$urelstat."', user_relationship_status_privacy='".$urelprv."', user_eye_color='".$ueyes."', user_hair_color='".$uhair."', user_location='".$uplace."', user_location_privacy='".$uplaprv."', user_nationality='".$unation."', user_locale='".$ulocale."', user_time_zone='".$utz."', user_bio='".$ubio."'";
+	$usrupdq	= "UPDATE users SET user_name='".$uname."', user_display_name='".$udname."', user_email='".$uemail."', user_date_of_birth='".$udob."', user_date_of_birth_privacy='".$udobprv."', user_level='".$ulevel."', user_actor_type='".$uactor."', user_gender='".$ugender."', user_gender_privacy='".$ugenprv."', user_sexuality='".$usexual."', user_sexuality_privacy='".$usexprv."', user_relationship_status='".$urelstat."', user_relationship_status_privacy='".$urelprv."', user_eye_color='".$ueyes."', user_hair_color='".$uhair."', user_location='".$uplace."', user_location_privacy='".$uplaprv."', user_nationality='".$unation."', user_locale='".$ulocale."', user_time_zone='".$utz."', user_bio='".$ubio."' WHERE user_id='".$uid."'";
 	$userupdquery = mysqli_query($dbconn,$usrupdq);
 	redirect("index.php?uid=".$uid);
 }
