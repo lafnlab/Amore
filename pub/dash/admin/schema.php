@@ -96,6 +96,7 @@ require			"../../includes/database-connect.php";
     dislike_is_called tinytext NOT NULL,
     max_post_length smallint NOT NULL DEFAULT 500,
     banned_user_names text NOT NULL,
+    deleted_user_names text NOT NULL,
     allow_user_age_privacy varchar(10) NOT NULL,
     allow_user_gender_privacy varchar(10) NOT NULL,
     allow_user_sexuality_privacy varchar(10) NOT NULL,
