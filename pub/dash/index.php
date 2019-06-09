@@ -37,6 +37,7 @@ if (isset($sel_id)) {
 	while($usropt = mysqli_fetch_assoc($usrquery)) {
 		$usrid		= $usropt['user_id'];
 		$usrname		= $usropt['user_name'];
+		$usrlevel	= $usropt['user_level'];
 	}
 
 	include "localization.php";
@@ -286,7 +287,11 @@ if (mysqli_num_rows($pst_query) <> 0) {
 		echo "</a></span>\n";
 		echo "\t\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t\t<!-- future functionality on span below -->\n";
-		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=like\" title=\""._('Like')."\">🎔&nbsp;".$likes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=dislike\" title=\""._('Dislike')."\">💔&nbsp;".$dislikes."</a>&nbsp;\n";
+		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=like\" title=\""._('Like')."\">🎔&nbsp;".$likes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=dislike\" title=\""._('Dislike')."\">💔&nbsp;".$dislikes."</a>&nbsp;<a href=\"#\" title=\""._('Flag for moderation')."\">⚐</a>&nbsp;";
+
+		if ($usrlevel === 'ЗиóВéèàwVO') {
+		echo "<a href=\"delete-post.php?pid=".$postid."\">⛝</a>\n";
+		}
 		echo "\t\t\t\t</div>\n";
 	}
 } else {
