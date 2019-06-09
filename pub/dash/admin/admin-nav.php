@@ -42,6 +42,7 @@ if(isset($_COOKIE['id'])) {
 			echo "\t\t\t\t\t\t<li><a href=\"../my-profile.php?uid=".$_COOKIE['id']."\">"._('My profile')."</a></li>\n";
 			echo "\t\t\t\t\t\t\t<ul>\n";
 			echo "\t\t\t\t\t\t\t\t<li><a href=\"../edit-profile.php?uid=".$_COOKIE['id']."\">"._('Edit profile')."</a></li>\n";
+			echo "\t\t\t\t\t\t\t\t<li><a href=\"../delete-profile.php?uid=".$_COOKIE['id']."\">"._('Delete profile')."</a></li>\n";
 			echo "\t\t\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t<h5>"._('Settings')."</h5>\n";
