@@ -387,6 +387,11 @@ require			"../../includes/database-connect.php";
     post_shares text NOT NULL,
     post_likes text NOT NULL,
     post_dislikes text NOT NULL,
+    post_flagged BOOLEAN DEFAULT 0,
+    post_flagged_by varchar(10),
+    post_flagged_on datetime,
+    post_deleted_by varchar(10),
+    post_deleted_on datetime,
     PRIMARY KEY (post_id)
   ) DEFAULT CHARSET=utf8 COMMENT='".$posts_tbl_comment."'";
 
