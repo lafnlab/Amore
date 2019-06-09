@@ -35,6 +35,10 @@ if(isset($_COOKIE['id'])) {
 		$level	= $idopt['user_level'];
 		if ($level === 'ЗиóВéèàwVO') {
 			echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-top\">\n";
+			echo "\t\t\t\t\t<h5>"._('Posts')."</h5>\n";
+			echo "\t\t\t\t\t<ul>\n";
+			echo "\t\t\t\t\t\t<li><a href=\"mod-queue.php\">"._('Moderation queue')."</a></li>\n";
+			echo "\t\t\t\t\t</ul>\n";
 			echo "\t\t\t\t\t<h5>"._('Users')."</h5>\n";
 			echo "\t\t\t\t\t<ul>\n";
 			echo "\t\t\t\t\t\t<li><a href=\"list-users.php\">"._('All users')."</a></li>\n";
