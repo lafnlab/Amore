@@ -214,6 +214,23 @@ if (isset($_GET["type"])) {
 				} // end while $pdislikesopt
 			}
 
+	} else if ($_GET["type"] === "flag") {
+		// check if the user is logged in (is there a session ID?)
+			if (!isset($_COOKIE['id'])) {
+
+				// if the user is not logged in, refer them to the login page
+				// then bring them back here afterwards.
+				setcookie('referer',$_SERVER['SERVER_NAME']."/post/".$post_id);
+				redirect('../the-login.php');
+			} else {
+				// if the user is logged in
+				$uid = urldecode($_COOKIE['id']);
+
+				$now = date('Y-m-d H:i:s');
+
+				$flaggingq = "UPDATE posts SET post_flagged=1, post_flagged_by='".$uid."', post_flagged_on='".$now."' WHERE post_id='".$_GET['pid']."'";
+				$flaggingquery = mysqli_query($dbconn,$flaggingq);
+			}
 	}
 }
 
@@ -228,16 +245,6 @@ include_once "dash-nav.php";
 			<article class="w3-col w3-panel w3-cell m9">
 				<form class="w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom" id="addpost" method="post" action="<?php echo htmlspecialchars("add-post.php?uid=".$usrid); ?>">
 					<input type="text" id="addposttext" class="w3-input w3-border w3-margin-bottom" name="addposttext" maxlength="<?php echo $max_post_length; ?>" required placeholder="<?php echo _('What are you doing?'); ?>"><br>
-					<!-- This isn't being used so we will save it for later versions -->
-					<!--
-					<input type="radio" class="w3-radio" name="addpostradio" value="6ьötХ5áзÚZ" checked><?php echo _("EVERYONE"); ?>&nbsp;&nbsp;
-					<input type="radio" class="w3-radio" name="addpostradio" value="щÊдrûOftÐÿ" ><?php echo _("FEDIVERSE"); ?>&nbsp;&nbsp;
-					<input type="radio" class="w3-radio" name="addpostradio" value="РЖFÂå1ÔÏúL" ><?php echo _("INSTANCE"); ?>&nbsp;&nbsp;
-					<input type="radio" class="w3-radio" name="addpostradio" value="óСПõöRærÊh" ><?php echo _("FOLLOWERS"); ?>&nbsp;&nbsp;
-					<input type="radio" class="w3-radio" name="addpostradio" value="ÞБЯÍcOъøДS" ><?php echo _("FRIENDS"); ?>&nbsp;&nbsp;
-					<input type="radio" class="w3-radio" name="addpostradio" value="ÓÇfXЦИфЕaù" ><?php echo _("PRIVATE"); ?>&nbsp;&nbsp;
-					<input type="radio" class="w3-radio" name="addpostradio" value="ñToùòхаþOЪ" ><?php echo _("SELF"); ?>&nbsp;&nbsp;
-					-->
 					<input type="submit" id="addpostsubmit" class="w3-button w3-button-hover w3-theme-d3 w3-padding" name="addpostsubmit" value="<?php echo _('Post'); ?>">
 				</form>
 <?php
@@ -287,7 +294,7 @@ if (mysqli_num_rows($pst_query) <> 0) {
 		echo "</a></span>\n";
 		echo "\t\t\t\t\t<p class=\"showposttext\">".$posttext."</p>\n";
 		echo "\t\t\t\t\t<!-- future functionality on span below -->\n";
-		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=like\" title=\""._('Like')."\">🎔&nbsp;".$likes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=dislike\" title=\""._('Dislike')."\">💔&nbsp;".$dislikes."</a>&nbsp;<a href=\"#\" title=\""._('Flag for moderation')."\">⚐</a>&nbsp;";
+		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=like\" title=\""._('Like')."\">🎔&nbsp;".$likes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=dislike\" title=\""._('Dislike')."\">💔&nbsp;".$dislikes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=flag\" title=\""._('Flag for moderation')."\">⚐</a>&nbsp;";
 
 		if ($usrlevel === 'ЗиóВéèàwVO') {
 		echo "<a href=\"admin/delete-post.php?pid=".$postid."\">⛝</a>\n";
@@ -297,7 +304,6 @@ if (mysqli_num_rows($pst_query) <> 0) {
 } else {
 		echo "\t\t\t\t<div class=\"w3-card-2 w3-theme-l3 w3-padding w3-margin-bottom\">\n";
 		echo "\t\t\t\t\t"._("There are no posts at the moment")."\n";
-#		echo $pst_q;
 		echo "\t\t\t\t</div>\n";
 }
 ?>
