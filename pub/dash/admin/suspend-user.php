@@ -35,7 +35,7 @@ if (isset($_POST['usersusp'])) {
 	$id		= $_POST['userid'];
 	$susdate	= $_POST['usersuspdate']." 00:00:00";
 
-	$usrsuspq = "UPDATE users SET user_is_suspended='".$susdate."', user_suspended_on='".strtotime('now')."', user_suspended_by='".$_COOKIE['id']."'";
+	$usrsuspq = "UPDATE users SET user_is_suspended='".$susdate."', user_suspended_on='".date('Y-m-d H:i:s')."', user_suspended_by='".$_COOKIE['id']."'";
 	$usrsuspquery = mysqli_query($dbconn,$usrsuspq);
 	redirect("list-users.php");
 } else if (isset($_POST['usercancel'])) {

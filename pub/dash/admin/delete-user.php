@@ -32,8 +32,31 @@ if ($sel_id != '') {
 }
 
 if (isset($_POST['userdelete'])) {
+	// remove the user from the users table
 	$usrdelq = "DELETE FROM users WHERE user_id='".$_POST['userid']."'";
 	$usrdelquery = mysqli_query($dbconn,$usrdelq);
+
+	// remove them from the list of banned usernames
+	$bannameq = "SELECT * FROM configuration";
+	$bannamequery = mysqli_query($dbconn,$bannameq);
+	while ($bannameopt = mysqli_fetch_assoc($bannamequery)) {
+
+	// turns a comma separated string into an array
+	$banned = explode(",",$bannameopt["banned_user_names"]);
+
+	// push the user name into the array
+	if (($key = array_search($username, $banned)) !== false) {
+    unset($banned[$key]);
+}
+
+	// join the array into a string
+	$bannedjoin = implode(",",$banned);
+
+	// put the joined string into user_liked for this user
+	$bannedaddq = "UPDATE configuration SET banned_user_names='".$bannedjoin."'";
+	$bannedaddquery = mysqli_query($dbconn,$bannedaddq);
+	} // end while bannameopt
+
 	redirect("list-users.php");
 } else if (isset($_POST['usercancel'])) {
 	redirect["list-users.php"];

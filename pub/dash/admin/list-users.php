@@ -27,11 +27,9 @@ include_once "admin-nav.php";
 					<tr class="w3-theme-d3">
 						<th><?php echo _('Username'); ?></th>
 						<th><?php echo _('Display name'); ?></th>
-						<th><?php echo _('User level'); ?></th>
-						<th><?php echo _('Account type'); ?></th>
 						<th><?php echo _('User since'); ?></th>
 						<th><?php echo _('Last logged in'); ?></th>
-						<th colspan="4"><?php echo _('Actions'); ?></th>
+						<th colspan="5"><?php echo _('Actions'); ?></th>
 					</tr>
 <?php
 				$usq = "SELECT * FROM users ORDER BY user_name ASC";
@@ -41,26 +39,11 @@ include_once "admin-nav.php";
 					$usrid				= $usopt['user_id'];
 					$usrname				= $usopt['user_name'];
 					$usrdname			= $usopt['user_display_name'];
-					$usrlevel			= $usopt['user_level'];
-					$usrtype				= $usopt['user_actor_type'];
 					$usrsince			= $usopt['user_created'];
 					$usrlast				= $usopt['user_last_login'];
 					$usrsusp				= $usopt['user_is_suspended'];
 					$usrban				= $usopt['user_is_banned'];
 
-					// get the user_level_name
-					$levelq = "SELECT * FROM user_levels WHERE user_level_id='".$usrlevel."'";
-					$levelquery = mysqli_query($dbconn,$levelq);
-					while ($levelopt = mysqli_fetch_assoc($levelquery)) {
-						$level	= $levelopt['user_level_name'];
-					}
-
-					// get the actor_type_name
-					$actorq = "SELECT * FROM actor_types WHERE actor_type_id='".$usrtype."'";
-					$actorquery = mysqli_query($dbconn,$actorq);
-					while ($actoropt = mysqli_fetch_assoc($actorquery)) {
-						$actor	= $actoropt['actor_type_name'];
-					}
 
 					// if a user is not banned and not suspended, they are shown on this list
 					if ($usrban == 0) {
@@ -68,28 +51,26 @@ include_once "admin-nav.php";
 							echo "\t\t\t\t\t<tr>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
-							echo "\t\t\t\t\t\t<td>".$level."</td>\n";
-							echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"passphrase-reset.php?uid=".$usrid."\">"._('Passphrase reset')."</a></td>\n";
 							echo "\t\t\t\t\t<tr>\n";
 						} else {
 							// the user is suspended
 							echo "\t\t\t\t\t<tr class=\"w3-amber w3-hover-grey\">\n";
 							echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
-							echo "\t\t\t\t\t\t<td>".$level."</td>\n";
-							echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
-							echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td></td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
+							echo "\t\t\t\t\t\t<td><a href=\"passphrase-reset.php?uid=".$usrid."\">"._('Passphrase reset')."</a></td>\n";
 							echo "\t\t\t\t\t<tr>\n";
 						}
 					} else {
@@ -97,14 +78,13 @@ include_once "admin-nav.php";
 						echo "\t\t\t\t\t<tr class=\"w3-red w3-hover-black\">\n";
 						echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
 						echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
-						echo "\t\t\t\t\t\t<td>".$level."</td>\n";
-						echo "\t\t\t\t\t\t<td>".$actor."</td>\n";
 						echo "\t\t\t\t\t\t<td>".$usrsince."</td>\n";
 						echo "\t\t\t\t\t\t<td>".$usrlast."</td>\n";
 						echo "\t\t\t\t\t\t<td><a href=\"edit-user.php?uid=".$usrid."\">"._('Edit')."</a></td>\n";
-						echo "\t\t\t\t\t\t<td><a href=\"suspend-user.php?uid=".$usrid."\">"._('Suspend')."</a></td>\n";
-						echo "\t\t\t\t\t\t<td><a href=\"ban-user.php?uid=".$usrid."\">"._('Ban')."</a></td>\n";
+						echo "\t\t\t\t\t\t<td></td>\n";
+						echo "\t\t\t\t\t\t<td></td>\n";
 						echo "\t\t\t\t\t\t<td><a href=\"delete-user.php?uid=".$usrid."\">"._('Delete')."</a></td>\n";
+						echo "\t\t\t\t\t\t<td></td>\n";
 						echo "\t\t\t\t\t<tr>\n";
 					}
 				}
