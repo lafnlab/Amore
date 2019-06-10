@@ -1,22 +1,22 @@
-# Amore v0.2 American English language translation.
+# American English translation for Amore v0.3.
+# Copyright (C) 2019 10th Street Media, LLC
 # This file is distributed under the same license as the Amore package.
-# Michael Hawkes <translations@dating.media>, 2019.
+# Michael Hawkes <translations@amore.social>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Amore v0.2\n"
+"Project-Id-Version: Amore v0.3\n"
 "Report-Msgid-Bugs-To: <translations@dating.media>\n"
-"POT-Creation-Date: 2019-01-30 09:17-0500\n"
-"PO-Revision-Date: 2019-02-01 14:46-0500\n"
-"Language-Team: Amore English Translations <amore.en@dating.media>\n"
+"POT-Creation-Date: 2019-06-10 10:03-0400\n"
+"PO-Revision-Date: 2019-06-10 13:00-0400\n"
+"Last-Translator: Michael Hawkes <translations@dating.media>\n"
+"Language-Team: Amore English Translations <amore.en@amore.social>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
-"Last-Translator: Michael Hawkes <translations@dating.media>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en_US\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #.
 #. * pub/main-footer.php
@@ -24,6 +24,18 @@ msgstr ""
 #. * This footer ends the HTML for each public facing webpage in Amore.
 #. *
 #. * since Amore version 0.1
+#. *
+#.
+#: pub/main-footer.php:14
+msgid "Site Statistics"
+msgstr "Site Statistics"
+
+#.
+#. * pub/dash/admin/admin-footer.php
+#. *
+#. * This footer ends the HTML for all pre-installation admin pages in Amore.
+#. *
+#. * since Amore version 0.3
 #. *
 #.
 #.
@@ -34,214 +46,116 @@ msgstr ""
 #. * since Amore version 0.1
 #. *
 #.
-#: pub/main-footer.php:14 pub/dash/dash-footer.php:14
+#: pub/main-footer.php:14 pub/dash/admin/admin-footer.php:14
+#: pub/dash/dash-footer.php:14
 msgid "Powered by "
-msgstr "Powered by "
+msgstr "Built with "
 
-#: pub/main-header.php:39 pub/dash/my-profile.php:96
-#: pub/dash/dash-header.php:40
+#: pub/main-header.php:45 pub/dash/admin/admin-header.php:42
+#: pub/dash/dash-header.php:41 pub/dash/index.php:240
 msgid "Hello, "
 msgstr "Hello, "
 
-#.
-#. * pub/main-nav.php
-#. *
-#. * This is a navigation menu for some public facing webpages in Amore.
-#. *
-#. * since Amore version 0.1
-#. *
-#.
-#: pub/main-nav.php:28
-msgid "Home will show all of the user's posts own."
-msgstr "Home will show of the user's posts."
-
-#: pub/main-nav.php:29 pub/dash/dash-nav.php:21
-msgid "Mentions will show any posts where the user is mentioned."
-msgstr "Mentions will show any posts where the user is mentioned."
-
-#: pub/main-nav.php:30 pub/dash/dash-nav.php:23
-msgid "A list of the user's friends (Friends follow each other)."
-msgstr "A list of the user's friends (Friends follow each other)."
-
-#: pub/main-nav.php:31 pub/dash/dash-nav.php:24
-msgid "A list of accounts the user follows."
-msgstr "A list of accounts the user follows."
-
-#: pub/main-nav.php:32 pub/dash/dash-nav.php:25
-msgid "A list of accounts that follow this user."
-msgstr "A list of accounts that follow this user."
-
-#: pub/main-nav.php:33 pub/dash/dash-nav.php:26
-msgid "Lists created by the user."
-msgstr "Lists created by the user."
-
-#: pub/main-nav.php:34 pub/dash/dash-nav.php:27
-msgid "A list of the user's favorites."
-msgstr "A list of the user's favorites."
-
-#: pub/the-user.php:18 pub/the-post.php:18 pub/the-login.php:17
-#: pub/the-registration.php:18 pub/index.php:22
+#: pub/main-header.php:57 pub/the-login.php:18 pub/index.php:92
 msgid "Guest"
 msgstr "Guest"
 
-#: pub/the-user.php:103 pub/the-post.php:88
+#: pub/main-nav.php:39
+msgid "Posts:"
+msgstr "Posts:"
+
+#: pub/main-nav.php:40
+msgid "Friends:"
+msgstr "Friends"
+
+#: pub/main-nav.php:41
+msgid "Followers:"
+msgstr "Followers:"
+
+#: pub/main-nav.php:42
+msgid "Following:"
+msgstr "Following:"
+
+#: pub/main-nav.php:45
+msgid "Home will show all of the user's posts."
+msgstr "Home will show all of the user's posts."
+
+#: pub/main-nav.php:45 pub/dash/dash-nav.php:20 pub/dash/admin/admin-nav.php:20
+#: pub/index.php:103
+msgid "Home"
+msgstr "Home"
+
+#: pub/main-nav.php:46 pub/dash/dash-nav.php:21 pub/dash/admin/admin-nav.php:21
+msgid "Mentions will show any posts where the user is mentioned."
+msgstr "Mentions will show any posts where the user is mentioned."
+
+#: pub/main-nav.php:46 pub/dash/dash-nav.php:21 pub/dash/admin/admin-nav.php:21
+msgid "Mentions"
+msgstr "Mentions"
+
+#: pub/main-nav.php:47
+msgid "A list of the user's friends (Friends follow each other)."
+msgstr "A list of the user's friends (Friends follow each other)."
+
+#: pub/main-nav.php:47
+msgid "Friends"
+msgstr "Friends"
+
+#: pub/main-nav.php:48 pub/dash/dash-nav.php:23 pub/dash/admin/admin-nav.php:23
+msgid "A list of accounts the user follows."
+msgstr "A list of accounts the user follows."
+
+#: pub/main-nav.php:48 pub/dash/dash-nav.php:23 pub/dash/admin/admin-nav.php:23
+msgid "Following"
+msgstr "Following"
+
+#: pub/main-nav.php:49 pub/dash/dash-nav.php:24 pub/dash/admin/admin-nav.php:24
+msgid "A list of accounts that follow this user."
+msgstr "A list of accounts that follow this user."
+
+#: pub/main-nav.php:49 pub/dash/dash-nav.php:24 pub/dash/admin/admin-nav.php:24
+msgid "Followers"
+msgstr "Followers"
+
+#: pub/main-nav.php:50 pub/dash/dash-nav.php:25 pub/dash/admin/admin-nav.php:25
+msgid "Lists created by the user."
+msgstr "Lists created by the user."
+
+#: pub/main-nav.php:50 pub/dash/dash-nav.php:25 pub/dash/admin/admin-nav.php:25
+msgid "Lists"
+msgstr "Lists"
+
+#: pub/main-nav.php:51 pub/dash/dash-nav.php:26 pub/dash/admin/admin-nav.php:26
+msgid "A list of the user's favorites."
+msgstr "A list of the user's favorites."
+
+#: pub/main-nav.php:51 pub/dash/dash-nav.php:26 pub/dash/admin/admin-nav.php:26
+msgid "Favorites"
+msgstr "Favorites"
+
+#: pub/the-user.php:81 pub/dash/admin/mod-queue.php:81 pub/dash/index.php:297
+#: pub/the-post.php:61
 msgid "Reply"
 msgstr "Reply"
 
-#: pub/the-user.php:103 pub/the-post.php:88
-msgid "Upvote"
-msgstr "Upvote"
+#: pub/the-user.php:81 pub/dash/admin/mod-queue.php:81 pub/dash/index.php:297
+#: pub/the-post.php:61
+msgid "Share"
+msgstr "Share"
 
-#: pub/the-user.php:103 pub/the-post.php:88
-msgid "Downvote"
-msgstr "Downvote"
+#: pub/the-user.php:81 pub/dash/admin/mod-queue.php:81 pub/dash/index.php:297
+#: pub/the-post.php:61
+msgid "Like"
+msgstr "Like"
 
-#: pub/the-user.php:103 pub/the-post.php:88
-msgid "Favorite"
-msgstr "Favorite"
+#: pub/the-user.php:81 pub/dash/admin/mod-queue.php:81 pub/dash/index.php:297
+#: pub/the-post.php:61
+msgid "Dislike"
+msgstr "Dislike"
 
-#: pub/the-user.php:108 pub/dash/my-profile.php:146
+#: pub/the-user.php:86 pub/dash/index.php:306
 msgid "There are no posts at the moment"
-msgstr "There are no posts at the moment."
-
-#: pub/dash/list-genders.php:39
-msgid "List of genders"
-msgstr "List of genders"
-
-#: pub/dash/list-genders.php:48
-msgid "Add a gender "
-msgstr "Add a gender "
-
-#: pub/dash/list-genders.php:48 pub/dash/list-locales.php:48
-#: pub/dash/list-eye-colors.php:48 pub/dash/list-spoken-languages.php:47
-#: pub/dash/list-nationalities.php:48 pub/dash/list-users.php:47
-#: pub/dash/list-currencies.php:48 pub/dash/list-hair-colors.php:48
-#: pub/dash/list-sexualities.php:48 pub/dash/list-time-zones.php:48
-#: pub/dash/list-places.php:49
-msgid "here"
-msgstr "here"
-
-#: pub/dash/list-genders.php:62 pub/dash/list-locales.php:67
-#: pub/dash/list-eye-colors.php:62 pub/dash/list-spoken-languages.php:61
-#: pub/dash/list-nationalities.php:62 pub/dash/list-users.php:62
-#: pub/dash/list-currencies.php:80 pub/dash/list-hair-colors.php:62
-#: pub/dash/list-sexualities.php:62 pub/dash/list-time-zones.php:67
-#: pub/dash/list-places.php:65 pub/dash/list-places.php:111
-#: pub/dash/list-places.php:133 pub/dash/list-places.php:155
-#: pub/dash/list-places.php:177 pub/dash/list-places.php:199
-#: pub/dash/list-places.php:221
-msgid "Edit"
-msgstr "Edit"
-
-#: pub/dash/list-genders.php:63 pub/dash/list-locales.php:68
-#: pub/dash/list-eye-colors.php:63 pub/dash/list-spoken-languages.php:62
-#: pub/dash/list-nationalities.php:63 pub/dash/list-users.php:65
-#: pub/dash/list-currencies.php:81 pub/dash/list-hair-colors.php:63
-#: pub/dash/list-sexualities.php:63 pub/dash/list-time-zones.php:68
-#: pub/dash/list-places.php:66 pub/dash/list-places.php:112
-#: pub/dash/list-places.php:134 pub/dash/list-places.php:156
-#: pub/dash/list-places.php:178 pub/dash/list-places.php:200
-#: pub/dash/list-places.php:222
-msgid "Delete"
-msgstr "Delete"
-
-#: pub/dash/edit-gender.php:53 pub/dash/edit-eye-color.php:54
-#: pub/dash/edit-place.php:57 pub/dash/edit-nationality.php:55
-#: pub/dash/edit-sexuality.php:55 pub/dash/edit-locale.php:58
-#: pub/dash/edit-locale.php:60 pub/dash/edit-time-zone.php:57
-#: pub/dash/edit-currency.php:58 pub/dash/edit-hair-color.php:55
-#: pub/dash/edit-spoken-language.php:55
-msgid "Edit "
-msgstr "Edit "
-
-#: pub/dash/edit-gender.php:83 pub/dash/add-gender.php:79
-msgid "Gender name"
-msgstr "Gender name"
-
-#: pub/dash/edit-gender.php:87 pub/dash/edit-eye-color.php:88
-#: pub/dash/edit-place.php:112 pub/dash/edit-nationality.php:89
-#: pub/dash/edit-sexuality.php:89 pub/dash/edit-locale.php:103
-#: pub/dash/edit-time-zone.php:106 pub/dash/edit-currency.php:119
-#: pub/dash/edit-hair-color.php:90 pub/dash/edit-spoken-language.php:89
-#: pub/dash/edit-profile.php:389
-msgid "Update"
-msgstr "Update"
-
-#: pub/dash/the-currency.php:66 pub/dash/edit-currency.php:96
-#: pub/dash/list-currencies.php:55 pub/dash/add-currency.php:85
-msgid "Currency name"
-msgstr "Currency name"
-
-#: pub/dash/the-currency.php:67 pub/dash/edit-currency.php:100
-#: pub/dash/list-currencies.php:54 pub/dash/add-currency.php:89
-msgid "ISO code"
-msgstr "ISO code"
-
-#: pub/dash/the-currency.php:68 pub/dash/edit-currency.php:104
-#: pub/dash/list-currencies.php:56 pub/dash/add-currency.php:93
-msgid "Symbol"
-msgstr "Symbol"
-
-#: pub/dash/the-currency.php:69
-msgid "Digital"
-msgstr "Digital"
-
-#: pub/dash/the-currency.php:77 pub/dash/list-currencies.php:73
-msgid "Yes"
-msgstr "Yes"
-
-#: pub/dash/the-currency.php:79 pub/dash/list-currencies.php:71
-msgid "No"
-msgstr "No"
-
-#: pub/dash/add-nationality.php:39
-msgid "Add a nationality"
-msgstr "Add a nationality"
-
-#: pub/dash/add-nationality.php:79 pub/dash/edit-nationality.php:85
-msgid "Nationality name"
-msgstr "Nationality name"
-
-#: pub/dash/add-nationality.php:83 pub/dash/add-time-zone.php:98
-#: pub/dash/add-eye-color.php:83 pub/dash/add-locale.php:88
-#: pub/dash/add-gender.php:83 pub/dash/add-hair-color.php:83
-#: pub/dash/add-currency.php:101 pub/dash/add-sexuality.php:83
-#: pub/dash/add-place.php:99 pub/dash/add-spoken-language.php:83
-msgid "Submit"
-msgstr "Submit"
-
-#: pub/dash/list-locales.php:39
-msgid "List of locales"
-msgstr "List of locales"
-
-#: pub/dash/list-locales.php:48
-msgid "Add a locale "
-msgstr "Add a locale "
-
-#: pub/dash/list-eye-colors.php:39
-msgid "List of eye colors"
-msgstr "List of eye colors"
-
-#: pub/dash/list-eye-colors.php:48
-msgid "Add an eye color "
-msgstr "Add an eye color "
-
-#: pub/dash/edit-eye-color.php:54
-msgid " eye color"
-msgstr " eye color"
-
-#: pub/dash/edit-eye-color.php:84 pub/dash/add-eye-color.php:79
-#: pub/dash/edit-profile.php:223
-msgid "Eye color"
-msgstr "Eye color"
-
-#: pub/dash/edit-place.php:89 pub/dash/add-place.php:80
-msgid "Place name"
-msgstr "Place name"
-
-#: pub/dash/edit-place.php:93 pub/dash/add-place.php:84
-msgid "Place parent"
-msgstr "Place parent"
+msgstr "There are no posts at the moment"
 
 #.
 #. * pub/dash/dash-nav.php
@@ -251,7 +165,7 @@ msgstr "Place parent"
 #. * since Amore version 0.1
 #. *
 #.
-#: pub/dash/dash-nav.php:20
+#: pub/dash/dash-nav.php:20 pub/dash/admin/admin-nav.php:20
 msgid ""
 "Home will show posts from everyone the user is following, including their "
 "own."
@@ -259,675 +173,1828 @@ msgstr ""
 "Home will show posts from everyone the user is following, including their "
 "own."
 
-#: pub/dash/dash-nav.php:20 pub/index.php:57
-msgid "Home"
-msgstr "Home"
+#: pub/dash/dash-nav.php:22 pub/dash/admin/admin-nav.php:22
+msgid "Messages will be private/direct messages."
+msgstr "Messages will be private/direct messages."
 
-#: pub/dash/dash-nav.php:21
-msgid "Mentions"
-msgstr "Mentions"
-
-#: pub/dash/dash-nav.php:22
-msgid "Messages will be private/direct messages between friends."
-msgstr "Messages will be private/direct messages between friends."
-
-#: pub/dash/dash-nav.php:22
+#: pub/dash/dash-nav.php:22 pub/dash/admin/admin-nav.php:22
 msgid "Messages"
 msgstr "Messages"
 
-#: pub/dash/dash-nav.php:23
-msgid "Friends"
-msgstr "Friends"
-
-#: pub/dash/dash-nav.php:24
-msgid "Following"
-msgstr "Following"
-
-#: pub/dash/dash-nav.php:25
-msgid "Followers"
-msgstr "Followers"
-
-#: pub/dash/dash-nav.php:26
-msgid "Lists"
-msgstr "Lists"
-
-#: pub/dash/dash-nav.php:27
-msgid "Favorites"
-msgstr "Favorites"
-
-#: pub/dash/dash-nav.php:40
-msgid "List currencies"
-msgstr "List currencies"
-
-#: pub/dash/dash-nav.php:41
-msgid "List eye colors"
-msgstr "List eye colors"
-
-#: pub/dash/dash-nav.php:42
-msgid "List genders"
-msgstr "List genders"
-
-#: pub/dash/dash-nav.php:43
-msgid "List hair colors"
-msgstr "List hair colors"
-
-#: pub/dash/dash-nav.php:44
-msgid "List locales"
-msgstr "List locales"
-
-#: pub/dash/dash-nav.php:45
-msgid "List nationalities"
-msgstr "List nationalities"
-
-#: pub/dash/dash-nav.php:46
-msgid "List places"
-msgstr "List places"
-
-#: pub/dash/dash-nav.php:47
-msgid "List sexualities"
-msgstr "List sexualities"
-
-#: pub/dash/dash-nav.php:48
-msgid "List spoken languages"
-msgstr "List spoken languages"
-
-#: pub/dash/dash-nav.php:49
-msgid "List time zones"
-msgstr "List time zones"
-
-#: pub/dash/dash-nav.php:50
-msgid "List users"
-msgstr "List users"
-
-#: pub/dash/my-profile.php:94 pub/dash/edit-profile.php:75
-msgid "Dashboard for "
-msgstr "Dashboard for "
-
-#. echo bindtextdomain($textdomain, $_SERVER['DOCUMENT_ROOT']."/locale");
-#. echo $textdomain;
-#: pub/dash/my-profile.php:105 pub/dash/add-post.php:130
-msgid "What are you doing?"
-msgstr "What are you doing?"
-
-#: pub/dash/my-profile.php:106 pub/dash/add-post.php:131
-msgid "EVERYONE"
-msgstr "Everyone"
-
-#: pub/dash/my-profile.php:107 pub/dash/add-post.php:132
-msgid "FEDIVERSE"
-msgstr "Fediverse"
-
-#: pub/dash/my-profile.php:108 pub/dash/add-post.php:133
-msgid "INSTANCE"
-msgstr "Instance"
-
-#: pub/dash/my-profile.php:109 pub/dash/add-post.php:134
-msgid "FOLLOWERS"
-msgstr "Followers"
-
-#: pub/dash/my-profile.php:110 pub/dash/add-post.php:135
-msgid "FRIENDS"
-msgstr "Friends"
-
-#: pub/dash/my-profile.php:111 pub/dash/add-post.php:136
-msgid "PRIVATE"
-msgstr "Private"
-
-#: pub/dash/my-profile.php:112 pub/dash/add-post.php:137
-msgid "SELF"
-msgstr "Self"
-
-#. plural form
-#: pub/dash/my-profile.php:113 pub/dash/add-post.php:138 config.php:50
-msgid "Post"
-msgstr "Post"
-
-#: pub/dash/edit-sexuality.php:85 pub/dash/add-sexuality.php:79
-msgid "Sexuality name"
-msgstr "Sexuality name"
-
-#: pub/dash/edit-locale.php:95 pub/dash/add-locale.php:80
-msgid "Locale language"
-msgstr "Locale language"
-
-#: pub/dash/edit-locale.php:99 pub/dash/add-locale.php:84
-msgid "Locale country"
-msgstr "Locale country"
-
-#: pub/dash/add-time-zone.php:39
-msgid "Add a time zone"
-msgstr "Add a time zone"
-
-#: pub/dash/add-time-zone.php:82 pub/dash/edit-time-zone.php:90
-msgid "Time zone abbreviation"
-msgstr "Time zone abbreviation"
-
-#: pub/dash/add-time-zone.php:86 pub/dash/edit-time-zone.php:94
-msgid "Time zone name"
-msgstr "Time zone name"
-
-#: pub/dash/add-time-zone.php:90 pub/dash/edit-time-zone.php:98
-msgid "Time zone offset"
-msgstr "Time zone offset"
-
-#: pub/dash/add-time-zone.php:94 pub/dash/edit-time-zone.php:102
-msgid "Time zone DST offset"
-msgstr "Time zone DST offset"
-
-#: pub/dash/list-spoken-languages.php:39
-msgid "List of spoken languages"
-msgstr "List of spoken languages"
-
-#: pub/dash/list-spoken-languages.php:47
-msgid "Add a spoken language "
-msgstr "Add a spoken language "
-
-#: pub/dash/list-nationalities.php:39
-msgid "List of nationalities"
-msgstr "List of nationalities"
-
-#: pub/dash/list-nationalities.php:48
-msgid "Add a nationality "
-msgstr "Add a nationality "
-
-#: pub/dash/the-user.php:68
-msgid "ID"
-msgstr "ID"
-
-#: pub/dash/the-user.php:71
-msgid "Email"
-msgstr "Email"
-
-#: pub/dash/the-user.php:74 pub/the-registration.php:208 pub/index.php:142
-msgid "Date of birth"
-msgstr "Date of birth"
-
-#: pub/dash/the-user.php:77
-msgid "Joined"
-msgstr "Joined"
-
-#: pub/dash/the-user.php:80
-msgid "Last login"
-msgstr "Last login"
-
-#: pub/dash/add-eye-color.php:39
-msgid "Add an eye color"
-msgstr "Add an eye color"
-
-#: pub/dash/list-users.php:39
-msgid "List of users"
-msgstr "List of users"
-
-#: pub/dash/list-users.php:47
-msgid "Add a user "
-msgstr "Add a user"
-
-#: pub/dash/list-users.php:63
-msgid "Suspend"
-msgstr "Suspend"
-
-#: pub/dash/list-users.php:64
-msgid "Ban"
-msgstr "Ban"
-
-#: pub/dash/add-locale.php:39
-msgid "Add a locale"
-msgstr "Add a locale"
-
-#: pub/dash/edit-currency.php:108 pub/dash/list-currencies.php:57
-#: pub/dash/add-currency.php:97
-msgid "Digital?"
-msgstr "Digital?"
-
-#: pub/dash/list-currencies.php:39
-msgid "List of currencies"
-msgstr "List of currencies"
-
-#: pub/dash/list-currencies.php:48
-msgid "Add a currency "
-msgstr "Add a currency "
-
-#: pub/dash/edit-hair-color.php:86 pub/dash/add-hair-color.php:79
-#: pub/dash/edit-profile.php:243
-msgid "Hair color"
-msgstr "Hair color"
-
-#: pub/dash/add-gender.php:39
-msgid "Add a gender"
-msgstr "Add a gender"
-
-#: pub/dash/the-time-zone.php:66
-msgid "Name"
-msgstr "Name"
-
-#: pub/dash/the-time-zone.php:67
-msgid "Offset"
-msgstr "Offset"
-
-#: pub/dash/the-time-zone.php:68
-msgid "DST offset"
-msgstr "DST offset"
-
-#: pub/dash/add-hair-color.php:39
-msgid "Add a hair color"
-msgstr "Add a hair color"
-
-#: pub/dash/list-hair-colors.php:39
-msgid "List of hair colors"
-msgstr "List of hair colors"
-
-#: pub/dash/list-hair-colors.php:48
-msgid "Add a hair color "
-msgstr "Add a hair color "
-
-#: pub/dash/list-sexualities.php:39
-msgid "List of sexualities"
-msgstr "List of sexualities"
-
-#: pub/dash/list-sexualities.php:48
-msgid "Add a sexuality "
-msgstr "Add a sexuality "
-
-#: pub/dash/the-place.php:66
-msgid "is part of"
-msgstr "is part of"
-
-#: pub/dash/add-post.php:93
-msgid "Add a post"
-msgstr "Add a post"
-
-#: pub/dash/add-currency.php:39
-msgid "Add a currency"
-msgstr "Add a currency"
-
-#: pub/dash/add-sexuality.php:39
-msgid "Add a sexuality"
-msgstr "Add a sexuality"
-
-#: pub/dash/list-time-zones.php:39
-msgid "List of time zones"
-msgstr "List of time zones"
-
-#: pub/dash/list-time-zones.php:48
-msgid "Add a time zone "
-msgstr "Add a time zone "
-
-#: pub/dash/the-locale.php:67
-msgid "Language"
-msgstr "Language"
-
-#: pub/dash/the-locale.php:68
-msgid "Country"
-msgstr "Country"
-
-#: pub/dash/add-place.php:39
-msgid "Add a place/location)"
-msgstr "Add a place/location"
-
-#: pub/dash/list-places.php:39
-msgid "List of places"
-msgstr "List of places"
-
-#: pub/dash/list-places.php:49
-msgid "Add a place "
-msgstr "Add a place "
-
-#: pub/dash/list-places.php:52
-msgid "Africa"
-msgstr "Africa"
-
-#: pub/dash/list-places.php:74
-msgid "Antarctica"
-msgstr "Antarctica"
-
-#: pub/dash/list-places.php:98
-msgid "Asia"
-msgstr "Asia"
-
-#: pub/dash/list-places.php:120
-msgid "Caribbean"
-msgstr "Caribbean"
-
-#: pub/dash/list-places.php:142
-msgid "Europe"
-msgstr "Europe"
-
-#: pub/dash/list-places.php:164
-msgid "North America"
-msgstr "North America"
-
-#: pub/dash/list-places.php:186
-msgid "Oceania"
-msgstr "Oceania"
-
-#: pub/dash/list-places.php:208
-msgid "South America"
-msgstr "South America"
-
-#: pub/dash/edit-spoken-language.php:85 pub/dash/add-spoken-language.php:79
-msgid "Spoken language name"
-msgstr "Spoken language name"
-
-#: pub/dash/edit-profile.php:77
-msgid "Edit your profile"
-msgstr "Edit your profile"
-
-#: pub/dash/edit-profile.php:167 pub/the-login.php:109
-#: pub/the-registration.php:196 pub/the-login.old.php:86 pub/index.php:111
-#: pub/index.php:130
-msgid "Username"
-msgstr "Username"
-
-#: pub/dash/edit-profile.php:171
-msgid "Display name"
-msgstr "Display name"
-
-#: pub/dash/edit-profile.php:175
-msgid "Description/bio"
-msgstr "Description/short bio"
-
-#: pub/dash/edit-profile.php:179
-msgid "Email address"
-msgstr "Email address"
-
-#: pub/dash/edit-profile.php:183
-msgid "Gender"
-msgstr "Gender"
-
-#: pub/dash/edit-profile.php:203
-msgid "Sexuality"
-msgstr "Sexuality"
-
-#: pub/dash/edit-profile.php:263
-msgid "Location"
-msgstr "Location"
-
-#: pub/dash/edit-profile.php:283
-msgid "Nationality"
-msgstr "Nationality"
-
-#: pub/dash/edit-profile.php:303
-msgid "Locale"
-msgstr "Locale"
-
-#: pub/dash/edit-profile.php:331
-msgid "Languages spoken"
-msgstr "Languages spoken"
-
-#: pub/dash/edit-profile.php:352
-msgid "Time zone"
-msgstr "Time zone"
-
-#: pub/dash/edit-profile.php:373
-msgid "Height (inches)"
-msgstr "Height (inches)"
-
-#: pub/dash/edit-profile.php:377
-msgid "Height (cm)"
-msgstr "Height (cm)"
-
-#: pub/dash/edit-profile.php:381
-msgid "Weight (pounds)"
-msgstr "Weight (pounds)"
-
-#: pub/dash/edit-profile.php:385
-msgid "Weight (kilos)"
-msgstr "Weight (kilos)"
-
-#: pub/dash/add-spoken-language.php:39
-msgid "Add a spoken language"
-msgstr "Add a spoken language"
-
-#: pub/the-login.php:72 pub/the-login.old.php:56 pub/the-login.old.php:62
-msgid "There was a problem. Please try again."
-msgstr "There was a problem. Please try again."
-
-#: pub/the-login.php:78
-msgid "User not found"
-msgstr "User not found"
-
-#: pub/the-login.php:90 pub/the-login.old.php:73 pub/index.php:109
-msgid "Login to "
-msgstr "Login to "
-
-#: pub/the-login.php:113 pub/the-registration.php:200 pub/the-login.old.php:90
-#: pub/index.php:115 pub/index.php:134
-msgid "Passphrase"
-msgstr "Passphrase"
-
-#: pub/the-login.php:116 pub/the-login.old.php:95 pub/index.php:118
-#: pub/index.php:150
-msgid "Login"
-msgstr "Login"
-
-#: pub/the-login.php:120 pub/the-registration.php:167 pub/the-login.old.php:99
-msgid "Create an account"
-msgstr "Create an account"
-
-#: pub/the-registration.php:115
-msgid "Passphrases do not match"
-msgstr "Passphrases do not match."
-
-#: pub/the-registration.php:118
-msgid "Please verify the passphrase"
-msgstr "Please verify the passphrase."
-
-#: pub/the-registration.php:123
-msgid "Passphrase is too short."
-msgstr "Passphrase is too short."
-
-#: pub/the-registration.php:127
-msgid "Password is not complex"
-msgstr "Password is not complex."
-
-#: pub/the-registration.php:143
-msgid "You are too young"
-msgstr "You are too young."
-
-#: pub/the-registration.php:145
-msgid "Your date of birth had a typo. Try again"
-msgstr "Your date of birth had a typo. Try again."
-
-#: pub/the-registration.php:182
-msgid "Password must be at least 16 characters long"
-msgstr "Password must be at least 16 characters long."
-
-#: pub/the-registration.php:183
-msgid "Password must have:"
-msgstr "Password must have:"
-
-#: pub/the-registration.php:185
-msgid "at least one lowercase letter"
-msgstr "at least one lowercase letter"
-
-#: pub/the-registration.php:186
-msgid "at least one uppercase letter"
-msgstr "at least one UPPERCASE letter"
-
-#: pub/the-registration.php:187
-msgid "at least one numeral"
-msgstr "at least one numeral"
-
-#: pub/the-registration.php:188
-msgid "at least one character that is not a number or a letter."
-msgstr "at least one character that is not a number or a letter."
-
-#: pub/the-registration.php:204 pub/index.php:138
-msgid "Verify passphrase"
-msgstr "Verify passphrase"
-
-#: pub/the-registration.php:211 pub/index.php:145
-msgid "Register"
-msgstr "Register"
-
-#: pub/index.php:128
-msgid "Registration for "
-msgstr "Registration for "
-
-#: pub/index.php:149
-msgid "Already a user?"
-msgstr "Already a user?"
-
-#: pub/index.php:159 pub/index.php:160
-msgid "Number of "
-msgstr "Number of "
-
-#: pub/index.php:167
-msgid "Recent posts"
-msgstr "Recent posts"
-
-#: functions.php:79
-msgid "A few seconds ago"
-msgstr "A few seconds ago"
-
-#: functions.php:81
-msgid "About half a minute ago"
-msgstr "About half a minute ago"
-
-#: functions.php:83
-msgid "A minute ago"
-msgstr "A minute ago"
-
-#: functions.php:85
-msgid "A couple of minutes ago"
-msgstr "A couple of minutes ago"
-
-#: functions.php:87
-msgid "A few minutes ago"
-msgstr "A few minutes ago"
-
-#: functions.php:89
-msgid "Several minutes ago"
-msgstr "Several minutes ago"
-
-#: functions.php:91
-msgid "About 10 minutes ago"
-msgstr "About 10 minutes ago"
-
-#: functions.php:93
-msgid "About 15 minutes ago"
-msgstr "About 15 minutes ago"
-
-#: functions.php:95
-msgid "About 20 minutes ago"
-msgstr "About 20 minutes ago"
-
-#: functions.php:97
-msgid "About half an hour ago"
-msgstr "About half an hour ago"
-
-#: functions.php:99
-msgid "About an hour ago"
-msgstr "About an hour ago"
-
-#: functions.php:101
-msgid "A couple of hours ago"
-msgstr "A couple of hours ago"
-
-#: functions.php:103
-msgid "A few hours ago"
-msgstr "A few hours ago"
-
-#: functions.php:105
-msgid "Several hours ago"
-msgstr "Several hours ago"
-
-#: functions.php:107
-msgid "About half a day ago"
-msgstr "About half a day ago"
-
-#: functions.php:109
-msgid "Almost a day ago"
-msgstr "Almost a day ago"
-
-#: functions.php:111
-msgid "Yesterday"
-msgstr "Yesterday"
-
-#: functions.php:113
-msgid "A couple of days ago"
-msgstr "A couple of days ago"
-
-#: functions.php:115
-msgid "A few days ago"
-msgstr "A few days ago"
-
-#: functions.php:117
-msgid "Several days ago"
-msgstr "Several days ago"
-
-#: functions.php:119
-msgid "Last week"
-msgstr "Last week"
-
-#: functions.php:121
-msgid "A few weeks ago"
-msgstr "A few weeks ago"
-
-#: functions.php:123
-msgid "Last month"
-msgstr "Last month"
-
-#: functions.php:125
-msgid "A few months ago"
-msgstr "A few months ago"
-
-#: functions.php:127
-msgid "About half a year ago"
-msgstr "About half a year ago"
-
-#: functions.php:129
-msgid "Around a year ago"
-msgstr "Around a year ago"
-
-#: functions.php:131
-msgid "More than a year ago"
-msgstr "More than a year ago"
-
-#: functions.php:133
-msgid "More than two years ago"
-msgstr "More than two years ago"
-
-#: functions.php:135
-msgid "More than three years ago"
-msgstr "More than three years ago"
-
-#.
-#. $metadescription is a summary of the website that may appear on websites
-#. See https://moz.com/learn/seo/meta-description
-#: config.php:33
-msgid ""
-"Amore is open-source PHP/MySQL software for the Fediverse - a decentralized "
-"social network of thousands of different communities."
-msgstr ""
-"Amore is open-source PHP/MySQL software for the Fediverse - a decentralized "
-"social network of thousands of different communities."
-
-#.
-#. $posts_are_called allows the admin to change the name of the posts on their site.
-#. Twitter has tweets. Mastodon has toots. This site can define their own name.
-#: config.php:49
+#: pub/dash/dash-nav.php:38 pub/dash/admin/admin-nav.php:38
 msgid "Posts"
 msgstr "Posts"
 
-#. singular form
-#: config.php:52
-msgid "Reposts"
-msgstr "Reposts"
+#: pub/dash/dash-nav.php:40 pub/dash/admin/mod-queue.php:16
+#: pub/dash/admin/admin-nav.php:40
+msgid "Moderation queue"
+msgstr "Moderation queue"
 
-#. plural form
-#: config.php:53
-msgid "Repost"
-msgstr "Repost"
-
-#. singular form
-#.
-#. $users_are_called allows the admin to change the name of the users on their site.
-#: config.php:57
+#: pub/dash/dash-nav.php:42 pub/dash/admin/admin-nav.php:42
 msgid "Users"
 msgstr "Users"
 
-#. plural form
-#: config.php:58
-msgid "User"
-msgstr "User"
+#: pub/dash/dash-nav.php:44 pub/dash/admin/admin-nav.php:44
+msgid "All users"
+msgstr "All users"
+
+#: pub/dash/dash-nav.php:45 pub/dash/admin/admin-nav.php:45
+msgid "Add a user"
+msgstr "Add a user"
+
+#: pub/dash/dash-nav.php:46 pub/dash/admin/admin-nav.php:46
+msgid "My profile"
+msgstr "My profile"
+
+#: pub/dash/dash-nav.php:48 pub/dash/admin/admin-nav.php:48
+msgid "Edit profile"
+msgstr "Edit profile"
+
+#: pub/dash/dash-nav.php:49 pub/dash/admin/admin-nav.php:49
+msgid "Delete profile"
+msgstr "Delete profile"
+
+#: pub/dash/dash-nav.php:50 pub/dash/admin/admin-nav.php:50
+msgid "Change passphrase"
+msgstr "Change passphrase"
+
+#: pub/dash/dash-nav.php:53 pub/dash/admin/admin-nav.php:53
+msgid "Settings"
+msgstr "Settings"
+
+#: pub/dash/dash-nav.php:55 pub/dash/admin/admin-nav.php:55
+msgid "General"
+msgstr "General"
+
+#: pub/dash/dash-nav.php:57 pub/dash/admin/admin-nav.php:57
+msgid "Configuration"
+msgstr "Configuration"
+
+#: pub/dash/dash-nav.php:58 pub/dash/admin/admin-nav.php:58
+msgid "Home page"
+msgstr "Home page"
+
+#: pub/dash/dash-nav.php:59 pub/dash/admin/admin-nav.php:59
+msgid "Privacy"
+msgstr "Privacy"
+
+#: pub/dash/dash-nav.php:62 pub/dash/admin/admin-nav.php:62
+msgid "Metadata"
+msgstr "Metadata"
+
+#: pub/dash/dash-nav.php:64 pub/dash/admin/admin-nav.php:64
+msgid "Currencies"
+msgstr "Currencies"
+
+#: pub/dash/dash-nav.php:65 pub/dash/admin/admin-nav.php:65
+msgid "Eye colors"
+msgstr "Eye colors"
+
+#: pub/dash/dash-nav.php:66 pub/dash/admin/admin-nav.php:66
+#: pub/the-statistics.php:49
+msgid "Genders"
+msgstr "Genders"
+
+#: pub/dash/dash-nav.php:67 pub/dash/admin/admin-nav.php:67
+msgid "Hair colors"
+msgstr "Hair colors"
+
+#: pub/dash/dash-nav.php:68 pub/dash/admin/admin-nav.php:68
+msgid "Locales"
+msgstr "Locales"
+
+#: pub/dash/dash-nav.php:69 pub/dash/admin/admin-nav.php:69
+msgid "Nationalities"
+msgstr "Nationalities"
+
+#: pub/dash/dash-nav.php:70 pub/dash/admin/admin-nav.php:70
+msgid "Places"
+msgstr "Places"
+
+#: pub/dash/dash-nav.php:71 pub/dash/admin/admin-nav.php:71
+msgid "Relationship statuses"
+msgstr "Relationship statuses"
+
+#: pub/dash/dash-nav.php:72 pub/dash/admin/admin-nav.php:72
+msgid "Sexualities"
+msgstr "Sexualities"
+
+#: pub/dash/dash-nav.php:73 pub/dash/admin/admin-nav.php:73
+msgid "Spoken languages"
+msgstr "Spoken languages"
+
+#: pub/dash/dash-nav.php:74 pub/dash/admin/admin-nav.php:74
+msgid "Time zones"
+msgstr "Time zones"
+
+#: pub/dash/my-profile.php:74 pub/dash/admin/the-user.php:92
+msgid "ID"
+msgstr "ID"
+
+#: pub/dash/my-profile.php:77 pub/dash/admin/install.php:192
+#: pub/dash/admin/edit-user.php:116 pub/dash/admin/the-user.php:95
+#: pub/dash/admin/post-install.php:117 pub/dash/admin/list-users.php:28
+#: pub/dash/admin/add-user.php:123 pub/dash/edit-profile.php:116
+#: pub/the-login.php:86 pub/the-registration.php:163 pub/index.php:133
+#: pub/index.php:152
+msgid "Username"
+msgstr "Username"
+
+#: pub/dash/my-profile.php:80 pub/dash/admin/edit-user.php:120
+#: pub/dash/admin/the-user.php:98 pub/dash/admin/list-users.php:29
+#: pub/dash/admin/add-user.php:127 pub/dash/edit-profile.php:120
+msgid "Display name"
+msgstr "Display name"
+
+#: pub/dash/my-profile.php:83 pub/dash/admin/edit-user.php:124
+#: pub/dash/admin/the-user.php:101 pub/dash/admin/add-user.php:139
+#: pub/dash/edit-profile.php:124
+msgid "Email"
+msgstr "Email"
+
+#: pub/dash/my-profile.php:86 pub/dash/admin/edit-user.php:128
+#: pub/dash/admin/the-user.php:104 pub/dash/edit-profile.php:128
+#: pub/the-registration.php:175 pub/index.php:164
+msgid "Date of birth"
+msgstr "Date of birth"
+
+#: pub/dash/my-profile.php:89 pub/dash/admin/edit-user.php:152
+#: pub/dash/admin/the-user.php:107 pub/dash/admin/add-user.php:143
+#: pub/dash/edit-profile.php:152 pub/the-statistics.php:265
+msgid "User level"
+msgstr "User level"
+
+#: pub/dash/my-profile.php:98 pub/dash/admin/edit-user.php:172
+#: pub/dash/admin/the-user.php:116 pub/dash/edit-profile.php:172
+msgid "Actor type"
+msgstr "Actor type"
+
+#: pub/dash/my-profile.php:107 pub/dash/admin/edit-user.php:192
+#: pub/dash/admin/the-user.php:125 pub/dash/admin/settings-privacy.php:68
+#: pub/dash/edit-profile.php:192
+msgid "Gender"
+msgstr "Gender"
+
+#: pub/dash/my-profile.php:116 pub/dash/admin/edit-user.php:232
+#: pub/dash/admin/the-user.php:134 pub/dash/admin/settings-privacy.php:72
+#: pub/dash/edit-profile.php:232 pub/the-statistics.php:73
+msgid "Sexuality"
+msgstr "Sexuality"
+
+#: pub/dash/my-profile.php:125 pub/dash/admin/edit-user.php:272
+#: pub/dash/admin/the-user.php:143
+#: pub/dash/admin/edit-relationship-status.php:60
+#: pub/dash/admin/add-relationship-status.php:54
+#: pub/dash/admin/settings-privacy.php:76 pub/dash/edit-profile.php:272
+#: pub/the-statistics.php:169
+msgid "Relationship status"
+msgstr "Relationship status"
+
+#: pub/dash/my-profile.php:134 pub/dash/admin/edit-eye-color.php:59
+#: pub/dash/admin/edit-user.php:312 pub/dash/admin/the-user.php:152
+#: pub/dash/admin/add-eye-color.php:54 pub/dash/edit-profile.php:312
+#: pub/the-statistics.php:193
+msgid "Eye color"
+msgstr "Eye color"
+
+#: pub/dash/my-profile.php:143 pub/dash/admin/edit-user.php:332
+#: pub/dash/admin/the-user.php:161 pub/dash/admin/edit-hair-color.php:61
+#: pub/dash/admin/add-hair-color.php:54 pub/dash/edit-profile.php:332
+#: pub/the-statistics.php:217
+msgid "Hair color"
+msgstr "Hair color"
+
+#: pub/dash/my-profile.php:152 pub/dash/admin/edit-user.php:352
+#: pub/dash/admin/the-user.php:170 pub/dash/admin/settings-privacy.php:80
+#: pub/dash/edit-profile.php:352 pub/the-statistics.php:97
+msgid "Location"
+msgstr "Location"
+
+#: pub/dash/my-profile.php:161 pub/dash/admin/edit-user.php:392
+#: pub/dash/admin/the-user.php:179 pub/dash/admin/settings-privacy.php:84
+#: pub/dash/edit-profile.php:392 pub/the-statistics.php:121
+msgid "Nationality"
+msgstr "Nationality"
+
+#: pub/dash/my-profile.php:170 pub/dash/admin/edit-user.php:412
+#: pub/dash/admin/the-user.php:188 pub/dash/edit-profile.php:412
+msgid "Locale"
+msgstr "Locale"
+
+#: pub/dash/my-profile.php:179 pub/dash/admin/edit-user.php:432
+#: pub/dash/admin/the-user.php:197 pub/dash/admin/settings-privacy.php:88
+#: pub/dash/edit-profile.php:432 pub/the-statistics.php:241
+msgid "Time zone"
+msgstr "Time zone"
+
+#: pub/dash/my-profile.php:188 pub/dash/admin/edit-user.php:452
+#: pub/dash/admin/the-user.php:206 pub/dash/edit-profile.php:452
+msgid "Bio"
+msgstr "Bio"
+
+#: pub/dash/my-profile.php:191 pub/dash/admin/the-user.php:209
+msgid "Joined"
+msgstr "Joined"
+
+#: pub/dash/my-profile.php:194 pub/dash/admin/the-user.php:212
+msgid "Last login"
+msgstr "Last login"
+
+#: pub/dash/change-passphrase.php:78
+msgid "Change your passphrase"
+msgstr "Change your passphrase"
+
+#: pub/dash/change-passphrase.php:86 pub/dash/admin/install.php:156
+#: pub/dash/admin/post-install.php:85 pub/dash/admin/passphrase-reset.php:92
+#: pub/dash/admin/add-user.php:104 pub/the-registration.php:126
+msgid "The passphrases do not match. Please try again."
+msgstr "The passphrases do not match. Please try again."
+
+#: pub/dash/change-passphrase.php:89 pub/dash/admin/install.php:159
+#: pub/dash/admin/post-install.php:88 pub/dash/admin/passphrase-reset.php:95
+#: pub/dash/admin/add-user.php:107 pub/the-registration.php:129
+msgid "The passphrase is too short. Please try again."
+msgstr "The passphrase is too short. Please try again."
+
+#: pub/dash/change-passphrase.php:92 pub/dash/admin/install.php:162
+#: pub/dash/admin/post-install.php:91 pub/dash/admin/passphrase-reset.php:98
+#: pub/dash/admin/add-user.php:110 pub/the-registration.php:132
+msgid "The passphrase is not complex. Please try again."
+msgstr "The passphrase is not complex. Please try again."
+
+#: pub/dash/change-passphrase.php:103
+msgid "Old passphrase"
+msgstr "Old passphrase"
+
+#: pub/dash/change-passphrase.php:107 pub/dash/admin/passphrase-reset.php:109
+msgid "New passphrase"
+msgstr "New passphrase"
+
+#: pub/dash/change-passphrase.php:111
+msgid "Verify new passphrase"
+msgstr "Verify new passphrase"
+
+#: pub/dash/change-passphrase.php:115
+msgid "CHANGE PASSPHRASES"
+msgstr "Change passphrase"
+
+#: pub/dash/admin/list-genders.php:23
+msgid "Add a gender "
+msgstr "Add a gender "
+
+#: pub/dash/admin/list-genders.php:23 pub/dash/admin/list-locales.php:22
+#: pub/dash/admin/list-eye-colors.php:22
+#: pub/dash/admin/list-spoken-languages.php:22
+#: pub/dash/admin/list-nationalities.php:22 pub/dash/admin/list-users.php:22
+#: pub/dash/admin/list-currencies.php:24
+#: pub/dash/admin/list-relationship-statuses.php:23
+#: pub/dash/admin/list-hair-colors.php:23
+#: pub/dash/admin/list-sexualities.php:23 pub/dash/admin/list-time-zones.php:23
+#: pub/dash/admin/list-places.php:24
+msgid "here"
+msgstr "here"
+
+#: pub/dash/admin/list-genders.php:26
+msgid "List of genders"
+msgstr "List of genders"
+
+#: pub/dash/admin/list-genders.php:37 pub/dash/admin/list-locales.php:41
+#: pub/dash/admin/list-eye-colors.php:36
+#: pub/dash/admin/list-spoken-languages.php:36
+#: pub/dash/admin/list-nationalities.php:36 pub/dash/admin/list-users.php:56
+#: pub/dash/admin/list-users.php:69 pub/dash/admin/list-users.php:83
+#: pub/dash/admin/list-currencies.php:56
+#: pub/dash/admin/list-relationship-statuses.php:37
+#: pub/dash/admin/list-hair-colors.php:37
+#: pub/dash/admin/list-sexualities.php:37 pub/dash/admin/list-time-zones.php:47
+#: pub/dash/admin/list-places.php:40 pub/dash/admin/list-places.php:86
+#: pub/dash/admin/list-places.php:108 pub/dash/admin/list-places.php:130
+#: pub/dash/admin/list-places.php:152 pub/dash/admin/list-places.php:174
+#: pub/dash/admin/list-places.php:196
+msgid "Edit"
+msgstr "Edit"
+
+#: pub/dash/admin/list-genders.php:38 pub/dash/admin/list-locales.php:42
+#: pub/dash/admin/list-eye-colors.php:37
+#: pub/dash/admin/list-spoken-languages.php:37
+#: pub/dash/admin/list-nationalities.php:37 pub/dash/admin/list-users.php:59
+#: pub/dash/admin/list-users.php:72 pub/dash/admin/list-users.php:86
+#: pub/dash/admin/list-currencies.php:57
+#: pub/dash/admin/list-relationship-statuses.php:38
+#: pub/dash/admin/list-hair-colors.php:38
+#: pub/dash/admin/list-sexualities.php:38 pub/dash/admin/list-time-zones.php:48
+#: pub/dash/admin/list-places.php:41 pub/dash/admin/list-places.php:87
+#: pub/dash/admin/list-places.php:109 pub/dash/admin/list-places.php:131
+#: pub/dash/admin/list-places.php:153 pub/dash/admin/list-places.php:175
+#: pub/dash/admin/list-places.php:197
+msgid "Delete"
+msgstr "Delete"
+
+#: pub/dash/admin/edit-gender.php:54 pub/dash/admin/edit-eye-color.php:54
+#: pub/dash/admin/edit-place.php:59 pub/dash/admin/edit-nationality.php:54
+#: pub/dash/admin/edit-sexuality.php:54 pub/dash/admin/edit-locale.php:67
+#: pub/dash/admin/edit-time-zone.php:59 pub/dash/admin/edit-currency.php:65
+#: pub/dash/admin/edit-relationship-status.php:55
+#: pub/dash/admin/edit-hair-color.php:56
+#: pub/dash/admin/edit-spoken-language.php:55
+msgid "Edit "
+msgstr "Edit "
+
+#: pub/dash/admin/edit-gender.php:59 pub/dash/admin/add-gender.php:53
+msgid "Gender name"
+msgstr "Gender name"
+
+#: pub/dash/admin/edit-gender.php:63 pub/dash/admin/edit-eye-color.php:63
+#: pub/dash/admin/edit-place.php:87 pub/dash/admin/edit-nationality.php:63
+#: pub/dash/admin/edit-sexuality.php:63 pub/dash/admin/edit-locale.php:80
+#: pub/dash/admin/settings-configure.php:172
+#: pub/dash/admin/edit-time-zone.php:76
+#: pub/dash/admin/settings-home-page.php:114 pub/dash/admin/edit-user.php:459
+#: pub/dash/admin/edit-currency.php:93
+#: pub/dash/admin/edit-relationship-status.php:64
+#: pub/dash/admin/edit-hair-color.php:65 pub/dash/admin/settings-privacy.php:92
+#: pub/dash/admin/edit-spoken-language.php:64 pub/dash/edit-profile.php:459
+msgid "TO UPDATE"
+msgstr "Update"
+
+#: pub/dash/admin/the-currency.php:44 pub/dash/admin/edit-currency.php:70
+#: pub/dash/admin/list-currencies.php:31 pub/dash/admin/add-currency.php:59
+msgid "Currency name"
+msgstr "Currency name"
+
+#: pub/dash/admin/the-currency.php:45 pub/dash/admin/edit-currency.php:74
+#: pub/dash/admin/list-currencies.php:30 pub/dash/admin/add-currency.php:63
+msgid "ISO code"
+msgstr "ISO code"
+
+#: pub/dash/admin/the-currency.php:46 pub/dash/admin/edit-currency.php:78
+#: pub/dash/admin/list-currencies.php:32 pub/dash/admin/add-currency.php:67
+msgid "Symbol"
+msgstr "Symbol"
+
+#: pub/dash/admin/the-currency.php:47
+msgid "Digital"
+msgstr "Digital"
+
+#: pub/dash/admin/the-currency.php:55 pub/dash/admin/list-currencies.php:49
+msgid "Yes"
+msgstr "Yes"
+
+#: pub/dash/admin/the-currency.php:57 pub/dash/admin/list-currencies.php:47
+msgid "No"
+msgstr "No"
+
+#: pub/dash/admin/add-nationality.php:50
+msgid "Add a nationality"
+msgstr "Add a nationality"
+
+#: pub/dash/admin/add-nationality.php:54 pub/dash/admin/edit-nationality.php:59
+msgid "Nationality name"
+msgstr "Nationality name"
+
+#: pub/dash/admin/add-nationality.php:58 pub/dash/admin/add-time-zone.php:68
+#: pub/dash/admin/add-eye-color.php:58 pub/dash/admin/add-locale.php:63
+#: pub/dash/admin/add-relationship-status.php:58
+#: pub/dash/admin/add-gender.php:57 pub/dash/admin/add-hair-color.php:58
+#: pub/dash/admin/add-currency.php:75 pub/dash/admin/add-sexuality.php:58
+#: pub/dash/admin/add-user.php:173 pub/dash/admin/add-place.php:74
+#: pub/dash/admin/add-spoken-language.php:58
+msgid "Submit"
+msgstr "Submit"
+
+#: pub/dash/admin/list-locales.php:22
+msgid "Add a locale "
+msgstr "Add a locale "
+
+#: pub/dash/admin/list-locales.php:25
+msgid "List of locales"
+msgstr "List of locales"
+
+#: pub/dash/admin/list-eye-colors.php:22
+msgid "Add an eye color "
+msgstr "Add an eye color "
+
+#: pub/dash/admin/list-eye-colors.php:25
+msgid "List of eye colors"
+msgstr "List of eye colors"
+
+#: pub/dash/admin/edit-eye-color.php:54
+msgid " eye color"
+msgstr " eye color"
+
+#: pub/dash/admin/edit-place.php:64 pub/dash/admin/add-place.php:55
+msgid "Place name"
+msgstr "Place name"
+
+#: pub/dash/admin/edit-place.php:68 pub/dash/admin/add-place.php:59
+msgid "Place parent"
+msgstr "Place parent"
+
+#.
+#. * pub/dash/admin/final.php
+#. *
+#. * This page is for final installation instructions.
+#. *
+#. * since Amore version 0.3
+#. *
+#.
+#: pub/dash/admin/final.php:11
+msgid "Final installation instructions"
+msgstr "Final installation instructions"
+
+#: pub/dash/admin/final.php:24
+msgid "We're done!"
+msgstr "We're done!"
+
+#: pub/dash/admin/final.php:25
+msgid ""
+"Move <code>conn.php</code> from the <code>pub/</code> directory to the "
+"<code>amore/</code> directory."
+msgstr ""
+"Move <code>conn.php</code> from the <code>pub/</code> directory to the "
+"<code>amore/</code> directory."
+
+#: pub/dash/admin/final.php:26
+msgid "Go to login page"
+msgstr "Go to login page"
+
+#: pub/dash/admin/edit-sexuality.php:59 pub/dash/admin/add-sexuality.php:54
+msgid "Sexuality name"
+msgstr "Sexuality name"
+
+#: pub/dash/admin/edit-locale.php:72 pub/dash/admin/add-locale.php:55
+msgid "Locale language"
+msgstr "Locale language"
+
+#: pub/dash/admin/edit-locale.php:76 pub/dash/admin/add-locale.php:59
+msgid "Locale country"
+msgstr "Locale country"
+
+#: pub/dash/admin/suspend-user.php:47 pub/dash/admin/suspend-user.php:49
+msgid "Suspend "
+msgstr "Suspend "
+
+#: pub/dash/admin/suspend-user.php:63
+msgid ""
+"NOTE: Suspending this user will prevent them from logging in while they are "
+"suspended. They will not be able to create new posts, respond to posts, or "
+"read direct messages."
+msgstr ""
+"NOTE: Suspending this user will prevent them from logging in while they are "
+"suspended. They will not be able to create new posts, respond to posts, or "
+"read direct messages."
+
+#: pub/dash/admin/suspend-user.php:64
+msgid ""
+"If you wish to proceed, the user will be suspended until midnight of the "
+"selected date."
+msgstr ""
+"If you wish to proceed, the user will be suspended until midnight of the "
+"selected date."
+
+#: pub/dash/admin/suspend-user.php:72
+msgid "SUSPEND"
+msgstr "Suspend"
+
+#: pub/dash/admin/suspend-user.php:73 pub/dash/admin/delete-user.php:90
+#: pub/dash/admin/ban-user.php:97 pub/dash/delete-profile.php:108
+msgid "NO"
+msgstr "No"
+
+#. translators: Do not translate currencies in following message
+#: pub/dash/admin/data-fill.php:196
+msgid "Default data added to table <i>currencies</i>."
+msgstr "Default data added to table <i>currencies</i>."
+
+#. translators: Do not translate currencies in following message
+#: pub/dash/admin/data-fill.php:199
+msgid "Error: Could not add data to table <i>currencies</i>."
+msgstr "Error: Could not add data to table <i>currencies</i>."
+
+#. translators: Do not translate eye_colors in following message
+#: pub/dash/admin/data-fill.php:221
+msgid "Default data added to table <i>eye_colors</i>."
+msgstr "Default data added to table <i>eye_colors</i>."
+
+#. translators: Do not translate eye_colors in following message
+#: pub/dash/admin/data-fill.php:224
+msgid "Error: Could not add data to table <i>eye_colors</i>."
+msgstr "Error: Could not add data to table <i>eye_colors</i>."
+
+#. translators: Do not translate genders in following message
+#: pub/dash/admin/data-fill.php:249
+msgid "Default data added to table <i>genders</i>."
+msgstr "Default data added to table <i>genders</i>."
+
+#. translators: Do not translate genders in following message
+#: pub/dash/admin/data-fill.php:252
+msgid "Error: Could not add data to table <i>genders</i>."
+msgstr "Error: Could not add data to table <i>genders</i>."
+
+#. translators: Do not translate hair_colors in following message
+#: pub/dash/admin/data-fill.php:276
+msgid "Default data added to table <i>hair_colors</i>."
+msgstr "Default data added to table <i>hair_colors</i>."
+
+#. translators: Do not translate hair_colors in following message
+#: pub/dash/admin/data-fill.php:279
+msgid "Error: Could not add data to table <i>hair_colors</i>."
+msgstr "Error: Could not add data to table <i>hair_colors</i>."
+
+#. translators: Do not translate locations in following message
+#: pub/dash/admin/data-fill.php:561
+msgid "Default data added to table <i>locations</i>."
+msgstr "Default data added to table <i>locations</i>."
+
+#. translators: Do not translate locations in following message
+#: pub/dash/admin/data-fill.php:564
+msgid "Error: Could not add data to table <i>locations </i>."
+msgstr "Error: Could not add data to table <i>locations </i>."
+
+#. translators: Do not translate nationalities in following message
+#: pub/dash/admin/data-fill.php:647
+msgid "Default data added to table <i>nationalities</i>."
+msgstr "Default data added to table <i>nationalities</i>."
+
+#. translators: Do not translate nationalities in following message
+#: pub/dash/admin/data-fill.php:650
+msgid "Error: Could not add data to table <i>nationalities</i>."
+msgstr "Error: Could not add data to table <i>nationalities</i>."
+
+#. translators: Do not translate sexualities in following message
+#: pub/dash/admin/data-fill.php:671
+msgid "Default data added to table <i>sexualities</i>."
+msgstr "Default data added to table <i>sexualities</i>."
+
+#. translators: Do not translate sexualities in following message
+#: pub/dash/admin/data-fill.php:674
+msgid "Error: Could not add data to table <i>sexualities</i>."
+msgstr "Error: Could not add data to table <i>sexualities</i>."
+
+#. translators: Do not translate time_zones in following message
+#: pub/dash/admin/data-fill.php:1196
+msgid "Default data added to table <i>time_zones</i>."
+msgstr "Default data added to table <i>time_zones</i>."
+
+#. translators: Do not translate time_zones in following message
+#: pub/dash/admin/data-fill.php:1199
+msgid "Error: Could not add data to table <i>time_zones</i>."
+msgstr "Error: Could not add data to table <i>time_zones</i>."
+
+#: pub/dash/admin/add-time-zone.php:52
+msgid "Add a time zone"
+msgstr "Add a time zone"
+
+#: pub/dash/admin/add-time-zone.php:56 pub/dash/admin/edit-time-zone.php:64
+#: pub/dash/admin/list-time-zones.php:29
+msgid "Time zone name"
+msgstr "Time zone name"
+
+#: pub/dash/admin/add-time-zone.php:60 pub/dash/admin/edit-time-zone.php:68
+msgid "Time zone offset"
+msgstr "Time zone offset"
+
+#: pub/dash/admin/add-time-zone.php:64 pub/dash/admin/edit-time-zone.php:72
+msgid "Time zone DST offset"
+msgstr "Time zone DST offset"
+
+#: pub/dash/admin/settings-configure.php:70
+msgid " configuration"
+msgstr " configuration"
+
+#: pub/dash/admin/settings-configure.php:78
+msgid "Main configuration settings for the website."
+msgstr "Main configuration settings for the website."
+
+#: pub/dash/admin/settings-configure.php:82 pub/dash/admin/post-install.php:113
+msgid "Site name"
+msgstr "Site name"
+
+#: pub/dash/admin/settings-configure.php:83 pub/dash/admin/post-install.php:114
+msgid "The name of the website."
+msgstr "The name of the website."
+
+#: pub/dash/admin/settings-configure.php:86
+msgid "URL"
+msgstr "URL"
+
+#: pub/dash/admin/settings-configure.php:87
+msgid "The url of the website."
+msgstr "The url of the website."
+
+#: pub/dash/admin/settings-configure.php:90
+msgid "Description"
+msgstr "Description"
+
+#: pub/dash/admin/settings-configure.php:91
+msgid "This website is made with Amore! It's made for love!"
+msgstr "This website is made with Amore! It's made for love!"
+
+#: pub/dash/admin/settings-configure.php:91
+msgid ""
+"The description appears on the front page and is a good way to introduce new "
+"visitors to the website."
+msgstr ""
+"The description appears on the front page and is a good way to introduce new "
+"visitors to the website."
+
+#: pub/dash/admin/settings-configure.php:94
+msgid "Default locale"
+msgstr "Default locale"
+
+#: pub/dash/admin/settings-configure.php:95
+msgid ""
+"This is the site's default locale. Users can set their own if they so choose."
+msgstr ""
+"This is the site's default locale. Users can set their own if they so choose."
+
+#: pub/dash/admin/settings-configure.php:109
+msgid "Membership"
+msgstr "Membership"
+
+#: pub/dash/admin/settings-configure.php:112
+#: pub/dash/admin/settings-configure.php:114
+msgid "If checked, anyone is allowed to become a member."
+msgstr "If checked, anyone is allowed to become a member."
+
+#: pub/dash/admin/settings-configure.php:112
+#: pub/dash/admin/settings-configure.php:114
+msgid "If checked, anyone can join."
+msgstr "If checked, anyone can join."
+
+#: pub/dash/admin/settings-configure.php:120
+msgid "Admin account"
+msgstr "Admin account"
+
+#: pub/dash/admin/settings-configure.php:121
+msgid "This is the account for the primary site admin."
+msgstr "This is the account for the primary site admin."
+
+#: pub/dash/admin/settings-configure.php:124
+msgid "Admin email"
+msgstr "Admin email"
+
+#: pub/dash/admin/settings-configure.php:125
+msgid "The email address of the site's primary admin."
+msgstr "The email address of the site's primary admin."
+
+#: pub/dash/admin/settings-configure.php:128
+msgid "Post is called"
+msgstr "Post is called"
+
+#: pub/dash/admin/settings-configure.php:129
+msgid "Do you want to call a Post something else?"
+msgstr "Do you want to call a Post something else?"
+
+#: pub/dash/admin/settings-configure.php:132
+msgid "Posts are called"
+msgstr "Posts are called"
+
+#: pub/dash/admin/settings-configure.php:133
+msgid "Do you want to call Posts something else?"
+msgstr "Do you want to call Posts something else?"
+
+#: pub/dash/admin/settings-configure.php:136
+msgid "Repost is called"
+msgstr "Repost is called"
+
+#: pub/dash/admin/settings-configure.php:137
+msgid "Do you want to call a Repost something else?"
+msgstr "Do you want to call a Repost something else?"
+
+#: pub/dash/admin/settings-configure.php:140
+msgid "Reposts are called"
+msgstr "Reposts are called"
+
+#: pub/dash/admin/settings-configure.php:141
+msgid "Do you want to call Reposts something else?"
+msgstr "Do you want to call Reposts something else?"
+
+#: pub/dash/admin/settings-configure.php:144
+msgid "Favorite is called"
+msgstr "Favorite is called"
+
+#: pub/dash/admin/settings-configure.php:145
+msgid "Do you want to call a Like something else?"
+msgstr "Do you want to call a Like something else?"
+
+#: pub/dash/admin/settings-configure.php:148
+msgid "Favorites are called"
+msgstr "Favorites are called"
+
+#: pub/dash/admin/settings-configure.php:149
+msgid "Do you want to call Likes something else?"
+msgstr "Do you want to call Likes something else?"
+
+#: pub/dash/admin/settings-configure.php:152
+msgid "Dislike is called"
+msgstr "Dislike is called"
+
+#: pub/dash/admin/settings-configure.php:153
+msgid "Do you want to call a Dislike something else?"
+msgstr "Do you want to call a Dislike something else?"
+
+#: pub/dash/admin/settings-configure.php:156
+msgid "Dislikes are called"
+msgstr "Dislikes are called"
+
+#: pub/dash/admin/settings-configure.php:157
+msgid "Do you want to call Dislikes something else?"
+msgstr "Do you want to call Dislikes something else?"
+
+#: pub/dash/admin/settings-configure.php:160
+msgid "User is called"
+msgstr "User is called"
+
+#: pub/dash/admin/settings-configure.php:161
+msgid "Do you want to call a User something else?"
+msgstr "Do you want to call a User something else?"
+
+#: pub/dash/admin/settings-configure.php:164
+msgid "Users are called"
+msgstr "Users are called"
+
+#: pub/dash/admin/settings-configure.php:165
+msgid "Do you want to call Users something else?"
+msgstr "Do you want to call Users something else?"
+
+#: pub/dash/admin/settings-configure.php:168
+msgid "Maximum characters per post"
+msgstr "Maximum characters per post"
+
+#: pub/dash/admin/settings-configure.php:169
+msgid "The maximum number of characters in a post."
+msgstr "The maximum number of characters in a post."
+
+#: pub/dash/admin/list-spoken-languages.php:22
+msgid "Add a spoken language "
+msgstr "Add a spoken language "
+
+#: pub/dash/admin/list-spoken-languages.php:25
+msgid "List of spoken languages"
+msgstr "List of spoken languages"
+
+#.
+#. * Let's start creating some tables
+#.
+#.
+#. Create the actor_types table
+#. FYI: https://www.w3.org/TR/activitystreams-core/#actors
+#.
+#: pub/dash/admin/schema.php:31
+msgid "Table for ActivityStreams Actor types."
+msgstr "Table for ActivityStreams Actor types."
+
+#. translators: Do not translate actor_types in following message
+#: pub/dash/admin/schema.php:42
+msgid "Table <i>actor_types</i> successfully created."
+msgstr "Table <i>actor_types</i> successfully created."
+
+#. translators: Do not translate actor_types in following message
+#: pub/dash/admin/schema.php:45
+msgid "Error: Could not create table <i>actor_types</i>."
+msgstr "Error: Could not create table <i>actor_types</i>."
+
+#. translators: Do not translate actor_types in following message
+#: pub/dash/admin/schema.php:63
+msgid "Default data added to table <i>actor_types</i>."
+msgstr "Default data added to table <i>actor_types</i>."
+
+#. translators: Do not translate actor_types in following message
+#: pub/dash/admin/schema.php:66
+msgid "Error: Could not add data to table <i>actor_types</i>."
+msgstr "Error: Could not add data to table <i>actor_types</i>."
+
+#.
+#. Create the configuration table
+#.
+#: pub/dash/admin/schema.php:73
+msgid "Table for website configuration."
+msgstr "Table for website configuration."
+
+#: pub/dash/admin/schema.php:74
+msgid "This will be the first account created."
+msgstr "This will be the first account created."
+
+#: pub/dash/admin/schema.php:75
+msgid "The default setting is yes."
+msgstr "The default setting is yes."
+
+#: pub/dash/admin/schema.php:76
+msgid "The default setting is no."
+msgstr "The default setting is no."
+
+#. translators: Do not translate configuration in following message
+#: pub/dash/admin/schema.php:126
+msgid "Table <i>configuration</i> successfully created."
+msgstr "Table <i>configuration</i> successfully created."
+
+#. translators: Do not translate configuration in following message
+#: pub/dash/admin/schema.php:129
+msgid "Error: Could not create table <i>configuration</i>."
+msgstr "Error: Could not create table <i>configuration</i>."
+
+#.
+#. Fill the configuration table with some default data
+#.
+#: pub/dash/admin/schema.php:135
+msgid "Another fine website made with Amore."
+msgstr "Another fine website made with Amore."
+
+#. translators: Do not translate configuration in following message
+#: pub/dash/admin/schema.php:166
+msgid "Default data added to table <i>configuration</i>."
+msgstr "Default data added to table <i>configuration</i>."
+
+#. translators: Do not translate configuration in following message
+#: pub/dash/admin/schema.php:169
+msgid "Error: Could not add data to table <i>configuration</i>."
+msgstr "Error: Could not add data to table <i>configuration</i>."
+
+#.
+#. Create the currencies table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:177
+msgid "Table for currencies/money."
+msgstr "Table for currencies/money."
+
+#. translators: Do not translate currencies in following message
+#: pub/dash/admin/schema.php:191
+msgid "Table <i>currencies</i> successfully created."
+msgstr "Table <i>currencies</i> successfully created."
+
+#. translators: Do not translate currencies in following message
+#: pub/dash/admin/schema.php:194
+msgid "Error: Could not create table <i>currencies</i>."
+msgstr "Error: Could not create table <i>currencies</i>."
+
+#.
+#. Create the eye_colors table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:202
+msgid "Table for eye colors."
+msgstr "Table for eye colors."
+
+#. translators: Do not translate eye_colors in following message
+#: pub/dash/admin/schema.php:213
+msgid "Table <i>eye_colors</i> successfully created."
+msgstr "Table <i>eye_colors</i> successfully created."
+
+#. translators: Do not translate eye_colors in following message
+#: pub/dash/admin/schema.php:216
+msgid "Error: Could not create table <i>eye_colors</i>."
+msgstr "Error: Could not create table <i>eye_colors</i>."
+
+#.
+#. Create the genders table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:224
+msgid "Table for genders."
+msgstr "Table for genders."
+
+#. translators: Do not translate genders in following message
+#: pub/dash/admin/schema.php:235
+msgid "Table <i>genders</i> successfully created."
+msgstr "Table <i>genders</i> successfully created."
+
+#. translators: Do not translate genders in following message
+#: pub/dash/admin/schema.php:238
+msgid "Error: Could not create table <i>genders</i>."
+msgstr "Error: Could not create table <i>genders</i>."
+
+#.
+#. Create the hair_colors table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:246
+msgid "Table for hair colors."
+msgstr "Table for hair colors."
+
+#. translators: Do not translate hair_colors in following message
+#: pub/dash/admin/schema.php:257
+msgid "Table <i>hair_colors</i> successfully created."
+msgstr "Table <i>hair_colors</i> successfully created."
+
+#. translators: Do not translate hair_colors in following message
+#: pub/dash/admin/schema.php:260
+msgid "Error: Could not create table <i>hair_colors</i>."
+msgstr "Error: Could not create table <i>hair_colors</i>."
+
+#.
+#. Create the locales table
+#. Table will be filled as new locales are added
+#.
+#: pub/dash/admin/schema.php:268
+msgid "Table for i18n/l10n locales."
+msgstr "Table for i18n/l10n locales."
+
+#. translators: Do not translate locales in following message
+#: pub/dash/admin/schema.php:279
+msgid "Table <i>locales</i> successfully created."
+msgstr "Table <i>locales</i> successfully created."
+
+#. translators: Do not translate locales in following message
+#: pub/dash/admin/schema.php:282
+msgid "Error: Could not create table <i>locales</i>."
+msgstr "Error: Could not create table <i>locales</i>."
+
+#.
+#. Create the locations table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:290
+msgid "Table for locations/places."
+msgstr "Table for locations/places."
+
+#. translators: Do not translate locations in following message
+#: pub/dash/admin/schema.php:301
+msgid "Table <i>locations</i> successfully created."
+msgstr "Table <i>locations</i> successfully created."
+
+#. translators: Do not translate locations in following message
+#: pub/dash/admin/schema.php:304
+msgid "Error: Could not create table <i>locations</i>."
+msgstr "Error: Could not create table <i>locations</i>."
+
+#.
+#. Create the nationalities table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:312
+msgid "Table for nationalities."
+msgstr "Table for nationalities."
+
+#. translators: Do not translate nationalities in following message
+#: pub/dash/admin/schema.php:323
+msgid "Table <i>nationalities</i> successfully created."
+msgstr "Table <i>nationalities</i> successfully created."
+
+#. translators: Do not translate nationalities in following message
+#: pub/dash/admin/schema.php:326
+msgid "Error: Could not create table <i>nationalities</i>."
+msgstr "Error: Could not create table <i>nationalities</i>."
+
+#.
+#. Create the privacy levels table
+#.
+#: pub/dash/admin/schema.php:333
+msgid "Table for Amore privacy levels"
+msgstr "Table for Amore privacy levels"
+
+#. translators: Do not translate privacy_levels in following message
+#: pub/dash/admin/schema.php:344
+msgid "Table <i>privacy_levels</i> successfully created."
+msgstr "Table <i>privacy_levels</i> successfully created."
+
+#. translators: Do not translate privacy_levels in following message
+#: pub/dash/admin/schema.php:347
+msgid "Error: Could not create table <i>privacy_levels</i>."
+msgstr "Error: Could not create table <i>privacy_levels</i>."
+
+#. translators: Do not translate privacy_levels in following message
+#: pub/dash/admin/schema.php:368
+msgid "Default data added to table <i>privacy_levels</i>."
+msgstr "Default data added to table <i>privacy_levels</i>."
+
+#. translators: Do not translate privacy_levels in following message
+#: pub/dash/admin/schema.php:371
+msgid "Error: Could not add data to table <i>privacy_levels</i>."
+msgstr "Error: Could not add data to table <i>privacy_levels</i>."
+
+#.
+#. Create the posts table
+#.
+#: pub/dash/admin/schema.php:378
+msgid "Table for posts."
+msgstr "Table for posts."
+
+#: pub/dash/admin/schema.php:379
+msgid "Default privacy level is for Everyone."
+msgstr "Default privacy level is for Everyone."
+
+#. translators: Do not translate posts in following message
+#: pub/dash/admin/schema.php:400
+msgid "Table <i>posts</i> successfully created."
+msgstr "Table <i>posts</i> successfully created."
+
+#. translators: Do not translate posts in following message
+#: pub/dash/admin/schema.php:403
+msgid "Error: Could not create table <i>posts</i>."
+msgstr "Error: Could not create table <i>posts</i>."
+
+#.
+#. Create the relationship_statuses table
+#.
+#: pub/dash/admin/schema.php:410
+msgid "Table for relationship statuses"
+msgstr "Table for relationship statuses"
+
+#. translators: Do not translate relationship_statuses in following message
+#: pub/dash/admin/schema.php:421
+msgid "Table <i>relationship_statuses</i> successfully created."
+msgstr "Table <i>relationship_statuses</i> successfully created."
+
+#. translators: Do not translate relationship_statuses in following message
+#: pub/dash/admin/schema.php:424
+msgid "Error: Could not create table <i>relationship_statuses</i>."
+msgstr "Error: Could not create table <i>relationship_statuses</i>."
+
+#. translators: Do not translate relationship_statuses in following message
+#: pub/dash/admin/schema.php:450
+msgid "Default data added to table <i>relationship_statuses</i>."
+msgstr "Default data added to table <i>relationship_statuses</i>."
+
+#. translators: Do not translate relationship_statuses in following message
+#: pub/dash/admin/schema.php:453
+msgid "Error: Could not add data to table <i>relationship_statuses</i>."
+msgstr "Error: Could not add data to table <i>relationship_statuses</i>."
+
+#.
+#. Create the spoken_languages table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:461
+msgid "Table for spoken languages"
+msgstr "Table for spoken languages"
+
+#. translators: Do not translate spoken_languages in following message
+#: pub/dash/admin/schema.php:472
+msgid "Table <i>spoken_languages</i> successfully created."
+msgstr "Table <i>spoken_languages</i> successfully created."
+
+#. translators: Do not translate spoken_languages in following message
+#: pub/dash/admin/schema.php:475
+msgid "Error: Could not create table <i>spoken_languages</i>."
+msgstr "Error: Could not create table <i>spoken_languages</i>."
+
+#.
+#. Create the sexualities tables
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:483
+msgid "Table for sexualities"
+msgstr "Table for sexualities"
+
+#. translators: Do not translate sexualities in following message
+#: pub/dash/admin/schema.php:494
+msgid "Table <i>sexualities</i> successfully created."
+msgstr "Table <i>sexualities</i> successfully created."
+
+#. translators: Do not translate sexualities in following message
+#: pub/dash/admin/schema.php:497
+msgid "Error: Could not create table <i>sexualities</i>."
+msgstr "Error: Could not create table <i>sexualities</i>."
+
+#.
+#. Create the time zones table
+#. Table will be filled via data-fill.php
+#.
+#: pub/dash/admin/schema.php:505
+msgid "Table for time zones"
+msgstr "Table for time zones"
+
+#: pub/dash/admin/schema.php:506
+msgid "Offset if Daylight Savings Time is used"
+msgstr "Offset if Daylight Savings Time is used"
+
+#. translators: Do not translate time_zones in following message
+#: pub/dash/admin/schema.php:519
+msgid "Table <i>time_zones</i> successfully created."
+msgstr "Table <i>time_zones</i> successfully created."
+
+#. translators: Do not translate time_zones in following message
+#: pub/dash/admin/schema.php:522
+msgid "Error: Could not create table <i>time_zones</i>."
+msgstr "Error: Could not create table <i>time_zones</i>."
+
+#.
+#. Create the users table
+#.
+#: pub/dash/admin/schema.php:529
+msgid "Table for users"
+msgstr "Table for users"
+
+#: pub/dash/admin/schema.php:530
+msgid "This is the same as the ActivityPub preferredUsername"
+msgstr "This is the same as the ActivityPub preferredUsername"
+
+#. translators: Do not translate users in following message
+#: pub/dash/admin/schema.php:582
+msgid "Table <i>users</i> successfully created."
+msgstr "Table <i>users</i> successfully created."
+
+#. translators: Do not translate users in following message
+#: pub/dash/admin/schema.php:585
+msgid "Error: Could not create table <i>users</i>."
+msgstr "Error: Could not create table <i>users</i>."
+
+#.
+#. Create the user_levels table
+#.
+#: pub/dash/admin/schema.php:592
+msgid "Table for user levels"
+msgstr "Table for user levels"
+
+#. translators: Do not translate user_levels in following message
+#: pub/dash/admin/schema.php:603
+msgid "Table <i>user_levels</i> successfully created."
+msgstr "Table <i>user_levels</i> successfully created."
+
+#. translators: Do not translate user_levels in following message
+#: pub/dash/admin/schema.php:606
+msgid "Error: Could not create table <i>user_levels</i>."
+msgstr "Error: Could not create table <i>user_levels</i>."
+
+#. translators: Do not translate user_levels in following message
+#: pub/dash/admin/schema.php:624
+msgid "Default data added to table <i>user_levels</i>."
+msgstr "Default data added to table <i>user_levels</i>."
+
+#. translators: Do not translate user_levels in following message
+#: pub/dash/admin/schema.php:627
+msgid "Error: Could not add data to table <i>user_levels</i>."
+msgstr "Error: Could not add data to table <i>user_levels</i>."
+
+#: pub/dash/admin/delete-user.php:67 pub/dash/admin/delete-user.php:69
+msgid "Delete "
+msgstr "Delete "
+
+#: pub/dash/admin/delete-user.php:83
+msgid "NOTE: Deleting a user will make the name available to be used again."
+msgstr "NOTE: Deleting a user will make the name available to be used again."
+
+#: pub/dash/admin/delete-user.php:84
+msgid "Are you sure you want to delete this user?"
+msgstr "Are you sure you want to delete this user?"
+
+#: pub/dash/admin/delete-user.php:89 pub/dash/admin/ban-user.php:96
+#: pub/dash/delete-profile.php:107
+msgid "YES"
+msgstr "Yes"
+
+#: pub/dash/admin/settings-home-page.php:56
+msgid "Home page configuration"
+msgstr "Home page configuration"
+
+#: pub/dash/admin/settings-home-page.php:64
+msgid ""
+"Will these items be displayed on the home page? If checked, these items will "
+"appear on the website's main page."
+msgstr ""
+"Will these items be displayed on the home page? If checked, these items will "
+"appear on the website's main page."
+
+#: pub/dash/admin/settings-home-page.php:68
+msgid "Login/Registration form"
+msgstr "Login/Registration form"
+
+#: pub/dash/admin/settings-home-page.php:71
+#: pub/dash/admin/settings-home-page.php:73
+msgid "If checked, login or registration form will be displayed."
+msgstr "If checked, login or registration form will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:78
+msgid "Number of users"
+msgstr "Number of users"
+
+#: pub/dash/admin/settings-home-page.php:79
+msgid "If checked, the number of total users will be displayed."
+msgstr "If checked, the number of total users will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:82
+msgid "Number of posts"
+msgstr "Number of posts"
+
+#: pub/dash/admin/settings-home-page.php:83
+msgid "If checked, the number of total posts will be displayed."
+msgstr "If checked, the number of total posts will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:86 pub/the-statistics.php:17
+msgid "Statistics"
+msgstr "Statistics"
+
+#: pub/dash/admin/settings-home-page.php:87
+msgid "If checked, a link to the public statistics page will be displayed."
+msgstr "If checked, a link to the public statistics page will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:90
+msgid "About"
+msgstr "About"
+
+#: pub/dash/admin/settings-home-page.php:91
+msgid "If checked, a link to the About page will be displayed."
+msgstr "If checked, a link to the About page will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:94
+msgid "Privacy policy"
+msgstr "Privacy policy"
+
+#: pub/dash/admin/settings-home-page.php:95
+msgid "If checked, a link to the website\\'s privacy policy will be displayed."
+msgstr ""
+"If checked, a link to the website\\'s privacy policy will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:98
+msgid "Site description"
+msgstr "Site description"
+
+#: pub/dash/admin/settings-home-page.php:99
+msgid "If checked, the website's description will be displayed."
+msgstr "If checked, the website's description will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:102
+msgid "Meta description"
+msgstr "Meta description"
+
+#: pub/dash/admin/settings-home-page.php:103
+msgid "If checked, a description of Amore software will be displayed."
+msgstr "If checked, a description of Amore software will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:106
+msgid "Administrator"
+msgstr "Administrator"
+
+#: pub/dash/admin/settings-home-page.php:107
+msgid "If checked, the name of the website administrator will be displayed."
+msgstr "If checked, the name of the website administrator will be displayed."
+
+#: pub/dash/admin/settings-home-page.php:110
+msgid "Public timeline"
+msgstr "Public timeline"
+
+#: pub/dash/admin/settings-home-page.php:111
+msgid "If checked, the website's public timeline will be displayed."
+msgstr "If checked, the website's public timeline will be displayed."
+
+#: pub/dash/admin/mod-queue.php:83
+msgid "Flagged for moderation by "
+msgstr "Flagged for moderation by "
+
+#: pub/dash/admin/mod-queue.php:83
+msgid " on "
+msgstr " on "
+
+#: pub/dash/admin/mod-queue.php:84
+msgid "Approve post"
+msgstr "Approve post"
+
+#: pub/dash/admin/mod-queue.php:85
+msgid "Delete post"
+msgstr "Delete post"
+
+#: pub/dash/admin/mod-queue.php:91
+msgid "There are no posts awaiting moderation at this time."
+msgstr "There are no posts awaiting moderation at this time."
+
+#. *
+#. * In the future, there will be a language chooser before we get to this point.
+#.
+#: pub/dash/admin/install.php:147
+msgid "Welcome to Amore"
+msgstr "Welcome to Amore"
+
+#: pub/dash/admin/install.php:170 pub/dash/admin/install.php:197
+#: pub/dash/admin/post-install.php:99 pub/dash/admin/post-install.php:122
+#: pub/the-registration.php:149
+msgid "Passphrase must be at least 16 characters long."
+msgstr "Passphrase must be at least 16 characters long."
+
+#: pub/dash/admin/install.php:171 pub/dash/admin/post-install.php:100
+#: pub/the-registration.php:150
+msgid "Passphrase must have:"
+msgstr "Passphrase must have:"
+
+#: pub/dash/admin/install.php:173 pub/dash/admin/post-install.php:102
+#: pub/the-registration.php:152
+msgid "at least one lowercase letter"
+msgstr "at least one lowercase letter"
+
+#: pub/dash/admin/install.php:174 pub/dash/admin/post-install.php:103
+#: pub/the-registration.php:153
+msgid "at least one uppercase letter"
+msgstr "at least one uppercase letter"
+
+#: pub/dash/admin/install.php:175 pub/dash/admin/post-install.php:104
+#: pub/the-registration.php:154
+msgid "at least one numeral"
+msgstr "at least one numeral"
+
+#: pub/dash/admin/install.php:181
+msgid "Amore installation"
+msgstr "Amore installation"
+
+#: pub/dash/admin/install.php:182
+msgid "We need some database information before we get started."
+msgstr "We need some database information before we get started."
+
+#: pub/dash/admin/install.php:184
+msgid "Host"
+msgstr "Host"
+
+#: pub/dash/admin/install.php:185
+msgid ""
+"The database host. Do not change this unless you know what you are doing."
+msgstr ""
+"The database host. Do not change this unless you know what you are doing."
+
+#: pub/dash/admin/install.php:188 pub/dash/admin/the-time-zone.php:43
+msgid "Name"
+msgstr "Name"
+
+#: pub/dash/admin/install.php:189
+msgid "The name of the database the website will use."
+msgstr "The name of the database the website will use."
+
+#: pub/dash/admin/install.php:193
+msgid "The username of the database admin."
+msgstr "The username of the database admin."
+
+#: pub/dash/admin/install.php:196 pub/dash/admin/post-install.php:121
+#: pub/dash/admin/add-user.php:131 pub/the-login.php:90
+#: pub/the-registration.php:167 pub/index.php:137 pub/index.php:156
+msgid "Passphrase"
+msgstr "Passphrase"
+
+#: pub/dash/admin/install.php:200 pub/dash/admin/post-install.php:125
+#: pub/dash/admin/passphrase-reset.php:113 pub/dash/admin/add-user.php:135
+#: pub/the-registration.php:171 pub/index.php:160
+msgid "Verify passphrase"
+msgstr "Verify passphrase"
+
+#: pub/dash/admin/install.php:201 pub/dash/admin/post-install.php:126
+msgid "Verify your passphrase."
+msgstr "Verify your passphrase."
+
+#: pub/dash/admin/install.php:204
+msgid "START SUBMIT"
+msgstr "Start"
+
+#: pub/dash/admin/list-nationalities.php:22
+msgid "Add a nationality "
+msgstr "Add a nationality "
+
+#: pub/dash/admin/list-nationalities.php:25
+msgid "List of nationalities"
+msgstr "List of nationalities"
+
+#: pub/dash/admin/edit-user.php:111 pub/dash/edit-profile.php:111
+msgid ""
+"NOTE: Privacy levels aren't currently implemented. Please use caution when "
+"entering personal information."
+msgstr ""
+"NOTE: Privacy levels aren't currently implemented. Please use caution when "
+"entering personal information."
+
+#: pub/dash/admin/edit-user.php:132 pub/dash/edit-profile.php:132
+msgid "Date of birth privacy"
+msgstr "Date of birth privacy"
+
+#: pub/dash/admin/edit-user.php:212 pub/dash/edit-profile.php:212
+msgid "Gender privacy"
+msgstr "Gender privacy"
+
+#: pub/dash/admin/edit-user.php:252 pub/dash/edit-profile.php:252
+msgid "Sexuality privacy"
+msgstr "Sexuality privacy"
+
+#: pub/dash/admin/edit-user.php:292 pub/dash/edit-profile.php:292
+msgid "Relationship status privacy"
+msgstr "Relationship status privacy"
+
+#: pub/dash/admin/edit-user.php:372 pub/dash/edit-profile.php:372
+msgid "Location privacy"
+msgstr "Location privacy"
+
+#: pub/dash/admin/the-user.php:80
+msgid "This user is currently suspended from the website."
+msgstr "This user is currently suspended from the website."
+
+#: pub/dash/admin/the-user.php:83
+msgid "The user had been banned from this website."
+msgstr "The user had been banned from this website."
+
+#: pub/dash/admin/post-install.php:76
+msgid "Create admin user"
+msgstr "Create admin user"
+
+#: pub/dash/admin/post-install.php:105 pub/the-registration.php:155
+msgid "at least one character that is not a number or a letter."
+msgstr "at least one character that is not a number or a letter."
+
+#: pub/dash/admin/post-install.php:111
+msgid "We're almost done!"
+msgstr "We're almost done!"
+
+#: pub/dash/admin/post-install.php:118
+msgid "The admin user will be the first user account entered in the database."
+msgstr "The admin user will be the first user account entered in the database."
+
+#: pub/dash/admin/post-install.php:129
+msgid "CREATE USER"
+msgstr "Create user"
+
+#: pub/dash/admin/add-eye-color.php:50
+msgid "Add an eye color"
+msgstr "Add an eye color"
+
+#: pub/dash/admin/list-users.php:16 pub/dash/admin/list-users.php:25
+msgid "List of users"
+msgstr "List of users"
+
+#: pub/dash/admin/list-users.php:22
+msgid "Add a user "
+msgstr "Add a user "
+
+#: pub/dash/admin/list-users.php:30
+msgid "User since"
+msgstr "User since"
+
+#: pub/dash/admin/list-users.php:31
+msgid "Last logged in"
+msgstr "Last logged in"
+
+#: pub/dash/admin/list-users.php:32 pub/dash/admin/list-time-zones.php:32
+msgid "Actions"
+msgstr "Actions"
+
+#: pub/dash/admin/list-users.php:57
+msgid "Suspend"
+msgstr "Suspend"
+
+#: pub/dash/admin/list-users.php:58 pub/dash/admin/list-users.php:71
+msgid "Ban"
+msgstr "Ban"
+
+#: pub/dash/admin/list-users.php:60 pub/dash/admin/list-users.php:73
+msgid "Passphrase reset"
+msgstr "Passphrase reset"
+
+#: pub/dash/admin/add-locale.php:51
+msgid "Add a locale"
+msgstr "Add a locale"
+
+#: pub/dash/admin/edit-currency.php:82 pub/dash/admin/list-currencies.php:33
+#: pub/dash/admin/add-currency.php:71
+msgid "Digital?"
+msgstr "Digital?"
+
+#: pub/dash/admin/list-currencies.php:24
+msgid "Add a currency "
+msgstr "Add a currency "
+
+#: pub/dash/admin/list-currencies.php:27
+msgid "List of currencies"
+msgstr "List of currencies"
+
+#: pub/dash/admin/list-relationship-statuses.php:23
+msgid "Add a relationship status "
+msgstr "Add a relationship status "
+
+#: pub/dash/admin/list-relationship-statuses.php:26
+msgid "List of relationship statuses"
+msgstr "List of relationship statuses"
+
+#: pub/dash/admin/add-relationship-status.php:50
+msgid "Add a relationship status"
+msgstr "Add a relationship status"
+
+#: pub/dash/admin/add-gender.php:49
+msgid "Add a gender"
+msgstr "Add a gender"
+
+#: pub/dash/admin/settings-privacy.php:52
+msgid "Privacy configuration"
+msgstr "Privacy configuration"
+
+#: pub/dash/admin/settings-privacy.php:60
+msgid ""
+"Will users be able to set these fields to private? If checked, these users "
+"can set these fields to private."
+msgstr ""
+"Will users be able to set these fields to private? If checked, these users "
+"can set these fields to private."
+
+#: pub/dash/admin/settings-privacy.php:64
+msgid "Age"
+msgstr "Age"
+
+#: pub/dash/admin/settings-privacy.php:65
+msgid "If checked, users will be able to set their age to private."
+msgstr "If checked, users will be able to set their age to private."
+
+#: pub/dash/admin/settings-privacy.php:69
+msgid "If checked, users will be able to set their gender to private."
+msgstr "If checked, users will be able to set their gender to private."
+
+#: pub/dash/admin/settings-privacy.php:73
+msgid "If checked, users will be able to set their sexuality to private."
+msgstr "If checked, users will be able to set their sexuality to private."
+
+#: pub/dash/admin/settings-privacy.php:77
+msgid ""
+"If checked, users will be able to set their relationship privacy to private."
+msgstr ""
+"If checked, users will be able to set their relationship privacy to private."
+
+#: pub/dash/admin/settings-privacy.php:81
+msgid "If checked, users will be able to set their location to private."
+msgstr "If checked, users will be able to set their location to private."
+
+#: pub/dash/admin/settings-privacy.php:85
+msgid "If checked, users will be able to set their nationality to private."
+msgstr "If checked, users will be able to set their nationality to private."
+
+#: pub/dash/admin/settings-privacy.php:89
+msgid "If checked, users will be able to set their time zone to private."
+msgstr "If checked, users will be able to set their time zone to private."
+
+#: pub/dash/admin/passphrase-reset.php:81
+#: pub/dash/admin/passphrase-reset.php:83
+msgid "Passphrase reset for "
+msgstr "Passphrase reset for "
+
+#: pub/dash/admin/passphrase-reset.php:118
+msgid "RESET PASSPHRASE"
+msgstr "Reset passphrase"
+
+#: pub/dash/admin/the-time-zone.php:44 pub/dash/admin/list-time-zones.php:30
+msgid "Offset"
+msgstr "Offset"
+
+#: pub/dash/admin/the-time-zone.php:45 pub/dash/admin/list-time-zones.php:31
+msgid "DST offset"
+msgstr "DST offset"
+
+#: pub/dash/admin/add-hair-color.php:50
+msgid "Add a hair color"
+msgstr "Add a hair color"
+
+#: pub/dash/admin/list-hair-colors.php:23
+msgid "Add a hair color "
+msgstr "Add a hair color "
+
+#: pub/dash/admin/list-hair-colors.php:26
+msgid "List of hair colors"
+msgstr "List of hair colors"
+
+#: pub/dash/admin/list-sexualities.php:23
+msgid "Add a sexuality "
+msgstr "Add a sexuality "
+
+#: pub/dash/admin/list-sexualities.php:26
+msgid "List of sexualities"
+msgstr "List of sexualities"
+
+#: pub/dash/admin/ban-user.php:72 pub/dash/admin/ban-user.php:74
+msgid "Permanently ban "
+msgstr "Permanently ban "
+
+#: pub/dash/admin/ban-user.php:88
+msgid ""
+"NOTE: Banning a user will delete their posts, clear their profile, scramble "
+"their passphrase, and prevent the username from being used again."
+msgstr ""
+"NOTE: Banning a user will delete their posts, clear their profile, scramble "
+"their passphrase, and prevent the username from being used again."
+
+#: pub/dash/admin/ban-user.php:89
+msgid "Are you sure you want to ban this user?"
+msgstr "Are you sure you want to ban this user?"
+
+#: pub/dash/admin/the-place.php:44
+msgid "is part of"
+msgstr "is part of"
+
+#: pub/dash/admin/add-currency.php:54
+msgid "Add a currency"
+msgstr "Add a currency"
+
+#: pub/dash/admin/add-sexuality.php:50
+msgid "Add a sexuality"
+msgstr "Add a sexuality"
+
+#: pub/dash/admin/list-time-zones.php:23
+msgid "Add a time zone "
+msgstr "Add a time zone "
+
+#: pub/dash/admin/list-time-zones.php:26
+msgid "List of time zones"
+msgstr "List of time zones"
+
+#: pub/dash/admin/the-locale.php:45
+msgid "Language"
+msgstr "Language"
+
+#: pub/dash/admin/the-locale.php:46
+msgid "Country"
+msgstr "Country"
+
+#: pub/dash/admin/add-user.php:101 pub/the-registration.php:123
+msgid "That username is already taken. Please choose another."
+msgstr "That username is already taken. Please choose another."
+
+#: pub/dash/admin/add-user.php:119
+msgid "Add a new user"
+msgstr "Add a new user"
+
+#: pub/dash/admin/add-user.php:158
+msgid "Account type"
+msgstr "Account type"
+
+#: pub/dash/admin/add-place.php:51
+msgid "Add a place/location"
+msgstr "Add a place/location"
+
+#: pub/dash/admin/list-places.php:24
+msgid "Add a place "
+msgstr "Add a place "
+
+#: pub/dash/admin/list-places.php:27
+msgid "Africa"
+msgstr "Africa"
+
+#: pub/dash/admin/list-places.php:49
+msgid "Antarctica"
+msgstr "Antarctica"
+
+#: pub/dash/admin/list-places.php:73
+msgid "Asia"
+msgstr "Asia"
+
+#: pub/dash/admin/list-places.php:95
+msgid "Caribbean"
+msgstr "Caribbean"
+
+#: pub/dash/admin/list-places.php:117
+msgid "Europe"
+msgstr "Europe"
+
+#: pub/dash/admin/list-places.php:139
+msgid "North America"
+msgstr "North America"
+
+#: pub/dash/admin/list-places.php:161
+msgid "Oceania"
+msgstr "Oceania"
+
+#: pub/dash/admin/list-places.php:183
+msgid "South America"
+msgstr "South America"
+
+#: pub/dash/admin/edit-spoken-language.php:60
+#: pub/dash/admin/add-spoken-language.php:54
+msgid "Spoken language name"
+msgstr "Spoken language name"
+
+#: pub/dash/admin/add-spoken-language.php:50
+msgid "Add a spoken language"
+msgstr "Add a spoken language"
+
+#: pub/dash/add-post.php:77 pub/dash/index.php:247
+msgid "What are you doing?"
+msgstr "What are you doing?"
+
+#: pub/dash/add-post.php:80
+msgid "EVERYONE"
+msgstr "Everyone"
+
+#: pub/dash/add-post.php:81
+msgid "FEDIVERSE"
+msgstr "Fediverse"
+
+#: pub/dash/add-post.php:82
+msgid "INSTANCE"
+msgstr "Instance"
+
+#: pub/dash/add-post.php:83
+msgid "FOLLOWERS"
+msgstr "Followers"
+
+#: pub/dash/add-post.php:84
+msgid "FRIENDS"
+msgstr "Friends"
+
+#: pub/dash/add-post.php:85
+msgid "PRIVATE"
+msgstr "Private"
+
+#: pub/dash/add-post.php:86
+msgid "SELF"
+msgstr "Self"
+
+#: pub/dash/add-post.php:88 pub/dash/index.php:248
+msgid "Post"
+msgstr "Post"
+
+#: pub/dash/delete-profile.php:100
+msgid "Are you sure you want to delete your profile?"
+msgstr "Are you sure you want to delete your profile?"
+
+#: pub/dash/index.php:238
+msgid "Dashboard for "
+msgstr "Dashboard for "
+
+#: pub/dash/index.php:297
+msgid "Flag for moderation"
+msgstr "Flag for moderation"
+
+#: pub/the-feeds.php:89
+msgid "The primary RSS feed of"
+msgstr "The primary RSS feed of"
+
+#: pub/the-login.php:50
+msgid "There was a problem. Please try again."
+msgstr "There was a problem. Please try again."
+
+#: pub/the-login.php:56
+msgid "User not found"
+msgstr "User not found"
+
+#: pub/the-login.php:84
+msgid "Login to"
+msgstr "Login to"
+
+#: pub/the-login.php:93 pub/index.php:140 pub/index.php:172
+msgid "TO LOGIN"
+msgstr "Login"
+
+#: pub/the-login.php:97 pub/the-registration.php:161
+msgid "Create an account"
+msgstr "Create an account"
+
+#: pub/the-registration.php:135
+msgid "You are too young to join this website"
+msgstr "You are too young to join this website"
+
+#: pub/the-registration.php:138
+msgid "There was a typo in your date of birth. Please try again."
+msgstr "There was a typo in your date of birth. Please try again."
+
+#: pub/the-registration.php:178 pub/index.php:167
+msgid "TO REGISTER"
+msgstr "Register"
+
+#: pub/the-user-feeds.php:61
+msgid "The RSS feed of"
+msgstr "The RSS feed of"
+
+#: pub/the-statistics.php:36
+msgid "Statistics for "
+msgstr "Statistics for "
+
+#: pub/the-statistics.php:40
+msgid "Website statistics"
+msgstr "Website statistics"
+
+#: pub/the-statistics.php:42
+msgid "Total number of accounts: "
+msgstr "Total number of accounts: "
+
+#: pub/the-statistics.php:43
+msgid "Number of signed-in users in the past 30 days: "
+msgstr "Number of signed-in users in the past 30 days: "
+
+#: pub/the-statistics.php:44
+msgid "Number of signed-in users in the past 180 months: "
+msgstr "Number of signed-in users in the past 180 months: "
+
+#: pub/the-statistics.php:48
+msgid "User statistics"
+msgstr "User statistics"
+
+#: pub/the-statistics.php:145
+msgid "Spoken language"
+msgstr "Spoken language"
+
+#: pub/the-statistics.php:289
+msgid "User type"
+msgstr "User type"
+
+#: pub/index.php:131
+msgid "Login to "
+msgstr "Login to "
+
+#: pub/index.php:150
+msgid "Registration for "
+msgstr "Registration for "
+
+#: pub/index.php:171
+msgid "Already a user?"
+msgstr "Already a user?"
+
+#: pub/index.php:186 pub/index.php:187
+msgid "Number of "
+msgstr "Number of "
+
+#: functions.php:17
+msgid ""
+"<i>Amore</i> is open-source PHP/MySQL software that will be part of the "
+"Fediverse - a decentralized social network of thousands of different "
+"communities."
+msgstr ""
+"<i>Amore</i> is open-source PHP/MySQL software that will be part of the "
+"Fediverse - a decentralized social network of thousands of different "
+"communities."
