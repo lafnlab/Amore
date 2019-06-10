@@ -23,6 +23,6 @@ if (isset($_GET["pid"])) {
 if ($sel_id != '') {
 	$postokq = "UPDATE posts SET post_flagged=0, post_flagged_by='', post_flagged_on='' WHERE post_id='".$sel_id."'";
 	$postokquery = mysqli_query($dbconn,$postokq);
-	redirect("../index.php");
+	redirect("../index.php?uid=".$_COOKIE['id']);
 }
 ?>

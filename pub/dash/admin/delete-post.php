@@ -23,6 +23,6 @@ if (isset($_GET["pid"])) {
 if ($sel_id != '') {
 	$postdelq = "DELETE FROM posts WHERE post_id='".$sel_id."'";
 	$postdelquery = mysqli_query($dbconn,$postdelq);
-	redirect("../index.php");
+	redirect("../index.php?uid=".$_COOKIE['id']);
 }
 ?>

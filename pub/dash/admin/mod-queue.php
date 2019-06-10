@@ -81,8 +81,8 @@ if (mysqli_num_rows($modquequery) <> 0) {
 		echo "\t\t\t\t\t<a href=\"#\" title=\""._('Reply')."\">⮪</a>&nbsp;<a href=\"#\" title=\""._('Share')."\">🔁</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=like\" title=\""._('Like')."\">🎔&nbsp;".$likes."</a>&nbsp;<a href=\"".htmlspecialchars($_SERVER['PHP_SELF'])."?uid=".$usrid."&pid=".$postid."&type=dislike\" title=\""._('Dislike')."\">💔&nbsp;".$dislikes."</a>&nbsp;\n";
 		echo "\t\t\t\t\t<div class=\"w3-card-2 w3-theme-l5 w3-padding w3-margin-bottom w3-margin-top\">\n";
 		echo "\t\t\t\t\t\t"._('Flagged for moderation by ')."<a href=\"the-user.php?uid=".$postflby."\">".$flagbyname."</a>"._(' on ').$postflon."\n";
-		echo "\t\t\t\t\t\t<a href=\"admin/moderate-post.php?pid=".$postid."\">"._('Approve post')."</a>\n";
-		echo "\t\t\t\t\t\t<a href=\"admin/delete-post.php?pid=".$postid."\">"._('Delete post')."</a>\n";
+		echo "\t\t\t\t\t\t<a href=\"moderate-post.php?pid=".$postid."\">"._('Approve post')."</a>\n";
+		echo "\t\t\t\t\t\t<a href=\"delete-post.php?pid=".$postid."\">"._('Delete post')."</a>\n";
 		echo "\t\t\t\t\t</div>\n";
 		echo "\t\t\t\t</div>\n";
 	} // end while $modqueopt
