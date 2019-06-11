@@ -70,3 +70,75 @@ The `website_url` field is used a lot in links on the website and it will remain
 The `website_name` field is frequently used in the titles of webpages and it will remain in future versions of **Amore**.
 
 The `website_description` field is used on the home page, and also appears in the website's HTML metadata. Search engines sometimes display this metadata, so it is fairly important. It will remain in future versions.
+
+The `default_locale` field is used, but is currently useless. The only locale for **Amore** v0.3 is currently `en_US`. If other locales are created, then this field will be more useful. It wil remain in future versions.
+
+The `open_registrations` is mainly used on the home page, to determine whether it should show a login form or a registration form. It will remain in future versions.
+
+The `admin_account` field gets filled during the installation process, but it is not used otherwise. The field will be more useful in the future, and will remain in future versions.
+
+The `admin_email` field gets filled during the installation process, but it is not used otherwise. The field will be more useful in the future, and will remain in future versions.
+
+The `posts_are_called` field is used on the home page and will remain in future versions.
+
+The `post_is_called` field is used on the home page and will remain in future versions.
+
+The `reposts_are_called` field is used and will remain in future versions.
+
+The `repost_is_called` field is used and will remain in future versions.
+
+The `users_are_called` field is used on the home page and will remain in future versions.
+
+The `user_is_called` field is used on the home page and will remain in future versions.
+
+The `favorites_are_called` field is used and will remain in future versions.
+
+The `favorite_is_called` field is used and will remain in future versions.
+
+The `dislikes_are_called` field is used and will remain in future versions.
+
+The `dislike_is_called` field is used and will remain in future versions.
+
+The `max_post_length` field is not used in **Amore** v0.3, but will likely be used in future versions. It will remain in future versions.
+
+The `banned_user_names` field is used and will remain in future versions.
+
+The `deleted_user_names` field is used and will remain in future versions.
+
+The `allow_user_age_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their age. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `allow_user_gender_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their gender. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `allow_user_sexuality_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their sexuality. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `allow_user_relationship_status_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their relationship status. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `allow_user_location_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their location. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `allow_user_nationality_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their nationality. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `allow_user_time_zone_privacy` field is a misleading name. The field is used to allow users to set the privacy level for their time zone. This hasn't been fully implemented in **Amore** v0.3, but will likely remain in future versions, though it may be renamed.
+
+The `display_home_page_login_form` field is used to determine whether a login form should be shown on the home page. If `open_registrations` is set to yes, it will show a registration form instead. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_users_quantity` field is used to determine whether the number of users should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_posts_quantity` field is used to determine whether the number of posts should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_statistics_link` field is used to determine whether a link to the statistics page should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_about_link` field is used to determine whether a link to the about page should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_privacy_policy_link` field is used to determine whether a link to the privacy policy should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_site_description` field is used to determine whether the website description should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `display_home_page_meta_description` field is used to determine whether the description of **Amore** software should appear on the home page. This field is not currently used, but will be utilized in future versions.
+
+The `list_with_the_federation_info` field is not currently used, but will be utilized in future versions. [the-federation.info](https://the-federation.info) is a directory of websites connected to the Fediverse. Websites can request to be added to the list.
+
+The `list_with_fediverse_network` field is not currently used, but will be utilized in future versions. [fediverse.network](https://fediverse.network) is a directory of websites connected to the Fediverse. Websites can request to be added to the list.
+
+The `list_with_amore_social` field is not currently used, but will be utilized in future versions. [amore.social](https://amore.social) ~~is~~ will be the primary website of **Amore** and will include a list of websites that use its software. Websites that use **Amore** software can ask to be added to the list.
+
+The `list_with_dating_media` field is not currently used, and may or may be utilized in future versions. The [dating.media](https://dating.media) domain was purchased before the software was given the name **Amore**, so there is uncertainty around what to do with it. 
