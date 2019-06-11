@@ -1,8 +1,8 @@
-#*Amore* functions reference
+# **Amore** functions reference
 
-This page is a central document for functions used in *Amore*. Any *Amore* functions will be documented to show how they are used, while standard PHP functions will have links to the official PHP documentation.
+This is the central document for functions used in **Amore** v0.3. Any *Amore* functions will be documented to show how they are used, while standard PHP functions will have links to the official PHP documentation.
 
-###PHP functions
+### PHP functions
 [`date`](https://www.php.net/manual/en/function.date.php) *Amore* uses PHP's `date` function in various places, including in the `functions.php` file.
 
 [`floor`](https://www.php.net/manual/en/function.floor.php) *Amore* uses PHP's `floor` function in the `user_age` function in the `functions.php` file.
@@ -37,7 +37,7 @@ This page is a central document for functions used in *Amore*. Any *Amore* funct
 
 [`trim`](https://www.php.net/manual/en/function.trim.php) *Amore* uses PHP's `trim` function in the `nicetext` function in the `functions.php` file.
 
-###*Amore* functions
+### **Amore** functions
 `atom_updated( $time )`
 
 `header_message( $message )`

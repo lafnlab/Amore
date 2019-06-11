@@ -1,6 +1,6 @@
-#Amore variables reference
+# **Amore** variables reference
 
-This page is a central document for variables used in *Amore*. Any *Amore* variables will be documented to show how they are used, while standard PHP variables will have links to the official PHP documentation.
+This is the central document for variables used in **Amore** v0.3. Any *Amore* variables will be documented to show how they are used, while standard PHP variables will have links to the official PHP documentation.
 
 `$dbconn` - This variable is used to make a database connection. It is frequently positioned at the top of a PHP file, and is always assigned as `new mysqli(DBHOST, DBUSER, DBPASS, DBNAME)`.
 
