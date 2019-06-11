@@ -5,10 +5,10 @@ The documentation for **Amore** v0.3 can be divided into two areas of interest: 
 The documentation is intended to be useful to administrators and developers, but because the software is at an early stage of development, it may not be helpful for subsequent versions.
 
 #### Admin Documentation
-+ [Quick start guide](https://github.com/lafnlab/Amore/blob/master/docs/admin/quick-start-guide.md): A guide to install and configure **Amore** v0.3.
-+ [Admin manual](https://github.com/lafnlab/Amore/blob/master/docs/admin/admin-manual.md): A more detailed guide for administrators that shows what they can do in **Amore** v0.3.
++ [Quick start guide](/admin/quick-start-guide.md): A guide to install and configure **Amore** v0.3.
++ [Admin manual](admin/admin-manual.md): A more detailed guide for administrators that shows what they can do in **Amore** v0.3.
 
 #### Reference Documentation
-+ [Database](https://github.com/lafnlab/Amore/blob/master/docs/reference/database.md): This is the central document for database structure used by **Amore** v0.3. The purpose of each table and field will be described, as will the data type.
-+ [Functions](https://github.com/lafnlab/Amore/blob/master/docs/reference/functions.md): This is the central document for functions used in **Amore** v0.3. Any **Amore** functions will be documented to show how they are used, while standard PHP functions will have links to the official PHP documentation.
-+ [Variables](https://github.com/lafnlab/Amore/blob/master/docs/reference/variables.md): This is the central document for variables used in **Amore** v0.3. Any **Amore** variables will be documented to show how they are used, while standard PHP variables will have links to the official PHP documentation.
++ [Database](reference/database.md): This is the central document for database structure used by **Amore** v0.3. The purpose of each table and field will be described, as will the data type.
++ [Functions](reference/functions.md): This is the central document for functions used in **Amore** v0.3. Any **Amore** functions will be documented to show how they are used, while standard PHP functions will have links to the official PHP documentation.
++ [Variables](reference/variables.md): This is the central document for variables used in **Amore** v0.3. Any **Amore** variables will be documented to show how they are used, while standard PHP variables will have links to the official PHP documentation.
