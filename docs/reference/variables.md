@@ -1,10 +1,10 @@
 # **Amore** variables reference
 
-This is the central document for variables used in **Amore** v0.3. Any *Amore* variables will be documented to show how they are used, while standard PHP variables will have links to the official PHP documentation.
+This is the central document for variables used in **Amore** v0.3. Any **Amore** variables will be documented to show how they are used, while standard PHP variables will have links to the official PHP documentation.
 
 `$dbconn` - This variable is used to make a database connection. It is frequently positioned at the top of a PHP file, and is always assigned as `new mysqli(DBHOST, DBUSER, DBPASS, DBNAME)`.
 
-`$metadescription` - This variable is used in the `functions.php` file. It provides a translatable description of *Amore* software that gets displayed on `pub/index.php`.
+`$metadescription` - This variable is used in the `functions.php` file. It provides a translatable description of **Amore** software that gets displayed on `pub/index.php`.
 
 `$newid` - This variable is used in the `functions.php` file where it is the argument for the `makeid` function.
 
