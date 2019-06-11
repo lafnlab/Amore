@@ -26,7 +26,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<title><?php echo _($pagetitle); ?></title>
 	<meta name="description" content="<?php echo $website_description; ?>">
-	<link href="<?php echo $website_url; ?>/style/amore.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo $website_url; ?>style/amore.css" rel="stylesheet" type="text/css">
 	<script type="application/json">
 		{
 			"@context": "https://www.w3.org/ns/activitystreams",
