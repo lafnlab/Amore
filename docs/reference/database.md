@@ -141,4 +141,4 @@ The `list_with_fediverse_network` field is not currently used, but will be utili
 
 The `list_with_amore_social` field is not currently used, but will be utilized in future versions. [amore.social](https://amore.social) ~~is~~ will be the primary website of **Amore** and will include a list of websites that use its software. Websites that use **Amore** software can ask to be added to the list.
 
-The `list_with_dating_media` field is not currently used, and may or may be utilized in future versions. The [dating.media](https://dating.media) domain was purchased before the software was given the name **Amore**, so there is uncertainty around what to do with it. 
+The `list_with_dating_media` field is not currently used, and may or may not be utilized in future versions. The [dating.media](https://dating.media) domain was purchased before the software was given the name **Amore**, so there is uncertainty around what to do with it. 
