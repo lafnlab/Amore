@@ -11,7 +11,9 @@ An empty database must be created before installing **Amore**, but it can have a
 
 The `actor_types` table was created during the development of **Amore** v0.3. The ActivityPub [standard](https://www.w3.org/TR/activitypub/#actors) uses ActivityStreams [Actor Types](https://www.w3.org/TR/activitystreams-vocabulary/#actor-types). Actor types define whether an account is used by a person, group, organization, application, or service. This isn't implemented in many Fediverse applications, but it's interesting and has potential, so it was included in **Amore** v0.3, even if it isn't implemented yet.
 
-The `actor_type_id` is superfluous since all of the items in `actor_type_name` are unique.
+The `actor_type_id` field may not remain in future versions, since all of the names are unique and could serve as the primary key.
+
+The `actor_type_name` field will remain in future versions of **Amore**.
 
 The table is created and filled by `pub/dash/admin/schema.php` during **Amore** installation.
 
@@ -143,6 +145,8 @@ The `list_with_amore_social` field is not currently used, but will be utilized i
 
 The `list_with_dating_media` field is not currently used, and may or may not be utilized in future versions. The [dating.media](https://dating.media) domain was purchased before the software was given the name **Amore**, so there is uncertainty around what to do with it.
 
+The table is created by `pub/dash/admin/schema.php` and partially filled with some default information during **Amore** installation.
+
 ### `currencies` table
 + currency_id varchar(10)
 + currency_name tinytext
@@ -150,7 +154,29 @@ The `list_with_dating_media` field is not currently used, and may or may not be 
 + currency_symbol varchar(15) DEFAULT *¤*
 + currency_digital tinyint(1)
 
+The `currency_id` field may not remain in future versions of **Amore**, since the `currency_name` contains unique items and could also serve as the table's primary key.
+
+The `currency_name` field will remain in future versions of **Amore**.
+
+The `currency_iso` field will remain in future versions, as it is a good backup if a currency does not have a symbol.
+
+The `currency_symbol` field will remain in future versions, as the symbols are frequently used to identify a currency in prices.
+
+The `currency_digital` field will remain in future versions to make it easier to determine if a currency is digital.
+
+The table itself may or may not be included in future versions of **Amore**. It isn't currently used for anything and might be more suitable as a plugin rather than part of the core program.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
+
 ### `eye_colors` table
++ `eye_color_id` varchar(10)
++ `eye_color_name` tinytext
+
+The `eye_color_id` field may not remain in future versions of **Amore**, since the `eye_color_name` contains unique items and could also serve as the table's primary key.
+
+The `eye_color_name` field will remain in future versions of **Amore**.
+
+The table is created and filled by `pub/dash/admin/schema.php` during **Amore** installation.
 
 ### `genders` table
 
