@@ -151,7 +151,7 @@ The table is created by `pub/dash/admin/schema.php` and partially filled with so
 + currency_id varchar(10)
 + currency_name tinytext
 + currency_iso tinytext
-+ currency_symbol varchar(15) DEFAULT *¤*
++ currency_symbol varchar(15) DEFAULT ¤
 + currency_digital tinyint(1)
 
 The `currency_id` field may not remain in future versions of **Amore**, since the `currency_name` contains unique items and could also serve as the table's primary key.
@@ -225,18 +225,111 @@ The `location_parent` field will remain in future versions, though it may change
 The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `nationalities` table
++ `nationality_id` varchar(10)
++ `nationality_name` tinytext
+
+The `nationality_id` field may not remain in future versions of **Amore**, since the `nationality_name` contains unique items and could also serve as the table's primary key.
+
+The `nationality_name` field will remain in future versions of **Amore**.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `posts` table
++ `post_id` varchar(10)
++ `post_by` varchar(10)
++ `post_timestamp` datetime
++ `post_text` text
++ `post_privacy_level` varchar(10) DEFAULT 6ьötХ5áзÚZ COMMENT *Default privacy level is for Everyone.*
++ `post_shares` text
++ `post_likes` text
++ `post_dislikes` text
++ `post_flagged` tinyint(1) DEFAULT 0
++ `post_flagged_by` varchar(10)
++ `post_flagged_on` datetime
++ `post_deleted_by` varchar(10)
++ `post_deleted_on` datetime
+
+The `post_id` field will remain in future versions, though it may change format.
+
+The `post_by` field will remain in future versions because it's important to know which account authored a post.
+
+The `post_timestamp` field will remain in future versions as it's important to know when a post was created to fit it in a **timeline**.
+
+The `post_text` field will remain, because it is the primary content of each post.
+
+The `post_privacy_level` will probably remain in future versions. Privacy levels are planned, but not currently implemented. If there is a better way of dealing with privacy levels, this field may be removed from future versions.
+
+The `post_shares` field ~~is~~ will be an unordered collection of ActivityPub accounts that have shared/reposted a post. It will remain in future versions of **Amore**.
+
+The `post_likes` field ~~is~~ will be an unordered collection of ActivityPub accounts that have liked a post. It will remain in future versions of **Amore**.
+
+The `post_dislikes` field ~~is~~ will be an unordered collection of ActivityPub accounts that have disliked a post. It will remain in future versions of **Amore**, even though it isn't in the ActivityPub standard.
+
+The `post_flagged` field will remain in future versions. If this is not set to 0, a post is sent to the moderation queue to be moderated.
+
+The `post_flagged_by` field will remain in future versions. It may be important to know who flagged a post so the moderator or admin can follow up with them.
+
+The `post_flagged_on` field will remain in future versions. It is used to determine how high it ranks in the moderation queue. Posts should be moderated on a "first-come-first-served" basis.
+
+The `post_deleted_by` field will remain in future versions. It is mainly for record keeping purposes.
+
+The `post_deleted_on` field will remain in future versions. It can be used on an ActivityPub [Tombstone](https://www.w3.org/TR/activitypub/#delete-activity-outbox).
+
+The table is created by `pub/dash/admin/schema.php` during the installation process.
 
 ### `privacy_levels` table
++ `privacy_level_id` varchar(10)
++ `privacy_level_name` tinytext
+
+The `privacy_level_id` field may not remain in future versions of **Amore**, since the `privacy_level_name` contains unique items and could also serve as the table's primary key.
+
+The `privacy_level_name` field will remain in future versions of **Amore**.
+
+The table is created and filled by `pub/dash/admin/schema.php` during the installation process.
 
 ### `relationship_statuses` table
++ `relationship_status_id` varchar(10)
++ `relationship_status_name` tinytext
+
+The `relationship_status_id` field may not remain in future versions of **Amore**, since the `relationship_status_name` contains unique items and could also serve as the table's primary key.
+
+The `relationship_status_name` field will remain in future versions of **Amore**.
+
+The table is created and filled by `pub/dash/admin/schema.php` during the installation process.
 
 ### `sexualities` table
++ `sexuality_id` varchar(10)
++ `sexuality_name` tinytext
+
+The `sexuality_id` field may not remain in future versions of **Amore**, since the `sexuality_name` contains unique items and could also serve as the table's primary key.
+
+The `sexuality_name` field will remain in future versions of **Amore**.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `spoken_languages` table
++ `spoken_language_id` varchar(10)
++ `spoken_language_name` tinytext
+
+The `spoken_language_id` field may not remain in future versions of **Amore**, since the `spoken_language_name` contains unique items and could also serve as the table's primary key.
+
+The `spoken_language_name` field will remain in future versions of **Amore**.
+
+The table is created by `pub/dash/admin/schema.php` during the installation process.
 
 ### `time_zones` table
++ `time_zone_id` varchar(10)
++ `time_zone_name` tinytext
++ `time_zone_offset` tinytext
++ `time_zone_DST_offset` tinytext
+
+The `time_zone_id` field may not remain in future versions of **Amore**, since the `time_zone_name` contains unique items and could also serve as the table's primary key.
+
+The `time_zone_name` field will remain in future versions of **Amore**.
+
+The `time_zone_offset` field will remain in future versions of **Amore**. It can be used for setting the time of a user's post.
+
+The `time_zone_DST_offset` field will remain in future versions of **Amore**. It can be used for setting the time of a user's post.
 
 ### `users` table
 
