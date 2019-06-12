@@ -331,6 +331,145 @@ The `time_zone_offset` field will remain in future versions of **Amore**. It can
 
 The `time_zone_DST_offset` field will remain in future versions of **Amore**. It can be used for setting the time of a user's post.
 
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
+
 ### `users` table
++ `user_id` varchar(10)
++ `user_name` tinytext
++ `user_display_name` tinytext COMMENT *This is the same as the ActivityPub preferredUsername*
++ `user_pass` tinytext
++ `user_email` tinytext
++ `user_date_of_birth` date
++ `user_date_of_birth_privacy` varchar(10)
++ `user_level` varchar(10)
++ `user_actor_type` varchar(10)
++ `user_outbox` text
++ `user_inbox` text
++ `user_liked` text
++ `user_disliked` text
++ `user_follows` text
++ `user_followers` text
++ `user_priv_key` text
++ `user_pub_key` text
++ `user_avatar` tinytext
++ `user_gender` varchar(10)
++ `user_gender_privacy` varchar(10)
++ `user_sexuality` varchar(10)
++ `user_sexuality_privacy` varchar(10)
++ `user_relationship_status` varchar(10)
++ `user_relationship_status_privacy` varchar(10)
++ `user_eye_color` varchar(10)
++ `user_hair_color` varchar(10)
++ `user_location` varchar(10)
++ `user_location_privacy` varchar(10)
++ `user_nationality` varchar(10)
++ `user_nationality_privacy` varchar(10)
++ `user_locale` varchar(10)
++ `user_spoken_language` varchar(60)
++ `user_time_zone` varchar(10)
++ `user_time_zone_privacy` varchar(10)
++ `user_bio` tinytext
++ `user_is_suspended` datetime
++ `user_suspended_on` datetime
++ `user_suspended_by` varchar(10)
++ `user_is_banned` tinyint(4)
++ `user_banned_on` datetime
++ `user_banned_by` varchar(10)
++ `user_created` datetime
++ `user_last_login` datetime
+
+The `user_id` field will remain in future versions of **Amore**, though it may change format because most other programs don't play well with non-ASCII characters.
+
+The `user_name` field will remain in future versions. It is how users are identified on each instance.
+
+The `user_display_name` field will remain in future versions. It is how users prefer to be identified.
+
+The `user_pass` field will remain in future versions as it is how we can be sure that users are who they say they are.
+
+The `user_email` field will remain in future versions. It is not currently used, but it will be in future versions.
+
+The `user_date_of_birth` field will remain in future versions. Admins may wish to, or may be required to, prevent minors from creating accounts.
+
+The `user_date_of_birth_privacy` field will probably remain in future versions. It is not currently used, but may be in the future.
+
+The `user_level` field will remain in future versions. Users are given certain rights depending on what level they are.
+
+The `user_actor_type` field will remain in future versions. It is an ActivityStreams standard that is used by ActivityPub.
+
+The `user_outbox` field will remain in future versions. It is an [ordered collection](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection) of posts created by the user.
+
+The `user_inbox`  field will remain in future versions. It is an ordered collection of posts received by the user.
+
+The `user_liked` field will remain in future versions. It is a collection of ActivityPub objects that a user likes.
+
+The `user_disliked` field will remain in future versions. It is a collection of ActivityPub objects that a user does not like. This is not part of the ActivityPub standard, but probably should be.
+
+The `user_follows` field will remain in future versions. It is a collection of ActivityPub accounts that a user follows.
+
+The `user_followers` field will remain in future versions. It is a collection of ActivityPub accounts that follow a user.
+
+The `user_priv_key` field will probably remain in future versions of **Amore**. **Amore** is not currently setup to use cryptography keys, but they are required by ActivityPub.
+
+The `user_pub_key` field will probably remain in future versions of **Amore**. **Amore** is not currently setup to use cryptography keys, but they are required by ActivityPub.
+
+The `user_avatar` field will remain in future versions. It is not currently used, but will contain a path/URL for the user's avatar.
+
+The `user_gender` field will remain in future versions. Genders can be important for some dating apps/websites.
+
+The `user_gender_privacy` field will remain in future versions. It allows users to set a privacy level for their gender.
+
+The `user_sexuality` field will remain in future versions. Sexualities can be important for some dating apps/websites.
+
+The `user_sexuality_privacy` field will remain in future versions. It allows users to set a privacy level for their sexuality.
+
+The `user_relationship_status` field will remain in future versions. A person's relationship status can be important for some dating apps/websites.
+
+The `user_relationship_status_privacy` field will remain in future versions. It allows users to set a privacy level for their relationship status.
+
+The `user_eye_color` field will remain in future versions. Physical characteristics may be important to some dating app users.
+
+The `user_hair_color` field will remain in future versions. Physical characteristics may be important to some dating app users.
+
+The `user_location` field will remain in future versions. A person's location can be important for some dating apps/websites.
+
+The `user_location_privacy` field will remain in future versions. It allows users to set a privacy level for their location.
+
+The `user_nationality` field will remain in future versions. A person's nationality can be important for some dating apps/websites.
+
+The `user_nationality_privacy` field will remain in future versions. It allows users to set a privacy level for their nationality.
+
+The `user_locale` field will remain in future versions. Users will use it to set the language they want to use for the website.
+
+The `user_spoken_language` field will remain in future versions. The languages spoken by a user is potentially useful on some dating sites.
+
+The `user_time_zone` field will remain in future versions. A person's time zone can be important for some dating apps/websites. It is also useful to **Amore** to figure out when they post.
+
+The `user_time_zone_privacy` field will remain in future versions. It allows users to set a privacy level for their time zone.
+
+The `user_bio` field will remain in future versions. It is a brief description of the user written by themselves.
+
+The `user_is_suspended` field will remain, but may be renamed. The field is meant to hold the date and time when a user's suspension ends.
+
+The `user_suspended_on` field will remain in future versions. It is meant to note the beginning date and time of their suspension.
+
+The `user_suspended_by` field will remain in future versions. It is meant to note the administrator that suspended a user.
+
+The `user_is_banned` field will remain in future versions. It is a simple boolean that shows whether a user is banned or not.
+
+The `user_banned_on` field will remain in future versions. It is meant to note when a user was banned.
+
+The `user_banned_by` field will remain in future versions. It is meant to note the administrator that banned a user.
+
+The `user_created` field will remain in future versions. It is the date and time when a user first created their account. It is useful for calculating how long a user has been a member of a website.
+
+The `user_last_login` field will remain in future versions. It is the date and time of the user's most recent login. It is used to calculate how many users have logged in over the past month and over the past six months.
 
 ### `user_levels` table
++ `user_level_id` varchar(10)
++ `user_level_name` tinytext
+
+The `user_level_id` field may not remain in future versions of **Amore**, since the `user_level_name` contains unique items and could also serve as the table's primary key.
+
+The `user_level_name` field will remain in future versions of **Amore**.
+
+The table is created and filled by `pub/dash/admin/schema.php` during the installation process.
