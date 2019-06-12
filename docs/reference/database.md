@@ -176,15 +176,53 @@ The `eye_color_id` field may not remain in future versions of **Amore**, since t
 
 The `eye_color_name` field will remain in future versions of **Amore**.
 
-The table is created and filled by `pub/dash/admin/schema.php` during **Amore** installation.
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `genders` table
++ `gender_id` varchar(10)
++ `gender_name` tinytext
+
+The `gender_id` field may not remain in future versions of **Amore**, since the `gender_name` contains unique items and could also serve as the table's primary key.
+
+The `gender_name` field will remain in future versions of **Amore**.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `hair_colors` table
++ `hair_color_id` varchar(10)
++ `hair_color_name` tinytext
+
+The `hair_color_id` field may not remain in future versions of **Amore**, since the `hair_color_name` contains unique items and could also serve as the table's primary key.
+
+The `hair_color_name` field will remain in future versions of **Amore**.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `locales` table
++ `locale_id` varchar(10)
++ `locale_language` tinytext
++ `locale_country` tinytext
+
+The `locale_id` field may not remain in future versions, since the `locale_language` and `locale_country` fields can be combined to make a primary key.
+
+The `locale_language` field will remain in future versions.
+
+The `locale_country` field will remain in future versions.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `locations` table
++ `location_id` varchar(10)
++ `location_name` tinytext
++ `location_parent` varchar(60)
+
+The `location_id` field will be used in future versions, though it may change if there is a standard code for individual locations.
+
+The `location_name` field will be in future versions.
+
+The `location_parent` field will remain in future versions, though it may change as well. It currently allows a location to have multiple parents. For example, [Ceuta](https://en.wikipedia.org/wiki/Ceuta) can be considered part of Africa and part of Spain.
+
+The table is created by `pub/dash/admin/schema.php` and is filled by `pub/dash/admin/data-fill.php` during the installation process.
 
 ### `nationalities` table
 
