@@ -4,7 +4,10 @@ This Administrator's Manual for **Amore** v0.3 is meant to provide information o
 
 ### Configuration
 
+After installing **Amore**, it's recommended that the administrator take some time configuring the website to make it more useful and usable. The configuration has been divided into three areas: general, home page, and privacy.
+
 ##### General
+The general configuration webpage has some settings that should be configured first. The Site name field should already be filled in, while the rest of the fields are blank, have placeholder text, or have some default data.
 
 ##### Home Page
 
@@ -47,5 +50,3 @@ This Administrator's Manual for **Amore** v0.3 is meant to provide information o
 ###### Approve a post
 
 ### Metadata
-
- 
