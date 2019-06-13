@@ -282,6 +282,23 @@ require			"../../includes/database-connect.php";
     echo _("Error: Could not create table <i>locales</i>.")."<br>\n\n";
   }
 
+//
+// Fill the locales table with a locale
+//
+  $fill_locales_tbl = "INSERT INTO locales (
+                  locale_id,
+                  locale_language,
+                  locale_country
+                ) VALUES ('vsЙZñùÒÕСВ', 'en', 'US')";
+
+  if (mysqli_query($dbconn,$fill_locales_tbl)) {
+    /* translators: Do not translate locales in following message */
+    echo _("Default data added to table <i>locales</i>.")."<br>\n\n";
+  } else {
+    /* translators: Do not translate locales in following message */
+    echo _("Error: Could not add data to table <i>locales</i>.")."<br>\n\n";
+  }
+
 
 //
 // Create the locations table
@@ -565,7 +582,7 @@ require			"../../includes/database-connect.php";
     user_time_zone varchar(10) NOT NULL,
     user_time_zone_privacy varchar(10) NOT NULL,
     user_bio tinytext NOT NULL,
-    user_is_suspended datetime DEFAULT '0000-00-00 00:00:00',
+    user_is_suspended datetime,
     user_suspended_on datetime,
     user_suspended_by varchar(10),
     user_is_banned BOOLEAN DEFAULT 0,
