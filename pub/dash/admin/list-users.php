@@ -47,7 +47,7 @@ include_once "admin-nav.php";
 
 					// if a user is not banned and not suspended, they are shown on this list
 					if ($usrban == 0) {
-						if ($usrsusp == '0000-00-00 00:00:00') {
+						if ($usrsusp == '0000-00-00 00:00:00' || $usrsusp === NULL) {
 							echo "\t\t\t\t\t<tr>\n";
 							echo "\t\t\t\t\t\t<td><a href=\"the-user.php?uid=".$usrid."\">".$usrname."</a></td>\n";
 							echo "\t\t\t\t\t\t<td>".$usrdname."</td>\n";
