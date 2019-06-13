@@ -565,7 +565,7 @@ require			"../../includes/database-connect.php";
     user_time_zone varchar(10) NOT NULL,
     user_time_zone_privacy varchar(10) NOT NULL,
     user_bio tinytext NOT NULL,
-    user_is_suspended datetime,
+    user_is_suspended datetime DEFAULT '0000-00-00 00:00:00',
     user_suspended_on datetime,
     user_suspended_by varchar(10),
     user_is_banned BOOLEAN DEFAULT 0,
