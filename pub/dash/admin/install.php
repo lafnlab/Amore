@@ -145,7 +145,7 @@ if (isset($_POST['startsubmit'])) {
  */
 
 $pagetitle = _("Welcome to Amore");
-#include_once "admin-header.php";
+include_once "admin-header.php";
 
 ?>
 	<!-- THE CONTAINER for the main content -->

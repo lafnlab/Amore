@@ -74,7 +74,7 @@ if (isset($_POST['amosubmit'])) {
 }
 
 $pagetitle = _("Create admin user");
-#include_once "admin-header.php";
+include_once "admin-header.php";
 ?>
 
 	<!-- THE CONTAINER for the main content -->
