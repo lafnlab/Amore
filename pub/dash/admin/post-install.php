@@ -63,7 +63,7 @@ if (isset($_POST['amosubmit'])) {
 		$uid				= makeid($newid);
 		$udatecreate	= date('Y-m-d H:i:s');
 		$firstuserq		= "INSERT INTO users (user_id, user_name, user_pass, user_level, user_actor_type, user_created, user_last_login) VALUES ('".$uid."', '".$amouser."', '".$hash_pass."', 'ЗиóВéèàwVO', 'ХÉdôüzÍГùф', '".$udatecreate."', '".$udatecreate."')";
-		$firstadminq	= "INSERT INTO configuration (private_key, website_name, admin_account) VALUES ('".SITEKEY."', '".$amosite."', '".$uid."')";
+		$firstadminq	= "INSERT INTO configuration (primary_key, website_name, admin_account) VALUES ('".SITEKEY."', '".$amosite."', '".$uid."')";
 
 		$message = $firstuserq."<br>\n\n".$firstadminq;
 		$firstuserquery		= mysqli_query($dbconn,$firstuserq);
