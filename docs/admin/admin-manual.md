@@ -73,23 +73,30 @@ All users have the ability to perform certain tasks on their own profiles.
 All users have the ability to edit their own profiles, and should be encouraged to do so. While the user profiles in **Amore** v0.3 contain limited information compared to other dating platforms, they are more extensive when compared with other Fediverse platforms. This information will only be readable if someone visits a user's profile. It isn't readable by other platforms.
 
 ###### Delete profile
-All users have the ability to delete their profiles from **Amore**. If a user deletes their profile, their posts will be deleted, their username will be added to the deleted users list, and their profiles will be deleted from the `users` table.
+All users have the ability to delete their profiles from **Amore**. If a user deletes their profile, their posts will be deleted, their username will be added to the deleted users list, and their profiles will be deleted from the `users` table. In some jurisdictions, the ability of a user to delete their profile is a legal requirement.
 
 ###### Change passphrase
-All users have the ability to change their passphrase in **Amore**. Users may need or want to change their passphrase for any number of reasons, and it is a useful function to have. 
+All users have the ability to change their passphrase in **Amore**. Users may need or want to change their passphrase for any number of reasons, and it is a useful function to have.
 
 ### Posts
+All users have the ability to create their own posts and to do certain things with them.
 
 ##### Create a post
+All users can create posts in **Amore**.
 
 ##### Like or dislike a post
+Users can like and dislike their own posts and those of other users on the same **Amore** instance.
 
 ##### Flag a post
+Users can flag posts they feel need to be moderated.
 
 ##### Moderation queue
+Administrators can find posts flagged for moderation in the *moderation queue*. Any posts in the queue have been flagged by users and should be looked at by administrators to determine if the posts are allowable or should be deleted.
 
 ###### Delete a post
+Administrators can delete posts that have been flagged for moderation. This will remove the post from the database and all timelines.
 
 ###### Approve a post
+Administrators can approve posts that have been flagged for moderation. Doing so removes the flag from the post and removes the post from the queue.
 
 ### Metadata
