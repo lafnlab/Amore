@@ -70,10 +70,13 @@ Administrators can reset user passphrases. At the moment, there is no good way t
 All users have the ability to perform certain tasks on their own profiles.
 
 ###### Edit profile
+All users have the ability to edit their own profiles, and should be encouraged to do so. While the user profiles in **Amore** v0.3 contain limited information compared to other dating platforms, they are more extensive when compared with other Fediverse platforms. This information will only be readable if someone visits a user's profile. It isn't readable by other platforms.
 
 ###### Delete profile
+All users have the ability to delete their profiles from **Amore**. If a user deletes their profile, their posts will be deleted, their username will be added to the deleted users list, and their profiles will be deleted from the `users` table.
 
 ###### Change passphrase
+All users have the ability to change their passphrase in **Amore**. Users may need or want to change their passphrase for any number of reasons, and it is a useful function to have. 
 
 ### Posts
 
