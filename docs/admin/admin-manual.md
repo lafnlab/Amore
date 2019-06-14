@@ -31,8 +31,10 @@ The general configuration webpage has some settings that should be configured fi
 When the fields are set as desired, click on the Update button. They can always be changed later if needed.
 
 ##### Home Page
+The home page configuration webpage is intended to allow the site admin to decide what items would appear on the website's home page. These settings don't currently work, but they will in future versions of **Amore**.
 
 ##### Privacy
+The privacy configuration webpage is intended to allow the site admin to decide if users can set privacy settings for some parts of their profiles. These settings don't currently work, but they will in future versions. of **Amore**.
 
 ### Users
 
