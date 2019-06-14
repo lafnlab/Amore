@@ -100,3 +100,17 @@ Administrators can delete posts that have been flagged for moderation. This will
 Administrators can approve posts that have been flagged for moderation. Doing so removes the flag from the post and removes the post from the queue.
 
 ### Metadata
+**Amore** v0.3 has several types of data that don't fit easily into other categories. For each of the following types of data, administrators can add, list, edit, and remove records from their tables:
++ Currencies
++ Eye colors
++ Genders
++ Hair colors
++ Locales
++ Nationalities
++ Places
++ Relationship statuses
++ Sexualities
++ Spoken languages
++ Time zones
+
+In the future, the `currencies` table may go away or be converted to a plugin. Also the `locales` table will probably only be updated when actual locales are added or deleted. 
