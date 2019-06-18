@@ -38,26 +38,26 @@ This is the central document for functions used in **Amore** v0.3. Any **Amore**
 [`trim`](https://www.php.net/manual/en/function.trim.php) **Amore** uses PHP's `trim` function in the `nicetext` function in the `functions.php` file.
 
 ### **Amore** functions
-`atom_updated( $time )`
+`atom_updated( $time )` This function gets the timestamp of the latest post and formats it in a format that is frienldy to the Atom format.
 
-`header_message( $message )`
+`header_message( $message )` This function shows a `<div>` near the top of the page with an important message for the user.
 
-`makeid( $newid )`
+`makeid( $newid )` This function makes a ten character random id comprised of Arabic numerals, and Latin and Cyrillic upper and lowercase letters.
 
-`nicetext( $text )`
+`nicetext( $text )` This function takes text from a form and makes it less likely to be used in an attack. It converts html entities, strips slashes, and removes whitespace.
 
-`post_quantity( $posts )`
+`post_quantity( $posts )` This function gets the total number of posts on an instance.
 
-`redirect( $location )`
+`redirect( $location )` This function will redirect a browser to another page.
 
-`short_url( $url )`
+`short_url( $url )` This function removes the https:// or http:// from the start of a URL.
 
-`user_age( $userage )`
+`user_age( $userage )` This function calculates a user's age based on their date of birth.
 
-`user_post_quantity( $userid )`
+`user_post_quantity( $userid )` This function gets the total number of posts for a user.
 
-`user_quantity( $users )`
+`user_quantity( $users )` This function gets the total number of users on an instance.
 
-`users_half_year( $sometimes_users )`
+`users_half_year( $sometimes_users )` This function gets the total number of users over the past six months.
 
-`users_past_month( $active_users )`
+`users_past_month( $active_users )` This function get the total number of users over the past month.
