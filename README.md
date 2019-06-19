@@ -11,5 +11,3 @@ The [documentation](docs/README.md) for **Amore** is split into two sections: ad
 
 ### License
 **Amore** is open-source software and is released under the [Apache License, version 2.0](LICENSE).
-
-test
